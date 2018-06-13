@@ -1,0 +1,5 @@
+#./htaccess
+AuthType Basic
+AuthName "Password Required"
+AuthUserFile /home/dllido/privHtml/.htpasswd
+Require  valid-user
