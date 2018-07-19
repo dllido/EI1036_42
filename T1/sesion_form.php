@@ -1,22 +1,9 @@
-<?php
-session_start():
-var_dump($_SESSION);
-if (!isset($_SESSION["activo"]) )
-{
-	$_SESSION["cont"]=0;
-	$_SESSION["nombre"]=$_REQUEST["nombre"];
-	$_SESSION["activo"];}
-else {
-	$_SESSION["cont"]=$_SESSION["cont"];
-	
-}
 
-?>
 <!DOCTYPE html>
 <!--**
- * * Descripción: Cabecera portal Programa Aprender PHP
+ * * Descripciï¿½n: Cabecera portal Programa Aprender PHP
  * *
- * * Descripción extensa: Pagina web dividida en 4 ficheros.
+ * * Descripciï¿½n extensa: Pagina web dividida en 4 ficheros.
  * *
  * * @author  Lola <dllido@uji.es>
  * * @version 1
@@ -34,7 +21,7 @@ else {
 	<body>
 			<header>
 				<img src="./img/Logo-ACCE.gif" id="logo" alt="logo"/>
-				<p id="eslogan">Asociación de Consumidores de Comercio Electrónico</p>
+				<p id="eslogan">Asociaciï¿½n de Consumidores de Comercio Electrï¿½nico</p>
 			</header>
 	
 	
@@ -65,7 +52,7 @@ else {
 <h1>Gestion de Usuarios </h1>
  <form class="fom_usuario" action="controlForm.php" method="POST">
    <fieldset>
-  <legend>Datos básicos</legend>
+  <legend>Datos bï¿½sicos</legend>
   <label for="nombre">Nombre</label> <br/>
   <input type="text" name="nombre" class="item_requerid" size="20" maxlength="25" value="<?php $_SESSION["nombre"] ?>" placeholder="Miguel" />
   <br/>

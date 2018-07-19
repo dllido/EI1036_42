@@ -12,7 +12,7 @@ const PI=2.1416;
 //Variables
 $a=2;
 $b=2;
-echo "Hola Mundo";
+echo "Hola Mundo\n<p/>";
 echo $c;
 $c=$a+$b;
 $d=$a.$b;
@@ -30,8 +30,9 @@ $a="bienvenida/o";
 echo $a;
 echo "aui";
 }
+  
 concatenar("oo");
-
+print_r("\n concatenar\n </p>");
 
 $lista=array(1,2,3,4,5);
 
@@ -41,7 +42,7 @@ for ($i=0;$i<$lista.length;$i++)
 $lista=array();
 $lista[]=1;
 print_r($lista);
-
+print_r("\n Listas r\n </p>");
 //diccionarios
 
 $grants=array('read'=>'1','write'=>'2');
@@ -51,6 +52,8 @@ var_dump ($grants);  //muestra tipos complejos
 foreach($grants as $val => $n)
 {echo $val,"-",$n,"\n";}
 
+print_r("\n Diccionarios\n </p>");
+        
 if ($a=='hola') echo "1";
 else echo "2";
 $a="3";
@@ -60,29 +63,9 @@ case "2":echo "2";break;
 default:echo "3";break;
 }	
 
-
-$messages = array(
-		   array(
-
-			 'id'=>'wellcome',
-			 'description'=>'Bien Venid@'
-			 ),
-		   array(
-			 'id'=>'logout',
-			 'description'=>'Salir'
-			 ),
-		   array(
-			 'id'=>'calendarlist',
-			 'description'=>'Calendarios'
-			 )
-		   );
-
-
-print_r($messages);
-print_r ($_POST);
-print_r ($_GET);
+print_r("\n Sentencias\n </p>");
+print_r("\n Variables Globales\n </p>");
 print_r ($_REQUEST);
-print_r ($GLOBALS);
-print_r ($_COOKIE);
+print_r ($_GLOBALS);
 print_r ($_SERVER);
 ?>
