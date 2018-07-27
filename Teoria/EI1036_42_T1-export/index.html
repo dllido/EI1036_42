@@ -5,7 +5,7 @@
         <title>RevealJS : /Users/dllido/pruebas/GITHOME/EI1036_42/Teoria/EI1036_42_T1.md</title>
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/white.css" id="theme">
-        
+         <link rel="stylesheet" href="lola_theme.css" id="theme">
        
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/darkula.css">
@@ -35,167 +35,102 @@
 
         <div class="reveal">
             <div class="slides"><section  data-markdown><script type="text/template">
-## Introducción a la WWW
+# Introducción a la WWW
 
-### EI1042 - Tecnologias y Aplicaciones Web
+### EI1042 - Tecnologías y Aplicaciones Web
 
-**EI1036- Tecnologias Web ppara los Sistemas de Información (2018/2019)**
+**EI1036- Tecnologías Web para los Sistemas de Información (2018/2019)**
 
 *Professora: Dra. Dolores Mª Llidó Escrivá*
 
 [Universitat Jaume I](https://www.uji.es/).
 </script></section><section  data-markdown><script type="text/template">
- # Índice
-- La web WWW: Sistema client servidor
-- Procés de producció del portal web
+# Tabla de contenidos
+- Sistema cliente servidor Web
+- El HTTP
+- Proceso de producción del portal web
 - Definir la Arquitectura: Thumbnail
 - Dissenyar la web: Wireframe
 - Prototipado: Mockup
-- Equip producción
-- Informació: Document HTML
 - Localització de recursos: URL
-- Servidor web amb PHP
-- Servidor web apache(xamp)
-- Formularis web
+- Servidor web con PHP
 
 </script></section><section  data-markdown><script type="text/template">
- # La World Wide Web
+# Arquitectura Cliente Servidor
 
 ![Image of La World Wide Web](./media/T1/image2.png)
 
-<!-- img src="./media/T1/image2.png" --> 
+<!-- img src="./media/T1/image2.png" -->
 </script></section><section  data-markdown><script type="text/template">
- ## HTML
- ![Image of HTML](./media/T1/image1.png)
+## HTML
+![Image of HTML](./media/T1/image1.png)
 
 ``` <!DOCTYPE html >```
 </script></section><section  data-markdown><script type="text/template">
 ##El protocolo HTTP
 
- Client
- 
- ```HTTP
-  GET /un/ejemplo.html HTTP/1.0 CRLF
-  User Agent: Mozilla CRLF
-  (..)
-  Referer:http://anubis.uji.es/index.html
-  CRLF
+Client
+```HTTP
+ GET /un/ejemplo.html HTTP/1.0 CRLF
+ User Agent: Mozilla CRLF
+ (..)
+ Referer:http://anubis.uji.es/index.html
+ CRLF
 ```
 
 Servidor
 
 ```
-  HTTP/1.1 200 OK CRLF
-  Date: Mon, 27 Sep 199 21:23:20 GMT CRLF
-  Server: Apache/1.3.3 (Unix) CRLF
-  Last-Modified: Sun, 26 Sep 1999 ... CRLF
-  Content-Length: 5654 CRLF
-  (...)
-  Content-Type: text/html CRLF
-  CRLF
-  <PAGE HTML>
+ HTTP/1.1 200 OK CRLF
+ Date: Mon, 27 Sep 199 21:23:20 GMT CRLF
+ Server: Apache/1.3.3 (Unix) CRLF
+ Last-Modified: Sun, 26 Sep 1999 ... CRLF
+ Content-Length: 5654 CRLF
+ (...)
+ Content-Type: text/html CRLF
+ CRLF
+ <PAGE HTML>
 ```
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Métodos
 
-** GET|HEAD|POST|PUT|DELETE |OPTIONS|TRACE ** 
+** GET|HEAD|POST|PUT|DELETE |OPTIONS|TRACE **
 
 * HEAD: recupera las cabeceras HTTP de respuesta.
-   * obtener meta-información sobre el recurso
-   * comprobar la validez de hiperenlaces,
-   * comprobar la accesibilidad, actualización, etc.
+  * obtener meta-información sobre el recurso
+  * comprobar la validez de hiperenlaces,
+  * comprobar la accesibilidad, actualización, etc.
 * POST: ejecuta el recurso con los datos del cuerpo de la petición.
-    * Envío de un mensaje a un grupo de noticias 
-    * Insertar un nuevo registro en una base de datos
-    * Formularios
+   * Envío de un mensaje a un grupo de noticias
+   * Insertar un nuevo registro en una base de datos
+   * Formularios
 </script></section><section  data-markdown><script type="text/template">
 ### Códigos de estado HTTP
-  * 2xx: la petición se realizó con éxito
-  * 200 OK
-  * 3xx: redirecciones (el recurso  ha  cambiado su ubicación)
-  * 301 Moved Permanently
-  * 302 Moved Temporarily
-  * 4xx: error del cliente
-  * 400 Bad Request
-  * 403 Forbidden
-  * 404 Not Found
-  * 5xx: error del servidor
-  * 500 Internal Server Error
-  * 501 Not Implemented
+* 2xx: la petición se realizó con éxito
+* 200 OK
+* 3xx: redirecciones
+* 301 Moved Permanently
+* 302 Moved Temporarily
+* 4xx: error del cliente
+* 400 Bad Request
+* 403 Forbidden
+* 404 Not Found
+* 5xx: error del servidor
+* 500 Internal Server Error
+* 501 Not Implemented
 </script></section><section  data-markdown><script type="text/template">
-#Clientes Web
+### Clientes Web
 
-wget -r -l1 [http://www.pekegifs.com/pekemundo/dibujos/colorearonline.htm](http://www.pekegifs.com/pekemundo/dibujos/colorearonline.htm)
+#Download all the MP3 files from a subdirectory
 
+<small>wget ‐‐level=1 ‐‐recursive ‐‐no-parent ‐‐accept mp3,MP3 http://example.com/mp3/
+</small>
+#Download a document to a file
+<small>
 curl http://www.pekegifs.com/pekemundo/dibujos/colorearonline.htm  -o pp.html
-
---- 
-
-# Cookies
-Una cookie es información que un servidor puede enviar al cliente para que la almacene y se reenvíe en posteriores accesos.(cabecera)
-
-La información de la coockie son pares nombre=valor
-
-Aplicaciones de las cookies:**
-- Recordar preferencias de un cliente para generar contenido personalizado
-- Para almacenar información de sesión (ej: carro de la compra)
-En general: para “simular” sesiones
-
-</script></section><section  data-markdown><script type="text/template">
-
-#Sesión
-HTTP es un protocolo sin sesión.
-* ¿Como evitamos que pida reiteradamente la autentificación?
-* ¿Como recordamos el carrito de la compra?
----
-
-#Cookies
-
-Las variables básicas de una Cookie son:
-* name= nombre de la cookie
-* expires=DD-Month-YY HH:MM:SS GMT fecha caducidad.
-* secure=tipo de seguridad (sólo en HTTPS)
-* path= ruta especifica a los recursos a los que se envía la * cookie. Por defecto lo añade el servidor.
-* domain=ámbito con el cual el cliente identifica si debe enviar la cookie al servidor
-
----
-# Pros/Constras Cookies 
-Inonvenientes:
-* Privacidad:
-Otros servidores podrían leer información de las cookies del cliente
-No son válidas para guardar números de tarjeta, contraseñas,etc
-* Los datos pueden ser alterados
-Un usuario podría modificar el fichero de una cookie
-Al igual como con otros mecanismos: URL, formularios.
-* Aumenta el tráfico por la red
-* El estado se transmite con cada petición al servidor
-* Implementación compleja
-* Mantener “a mano” el estado en el cliente puede ser realmente complicado si queremos hacerlo de manera robusta
-* Tamaño de datos limitado
-Tanto el tamaño máximo permitido por las cookies como la longitud máxima de una URL pueden darnos problemas.
-</script></section><section  data-markdown><script type="text/template">
-# URL REWRITING
-Consiste en incluir la información del estado en el propio URL
-
-http://www.pekegifs.com/pekemundo/dibujos//comprar.asp?paso=3&producto1=01992CX&producto2=ZZ112230&producto3=HJ19X25
-
---- 
-
----
-#Simulación de la Sesión en HTTP
- 
-* A partir de controles HTML ocultos.
-
-    ```<INPUT type=“hidden” name=“session” value=“1234”>```
-
-* URL rewriting :
-* Uso cookie (por ejemplo, mediante JavaScript o CGI)
-* Una combinación de cookie y bases de datos
-* Usar el objeto SESSION (o similar) provisto por los entornos de programación como PHP, ASP o J2EE
-</script></section><section  data-markdown><script type="text/template">
-#Robots.txt
-
+</small>
+</script></section><section  data-markdown><script type="text/template"></script></section><section  data-markdown><script type="text/template">
+# Robots.txt
 * Fichero donde indicar el comportamiento que tienen que tener los buscadores y los programas de descargas sobre el servidor.
 
 * Se supone que todos los
@@ -204,10 +139,10 @@ respetarlo, aunque no siempre es
 así.
 
 * Se utilizan 2 directivas:
-    * User-agent:
-    * Disallow:
-
-Ejemplos: 
+   * User-agent:
+   * Disallow:
+</script></section><section  data-markdown><script type="text/template">
+## Ejemplos:
 ```
 #Para desactivar todas la arañas:
 User-agent: *
@@ -223,120 +158,159 @@ User-agent: emailspider
 Disallow: /
 ```
 </script></section><section  data-markdown><script type="text/template">
- ### Proceso de Producción de un Proyecto Web
+## Sesión
+HTTP es un protocolo sin sesión.
+* ¿Cómo evitamos que pida reiteradamente la autentificación?
+* ¿Cómo recordamos el carrito de la compra?
+</script></section><section  data-markdown><script type="text/template">
+## Simulación de la Sesión
+* A partir de controles HTML ocultos.
+<small>```<INPUT type="hidden" name="session" value="1234">```</small>
+* URL rewriting.
+* Uso cookies.
+* Una combinación de cookie y bases de datos.
+* Usar el objeto SESSION  provisto por los entornos de programación como PHP, ASP o J2EE
+</script></section><section  data-markdown><script type="text/template">
+## URL REWRITING
+Consiste en incluir la información del estado en el propio URL
 
-- Se requiere **tiempo** and **planificación**
-- Procesos :
-    - Planificación
-    - Deseño
-    - Devesarrollo
-    - Implementación
-    - Evaluación
-    - Mantenimiento
- ![Image Production](./media/T1/image6.png)
+http://www.pekegifs.com/pekemundo/dibujos//comprar.asp?paso=3&producto1=01992CX&producto2=ZZ112230&
+</script></section><section  data-markdown><script type="text/template">
+## Cookies
+* Una cookie es información que un servidor puede enviar al cliente para que la almacene y se reenvíe en posteriores accesos (header).
+
+
+* Aplicaciones de las cookies:
+    * Recordar preferencias de un cliente para generar contenido personalizado
+    * Para almacenar información de sesión
+    * En general: para “simular” sesiones
+* No para almacenar información privada. claves, cuentas...
 
 </script></section><section  data-markdown><script type="text/template">
- ### Diagrama de la Arquitectura de la informació: Thumbnail
+##  Cookies
+fichero con pares nombre=valor de tamaño limitado.
 
-  ![Image of Architecture](./media/T1/image3.png)
+* name= nombre de la cookie
+* expires=DD-Month-YY HH:MM:SS GMT fecha caducidad.
+* secure=tipo de seguridad (sólo en HTTPS)
+* path= ruta específica a los recursos a los que se envía la * cookie. Por defecto lo añade el servidor.
+* domain=ámbito con el cual el cliente identifica si debe enviar la cookie al servidor
+</script></section><section  data-markdown><script type="text/template">
+Vista en Chrome
+
+![Image of coockies](./media/T1/image11.jpeg)
 
 
 </script></section><section  data-markdown><script type="text/template">
- ### Disseny web:  WireFrame
- ![Image of thumbnail](./media/T1/image9.png)
+### Contras Cookies
+* Privacidad: Otros servidores podrían pueden leer información de las cookies del cliente.
+
+   
+* Los datos pueden ser alterados: Un usuario podría modificar el fichero de una cookie.
+* Implementación compleja: Mantener “a mano” el estado en el cliente es complicado si queremos hacerlo de manera robusta.
+* Tamaño de datos limitado: Tanto el tamaño máximo permitido por las cookies como la longitud máxima de una URL pueden darnos problemas.
+
 </script></section><section  data-markdown><script type="text/template">
- ### Prototipat: Mockup
-
-  ![Image of Wireframe](./media/T1/image4.png)
-
-
-
-
---- 
-# Definición de la interficie de cada servicio
-
-
-
-
-Title|Título
- --- | --- 
-URL|URL
-Method|GET/POST
-URL Params | Parámetros en la URL
-Data Params| Parámetros que requiere/envía el formulario
-Success Response | Que mostrar si el registro se ha realizado correctamente
-Error Resp. |Que mostrar si el registro se ha realizado correctamente
-Notes | Precondiciones/postcondiciones
+### Proceso de Producción de un Proyecto Web
+<img src="./media/T1/image6.png" style="float:right;height:50 % ">
+* Planificación
+* Deseño
+* Desarrollo
+* Implementación
+* Evaluación
+* Mantenimiento
 </script></section><section  data-markdown><script type="text/template">
- # Ejemplo:Definición de la interficie de cada servicio
+### Arquitectura de la informació: Thumbnail
 
-Identificador |R01 Name:​Registro
- --- | --- 
-URLL| ​http://www.oo.com/Lab2017/Proyecte/PortalMVC.php​?
-Método | ​GET
-Parametros URL| module=user, action=register_form**
-Fecha de Creación| 10/11/
-Fecha de Revisión| 15/01/
-Revisión autores| CMV&JCB
-Versión| 1.
-Descripción| ​El usuario quiere registrarse en el portal.
-Datos sobre parámetros|
-Respuesta de éxito|code: 200 content → Formulario de registro
-Respuesta de error| code: 500 content → Interfaz no implementada
-Comentarios|
+ ![Image of Architecture](./media/T1/image3.png)
 
-**- A esta interfaz puedes llegar desde cualquier pantalla puesto que el enlace está situado en la cabecera, pero
-solo si no has sido identificado en el portal con anterioridad. - Esta contolada en el fichero mod_user.php
-(Proyecte/mod_userMVC) - Después de rellenar el formulario y hacer darle en Enviar, dicho usuario se
-registrará en el portal, se le enviará un mensaje de confirmación de alta y se identificará en el portal,
-cambiando ası́ sus privilegios y pudiendo ver contenido oculto.**
+
+</script></section><section  data-markdown><script type="text/template">
+### Diseño web:  WireFrame
+![Image of thumbnail](./media/T1/image9.png)
+</script></section><section  data-markdown><script type="text/template">
+### Prototipado: Mockup
+
+ ![Image of Wireframe](./media/T1/image4.png)
+
+</script></section><section  data-markdown><script type="text/template">
+###### Definición de la interficie de cada servicio
+| Title            | Título                                      |
+| ---------------- | ------------------------------------------- |
+| URL              | URL                                         |
+| Method           | GET/POST                                    |
+| URL Params       | Parámetros en la URL                        |
+| Data Params      | Parámetros que requiere/envía el formulario |
+| Success Response | Respuesta si el registro es correctamente   |
+| Error Resp.      | Respuesta si hay algún error                |
+| Notes            | Precondiciones/postcondiciones              |
+</script></section><section  data-markdown><script type="text/template">
+#### Ejemplo: Definición Interfaz del registro
+
+| Identificador               | R01 Name:​Registro                                  |
+| ----------------------- | --------------------------------------------------- |
+| URL                  | Portal.php​?action=registro |
+| Método                 | ​GET                                                |
+| Creación      | 10/11/18                                              |
+| Revisión      | 15/01/18                                              |
+| Autores       | xxx&yyy                                             |
+| Versión                | 1.                                                  |
+| Descripción            | ​El usuario quiere registrarse en el portal.        |
+| Parámetros |validar fecha nacimiento|
+| Éxito     | mensaje registro correcto.|
+| Error      |  mensaje registro incorrecto   |
+| Comentarios             |Poner un enlace en portal en el menú pero ocultar al autentificar. |
+||Al  hacer click  se muestra formulario|
+|| Tras rellenar campos el usuario debe dar a enviar
+|| El formulario lo procesa  ?action= registrar |
+
+
 </script></section><section  data-markdown><script type="text/template">
 # URL: Uniform Resource Locator
 
- Són cadenes de caràcters amb un format que identifica recursos indicant la seua direcció electrónica
+Són cadenes de caràcters amb un format que identifica recursos indicant la seua direcció electrónica
 
- * http://anubis.uji.es/index.html
+* http://anubis.uji.es/index.html
 
- * ftp://al007@anubis.uji.es/un/ejemplo.txt
+* ftp://al007@anubis.uji.es/un/ejemplo.txt
 
 ```<esquema>://<user>:<password>@<host>:<port>/<url-path>```
 
- * //: Parte específica de los sistemas basados en IP
+* //: Parte específica de los sistemas basados en IP
 
- * URLs HTTP:
+* URLs HTTP:
 
- * http://host[:port][abs_path]
+* http://host[:port][abs_path]
 
 </script></section><section  data-markdown><script type="text/template">
- ### Exemples URL
+### Exemples URL
 
 - [http://www.milanuncios.com/informaticos-en-almeria/pp.htm?dias=1&demanda=n](http://www.milanuncios.com/informaticos-en-almeria/pp.htm?dias=1&demanda=n)
 - https://duckduckgo.com/?q=pp&t=ffab&ia=about
 - https://www.google.es/search?q=llido&as_sitesearch=uji.es&gfe_rd=ssl&ei=pRDx
 - [http://dllido.al.nisu.org/EI1036_1042/PortalJson.php?action=modificarAlumnoJson](http://dllido.al.nisu.org/EI1036_1042/PortalJson.php?action=modificarAlumnoJson)
 
-###### El servidor si existeix el recurs, comprova qui som i si estem
-
-###### autoritzats ens dona accés al recurs.
-
+*El servidor si existe el recurs, comprova quienes somos(autentificar) y si estamos autorizados al acceso del recurso
 </script></section><section  data-markdown><script type="text/template">
- ### Exemples URL amigables
+### URL amigables
 
 [http://www.example.com/camaras/reflex/canon-eos-5d-mark-2/](http://www.example.com/camaras/reflex/canon-eos-5d-mark-2/)
 
-- Millora el SEO
-- El servidor les ha de manipular les urls per a enviar els paràmetres correctes als programes
+- Mejora el SEO
+- El servidor  manipula la URL para redireccionarlos a los recursos internos correctamente.
 
 </script></section><section  data-markdown><script type="text/template">
- # Servidor WEB con PHP
+# Servidor WEB con PHP
 
-★¿Cómo funciona PHP?
+¿Cómo funciona PHP?
 **Intérprete**
-  ![Image of Wireframe](./media/T1/image10.png)
+ ![Image of Wireframe](./media/T1/image10.png)
 </script></section><section  data-markdown><script type="text/template">
- ## ¿Dudas?
+## ¿Dudas?
 
-  ![Image of Wireframe](./media/T1/image8.png)
+ ![Image of Wireframe](./media/T1/image8.png)
+
+
 
 </script></section></div>
         </div>
@@ -413,6 +387,7 @@ cambiando ası́ sus privilegios y pudiendo ver contenido oculto.**
   "parallaxBackgroundVertical": null,
   "slideExplorerEnabled": true,
   "browserPath": null,
+  "customTheme": "lola_theme",
   "attributes": ""
 };
             options = extend(defaultOptions, options, queryOptions);

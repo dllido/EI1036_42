@@ -7,7 +7,6 @@
  * *
  * * @author  Lola <dllido@uji.es>
  * * @version 1
- * * @link http://dllido@al.nisu.org/P0/holaMundo.php
  * * -->
 <html>
 <head>

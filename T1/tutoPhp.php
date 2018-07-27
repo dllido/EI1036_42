@@ -28,11 +28,11 @@ function concatenar($a)
 
 $a="bienvenida/o";
 echo $a;
-echo "aui";
+echo "\nFIN\n</p>";
 }
   
-concatenar("oo");
-print_r("\n concatenar\n </p>");
+concatenar("  oo ");
+print_r("\n concatenar </p>\n");
 
 $lista=array(1,2,3,4,5);
 
@@ -52,7 +52,7 @@ var_dump ($grants);  //muestra tipos complejos
 foreach($grants as $val => $n)
 {echo $val,"-",$n,"\n";}
 
-print_r("\n Diccionarios\n </p>");
+print_r("\n Diccionarios </p>\n");
         
 if ($a=='hola') echo "1";
 else echo "2";
@@ -63,9 +63,12 @@ case "2":echo "2";break;
 default:echo "3";break;
 }	
 
-print_r("\n Sentencias\n </p>");
-print_r("\n Variables Globales\n </p>");
-print_r ($_REQUEST);
-print_r ($_GLOBALS);
+print_r("\n Sentencias </p>\n");
+
+print_r("\n Variables Cookies</p>\n");
+print_r ($_COOKIE);
+print_r("\n Variables Globales</p>\n");
+print_r ($GLOBALS);
+print_r("\n Variables var_dump Server</p>\n");
 print_r ($_SERVER);
 ?>

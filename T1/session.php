@@ -1,15 +1,14 @@
 <?php
+        //No almacena la sessión, no está configurado para Apache.
         // Initialize the session.
         // If you are using session_name("something"), don't forget it now!
-        print "Cookies";
-        var_dump($_COOKIE);
-        print "Session";
-        var_dump($_SESSION);
+        print "</p>Cookies</p>";
+        print_r($_COOKIE);
+        print "</p>Session</p>";
+        print_r($_SESSION);
         session_start();
-        print "Cookies";
-        var_dump($_COOKIE);
-        print "Session";
-        var_dump($_SESSION);
+        print "</p>Session</p>";
+        print_r($_SESSION);
 
 
         if (!isset($_SESSION["activo"]) )
@@ -25,9 +24,9 @@
         if ($_SESSION['last_action'] < time() - 60 /* be a little tolerant here */) {
             session_destroy();}// destroy the session and quit
 
-    print "<h2>bienvenido de nuevo visitante\n</H2>";}
+    print "<h2>Bienvenido de nuevo visitante\n</H2>";}
     print "Session";
-    var_dump($_SESSION);
+    print_r($_SESSION);
     print "Cookies";
-    var_dump($_COOKIE);
+    print_r($_COOKIE);
     ?>
