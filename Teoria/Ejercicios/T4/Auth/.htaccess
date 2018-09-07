@@ -1,5 +1,0 @@
-#./htaccess
-AuthType Basic
-AuthName "Password Required"
-AuthUserFile "  users.htpasswd"
-Require  valid-user
