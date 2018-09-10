@@ -1,10 +1,40 @@
----
-theme : "white"
-transition: "zoom"
-highlightTheme: "darkula"
-customTheme : "lola_theme"
----
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>RevealJS : /Users/dllido/pruebas/GITHOME/EI1036_42/Teoria/EI1036_42_T6.md</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/white.css" id="theme">
+         <link rel="stylesheet" href="lola_theme.css" id="theme">
+       
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/darkula.css">
 
+        
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <style type="text/css">
+            @page {    
+              margin: 0;
+              size: auto; 
+            }
+        </style>
+
+        <script>
+         if(window.location.search.match( /print-pdf-now/gi )) {
+           window.print();
+         }
+      </script>
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
 ##### Tema 6:
 
 ##### JavaScript Avanzado
@@ -13,9 +43,7 @@ customTheme : "lola_theme"
 **EI1036 EI
 Dolores María Llidó Escrivá
 Curso 2017 – 2018**
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Índice
 
 
@@ -36,18 +64,14 @@ Curso 2017 – 2018**
 9. Seguridad
 10. RestApi
 11. Wordpress REST 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # Carga contenido página html
 
 
 
 
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # Función Flecha => (arrow functions)
 
 
@@ -79,9 +103,7 @@ elementos.map( elementos => elementos.length ); // [8, 6, 7, 9]
 El método array.map() crea un nuevo array con los resultados de la función que se pasa como parámetro aplicados a cada uno de sus elementos.
 
 ```
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 # 2. Closure
 
 - En JavaScript, el ámbito de una variable se define por su
@@ -103,9 +125,7 @@ displayName();
 init();
 alert(name);
 ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ¿Qué funciones se han definido?
 
@@ -118,9 +138,7 @@ alert(name);
 
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Ejemplos Closure
 
 ```
@@ -141,9 +159,7 @@ llamaotra2('funcionllamada("Estoy Aqui3")');
 
 ¿Que aparecerá en la pantalla?
 [EjemploClosure1](./Ejercicios/T6/Closure1.js)
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ##  Problema Closures
 
@@ -176,9 +192,7 @@ http://jsfiddle.net/
 https://codepen.io/idesi/pen/rLgaJO
 
 ¿Qué valor muestra en la ayuda al pulsar sobre Name? ¿Por qué?
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ### Solución:
 ```html
@@ -203,9 +217,7 @@ function setupHelp() {
   }}
 setupHelp();
 ```
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Modelo Asincrono
 Asincronía: acción que no tiene lugar en total correspondencia temporal con otra acción. (Fuente: Wikipedia).
 
@@ -221,10 +233,8 @@ El algo que ejecuta se le provee como último argumento a la función.
 
 - Se genera una función A de la que uno de sus argumentos es una función B que por convención recibe el nombre de callback.
 El callback recibe 2 argumentos, el primer argumento es una referencia a un error el cual puede ser personalizado , el segundo argumento contiene el resultado de la función A que está recibiendo el callback.
-
---
-
-<script src="https://gist.github.com/konami12/860b091a24028502319ec0a460db552e.js"></script>
+</script></section><section data-markdown><script type="text/template">
+<script src="https://gist.github.com/konami12/860b091a24028502319ec0a460db552e.js">__SCRIPT_END__
 
 [konami12/EjemploCallBack.js](https://gist.github.com/konami12/860b091a24028502319ec0a460db552e#file-ejemplocallback-js)
 ```
@@ -250,9 +260,7 @@ asincronia([], (error, result) => (error) ? console.error(error) : console.log(r
 
 
 https://javascript.info/callbacks
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 
 ## Ejemplo callback: AddeventListener
@@ -311,23 +319,19 @@ https://javascript.info/callbacks
       });
     }, 0);
   }
-  </script>
+  __SCRIPT_END__
 
 
 </body>
 </html>
 ```
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 ### Problemas:CallBackHell o PyramidOfDoom
 [CallBackHell Sample](https://gist.github.com/konami12/bef79c816d517a6c4676ba63cea45fcf#file-callbackapipokemons-js)
 
 
 Este problema surge por los niveles de profundidad que se generan en el código lo cual dificultara la lectura y el mantenimiento de este.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #  Promesas- Promise
 
 
@@ -351,9 +355,7 @@ var promise = new Promise(function(resolve, reject) {
    }
    else {reject(Error("It broke")); }
 });```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 
 #### Estados Promesas
 
@@ -368,9 +370,7 @@ no se completa con éxito.
 
 
 
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 ### Métodos
 Los métodos de las promesas devuelven promesas, permitiendo que las promesas  se puedan encadenar.
 - Promise.reject(reason): Devuelve el objeto Promise que es rechazado con la razón dada (reason).
@@ -381,9 +381,7 @@ thenable, adoptando su eventual estado.
 - Promise.all(iterable): se cumple cuando todas las promesas en el argumento iterable han sido cumplidas. Devuelve una lista de promesas con los valores de las promesas cumplidas.
 
 - Promise.race(iterable): Devuelve los datos de la primera promesa en cumplirse o rechazarse.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Métodos
 
  -  promise.then(onFulfilled,onRejected) : Método para indicar que hacer
@@ -404,16 +402,12 @@ https://elabismodenull.wordpress.com/2017/01/31/es6-las-promesas/
 
 [Otro EJemplo Promesas Ajax]
 https://gist.github.com/konami12/a85b5d299b01dccd8f5604fe93f9acaa#file-promisesapipokemons-js
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ¿Que problemas tienen las promesas?
 - Notación inteligente
 - Anidamientos
 
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 #   Async / Await
 - Te permite escribir un código basado en promesas como si fuese sincrónico, pero sin bloquear el hilo principal. Hacen a tu código asincrónico menos "inteligente" y más legible.
 
@@ -457,9 +451,7 @@ Es mejor ejecutar tareas y usar await's después que las tareas sean ejecutadas.
 ![Funciones asincrónicas](./media/T6/funcAsymc.jpeg)
 
 
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 # AJAX: API XMLHttpRequest
 
 <img src="./media/T6/image6.png" width="40%" style="float:right ">
@@ -469,9 +461,7 @@ una  comunicación cliente/servidor Asincrona
 - En el modelo C/S el usuario debe esperar a que se recargue la página completa cada vez que hace una petición al servidor.
 
 - Con AJAX el usuario puede seguir trabajando con la información de que disponía, mientras el navegador carga los recursos solicitados asincronamente.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 # AJAX: Jesse James Garrett
 
 
@@ -490,9 +480,7 @@ w-approach-web-applications/ "
 acrónimo de **Asynchronous JavaScript +
 XML** , que se puede traducir como
 "JavaScript asíncrono + XML".
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## Interacción
 
 - AJAX mejora la interacción del usuario con la aplicación,
@@ -504,9 +492,7 @@ peticiones con el servidor de forma asíncrona, o la API XMLHttpRequest.
 -En el **servidor** no se requiere nada en particular, simplemente
 debe devolver el recurso que se le solicita.
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ##  API XMLHttpRequest
 
@@ -524,9 +510,7 @@ debe devolver el recurso que se le solicita.
 -  .getResponseHeader() 
 -  .abort() 
 
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## Ejemplo 1
 
 ```
@@ -539,16 +523,12 @@ document.getElementByID("central").innerHTML=Ajax1.responseText;
 ¿Hay algun problema si es sincrono?
 ¿I si es asincrono?
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 # Estados  del motor de Ajax
 API XMLHttpRequest
 
 ![Image of La World Wide Web](./media/T6/image10.png)
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ### API XMLHttpRequest: propiedades
 
 
@@ -561,9 +541,7 @@ asociado.
 - .withCredentials: Asignamos true/false para permitir CORS
 - .upload:** devuelve el objeto **XMLHttpRequestUpload** (envio imágenes)
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Eventos objeto XMLHttpRequest y XMLHttpRequestUpload 
 - loadstart
 - progress
@@ -574,9 +552,7 @@ asociado.
 - loadend
 - readystatechange
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ```
 var req = new XMLHttpRequest();
 req.upload.addEventListener("progress", updateProgress, false);
@@ -591,9 +567,7 @@ req.addEventListener("load", transferComplete, false);
 req.addEventListener("error", transferFailed, false);
 req.addEventListener("abort", transferCanceled, false);
 ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ### Ejemplo carga hiperenlaces de forma asíncrona
 
 ```
@@ -625,9 +599,7 @@ https://dllido.al.nisu.org/Lab2017/T5/ajaxASincro.html
 
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ### Cuestiones AJAX
 
  -  ¿Por qué está vacío el método sent?
@@ -640,14 +612,10 @@ https://dllido.al.nisu.org/Lab2017/T5/ajaxASincro.html
 
 asíncrono?
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 [CallBackHell Sample](https://gist.github.com/konami12/bef79c816d517a6c4676ba63cea45fcf#file-callbackapipokemons-js)
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 # FETCH API(Sustito de XMLHttpRequest API )
 
  - Objeto global para recolectar/buscar recursos devolviendo una promesa.
@@ -655,9 +623,7 @@ asíncrono?
  - Tiene un diseño de API más simple y más limpio que XHTMLRequest.
  - No envia ni recibe ninguna **cookies**.
  - Utiliza las promesas.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ##  objetos Api FETCH
 
 
@@ -680,9 +646,7 @@ la respuesta/solicitud, lo que le permite declarar cuál es
 su tipo y cómo debe manejarse.
 
 - **Response** : Representa la respuesta a una solicitud. Es  la promesa que devuelve fetch. Devolverá un error sólo cuando hay un error de red. No codigo error http como 404  o 500.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 # Ejemplo completo Evitar errores
 
 ```
@@ -700,9 +664,7 @@ async function asyncCall()) {
 }
 ```
 ¿Porqué await response?
-
---
-
+</script></section><section data-markdown><script type="text/template">
 # Response
 
 
@@ -714,9 +676,7 @@ Tipos de respuesta:
 - response.blob():Un objeto Blob representa un objeto tipo fichero de  datos planos inmutables.
 - response.json()
 - response.text()
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ```
 async function asyncCall(){
 var myImage = document.querySelector('.my-image');
@@ -744,9 +704,7 @@ Imágenes dibujadas en patrones usando drawImage.
 Hojas de estilo (para acceso CSSOM).
 Scripts (para excepciones inmutadas).
 
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 # FORMDATA Element
 
  - Los parámetros de un formulario se pueden recoger con el objeto FormData
@@ -755,9 +713,7 @@ Scripts (para excepciones inmutadas).
 var formData = new FormData(form)
 var formElement = new FormdData (document.getElementById("myFormElement"));
 ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 Ejemplo T6/login.html con Fetch con CORS
 
 ```
@@ -783,9 +739,7 @@ document.querySelector('#form_log').addEventListener("submit",function (event) {
 	 llamarServer(myRequest);																						 
 	 });
 ```
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ##  El elemento SCRIPT
 
 Atributos:
@@ -798,9 +752,7 @@ cargados asincrónicamente.
 procesamiento del documento y evaluado sólo cuando se haya completado el
 procesamiento del documento.
  
-
---
-
+</script></section><section data-markdown><script type="text/template">
 Los scripts sin atributo async o defer, son interpretados y ejecutados
 inmediatamente, antes de que el navegador continúe procesando la página por lo que ralentiza la velocidad de carga de la página.
 
@@ -812,17 +764,13 @@ https://dllido.al.nisu.org/Lab2017/T5/listarTemplateAsync.html
 ```
 <script type="text/javascript"
 src="listarTemplateAsync.js" async defer >
-</script>
+__SCRIPT_END__
 ```
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 Servicio Web
 
 Los Servicios Web son un conjunto de aplicaciones o de tecnologías con capacidad para interoperar en la Web y que intercambian datos entre sí con el objetivo de ofrecer servicios. Los proveedores ofrecen sus servicios como procedimientos remotos y los usuarios solicitan un servicio llamando a estos procedimientos a través de la Web. Estos servicios proporcionan mecanismos de comunicación estándares entre diferentes aplicaciones, que interactúan entre sí para presentar información dinámica al usuario. (http://www.w3c.es/divulgacion/a-z/)‏
-
---
-
+</script></section><section data-markdown><script type="text/template">
 Podemos clasificar los servicios web en 2 tipos:
 - Servicios Web **REST**, el propósito principal del servicio es manipular las representación de los recursos WEB (XML,JSON) usando un conjunto uniforme de operaciones sin estado(Métodos).
 - Servicios Web **SOAP**: en el cual el servicio se expone con un conjunto arbitrario de operaciones.(XML)
@@ -838,9 +786,7 @@ Los sistemas REST utilizan estos métodos para identificar operaciones sobre los
 - PUT (update): Utilizado para editar un recurso.
 - DELETE (delete): Es la opción para eliminar un recurso
 
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 ![Image of rest](./media/T6/rest.jpg)
 
 (http://geek-and-poke.com/)
@@ -883,9 +829,7 @@ https://piruletas.000webhostapp.com//wp-json/wp/v2/posts/2
 
 ---
 # Accesibilidad
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 ## Guias  accesibilidad
 
 - UAAG 2.0:User Agent Accessibility Guidelines (for developers of
@@ -916,17 +860,13 @@ requisitos de accesibilidad de los sitios web y apps del sector público.
 Esta norma es el estándar europeo que especifica los requisitos funcionales de accesibilidad de los productos y
 servicios TIC: los requisitos de accesibilidad de los sitios web (equivalentes al nivel **AA de las WCAG 2.0** ), del
 hardware, del software, de los documentos, etc.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 #### Ejercicio 1
 
 **Leer : [http://www.sidar.org/traducciones/wcag20/es/](http://www.sidar.org/traducciones/wcag20/es/)**
 
 Cita 10 Normas que debería cumplir un portal web.
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 #### Ejercicio 2
 
 [http://www.usableyaccesible.com/archivos/relacion_equivalencia_301](http://www.usableyaccesible.com/archivos/relacion_equivalencia_301)
@@ -937,9 +877,7 @@ excel.
 
 SOLUCIÓN:
  -  -  https://docs.google.com/document/d/1V3UgVbwnwxSuBTGteMk2xZhxL3DmoMxz1ojNVLGnLCk/edithttps://docs.google.com/document/d/1d7ovEd79NUav44rrDvxuEqmyk78F4Cxm2F4t8nke9H4/edit
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # Seguridad
 
  La seguridad supone un coste económico y de
@@ -948,9 +886,7 @@ eficiencia.
 - Hay diversas formas de mitigar el riesgo
 - No se puede gastar un millón para proteger un
 céntimo
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 Tipos de seguridad:
 
 1.Seguridad en el Cliente
@@ -960,9 +896,7 @@ Tipos de seguridad:
 3.Seguridad en la Comunicación
 
 4.Seguridad en la Aplicación
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Seguridad en el Cliente:Código móvil
 
  - Código que circula por la red y se ejecuta en una máquina
@@ -975,9 +909,7 @@ en la máquina cliente.
  - Potencia la funcionalidad de los documentos HTML pero entraña riesgos de seguridad. Un código móvil puede obtener
 información acerca de un sistema o un usuario y enviarla a una máquina remota.
  - Un método de protección común es tener siempre actualizado el software.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Seguridad en el Servidor
 
 El desarrollo de una aplicación web requiere herramientas:
@@ -991,9 +923,7 @@ Estas herramientas pueden plantear problemas
 - Activación de cuentas por defecto
 - Las herramientas deben estar actualizadas y bien configuradas para
 impedir ataques a la aplicación.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 **Seguridad en el Servidor:**
 
 ##1.Servidor Web
@@ -1016,9 +946,7 @@ error_log en Apache) para detectar posibles ataques.
  - Configurar los servicios del servidor HTTP necesarios y
 
 deshabilitar los que no se utilizan. (^52)
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### 2. Servidor de Bases de Datos
 
 Riesgos:
@@ -1034,9 +962,7 @@ servidor, construidas de forma dinámica a partir de
 datos recibidos del usuario y por tanto potencialmente
 peligrosos ( Inyección SQL )
 - Acceso no autorizado a información restringida
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 **Seguridad en el Servidor:**
 
 #### Servidor de Bases de Datos
@@ -1060,9 +986,7 @@ excepto al administrador.
 necesarios
 
 - Almacenar los datos sensibles de forma encriptada
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### 6.3.3 Seguridad en la Comunicación;HTTPS
 
  - Proteger la información cuando se envía con protocolos seguros
@@ -1087,9 +1011,7 @@ contenido del mensaje enviado.
 identidad phishing o intermediarios (“ man in the middle ”) en
 el que tu usuario proporciona información a terceros cuando
 cree que te los está dando a ti.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### HTTPS
 
 
@@ -1111,9 +1033,7 @@ RewriteCond %{HTTPS} !on
 RewriteRule (.*)
 https://%{HTTP_HOST}%{REQUEST_URI} [L,R=302]
 ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### PHP con HTTPS
 ```
 <?php if
@@ -1145,9 +1065,7 @@ sesión SSL cifrada.
 encarga de verificar y demostrar la autenticidad de cada conexión.
  -  Disminución de la velocidad de carga de las páginas: es necesario acceder a un
 tercer sitio antes de cargar el contenido de cualquier página.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 **Seguridad en el Servidor:**
 
 ####  Lenguajes de programación en servidor/cliente
@@ -1164,9 +1082,7 @@ servidor.
 mensajes de error (esquema, naturaleza de los datos
 almacenados, fragmentos SQL).
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### 6.4 ClickJacking: robo de clics
 
  - http://www.elladodelmal.com/2015/08/el-ironframe-para-luchar-contra-ataques.html
@@ -1183,9 +1099,7 @@ en otra web.:
 Refused to display
 'https://www.google.es/maps/@38.9421251,-0.3578288,19z' in a frame
 because it set 'X-Frame-Options' to ‘SAMEORIGIN'.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### Robo sesiones
 
 ```
@@ -1209,9 +1123,7 @@ else
 
 { $menu="menu.phtml";}
 ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ###### 6.5: Seguridad: Top 10
 
 ###### https://www.owasp.org
@@ -1231,9 +1143,7 @@ else
 - A8-Cross-Site Request Forgery (CSRF)
 - A9-Using Components with Known Vulnerabilities
 - A10-Underprotected APIs
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### Ejercicio 3
 
 Define y pon un ejemplo de los ataques top 10.
@@ -1259,9 +1169,7 @@ interactuando:
 
 This is a offline tool, your data stays locally and is not send to any server!
 Feedback & Bug Reports
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 
 ## Recomendación en WP manejo sessiones:
 
@@ -1344,9 +1252,7 @@ Aún así si se requiere utilizar cookies desde php se tienen 2 opciones:
 
 - Configurando el servidor para que no utilice cache.
 - Utilizar admin-ajax calls :Esto desencadena una solicitud POST a admin-ajax.php que recibe  php para realizar distintas acciones.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### Evolución
 
 
@@ -1362,9 +1268,7 @@ do_Fetch
 h-la-evolucion-natural-de-xhr-en-el-nuevo-javascript/
  - https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/
 Funciones/Arrow_functions
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 #### Bibliografía
 
 
@@ -1381,3 +1285,88 @@ https://codepen.io/idesi/pen/rLgaJO
 
 
 
+</script></section></div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+              { src: 'plugin/math/math.js', async: true }
+            ];
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default',
+              dependencies: deps
+            };
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+            var options = {
+  "notesSeparator": "note:",
+  "separator": "^[\r\n?|\n]---[\r\n?|\n]$",
+  "verticalSeparator": "^[\r\n?|\n]--[\r\n?|\n]$",
+  "theme": "white",
+  "highlightTheme": "darkula",
+  "controls": true,
+  "progress": true,
+  "slideNumber": false,
+  "history": true,
+  "keyboard": true,
+  "overview": true,
+  "center": true,
+  "touch": true,
+  "loop": false,
+  "rtl": false,
+  "shuffle": false,
+  "fragments": true,
+  "embedded": false,
+  "help": true,
+  "showNotes": false,
+  "autoSlide": 0,
+  "autoSlideStoppable": true,
+  "mouseWheel": false,
+  "hideAddressBar": true,
+  "previewLinks": false,
+  "transition": "zoom",
+  "transitionSpeed": "default",
+  "backgroundTransition": "default",
+  "viewDistance": 3,
+  "parallaxBackgroundImage": "",
+  "parallaxBackgroundSize": "",
+  "parallaxBackgroundHorizontal": null,
+  "parallaxBackgroundVertical": null,
+  "slideExplorerEnabled": true,
+  "browserPath": null,
+  "customTheme": "lola_theme",
+  "attributes": ""
+};
+            options = extend(defaultOptions, options, queryOptions);
+            Reveal.initialize(options);
+
+        </script>
+        
+    </body>
+</html>
