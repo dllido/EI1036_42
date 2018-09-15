@@ -1,0 +1,62 @@
+/**
+ *Mis fuentes más pequeñas*/
+
+.reveal {
+  
+  font-size: 30px;
+}
+
+
+.reveal h1 {
+  font-size: 1.5em; 
+  color: 83a;}
+
+.reveal h2 {
+  font-size: 1.4em; }
+
+.reveal h3 {
+  font-size: 1.2em; }
+
+.reveal h4 {
+  font-size: 1em; }
+
+.reveal h1 {
+  text-shadow: none; }
+.reveal table{font-size: 0.5 em;line-height: 0.8em;}
+.reveal img  {max-height: 550px;max-width: 80%;}
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: block;
+  text-align: left;
+  margin: 10px 40px 10px 40px;
+  }
+.reveal pre code{
+    max-height: 90%;
+  }
+a {    word-wrap: break-word;}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.truncate:hover {
+  
+  white-space: normal;
+  overflow:visible;
+
+   }
+
+
+
+
+
+
+.DescriptionExcerpt {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

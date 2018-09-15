@@ -1,10 +1,40 @@
----
-theme : "white"
-transition: "zoom"
-highlightTheme: "darkula"
-customTheme : "lola_theme"
----
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>RevealJS : /Users/dllido/pruebas/GITHOME/EI1036_42/Teoria/EI1036_42_T3.md</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/white.css" id="theme">
+         <link rel="stylesheet" href="lola_theme.css" id="theme">
+       
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/darkula.css">
 
+        
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <style type="text/css">
+            @page {    
+              margin: 0;
+              size: auto; 
+            }
+        </style>
+
+        <script>
+         if(window.location.search.match( /print-pdf-now/gi )) {
+           window.print();
+         }
+      </script>
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
 # T3: Lenguajes de la Web
 
 # (HTML5, CSS3)
@@ -17,9 +47,7 @@ customTheme : "lola_theme"
 
 [Universitat Jaume I](https://www.uji.es/).
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # Índice
 
 1. HTML: HyperText Markup Language
@@ -38,9 +66,7 @@ customTheme : "lola_theme"
     - Media-Type
     - Media-Queries
  Bibliografía
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # 1 HTML: HyperText Markup Language
 
 * Lenguaje de marcas para publicar documentos multimedia
@@ -56,24 +82,18 @@ contenidos de los documentos.
     ```<body class=“principal”>...</body>```
 * Extensión de los documentos: .html o .htm
 * Mejor etiquetas en  minúsculas y atributos entre comillas dobles (xml).
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # Conceptos:
 
 * ¿Qué es el encode? (Editor/Navegador)
 * ¿Cómo especificamos que el documento HTML está en español?
 * ¿Qué es el mimetype?
 * ¿Qué son los carácteres especiales en HTML?
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ![Image of HTML](./media/T3/image4.png)
 https://ontargetwebsolutions.com/insights/wp-conten
 t/uploads/2014/11/evolution-of-web-design-ok.jpg
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # 2. Renderizado HTML
 
 ¿Qué es el renderizado?
@@ -85,9 +105,7 @@ de Braille.
 
 * Cuando un documento HTML se renderiza se guarda en la memoria como un árbol *DOM*(Document Object
 Model).
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Renderizado en navegador:  blok/Inline
 
  Los elementos HTML se dividen en dos grandes tipos:
@@ -98,9 +116,7 @@ footer,div,table...).
 de existir varios se sitúan uno junto a otro en la misma línea
 siempre que haya espacio.(span,a).
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # 3 Recomendaciones: Accesibilidad y Usabilidad
 
 * Etiquetas y atributos en minúsculas.
@@ -111,9 +127,7 @@ siempre que haya espacio.(span,a).
 * No utilizar espacios en blanco consecutivos:
 ``` css margin```
 * Utilizar  etiquetas semánticas ```header,article....``` no siempre ```div```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 
 
 # 4. HTML 5: http://www.w3.org/TR/html5/
@@ -125,9 +139,7 @@ siempre que haya espacio.(span,a).
 [http://validator.w3.org/nu/](http://validator.w3.org/nu/)
 * [http://caniuse.com](http://caniuse.com) ¿Que etiquetas puedo usar en los
 navegadores?
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 
 
 ## Elementos HTML5 multimedia
@@ -137,9 +149,7 @@ navegadores?
 * Animación: ```<canvas></canvas> ```(+ JS)
 * Soporte Imágenes vectoriales: SVG (scalable vector graphics)
 
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 # 5. Estructura Semántica
 ```html
 <header> <hgroup>
@@ -170,9 +180,7 @@ navegadores?
    Copyright © <time datetime="2010-11-08">2010</time>.
 </footer>
 ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## HTML5: Estructura Semántica
 * ```<p>```: Mínimo bloque en HTML.
 * ```<div>```: Une bloques de distintos tipos, cuando no podemos asociar significado
@@ -190,18 +198,14 @@ contenido relacionado. Equivalente a una sección de un periódico que engloba v
 al lado. Ej propaganda. Son datos extra sin lo que podríamos
 pasar perfectamente pero que hemos decidido añadir en el
 documento.
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 # 7. Formularios: HTML DINÁMICO
 
 - ¿Qué entendesis por dinámico?
 - ¿Cómo seria la arquitectura?
 - ¿Cómo funcionan los formularios?
 - ¿conoceis alguna alternativa a formularios?
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Atributos  Form
 ```<form id="identificador" action=“programa"
  method="post“ enctype="multipart/form-data">```
@@ -213,9 +217,7 @@ información del formulario.
 * ```enctype``` :El tipo mime empleado para codificar el contenido del
 formulario.
 https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Etiquetas de los formularios
 
 * Input
@@ -227,9 +229,7 @@ https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 * Button
 
  http://www.w3.org/TR/html5/forms.html
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 # 8. CSS: Cascade Style Sheets
 
 * HTML utiliza un conjunto de etiquetas predefinidas, cuyo
@@ -240,9 +240,7 @@ mostrar estos elementos al usuario.
 reglas de estilo unidas a un documento que permiten definir
 estilos para mostrar a los elementos de HTML
     - [http://www.w3c.es/Divulgacion/GuiasReferencia/CSS](http://www.w3c.es/Divulgacion/GuiasReferencia/CSS)
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## CSS: En navegadores
 
 ¿Por qué no son iguales los documentos HTML en todos los
@@ -250,9 +248,7 @@ navegadores?
 - Los navegadores tienen su propio conjunto de reglas de
 estilo.
 - Los navegadores no soportan el estándar CSS 100%
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## CSS: Ventajas
 
 * Separar el contenido del formato.
@@ -265,9 +261,7 @@ sus propias reglas de estilo.
 * Las reglas se aplican de forma jerárquica o en cascada.
 * Se combinan reglas del navegador con las del diseñador 
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # 9 CSS: Sintáxis
 
 Una regla de estilo se compone de:
@@ -282,9 +276,7 @@ Una regla de estilo se compone de:
  h1 {color:blue}
 
  h1,h2,h3 {color:blue; tex-align:center}}```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## ¿Cómo se enlaza CSS con html?
 
 
@@ -316,9 +308,7 @@ h1 {color: gray;}
 ```
 
 ¿Prioridad de las reglas?
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Tipos de selectores
 
 ```html
@@ -352,9 +342,7 @@ width: 20%;
 .cita {font-weight: bold; color: red;}
 p.cita {background-color: red;}
 ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Tipos de selectores
 
 * Pseudo-Clases :
@@ -381,9 +369,7 @@ ul b {color:#074A}
 ```
 
  El atributo Color del CSS soporta nombre inglés o HEXA, RGB y HSL
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Unidades CSS
 
 * Medidas relativas:
@@ -401,17 +387,13 @@ ul b {color:#074A}
 margen izquierdo de un 20% del ancho del elemento contenedor
     - Proporcionales: margin-left:3*
 margen izquierdo de ¾ partes del elemento contenedor
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Tamaño de la fuente: Font-size
 
 * Absolutos:[ xx-small | x-small | small |medium |large | x-large
 | xx-large ]
 * Relativos: [larger | smaller]
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # 9. CSS3
 
 * Transformaciones
@@ -430,9 +412,7 @@ transform: scale(1,5) translate(30px,10px);}
 ```
 
 https://dllido.al.nisu.org/Lab2017/P2_0/
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 Ejercicio CSS3
 
 <p><a style=":hover {
@@ -443,12 +423,8 @@ transform: scale(1,5) translate(30px,10px);}"> Acción</a>
 Practicar ejemplos:  
 
 https://codepen.io/martinwolf/pen/qlFdp
-
---
-
-
----
-
+</script></section><section data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 # 10. Modelo de Cajas:
 
 * Los elementos HTML se dividen en dos grandes tipos: block e inline.
@@ -462,9 +438,7 @@ existiera, por lo que su espacio será ocupado por otros.
     - ```inherit``` : se heredan las características del elemento padre.
     - ```flex``` : el elemento es flexible en posición horizontal y vertical.
     - ```inline-block``` : el elemento de bloque pero que se renderiza en línea con otros elementos.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 #Ejemplo
 
 <p> Esto es un párrafo, elemento block por defecto que contiene un trozo de texto <span> SPAN </span> que por defecto es inline</p>
@@ -472,9 +446,7 @@ existiera, por lo que su espacio será ocupado por otros.
 <a href="alli" style="display:inline-block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; ">Alli</a> Esto es una caja inline, es block
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ```
 header, footer {
    display: block;
@@ -487,9 +459,7 @@ header, footer {
 }```
 
 <img src="./media/T3/image5.gif"/>
-
---
-
+</script></section><section data-markdown><script type="text/template">
 # Propiedad overflow 
 Propiedad que especifica que hacer con el contenido excedente en un elemento a nivel de bloque
 
@@ -499,9 +469,7 @@ Propiedad que especifica que hacer con el contenido excedente en un elemento a n
 - hidden: Contenido  recortado. 
 - scroll Contenido  recortado y el navegador web usa las barras de desplazamiento.
 - auto: Depende del Navegadore.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 Elipsis texto
 
 <div id="container">
@@ -522,9 +490,7 @@ Elipsis texto
 
    }
 ```
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 ### Modelo de cajas: “Position”
 
 * ```Static:``` Posición predeterminada en HTML.
@@ -548,9 +514,7 @@ border-style: solid; }
 
 
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Cajas Flotantes: Float
 
 * ```Left``` : Genera un bloque a la izquierda donde posicionar las
@@ -571,9 +535,7 @@ Si al lado ponemos un parrafo este se alinea
 a la derecha de la imagen.
 https://piruletas.000webhostapp.com/Lab/P1
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Cajas flexibles: Diseño Flexible
 
 Un diseño flexible permite para alterar el ancho y alto de sus
@@ -589,9 +551,7 @@ flexible (Flex item). Que puede permitir cajas a su derecha o izquierda
 
 https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # 11. CSS: Discriminación por dispositivos  
 ## Media-Type
 
@@ -611,9 +571,7 @@ tty, tv.
 
 <link rel="stylesheet" type="text/css" href="http://mysite.com/style.css" media="screen">
 ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## CSS3: Media queries
 
 
@@ -640,9 +598,7 @@ de pantalla, el ancho, el alto, la orientación e incluso la resolución.
 }
 ```
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Ejemplo Media-QuerIes
 
 ``` html
@@ -664,9 +620,7 @@ content:" In fact, it's between 500px and 600px wide.";
 </style>
 
 ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Media Feature
 
 * ```min-width``` :Reglas aplicadas a cualquier ancho de ventana de
@@ -681,9 +635,7 @@ navegador que sea inferior al valor definido en la consulta.
 cuyo alto de ventana sea superior o igual al ancho.
 * ```orientation=landscape``` : Reglas aplicadas a cualquier navegador
 cuyo ancho sea superior al alto.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # Lecturas recomendadas
 
 * Enlaces de Interés:
@@ -701,9 +653,92 @@ https://html.spec.whatwg.org/multipage/indices.html
 Siarto.
     - HTML5 y CSS3. Editor: ENI (Septiembre 2011) Autor : Luc VAN
 LANCKER ISBN : 978-2-7460-6816-2
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### ¿Dudas?
   ![Image de Dudas](./media/image8.png)
 
+</script></section></div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+              { src: 'plugin/math/math.js', async: true }
+            ];
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default',
+              dependencies: deps
+            };
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+            var options = {
+  "notesSeparator": "note:",
+  "separator": "^[\r\n?|\n]---[\r\n?|\n]$",
+  "verticalSeparator": "^[\r\n?|\n]--[\r\n?|\n]$",
+  "theme": "white",
+  "highlightTheme": "darkula",
+  "controls": true,
+  "progress": true,
+  "slideNumber": false,
+  "history": true,
+  "keyboard": true,
+  "overview": true,
+  "center": true,
+  "touch": true,
+  "loop": false,
+  "rtl": false,
+  "shuffle": false,
+  "fragments": true,
+  "embedded": false,
+  "help": true,
+  "showNotes": false,
+  "autoSlide": 0,
+  "autoSlideStoppable": true,
+  "mouseWheel": false,
+  "hideAddressBar": true,
+  "previewLinks": false,
+  "transition": "zoom",
+  "transitionSpeed": "default",
+  "backgroundTransition": "default",
+  "viewDistance": 3,
+  "parallaxBackgroundImage": "",
+  "parallaxBackgroundSize": "",
+  "parallaxBackgroundHorizontal": null,
+  "parallaxBackgroundVertical": null,
+  "slideExplorerEnabled": true,
+  "browserPath": null,
+  "customTheme": "lola_theme",
+  "attributes": ""
+};
+            options = extend(defaultOptions, options, queryOptions);
+            Reveal.initialize(options);
+
+        </script>
+        
+    </body>
+</html>
