@@ -33,7 +33,9 @@
   margin: 10px 40px 10px 40px;
   }
 .reveal pre code{
-    max-height: 100%;
+  font-weight: 600;
+  font-size: 1.5em;
+  max-height: 100%;
   }
 a {    word-wrap: break-word;}
 
