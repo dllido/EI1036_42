@@ -1,6 +1,13 @@
 /**
  *Mis fuentes más pequeñas*/
 
+ 
+
+ @media print { 
+  /* All your print styles go here */
+  #header, #footer, #nav { display: none !important; } 
+ }
+
 .reveal {
 
   font-size: 28px;
