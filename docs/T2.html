@@ -23,15 +23,12 @@
               size: auto; 
             }
         </style>
-        <script>
-            var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
 
-        
+        <script>
+         if(window.location.search.match( /print-pdf-now/gi )) {
+           window.print();
+         }
+      </script>
 
     </head>
     <body>
@@ -49,7 +46,8 @@
 [Universitat Jaume I](https://www.uji.es/).
 
 (Drive/T2)
-*https://github.com/dllido/EI1042_36/tree/master/Ejercicios/T2*
+*https://drive.google.com/drive/folders/1U8unry7CEj77DF9-dpq9JuAJ4ZQkjYWf*
+
 </script></section><section  data-markdown><script type="text/template">
 ## Índice
 
@@ -281,7 +279,7 @@ $$a = "mundo";
 print "$a $hola\n";
 //hola mundo
 print "$a ${$a}";
-//hola mundo 18
+//hola mundo
 ```
 </script></section><section  data-markdown><script type="text/template">
 ## ¿Que tipo es la variable? 
@@ -302,7 +300,7 @@ print "$a ${$a}";
 - Global:
     -  No se puede definir dentro de las funciones a menos que :
        - se declare en la función con la palabra clave 'global'
-       - O que se acceda con el array $GLOBAL[indice]
+       - O que se acceda con el array $GLOBALS[indice]
     -  Existen durante todo el tiempo de proceso del fichero
     -  Al acabar de procesar el fichero se eliminan las variables globales
  
@@ -556,8 +554,93 @@ utiliza self:: para referenciar a la clase actual.
 $this->nombre 
 self::nombres
 ```
-</script></section><section  data-markdown><script type="text/template">
+---
 
+#Callback/Calleable/Retrollamadas
+
+
+Los callbacks es un tipo de funciones que son pasadas como parametros y que serán ejecutadas desde una subrutina. 
+
+Generalmente se ejecutan cuando se producen eventos.
+Ej: wordpress: 
+
+```php 
+function example_callback( $example ) {
+    // Maybe modify $example in some way.
+    return $example;
+}
+add_filter( 'example_filter', 'example_callback' );
+
+```
+
+Los callbacks, que son funciones llamadas por otra función que usa a la primera como parámetro. 
+
+Generalmente se utilizan funciones anónimas como parámetros de los  callbacks.
+```php 
+$saludo = function($nombre)
+{
+    printf("Hola %s\r\n", $nombre);
+};
+
+$saludo('Carlos'); // Devuelve Hola Carlos
+call_user_func($saludo, "PHP"); // Devuelve Hola PHP
+```
+</script></section><section  data-markdown><script type="text/template">
+# Funciones anónimas
+
+Una función anónima no es más que una función que no tiene nombre.
+
+```php
+$saludo = function() {
+    return "Hola que tal";
+};
+
+echo $saludo(); // Devuelve: Hola que tal
+};
+```
+
+```php
+function decir ($algo) {
+    echo $algo();
+}
+
+decir(function(){
+    return "Esto es algo";
+});
+decir()  // Devuelve "Esto es algo".
+```
+---
+# Una clausura o closure 
+
+
+Una clausura o closure es una función anónima que captura el scope actual, y proporciona acceso a ese scope cuando se invoca el closure.
+
+```php
+
+$colorCoche = 'rojo';
+
+$mostrarColor = function() use ($colorCoche) {
+    echo "El color del coche es $colorCoche";
+};
+
+$mostrarColor(); // Mostrará El color del coche es rojo
+```
+
+
+Las clausuras permiten usar variables mediante la palabra use. Estas variables su ámbito es el de la función donde se definen, no son como las variables globales.
+
+
+Si se altera el valor de la variable $colorCoche dentro de la clausura, no afectará a la variable original.
+```php 
+$colorCoche = 'rojo';
+
+$mostrarColor = function() use ($colorCoche) {
+    $colorCoche = 'azul';
+};
+
+$mostrarColor();
+echo $colorCoche; // Mostrará rojo
+```
 
 # Bibliografía
 
@@ -565,6 +648,7 @@ self::nombres
 Guia Estilos: https://www.php-fig.org/psr/psr-2/
 
 - Apache: [http://httpd.apache.org/docs/2.3/es/](http://httpd.apache.org/docs/2.3/es/)
+-Callbacks: https://diego.com.es/funciones-anonimas-y-clausuras-en-php 
 
 
 </script></section><section  data-markdown><script type="text/template">
@@ -618,7 +702,7 @@ Guia Estilos: https://www.php-fig.org/psr/psr-2/
   "highlightTheme": "darkula",
   "controls": true,
   "progress": true,
-  "slideNumber": false,
+  "slideNumber": true,
   "history": true,
   "keyboard": true,
   "overview": true,
