@@ -54,15 +54,15 @@
 2. Renderizado HTML
 3. Accesibilidad/usabilidad
 4. HTML5 
-5. HTML5: Estructura Semántica
-6. HTML5 Formularios
+5. Estructura Semántica
+6. Formularios
 7. CSS
 8. Sintaxis CSS
     - Tipos selectores
     - Medidas/Unidades
 9. CSS3
-10. CSS: Modelo de Cajas: flotantes/flexibles
-11. CSS: Discriminación por dispositivos.
+10. Modelo de Cajas: flotantes/flexibles
+11. Discriminación por dispositivos.
     - Media-Type
     - Media-Queries
 12. Bibliografía
@@ -72,20 +72,20 @@
 * Lenguaje de marcas para publicar documentos multimedia
 hipertexto.
 * Los documentos HTML son ficheros de texto con marcas de formato
-que son independientes de SO, lenguaje de programación y
+que son independientes del SO, lenguaje de programación y
 programas.
 * Las marcas o etiquetas indican cómo representar los
 contenidos de los documentos.
-    - Elemento con contenido.  ```<html>...</html>``` 
-    - Elemento vacío. ``` <br/> ``` o ```<br></br>``` 
-    - Etiqueta  con atributos.  
+    - Elemento con contenido:  ```<html>...</html>``` 
+    - Elemento vacío: ``` <br/> ``` o ```<br></br>``` 
+    - Etiqueta con atributos:  
     ```<body class=“principal”>...</body>```
-* Extensión de los documentos: .html o .htm
-* Mejor etiquetas en  minúsculas y atributos entre comillas dobles (xml).
+* Extensiones de fichero: .html o .htm
+* Cuestiones de estilo: etiquetas en minúsculas y atributos entre comillas dobles (XML).
 </script></section><section  data-markdown><script type="text/template">
 # Conceptos:
 
-* ¿Qué es el encode? (Editor/Navegador)
+* ¿Qué es el *encode*? (Editor/Navegador)
 * ¿Cómo especificamos que el documento HTML está en español?
 * ¿Qué es el mimetype?
 * ¿Qué son los carácteres especiales en HTML?
@@ -103,33 +103,29 @@ de Braille.
 * Para indicar cómo aparece el renderizado se ha definido el *CSS*    
 (Cascade Style Sheet).
 
-* Cuando un documento HTML se renderiza se guarda en la memoria como un árbol *DOM*(Document Object
+* Cuando un documento HTML se renderiza se guarda en la memoria como un árbol *DOM* (Document Object
 Model).
 </script></section><section  data-markdown><script type="text/template">
 ## Renderizado en navegador:  blok/Inline
 
  Los elementos HTML se dividen en dos grandes tipos:
-- ```block```: tienden a ocupar todo el espacio disponible a lo ancho y en
-caso de existir varios se sitúan unos debajo de otros. (p,aside,
-footer,div,table...).
+- ```block```: tienden a ocupar todo el espacio disponible a lo ancho y, en
+caso de existir varios elementos, se sitúan unos debajo de otros (p, aside,
+footer, div, table...).
 - ```inline```: ocupan el espacio necesario dentro de una línea y en caso
-de existir varios se sitúan uno junto a otro en la misma línea
-siempre que haya espacio.(span,a).
-
+de existir varios elementos se sitúan uno junto a otro en la misma línea
+siempre que haya espacio (span, a).
 </script></section><section  data-markdown><script type="text/template">
 # 3 Recomendaciones: Accesibilidad y Usabilidad
 
 * Etiquetas y atributos en minúsculas.
-* Organización lógica del documento.h1,h2,h3..
-* No poner ```<table>``` para formatear.
-* Intentar que sin las CSS se pueda entender el contenido.
-* Resaltar los textos tanto con forma como color distintos.
-* No utilizar espacios en blanco consecutivos:
-``` css margin```
-* Utilizar  etiquetas semánticas ```header,article....``` no siempre ```div```
+* Organización lógica del documento según estándar: h1, h2, h3, ...
+* No usar tablas (```<table>```) para estructurar la página.
+* Intentar que sin el estilo *CSS* se pueda entender el contenido.
+* Resaltar los textos tanto con forma y color distintos.
+* No utilizar espacios en blanco consecutivos, mejor usa ``` css margin```
+* Uso preferente de etiquetas semánticas ```header, article....``` frente a ```div```
 </script></section><section  data-markdown><script type="text/template">
-
-
 # 4. HTML 5:
 
 http://www.w3.org/TR/html5/
@@ -140,20 +136,18 @@ https://HTML.spec.whatwg.org/multipage/indices.HTML
 * Elementos obligatorios: ```html, head, title y body```
 * Validadores: [http://validator.w3.org](http://validator.w3.org) o
 [http://validator.w3.org/nu/](http://validator.w3.org/nu/)
-* [http://caniuse.com](http://caniuse.com) ¿Que etiquetas puedo usar en los
+* [http://caniuse.com](http://caniuse.com) ¿Qué etiquetas puedo usar en los
 navegadores?
 </script></section><section  data-markdown><script type="text/template">
-
-
 ## Elementos HTML5 multimedia
 
 * Audio: ```<audio src=””></audio>```
 * Vídeo: ```<video src=””></video>```
 * Animación: ```<canvas></canvas> ```(+ JS)
 * Soporte Imágenes vectoriales: SVG (scalable vector graphics)
-
 </script></section><section ><section data-markdown><script type="text/template">
 # 5. Estructura Semántica
+
 ```html
 <header> <hgroup>
 <h1>Page title</h1>
@@ -174,7 +168,8 @@ navegadores?
 </section>
 <aside>
    Top links...
-   <figure> <img src="..."/><figcaption>Chart</figcaption></figure>
+   <figure> <img src="..."/>
+   <figcaption>Chart</figcaption> </figure>
 </aside>
 <footer>
    Copyright © <time datetime="2010-11-08">2010</time>.
@@ -195,29 +190,27 @@ semántico a este conjunto.
 * ```<section/>```: declaramos que el conjunto de etiquetas tiene un
 contenido relacionado. Equivalente a una sección de un periódico que engloba varios artículos.
 * ```<aside>:``` bloque que es sólo un añadido a los bloques que tiene
-al lado. Ej propaganda. Son datos extra sin lo que podríamos
+al lado (ej.- anuncios). Son datos extra sin lo que podríamos
 pasar perfectamente pero que hemos decidido añadir en el
 documento.
-</script></section></section><section ><section data-markdown><script type="text/template">
+</script></section></section><section  data-markdown><script type="text/template">
 # 7. Formularios: HTML DINÁMICO
 
 - ¿Qué entendesis por dinámico?
-- ¿Cómo seria la arquitectura?
+- ¿Cómo sería la arquitectura?
 - ¿Cómo funcionan los formularios?
-- ¿conoceis alguna alternativa a formularios?
-</script></section><section data-markdown><script type="text/template">
+- ¿Conoceis alguna alternativa a los formularios?
+</script></section><section  data-markdown><script type="text/template">
 ## Atributos  Form
-```<form id="identificador" action=“programa"
- method="post“ enctype="multipart/form-data">```
-
+```<form id="identificador" action="programa" method="post" enctype="multipart/form-data">```
 
 * ```method``` : get(defecto)/post
-* ```action``` : (obligatorio) : Indica la URL o función JS que procesará la
+* ```action``` (obligatorio) : Indica la URL o función JS que procesará la
 información del formulario.
-* ```enctype``` :El tipo mime empleado para codificar el contenido del
+* ```enctype```: El tipo mime empleado para codificar el contenido del
 formulario.
 https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types
-</script></section><section data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template">
 ## Etiquetas de los formularios
 
 * Input
@@ -229,7 +222,7 @@ https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 * Button
 
  http://www.w3.org/TR/html5/forms.html
-</script></section></section><section  data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template">
 # 8. CSS: Cascade Style Sheets
 
 * HTML utiliza un conjunto de etiquetas predefinidas, cuyo
@@ -260,7 +253,6 @@ portal web para que tenga una apariencia uniforme  y consistente.
 sus propias reglas de estilo.
 * Las reglas se aplican de forma jerárquica o en cascada.
 * Se combinan reglas del navegador con las del diseñador 
-
 </script></section><section  data-markdown><script type="text/template">
 # 9 CSS: Sintáxis
 
@@ -269,38 +261,41 @@ Una regla de estilo se compone de:
 * Selector: enlace entre el documento HTML y el estilo    
 * Declaración: describe el efecto de la regla
 
-``` Selector1, selector2 { prop1:value1;prop2:value2;...}```
+```selector1, selector2 {prop1:value1; prop2:value2;...}```
 
-
-``` css 
- h1 {color:blue}
-
- h1,h2,h3 {color:blue; tex-align:center}}```
-</script></section><section  data-markdown><script type="text/template">
-## ¿Cómo se enlaza CSS con html?
-
-
-* Dentro de la definición de etiquetas en el HTML(No abusar)    
-```CSS
- <b style=“font-size:14pt;color:red">...</b> ```
-* En HTML dentro de la cabecera: etiqueta ```<style>```    
+```css
+   h1 {color:blue} 
+   h1,h2,h3 {color:blue; tex-align:center}}
 ```
+</script></section><section  data-markdown><script type="text/template">
+## ¿Cómo se enlaza CSS con HTML?
+
+* Dentro de la definición de etiquetas en el HTML (No abusar) 
+
+```html
+ <b style="font-size:14pt;color:red">...</b> 
+```
+
+* En HTML dentro de la cabecera: etiqueta ```<style>```    
+
+```html
 <head>
 <style type="text/css">
-body { color: purple;
-background-color: #d8da3d}
+body { color: purple; background-color: #d8da3d}
 </style>
 <head>
 ```
 
 * En ficheros externos .css e importarlos:```<link>/@import```
    
-    ```<head>
+```html
+<head>
 <link rel="stylesheet"
-type="text/css“
+type="text/css"
 href="splash.css">
-</head>```
+</head>
 ```
+```html
 <style type="text/css">
 @import url(externo.css);
 h1 {color: gray;}
@@ -308,7 +303,7 @@ h1 {color: gray;}
 ```
 
 ¿Prioridad de las reglas?
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section ><section data-markdown><script type="text/template">
 ## Tipos de selectores
 
 ```html
@@ -321,55 +316,55 @@ h1 {color: gray;}
 </div>
  ```
 * Etiquetas:
-```CSS 
+```css 
 h1 {color:blue}
 ```
-* Identificador:
+* Identificador de elemento (atributo ``ìd```):
 
-
-```CSS
+```css
 #directorio {
 position: absolute;
 left: 0px;
 top: 70px;
 background: red;
 width: 20%; 
-}```
+}
+```
 
-* Clases:
+* Clases de elementos (atributo ```class```):
   
-````CSS
+```css
 .cita {font-weight: bold; color: red;}
 p.cita {background-color: red;}
 ```
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 ## Tipos de selectores
 
 * Pseudo-Clases :
 
-    - *:link*: cualquier enlace no visitado de la página.
-    - *:visited*: cualquier enlace ya visitado de la página.
-    - *:active*: enlace en el que estamos en este momento.
+    - :link cualquier enlace no visitado de la página.
+    - :visited cualquier enlace ya visitado de la página.
+    - :active enlace en el que estamos en este momento.
 
-```CSS
+```css
 a:visited  {color: gray;}
 ```
 
 * Pseudo-Elementos
 
-```CSS
+```css
 p:first-letter {color: red;}
 p:first-line {color: gray;}
 ```
 * En función del contexto
 
-```CSS
+```css
 td b {color:green}
 ul b {color:#074A}
 ```
 
  El atributo Color del CSS soporta nombre inglés o HEXA, RGB y HSL
-</script></section><section  data-markdown><script type="text/template">
+</script></section></section><section  data-markdown><script type="text/template">
 ## Unidades CSS
 
 * Medidas relativas:
@@ -390,9 +385,11 @@ margen izquierdo de ¾ partes del elemento contenedor
 </script></section><section  data-markdown><script type="text/template">
 ## Tamaño de la fuente: Font-size
 
-* Absolutos:[ xx-small | x-small | small |medium |large | x-large
+* Absolutos:
+[ xx-small | x-small | small |medium |large | x-large
 | xx-large ]
-* Relativos: [larger | smaller]
+* Relativos: 
+[larger | smaller]
 </script></section><section  data-markdown><script type="text/template">
 # 9. CSS3
 
@@ -402,56 +399,56 @@ margen izquierdo de ¾ partes del elemento contenedor
 * Fuentes propias
 * Columnas
 * Transparencia
-* Degradé
+* Degradados
 * Bordes redondeados
 
-```
+```css
 a:hover {
 transform: scale(1,5) translate(30px,10px);}
 #mibloque {column-count: 3;}
 ```
 </script></section><section  data-markdown><script type="text/template">
-Ejercicio CSS3
+## Ejercicio CSS3
 
-
+```html
 <style>
   #gira:hover {
-transform:rotate(-30deg); }
+  transform:rotate(-30deg); }
 </style>
 
 <p id="gira" >Esto hace algo <a href="#"> Acción CSS3Transform</a>Se ve o no se ve.<p>
-
+```
 
 Practicar ejemplos:  
 
 https://codepen.io/martinwolf/pen/qlFdp
 
-Ejemplos: 
+Más ejemplos: 
 http://estelle.github.io/animation/30.html#slide1
-</script></section><section ><section data-markdown><script type="text/template">
-# 10. Modelo de Cajas:
+</script></section><section  data-markdown><script type="text/template">
+# 10. Modelo de Cajas
 
 * Los elementos HTML se dividen en dos grandes tipos: block e inline.
   
 * La propiedad ```display``` nos permite alterar el tipo de caja con
 que se muestra un elemento.
-   -```inline```: el elemento no es un bloque, se renderiza en linea con otros elementos de ese tipo.
-    - ```block``` : el elemento se comporta como un bloque, podemos poner márgenes  y Bordes..   
-    - ```none``` : el elemento no se muestra; el efecto es como si no
-existiera, por lo que su espacio será ocupado por otros.
-    - ```inherit``` : se heredan las características del elemento padre.
-    - ```flex``` : el elemento es flexible en posición horizontal y vertical.
-    - ```inline-block``` : el elemento de bloque pero que se renderiza en línea con otros elementos.
-</script></section><section data-markdown><script type="text/template">
-#Ejemplo
 
+   - ```inline```: el elemento no es un bloque, se renderiza en linea con otros elementos de ese tipo.
+   - ```block``` : el elemento se comporta como un bloque, podemos poner márgenes y bordes..   
+   - ```none``` : el elemento no se muestra; el efecto es como si no existiera, por lo que su espacio será ocupado por otros.
+   - ```inherit``` : se heredan las características del elemento padre.
+   - ```flex``` : el elemento es flexible en posición horizontal y vertical.
+   - ```inline-block``` : el elemento de bloque pero que se renderiza en línea con otros elementos.
+</script></section><section  data-markdown><script type="text/template">
+## Ejemplo
+
+```html
 <p> Esto es un párrafo, elemento block por defecto que contiene un trozo de texto <span> SPAN </span> que por defecto es inline</p>
-<a href="aqui" style="display:block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; "> Hiperenlace que  ya no es inline, es block.</a> 
+<a href="aqui" style="display:block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; "> Hiperenlace que  ya no es inline, es block.</a>
 <p>Hiperenlace <a href="alli" style="display:inline-block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; ">Alli</a> ,que es una caja inline, no es block</p>
-
-
-</script></section><section data-markdown><script type="text/template">
 ```
+
+```css
 header, footer {
    display: block;
    margin: 4px;
@@ -460,24 +457,30 @@ header, footer {
    border: 1px solid #eebb55;
    border-radius: 7pt;
    background: #ffeebb;
-}```
+}
+```
 
+```html
 <img src="./media/T3/image5.gif"/>
-</script></section><section data-markdown><script type="text/template">
-# Propiedad overflow 
+```
+</script></section><section  data-markdown><script type="text/template">
+## Propiedad overflow 
+
 Propiedad que especifica que hacer con el contenido excedente en un elemento a nivel de bloque
 
 ```overflow: scroll ```
 
-- visible:(defecto). Contenido no  recortado, podría ser dibujado fuera de la caja contenedora.
-- hidden: Contenido  recortado. 
-- scroll Contenido  recortado y el Navegador, usa  barras de desplazamiento.
-- auto: Depende del Navegador.
-</script></section><section data-markdown><script type="text/template">
-Elipsis texto
+- ```visible``` (por defecto): Contenido no  recortado, podría ser dibujado fuera de la caja contenedora.
+- ```hidden```: Contenido  recortado. 
+- ```scroll```: Contenido  recortado y el Navegador, usa  barras de desplazamiento.
+- ```auto```: Depende del Navegador.
+</script></section><section  data-markdown><script type="text/template">
+## Elipsis texto
 
+```html
 <div id="container">
   <p class="truncate" >This is a text that should be truncated because it's too long.  The dreams of yesterday are the hopes of today and the reality of tomorrow. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species. Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. If you could see the earth illuminated when you were in a place as dark as night, it would look to you more splendid than the moon. Buy why, some say, the moon? Why choose this as our goal? And they may as well ask why climb the highest </p>
+ ```
 
 ```css
 .truncate {
@@ -494,8 +497,8 @@ Elipsis texto
 
    }
 ```
-</script></section></section><section  data-markdown><script type="text/template">
-### Modelo de cajas: “Position”
+</script></section><section  data-markdown><script type="text/template">
+### Modelo de cajas: ```Position```
 
 * ```Static:``` Posición predeterminada en HTML.
 * ```Relative:``` La posición de la caja se ajusta en relación a su posición
@@ -506,7 +509,8 @@ especifica con las propiedades 'left', 'right', 'top', y 'bottom'. No
 tienen ninguna influencia sobre la posición de las cajas siguientes.
 * ```Fixed:``` Como el anterior, pero se posiciona en función de la ventana
 del navegador. Esta caja no se mueve de posición al hacer scroll.
-```CSS
+
+```css
 div {
 display:block;
 position: absolute;
@@ -515,11 +519,8 @@ padding: 5px 5px 5px 5px;
 Margin: 5px auto; /*centrar*/
 border-style: solid; }
 ```
-
-
-
 </script></section><section  data-markdown><script type="text/template">
-### Cajas Flotantes: Float
+### Cajas Flotantes: ```Float```
 
 * ```Left``` : Genera un bloque a la izquierda donde posicionar las
 siguientes cajas si caben. De modo que el contenido de la caja
@@ -527,7 +528,7 @@ se posiciona a la izquierda arriba de ese bloque.
 * ```Right``` : Lo mismo a la izquierda
 * ```None``` : No deja elementos flotantes.
 
-```CSS
+```css
 #a_izq {position:absolute;
 top:30px;
 right:30px;
@@ -547,11 +548,8 @@ elementos para ajustarse lo mejor posible al espacio disponible
 en cualquier dispositivo. Un contenedor flexible expande sus
 elementos para rellenar el espacio libre, o los comprime para
 evitar que rebasen el área prevista.
-- Un contenedor flexible ( Flex container)se define usando los valores flex o inline-flex en la propiedad display  del contenedor o elemento
-"padre" que contiene los elementos flexibles.
-- Cada hijo de un contenedor flex se convierte en un elemento
-flexible (Flex item). Que puede permitir cajas a su derecha o izquierda
-
+- Un contenedor flexible (Flex container) se define usando los valores flex o inline-flex en la propiedad display del contenedor o elemento "padre" que contiene los elementos flexibles.
+- Cada hijo de un contenedor flex se convierte en un elemento flexible (Flex item), que permite cajas a su derecha o izquierda.
 
 https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS
 
@@ -569,11 +567,12 @@ diferentes
 all, braille, embossed, handheld, print, projection, screen, speech,
 tty, tv.
 
-```html 
+```html
+<link rel="stylesheet" type="text/css" 
+href="http://mysite.com/style-print.css" media="print">
 
-<link rel="stylesheet" type="text/css" href="http://mysite.com/style-print.css" media="print">
-
-<link rel="stylesheet" type="text/css" href="http://mysite.com/style.css" media="screen">
+<link rel="stylesheet" type="text/css"
+href="http://mysite.com/style.css" media="screen">
 ```
 </script></section><section  data-markdown><script type="text/template">
 ## CSS3: Media queries
@@ -584,7 +583,7 @@ los estilos CSS. Facilitan el cambio de estilos según el tipo de dispositivo
 ( media-type ) o las características del dispositivo ( media-feature ), como el tipo
 de pantalla, el ancho, el alto, la orientación e incluso la resolución.
 
-```CSS
+```css
 @media screen and (min-width:600px) {
     nav {
     float: left;
@@ -592,13 +591,13 @@ de pantalla, el ancho, el alto, la orientación e incluso la resolución.
     }
     section {
     margin-left: 25%;
-    }}
+}}
 ```
 
-```
+```css
 @media (query) 
 {
- CSS Rules used when__query matches 
+ //CSS Rules used when__query matches 
 }
 ```
 
@@ -606,23 +605,22 @@ de pantalla, el ancho, el alto, la orientación e incluso la resolución.
 ## Ejemplo Media-QuerIes
 
 ``` html
-<link rel="stylesheet" media="(max-width: 640px)" href="max-640px.css">
-<link rel="stylesheet" media="(min-width: 640px)" href="min-640px.css">
-<link rel="stylesheet" media="(orientation: portrait)" href="portrait.css">
+<link rel="stylesheet" media="(max-width: 640px)" 
+href="max-640px.css">
+<link rel="stylesheet" media="(min-width: 640px)" 
+href="min-640px.css">
+<link rel="stylesheet" media="(orientation: portrait)"
+ href="portrait.css">
 <link rel="stylesheet" media="(orientation: landscape)"
-href="landscape.css">
+ href="landscape.css">
 <style>
-@media (min-width: 500px) and (max-width: 600px) {
-h1 {
-color: fuchsia;
-}
-
-.desc:after {
-content:" In fact, it's between 500px and 600px wide.";
-}
+  @media (min-width: 500px) and (max-width: 600px) {
+  h1 { color: fuchsia;}
+  .desc:after {
+    content:" In fact, it's between 500px and 600px wide.";
+  }
 }
 </style>
-
 ```
 </script></section><section  data-markdown><script type="text/template">
 ### Media Feature
@@ -660,7 +658,6 @@ LANCKER ISBN : 978-2-7460-6816-2
 </script></section><section  data-markdown><script type="text/template">
 ### ¿Dudas?
   ![Image de Dudas](./media/image8.png)
-
 </script></section></div>
         </div>
 
@@ -708,7 +705,7 @@ LANCKER ISBN : 978-2-7460-6816-2
   "highlightTheme": "darkula",
   "controls": true,
   "progress": true,
-  "slideNumber": false,
+  "slideNumber": true,
   "history": true,
   "keyboard": true,
   "overview": true,

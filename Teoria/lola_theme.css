@@ -33,10 +33,10 @@
   margin: 10px 40px 10px 40px;
   }
 .reveal pre code{
-  font-weight: 600;
-  font-size: 1.9em;
+  font-weight: 500;
+  font-size: 1.5em;
   max-height: 100%;
-  line-height: 1.2;
+  line-height: 1 ;
   }
 a {    word-wrap: break-word;}
 
