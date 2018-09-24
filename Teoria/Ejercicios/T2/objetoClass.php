@@ -1,3 +1,5 @@
+<?php
+
 class Myclass{
 
 const CONST_VALUE = 10;
@@ -8,7 +10,7 @@ function dameNumero(){
 function llamoDame(){ return self::dameNumero();}
 }
 $classname = 'Myclass';
-echo $classname::CONST_VALUE,"</p>"; // A partir de PHP 5.3.0
+echo $classname::CONST_VALUE,"</p>"; 
 echo Myclass::CONST_VALUE,"</p>";
 
 
@@ -17,6 +19,5 @@ $datos->numero=15;
 echo $datos->dameNumero(),"</p>";
 echo $datos->llamoDame(),"</p>";
 
-//Da error
-echo Myclass::dameNumero();
+echo "--",Myclass::dameNumero()."--"; //No devuelve nada
 ?>
