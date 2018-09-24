@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>RevealJS : /Users/dllido/pruebas/GITHOME/EI1036_42/Teoria/EI1036_42_T2.md</title>
+        <title>RevealJS : /Users/dllido/pruebas/GITHOME/EI1036_42/Teoria/EI1036_42_T3.md</title>
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/white.css" id="theme">
          <link rel="stylesheet" href="lola_theme.css" id="theme">
@@ -35,623 +35,628 @@
 
         <div class="reveal">
             <div class="slides"><section  data-markdown><script type="text/template">
-# Tema 2: Introducción al PHP
+# T3: Lenguajes de la Web
 
-### EI1042 - Tecnologías y Aplicaciones Web
+# (HTML5, CSS3)
 
-**EI1036- Tecnologías Web para los Sistemas de Información (2018/2019)**
+  *EI1042 - Tecnologías y Aplicaciones Web*
+
+```EI1036- Tecnologías Web para los Sistemas de Información (2018/2019)```
 
 *Professora: Dra. Dolores Mª Llidó Escrivá*
 
 [Universitat Jaume I](https://www.uji.es/).
 
-(Drive/T2)
-*https://drive.google.com/drive/folders/1U8unry7CEj77DF9-dpq9JuAJ4ZQkjYWf*
-
 </script></section><section  data-markdown><script type="text/template">
-## Índice
+# Índice
 
-- Introducción a PHP
-- Sintaxis básica
-- Tipos de datos
-- Salida Estándar
-- Variables Expresiones y Operadores
-- Formularios
-- Funciones
-- Objetos
-- Clausuras y Funciones anónimas
+1. HTML: HyperText Markup Language
+2. Renderizado HTML
+3. Accesibilidad/usabilidad
+4. HTML5 
+5. Estructura Semántica
+6. Formularios
+7. CSS
+8. Sintaxis CSS
+    - Tipos selectores
+    - Medidas/Unidades
+9. CSS3
+10. Modelo de Cajas: flotantes/flexibles
+11. Discriminación por dispositivos.
+    - Media-Type
+    - Media-Queries
+12. Bibliografía
 </script></section><section  data-markdown><script type="text/template">
-# 1. Introducción al PHP
+# 1 HTML: HyperText Markup Language
 
-- Creado por Rasmus Lerdorf para uso personal en 1994 ![Image of Rasmus](./media/T2/rasmus.jpeg)
-- PHP es un lenguaje de script del lado del servidor.
-- PHP: Hypertext Preprocessor
-- Versión actual: PHP 7
-- Es potente, fácil de aprender, de libre
-distribución, permite el acceso a bases de datos y otras
-funcionalidades orientadas a la red
-- Dispone de abundante soporte en la Web
+* Lenguaje de marcas para publicar documentos multimedia
+hipertexto.
+* Los documentos HTML son ficheros de texto con marcas de formato
+que son independientes del SO, lenguaje de programación y
+programas.
+* Las marcas o etiquetas indican cómo representar los
+contenidos de los documentos.
+    - Elemento con contenido:  ```<html>...</html>``` 
+    - Elemento vacío: ``` <br/> ``` o ```<br></br>``` 
+    - Etiqueta con atributos:  
+    ```<body class=“principal”>...</body>```
+* Extensiones de fichero: .html o .htm
+* Cuestiones de estilo: etiquetas en minúsculas y atributos entre comillas dobles (XML).
+</script></section><section  data-markdown><script type="text/template">
+# Conceptos:
+
+* ¿Qué es el *encode*? (Editor/Navegador)
+* ¿Cómo especificamos que el documento HTML está en español?
+* ¿Qué es el mimetype?
+* ¿Qué son los carácteres especiales en HTML?
+</script></section><section  data-markdown><script type="text/template">
+![Image of HTML](./media/T3/image4.png)
+
+https://ontargetwebsolutions.com/insights/wp-content/uploads/2014/11/evolution-of-web-design-ok.jpg
+</script></section><section  data-markdown><script type="text/template">
+# 2. Renderizado HTML
+
+¿Qué es el renderizado?
+* Los documentos HTML pueden ser renderizados en pantallas, sintetizadores de habla y dispositivos
+de Braille.
+
+* Para indicar cómo aparece el renderizado se ha definido el *CSS*    
+(Cascade Style Sheet).
+
+* Cuando un documento HTML se renderiza se guarda en la memoria como un árbol *DOM* (Document Object
+Model).
+</script></section><section  data-markdown><script type="text/template">
+## Renderizado en navegador:  blok/Inline
+
+ Los elementos HTML se dividen en dos grandes tipos:
+- ```block```: tienden a ocupar todo el espacio disponible a lo ancho y, en
+caso de existir varios elementos, se sitúan unos debajo de otros (p, aside,
+footer, div, table...).
+- ```inline```: ocupan el espacio necesario dentro de una línea y en caso
+de existir varios elementos se sitúan uno junto a otro en la misma línea
+siempre que haya espacio (span, a).
+</script></section><section  data-markdown><script type="text/template">
+# 3 Recomendaciones: Accesibilidad y Usabilidad
+
+* Etiquetas y atributos en minúsculas.
+* Organización lógica del documento según estándar: h1, h2, h3, ...
+* No usar tablas (```<table>```) para estructurar la página.
+* Intentar que sin el estilo *CSS* se pueda entender el contenido.
+* Resaltar los textos tanto con forma y color distintos.
+* No utilizar espacios en blanco consecutivos, mejor usa ``` css margin```
+* Uso preferente de etiquetas semánticas ```header, article....``` frente a ```div```
+</script></section><section  data-markdown><script type="text/template">
+# 4. HTML 5:
+
+http://www.w3.org/TR/html5/
+
+https://HTML.spec.whatwg.org/multipage/indices.HTML
+
+* Comienza con la definición del Doctype ```<!DOCTYPE html>```.
+* Elementos obligatorios: ```html, head, title y body```
+* Validadores: [http://validator.w3.org](http://validator.w3.org) o
+[http://validator.w3.org/nu/](http://validator.w3.org/nu/)
+* [http://caniuse.com](http://caniuse.com) ¿Qué etiquetas puedo usar en los
+navegadores?
+</script></section><section  data-markdown><script type="text/template">
+## Elementos HTML5 multimedia
+
+* Audio: ```<audio src=””></audio>```
+* Vídeo: ```<video src=””></video>```
+* Animación: ```<canvas></canvas> ```(+ JS)
+* Soporte Imágenes vectoriales: SVG (scalable vector graphics)
+</script></section><section ><section data-markdown><script type="text/template">
+# 5. Estructura Semántica
+
+```html
+<header> <hgroup>
+<h1>Page title</h1>
+<h2>Page subtitle<h2>
+</hgroup> </header>
+<nav>
+   <ul>
+   Navigation...
+   </ul>
+</nav>
+<section> <article>
+   <header><h1>Title<h1> </header>
+   Content...
+   </article>
+   <article>
+   ....
+   </article>
+</section>
+<aside>
+   Top links...
+   <figure> <img src="..."/>
+   <figcaption>Chart</figcaption> </figure>
+</aside>
+<footer>
+   Copyright © <time datetime="2010-11-08">2010</time>.
+</footer>
+```
+</script></section><section data-markdown><script type="text/template">
+## HTML5: Estructura Semántica
+* ```<p>```: Mínimo bloque en HTML.
+* ```<div>```: Une bloques de distintos tipos, cuando no podemos asociar significado
+semántico a este conjunto.
+* ```<header>``` : Encabezado de la página.
+* ```<footer>```: Pie de página.
+* ```<nav>```: Menú de navegación.
+* ```<hgroup>```: Agrupación titulares (Hn).
+* ```<article>```: Elementos con significado propio.Puede contener :
+    - ```<header/>, <section/>, <aside/> y <footer/>```.
+    - Puede ser un documento entero.
+* ```<section/>```: declaramos que el conjunto de etiquetas tiene un
+contenido relacionado. Equivalente a una sección de un periódico que engloba varios artículos.
+* ```<aside>:``` bloque que es sólo un añadido a los bloques que tiene
+al lado (ej.- anuncios). Son datos extra sin lo que podríamos
+pasar perfectamente pero que hemos decidido añadir en el
+documento.
+</script></section></section><section  data-markdown><script type="text/template">
+# 7. Formularios: HTML DINÁMICO
+
+- ¿Qué entendesis por dinámico?
+- ¿Cómo sería la arquitectura?
+- ¿Cómo funcionan los formularios?
+- ¿Conoceis alguna alternativa a los formularios?
+</script></section><section  data-markdown><script type="text/template">
+## Atributos  Form
+```<form id="identificador" action="programa" method="post" enctype="multipart/form-data">```
+
+* ```method``` : get(defecto)/post
+* ```action``` (obligatorio) : Indica la URL o función JS que procesará la
+información del formulario.
+* ```enctype```: El tipo mime empleado para codificar el contenido del
+formulario.
+https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+</script></section><section  data-markdown><script type="text/template">
+## Etiquetas de los formularios
+
+* Input
+
+* Select
+
+* Textarea
+
+* Button
+
+ http://www.w3.org/TR/html5/forms.html
+</script></section><section  data-markdown><script type="text/template">
+# 8. CSS: Cascade Style Sheets
+
+* HTML utiliza un conjunto de etiquetas predefinidas, cuyo
+significado es bien conocido. Un navegador sabe cómo debe
+mostrar estos elementos al usuario.    
+```h2 {color:blue;}```
+* Las CSS (Cascade Style Sheets): son un conjunto de distintas
+reglas de estilo unidas a un documento que permiten definir
+estilos para mostrar a los elementos de HTML
+    - [http://www.w3c.es/Divulgacion/GuiasReferencia/CSS](http://www.w3c.es/Divulgacion/GuiasReferencia/CSS)
+</script></section><section  data-markdown><script type="text/template">
+## CSS: En navegadores
+
+¿Por qué no son iguales los documentos HTML en todos los
+navegadores?
+- Los navegadores tienen su propio conjunto de reglas de
+estilo.
+- Los navegadores no soportan el estándar CSS 100%
+</script></section><section  data-markdown><script type="text/template">
+## CSS: Ventajas
+
+* Separar el contenido del formato.
+* Reducir el tiempo de descarga.
+* Dar más control sobre el renderizado de HTML.
+* Utilizar un mismo estilo para todo el
+portal web para que tenga una apariencia uniforme  y consistente.
+* Cada usuario pueden aplicar
+sus propias reglas de estilo.
+* Las reglas se aplican de forma jerárquica o en cascada.
+* Se combinan reglas del navegador con las del diseñador 
+</script></section><section  data-markdown><script type="text/template">
+# 9 CSS: Sintáxis
+
+Una regla de estilo se compone de:
+
+* Selector: enlace entre el documento HTML y el estilo    
+* Declaración: describe el efecto de la regla
+
+```selector1, selector2 {prop1:value1; prop2:value2;...}```
+
+```css
+   h1 {color:blue} 
+   h1,h2,h3 {color:blue; tex-align:center}}
+```
+</script></section><section  data-markdown><script type="text/template">
+## ¿Cómo se enlaza CSS con HTML?
+
+* Dentro de la definición de etiquetas en el HTML (No abusar) 
+
+```html
+ <b style="font-size:14pt;color:red">...</b> 
+```
+
+* En HTML dentro de la cabecera: etiqueta ```<style>```    
+
+```html
+<head>
+<style type="text/css">
+body { color: purple; background-color: #d8da3d}
+</style>
+<head>
+```
+
+* En ficheros externos .css e importarlos:```<link>/@import```
+   
+```html
+<head>
+<link rel="stylesheet"
+type="text/css"
+href="splash.css">
+</head>
+```
+```html
+<style type="text/css">
+@import url(externo.css);
+h1 {color: gray;}
+</style>
+```
+
+¿Prioridad de las reglas?
+</script></section><section ><section data-markdown><script type="text/template">
+## Tipos de selectores
+
+```html
+<h1>Directorio1</h1>
+<div id="directorio">
+   <h2>Directorio1.2</h2>
+   <h2>Directorio1.3</h2>
+   <p class="cita">En en lugar de la mancha...</p>
+   <aside class="cita"> Referencia Miguel </aside>
+</div>
+ ```
+* Etiquetas:
+```css 
+h1 {color:blue}
+```
+* Identificador de elemento (atributo ``ìd```):
+
+```css
+#directorio {
+position: absolute;
+left: 0px;
+top: 70px;
+background: red;
+width: 20%; 
+}
+```
+
+* Clases de elementos (atributo ```class```):
   
-</script></section><section  data-markdown><script type="text/template">
-## Ficheros con PHP
--  Fichero PHP:  hola.php
-
-``` PHP 
-<?php 
-echo "Hola Mundo";
-?>
+```css
+.cita {font-weight: bold; color: red;}
+p.cita {background-color: red;}
 ```
-- Fichero con HTML: bienvenido.php
-
-``` HTML
-<body>
-<p>Inicio</p>
-<?php 
-$nombre = "Ana";
-print(" <P>Hola, $nombre</P>"); 
- ?>
-<p>Fin</p>
-
-```
-
-</script></section><section  data-markdown><script type="text/template">
-## Ejecución PHP
-
--  Consola
-
-- ```php.exe "./bienvenidos.php"```
-- Entorno php:
-```
-php.exe
-$hola="Adios";
-$echo $hola
-```
--Servidor web:
-https://piruletas.000webhostapp.com/Teo/T2/holaMundo.php
-</script></section><section ><section data-markdown><script type="text/template">
-## Configuración php
-
--  Fichero: php.ini
--  Visualizar la configuración del servidor: función  phpinfo()
-
-https://piruletas.000webhostapp.com/teoria/T2/form0Info.html
 </script></section><section data-markdown><script type="text/template">
-# Ver errores php en producción:
+## Tipos de selectores
 
-Añadir al .htacess
+* Pseudo-Clases :
+
+    - :link cualquier enlace no visitado de la página.
+    - :visited cualquier enlace ya visitado de la página.
+    - :active enlace en el que estamos en este momento.
+
+```css
+a:visited  {color: gray;}
 ```
-php_flag display_errors 1
-php_value error_reporting 7
+
+* Pseudo-Elementos
+
+```css
+p:first-letter {color: red;}
+p:first-line {color: gray;}
 ```
+* En función del contexto
+
+```css
+td b {color:green}
+ul b {color:#074A}
+```
+
+ El atributo Color del CSS soporta nombre inglés o HEXA, RGB y HSL
 </script></section></section><section  data-markdown><script type="text/template">
-##  Páginas web dinámcas con PHP
+## Unidades CSS
 
-- El cliente no ve el código PHP sino los resultados que produce en la salida estándar.
-- Apache ejecuta php no como un CGI sino como un módulo.Version php  
--S.O. != Apache
-
-![Image of La World Wide Web](./media/T2/image1.png)
-
-
+* Medidas relativas:
+    - ```em``` (ems, "font-size" o tamaño de la fuente)
+    - ```ex``` (x-height, altura de la letra "x" minúscula)
+    - ```px``` (pixels, relativa a la resolución de pantalla)
+* Medidas absolutas:
+    - ```in``` (pulgadas; 1in=2.54cm)
+    - ```cm``` (centímetros; 1cm=10mm)
+    - ```mm``` (milímetros)
+    - ```pt``` (puntos tipográficos; 1pt=1/72in)
+    - ```pc``` (picas; 1pc=12pt)
+* Unidades de medida relativas:
+    - Porcentajes : margin-left:20%
+margen izquierdo de un 20% del ancho del elemento contenedor
+    - Proporcionales: margin-left:3*
+margen izquierdo de ¾ partes del elemento contenedor
 </script></section><section  data-markdown><script type="text/template">
-### Cuestiones
-https://piruletas.000webhostapp.com/Lab/P1/includes/portal.php?action=listar
+## Tamaño de la fuente: Font-size
 
-Analiza la URL.
-- ¿Cual es el nombre servidor?
-- ¿Cual es el recurso?
-- ¿Que parametros requiere el programa php?
-</script></section><section ><section data-markdown><script type="text/template">
-##  Servidor WEB Local
-
-Local:
-- Instalar PHP
-- Ejecutar:
-``` php -S localhost ```
-
-php [options] -S <addr>:<port> [-t docroot]
-
-[http://localhost:8088/T2/tutoPhp.php](http://localhost:8088/T2/tutoPhp.php)
-
-
-
-Manual PHP: http://php.net/manual/es/
-</script></section><section data-markdown><script type="text/template">
-### Cuestiones
-
-- ¿Que es el docroot del servidor web?
-- ¿Donde ponemos el fichero tutoPhp.php en el servidor?
-
-</script></section></section><section  data-markdown><script type="text/template">
-##  Servidor WEB en Producción
-
-
-- Servidor web Apache (http://www.apache.org) con el módulo PHP (http://www.php.net)
-- Base de datos MySQL (http://www.mysql.com) si se desea crear páginas dinámicas
-- Herramientas para la gestión de MySQL, como PHPMyAdmin
-(www.phpmyadmin.net)
-
-[Apache 2.3 http://httpd.apache.org/docs/current/es/](http://httpd.apache.org/docs/current/es/)
+* Absolutos:
+[ xx-small | x-small | small |medium |large | x-large
+| xx-large ]
+* Relativos: 
+[larger | smaller]
 </script></section><section  data-markdown><script type="text/template">
-## Servidor WEB  en desarrollo: XAMPP 
+# 9. CSS3
 
- * XAMPP es una distribución de Apache que incluye MySQL, PHP y  phpMyAdmin
- * XAMPP es gratuito y fácil de instalar
- * XAMPP es multiplataforma
- * Precaución: la configuración por defecto  no es segura, ni para un entorno de producción.
-</script></section><section ><section data-markdown><script type="text/template">
-# 2. Sintaxis básica PHP
+* Transformaciones
+* Transiciones
+* Animaciones
+* Fuentes propias
+* Columnas
+* Transparencia
+* Degradados
+* Bordes redondeados
 
-- PHP es sensible a las mayúsculas/minúsculas.
-- Las instrucciones se separan con ";"
-- Espacios en blanco y cambios de línea no se tienen en cuenta.
-- PHP interpreta entre comillas dobles pero no entre comillas
-simples.
-- Se utiliza codificación utf8.
-- Comprobar que el editor no ha generado un BOM ( *byte order mark* de unicode en la primera línea)
-
-
-
-Guia Estilos: https://www.php-fig.org/psr/psr-2/
-</script></section><section data-markdown><script type="text/template">
-### Ejemplo fichero PHP
-
-``` PHP
-<?php
-$var = "test";
-echo "$var"; // Salida:"test“
-echo "\$var"; // Salida:" "$var"
-echo '$var'; // Salida:" "$var"
-# otro comentario hasta el final de la línea
-/* comento
-varias líneas */
-?>
-```
-</script></section><section data-markdown><script type="text/template">
-### Usar: YodaStyle
-![Image of La World Wide Web](./media/T2/image2.png)
-
-Escribir comparaciones  al revés ( Yoda habla al revés).
-
-En ocasiones podemos equivocarnos  _if ($value = true)_ y ...simplemente estamos
-asignado SIEMPRE true a nuestra variable. Nos costaría identificar el error en nuestro código.
-
-
-</script></section></section><section ><section data-markdown><script type="text/template">
-# 3. Tipos de datos
-
-- Tipos escalares: boolean, integer, double, string
-- Tipos compuestos: array, object
-- Tipos especiales: resource, NULL
- 
-
-
-</script></section><section data-markdown><script type="text/template">
-### Array Asociativo
-
-Sintaxis:
-array ([clave =>] valor, ...)
-
-```PHP 
-$medidas = array (10, 25, 15);
-echo $medidas[0]
-
-$color = array (‘rojo’=>101, ‘verde’=>51, ‘azul’=>255); 
-
-#Acceso:
-echo $color[‘rojo’] // No olvidar las comillas
-echo array_keys($color)
-```
-</script></section></section><section ><section data-markdown><script type="text/template">
-# 4. Salida estándar
-
-¿Cómo enviar mensajes a la salida estándar?
--  echo — Muestra una o más cadenas.
--  print — Mostrar una cadena.
--  printf — Imprimir una cadena con formato.
--  print_r — Imprime información legible para humanos.
--  var_dump— Vuelca información sobre una variable. La información y su tipo
-</script></section><section data-markdown><script type="text/template">
-## Diferencias echo o print
--  Void echo (string argument1[,...string argumentN])
--  Int print (argument)
-
-
-    *  Print sólo tiene un argumento (echo puede tener varios)
-    *  print devuelve 1 (significa que ha generado la salida)
-
-No es obligatorio el uso de paréntesis ya que no son
-realmente una función.
-```PHP
-echo "Hola mundo";
-echo "Hola ", "mundo"; 
-print "Hola mundo";
-print "Hola ". "mundo";
-```
-</script></section></section><section  data-markdown><script type="text/template">
-#  Variables
-
-- No se declara el tipo de las variables.
-- Las variables se pueden asignar
-    -  Por valor
-    -  Por referencia (con &)
-    - Creación de nombres de variables dinámico.
-
-```PHP
-$x='equis';
-$_x = &$x; //referencia a $x
-$_x ='x';
-echo $x; //x
-echo $_x; //x
-$a = "hola";
-$$a = "mundo";
-print "$a $hola\n";
-//hola mundo
-print "$a ${$a}";
-//hola mundo
+```css
+a:hover {
+transform: scale(1,5) translate(30px,10px);}
+#mibloque {column-count: 3;}
 ```
 </script></section><section  data-markdown><script type="text/template">
-## ¿Que tipo es la variable? 
+## Ejercicio CSS3
 
+```html
+<style>
+  #gira:hover {
+  transform:rotate(-30deg); }
+</style>
 
--  gettype() devuelve el tipo de una variable
-- is_type() comprueba si una variable es de un tipo dado:
+<p id="gira" >Esto hace algo <a href="#"> Acción CSS3Transform</a>Se ve o no se ve.<p>
+```
 
-``` is_array(), is_bool(), is_float(), is_integer(), is_null(), is_numeric(), is_object(), is_resource(), is_scalar(),is_string()```
+Practicar ejemplos:  
 
+https://codepen.io/martinwolf/pen/qlFdp
+
+Más ejemplos: 
+http://estelle.github.io/animation/30.html#slide1
 </script></section><section  data-markdown><script type="text/template">
-## Ámbito de variables
+# 10. Modelo de Cajas
 
-- Local: Variable definida en una función
-    -  Está limitada a dicha función.
-    -  Se elimina al acabar la ejecución de la función
-    -  Salvo si la variable se declara como **static** .
-- Global:
-    -  No se puede definir dentro de las funciones a menos que :
-       - se declare en la función con la palabra clave 'global'
-       - O que se acceda con el array $GLOBALS[indice]
-    -  Existen durante todo el tiempo de proceso del fichero
-    -  Al acabar de procesar el fichero se eliminan las variables globales
- 
+* Los elementos HTML se dividen en dos grandes tipos: block e inline.
+  
+* La propiedad ```display``` nos permite alterar el tipo de caja con
+que se muestra un elemento.
 
+   - ```inline```: el elemento no es un bloque, se renderiza en linea con otros elementos de ese tipo.
+   - ```block``` : el elemento se comporta como un bloque, podemos poner márgenes y bordes..   
+   - ```none``` : el elemento no se muestra; el efecto es como si no existiera, por lo que su espacio será ocupado por otros.
+   - ```inherit``` : se heredan las características del elemento padre.
+   - ```flex``` : el elemento es flexible en posición horizontal y vertical.
+   - ```inline-block``` : el elemento de bloque pero que se renderiza en línea con otros elementos.
 </script></section><section  data-markdown><script type="text/template">
-## Superglobal
+## Ejemplo
 
-- Variables predefinidas en PHP
-- Están disponibles en todos los ámbitos.
-
-Ejemplos:
-
-- $GLOBALS — Array con todas las variables disponibles en el ámbito global
-- $_SERVER — Información del entorno del servidor y de ejecución
-- $_GET(POST) — Variables HTTP GET(POST)
-- $_FILES — Variables de Carga de Archivos HTTP
-- $_REQUEST — Variables HTTP Request
-- $_SESSION — Variables de sesión
-- $_COOKIE— Variables con datos de la cookie
-- $_ENV— Variables del entorno
-
-</script></section><section  data-markdown><script type="text/template">
-# Ejercicio
-https://piruletas.000webhostapp.com/teoria/T2/tutoPhp.php
-
-- Analiza este fichero y mira el funcionamiento.
-</script></section><section  data-markdown><script type="text/template">
-# 6. Formularios
-
-### Ejercicios
-
-```HTML
-RADIO
-<form action=’procesar.php” method=”get”>
-Sexo:
-<INPUT TYPE="radio" NAME=“sexo" VALUE=“M" CHECKED >Mujer
-<INPUT TYPE= "radio" NAME=“sexo" VALUE=“H">Hombre
-<INPUT TYPE=”submit”>
-</form>
-```
-```PHP 
-#Procesar.php
-<?PHP
-$sexo = $_REQUEST[‘sexo’];
-print ($sexo);
-?>
-```
-</script></section><section  data-markdown><script type="text/template">
-## Ejercicio:
- - ¿Cuál es la petición al servidor al pulsar submit?
- - ¿Que aparecerá por pantalla?
- https://piruletas.000webhostapp.com/teoria/T2/form0.html
-
-
-</script></section><section  data-markdown><script type="text/template">
-# 5. Formularios desde PHP
-
-CHECKBOX
-
-```php
-<INPUT TYPE="checkbox" NAME="extras[]" VALUE="garaje" CHECKED>Garaje
-<INPUT TYPE="checkbox" NAME="extras[]" VALUE="piscina">Piscina
-<INPUT TYPE="checkbox" NAME="extras[]" VALUE="jardin">Jardín
-```
-``` PHP 
-<?PHP
-$extras = $_REQUEST[‘extras’];
-foreach ($extras as $extra)
-print (“$extra<BR>\n”);
-?>
-```
-</script></section><section  data-markdown><script type="text/template">
-### Formularios desde PHP
-
-BUTTON
-
-```PHP 
-<INPUT TYPE="button" NAME=“actualizar" VALUE="Actualizar datos">
+```html
+<p> Esto es un párrafo, elemento block por defecto que contiene un trozo de texto <span> SPAN </span> que por defecto es inline</p>
+<a href="aqui" style="display:block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; "> Hiperenlace que  ya no es inline, es block.</a>
+<p>Hiperenlace <a href="alli" style="display:inline-block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; ">Alli</a> ,que es una caja inline, no es block</p>
 ```
 
-```PHP
-<?PHP
-$actualizar = $_REQUEST[‘actualizar’];
-if ($actualizar)
-print ("Se han actualizado los datos");
-?>
-```
-</script></section><section  data-markdown><script type="text/template">
-### Formularios desde PHP
-
-SELECT múltiple
-
-```
-Idiomas:
-<SELECT MULTIPLE SIZE="3" NAME="idiomas[]">
-<OPTION VALUE="ingles" SELECTED>Inglés
-<OPTION VALUE="francés">Francés
-<OPTION VALUE="alemán">Alemán
-<OPTION VALUE="holandés">Holandés
-</SELECT>
-```
-```
-<?PHP
-$idiomas = $_REQUEST[‘idiomas’];
-foreach ($idiomas as $idioma)
-print (“$idioma<BR>\n”);
-?>
-```
-
-</script></section><section  data-markdown><script type="text/template">
-# 7. Funciones
-
-Ejemplo:
-```PHP
-function suma ($x, $y)
-{
-$s = $x + $y;
-return $s;
+```css
+header, footer {
+   display: block;
+   margin: 4px;
+   padding: 5px;
+   min-height: 100px;
+   border: 1px solid #eebb55;
+   border-radius: 7pt;
+   background: #ffeebb;
 }
 ```
-Salida:
-```
-$a=1;
-$b=2;
-$c=suma ($a, $b);
-print $c;
+
+```html
+<img src="./media/T3/image5.gif"/>
 ```
 </script></section><section  data-markdown><script type="text/template">
-#### Funciones
+## Propiedad overflow 
 
-- Por defecto paso parámetros por valor
-- Paso por referencia:
+Propiedad que especifica que hacer con el contenido excedente en un elemento a nivel de bloque
 
-```PHP
-function incrementa (&$a)
-{
-$a = $a + 1;
+```overflow: scroll ```
+
+- ```visible``` (por defecto): Contenido no  recortado, podría ser dibujado fuera de la caja contenedora.
+- ```hidden```: Contenido  recortado. 
+- ```scroll```: Contenido  recortado y el Navegador, usa  barras de desplazamiento.
+- ```auto```: Depende del Navegador.
+</script></section><section  data-markdown><script type="text/template">
+## Elipsis texto
+
+```html
+<div id="container">
+  <p class="truncate" >This is a text that should be truncated because it's too long.  The dreams of yesterday are the hopes of today and the reality of tomorrow. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species. Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. If you could see the earth illuminated when you were in a place as dark as night, it would look to you more splendid than the moon. Buy why, some say, the moon? Why choose this as our goal? And they may as well ask why climb the highest </p>
+ ```
+
+```css
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
-$a=1;
-incrementa ($a);
-print $a; // Muestra un 2
+
+.truncate:hover {
+  
+  white-space: normal;
+  overflow:visible;
+
+   }
 ```
 </script></section><section  data-markdown><script type="text/template">
-#### Funciones
+### Modelo de cajas: ```Position```
 
-- Argumentos por defecto
-- Los argumentos con valores por defecto deben ser siempre
-los últimos:
-```PHP
-function muestranombre ($nombre, $titulo= "Sr.")
-{
-print "Estimado $titulo $nombre:\n";
-}
-muestranombre (“Fernández”);
-muestranombre (“Fernández”, "Prof.");
+* ```Static:``` Posición predeterminada en HTML.
+* ```Relative:``` La posición de la caja se ajusta en relación a su posición
+normal dentro de la página. La caja siguiente se sitúa como si esta
+no se hubiera desplazado.
+* ```Absolute:``` Las cajas son quitadas del flujo normal, su posición se
+especifica con las propiedades 'left', 'right', 'top', y 'bottom'. No
+tienen ninguna influencia sobre la posición de las cajas siguientes.
+* ```Fixed:``` Como el anterior, pero se posiciona en función de la ventana
+del navegador. Esta caja no se mueve de posición al hacer scroll.
+
+```css
+div {
+display:block;
+position: absolute;
+top: 150px;
+padding: 5px 5px 5px 5px;
+Margin: 5px auto; /*centrar*/
+border-style: solid; }
 ```
-Salida:
+</script></section><section  data-markdown><script type="text/template">
+### Cajas Flotantes: ```Float```
+
+* ```Left``` : Genera un bloque a la izquierda donde posicionar las
+siguientes cajas si caben. De modo que el contenido de la caja
+se posiciona a la izquierda arriba de ese bloque.
+* ```Right``` : Lo mismo a la izquierda
+* ```None``` : No deja elementos flotantes.
+
+```css
+#a_izq {position:absolute;
+top:30px;
+right:30px;
+width:20%;
+float:right }
+img {float: left;}
 ```
-Estimado Sr. Fernández:
-Estimado Prof. Fernández:
-```
+Si al lado ponemos un parrafo este se alinea
+a la derecha de la imagen.
+https://piruletas.000webhostapp.com/Lab/P1
 
 </script></section><section  data-markdown><script type="text/template">
-## Ejemplo funciones y sessiones
+### Cajas flexibles: Diseño Flexible
 
+Un diseño flexible permite para alterar el ancho y alto de sus
+elementos para ajustarse lo mejor posible al espacio disponible
+en cualquier dispositivo. Un contenedor flexible expande sus
+elementos para rellenar el espacio libre, o los comprime para
+evitar que rebasen el área prevista.
+- Un contenedor flexible (Flex container) se define usando los valores flex o inline-flex en la propiedad display del contenedor o elemento "padre" que contiene los elementos flexibles.
+- Cada hijo de un contenedor flex se convierte en un elemento flexible (Flex item), que permite cajas a su derecha o izquierda.
+
+https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS
+
+</script></section><section  data-markdown><script type="text/template">
+# 11. CSS: Discriminación por dispositivos  
+## Media-Type
+
+- Permite categorizar los dispositivos de usuario
+
+-  Se usaron originalmente para seleccionar en HTML4 distintos CSS en
+función del dispositivo del usuario.
+- Pero son insuficientes como una manera de discriminar entre dispositivos con
+diferentes
+- *Media Types*:
+all, braille, embossed, handheld, print, projection, screen, speech,
+tty, tv.
+
+```html
+<link rel="stylesheet" type="text/css" 
+href="http://mysite.com/style-print.css" media="print">
+
+<link rel="stylesheet" type="text/css"
+href="http://mysite.com/style.css" media="screen">
 ```
-function activarSession()
-{   if (!isset($_SESSION["activo"]))
-    {$_SESSION = array();
-        setcookie(session_name(), '', time() + 10);
-        $_SESSION["activo"] = 1;
-        print "<h2>Hola</h2>";
-        $_SESSION["usuario"] = "visitante";
-        return 0;
-    } else { 
-      if ($_SESSION['last_action'] < time() - 60 ) 
-      { session_destroy(); }// destroy the session 
-      print "<h2>Hola de nuevo ".$_SESSION["usuario"]."</h2>";
-      return 1;
+</script></section><section  data-markdown><script type="text/template">
+## CSS3: Media queries
+
+
+* Las consultas de medios ( media queries )son simples filtros que pueden aplicarse a
+los estilos CSS. Facilitan el cambio de estilos según el tipo de dispositivo
+( media-type ) o las características del dispositivo ( media-feature ), como el tipo
+de pantalla, el ancho, el alto, la orientación e incluso la resolución.
+
+```css
+@media screen and (min-width:600px) {
+    nav {
+    float: left;
+    width: 25%;
     }
-}
-print "</p>Cookies</p>";
-print_r($_COOKIE);
-session_start();
-if (1 == activarSession()) {
-    print "<p> Ya tenías una sessión activa</p>";
-}
-print "</p>Session</p>";
-print_r($_SESSION);
- ```   
- [https://piruletas.000webhostapp.com/teoria/T2/session.php](https://piruletas.000webhostapp.com/teoria/T2/session.php)
-</script></section><section  data-markdown><script type="text/template">
-
-# 8. OOP en PHP
-
-- PHP no es un lenguaje 100% Orientado a Objetos.
-- Soporta:
-- Encapsulamiento.
-- Tipos Abstractos de Datos y ocultamiento de la
-Información.
-- Herencia.
-- Polimorfismo.
-
-
-</script></section><section  data-markdown><script type="text/template">
-## Clases y Objetos
-
-```php
-class Myclass{
-
-    const CONST_VALUE = 10;
-    public $numero=5;
-    function dameNumero(){
-      return self::CONST_VALUE*$this->numero;
-    }
-    function llamoDame(){ return self::dameNumero();}
-}
-$classname = 'Myclass';
-echo $classname::CONST_VALUE,"</p>"; // A partir de PHP 5.3.0
-echo Myclass::CONST_VALUE,"</p>";
-$datos=new  Myclass();
-$datos->numero=15;
-echo $datos->dameNumero(),"</p>";
-echo $datos->llamoDame(),"</p>"; //Da error
-echo Myclass::dameNumero();
+    section {
+    margin-left: 25%;
+}}
 ```
 
-- :: Operador de Resolución de Ámbito  es un token que permite acceder a elementos estáticos, constantes, y sobrescribir propiedades o métodos de una clase. 
-- -> permite acceder a las propiedades y métodos de un objeto.
-
-</script></section><section  data-markdown><script type="text/template">
-### $this, self, parent
-
--  $this es una variable especial que auto-referencia l objeto para acceder a sus métodos y propiedades.
-- self y parent: son pseudo-variables para acceder a una propiedad o método  de una clase.
-- Usa $this-> para hacer referencia al objeto (instancia) actual, y se
-utiliza self:: para referenciar a la clase actual. 
-
-``` PHP
-$this->nombre 
-self::nombres
-```
-</script></section><section  data-markdown><script type="text/template">
-# Callback/Calleable/Retrollamadas
-
-
-Los callbacks es un tipo de funciones que son pasadas como parametros y que serán ejecutadas desde una subrutina. 
-
-Generalmente se ejecutan cuando se producen eventos.
-Ej: wordpress: 
-
-```php 
-function example_callback( $example ) {
-    // Maybe modify $example in some way.
-    return $example;
-}
-add_filter( 'example_filter', 'example_callback' );
-
-```
-</script></section><section  data-markdown><script type="text/template">
-Los callbacks, que son funciones llamadas por otra función que usa a la primera como parámetro. 
-
-Generalmente se utilizan funciones anónimas como parámetros de los  callbacks.
-```php 
-$saludo = function($nombre)
+```css
+@media (query) 
 {
-    printf("Hola %s\r\n", $nombre);
-};
+ //CSS Rules used when__query matches 
+}
+```
 
-$saludo('Carlos'); // Devuelve Hola Carlos
-call_user_func($saludo, "PHP"); // Devuelve Hola PHP
+</script></section><section  data-markdown><script type="text/template">
+## Ejemplo Media-QuerIes
+
+``` html
+<link rel="stylesheet" media="(max-width: 640px)" 
+href="max-640px.css">
+<link rel="stylesheet" media="(min-width: 640px)" 
+href="min-640px.css">
+<link rel="stylesheet" media="(orientation: portrait)"
+ href="portrait.css">
+<link rel="stylesheet" media="(orientation: landscape)"
+ href="landscape.css">
+<style>
+  @media (min-width: 500px) and (max-width: 600px) {
+  h1 { color: fuchsia;}
+  .desc:after {
+    content:" In fact, it's between 500px and 600px wide.";
+  }
+}
+</style>
 ```
 </script></section><section  data-markdown><script type="text/template">
-# Funciones anónimas
+### Media Feature
 
-Una función anónima no es más que una función que no tiene nombre.
+* ```min-width``` :Reglas aplicadas a cualquier ancho de ventana de
+navegador que supere el valor definido en la consulta.
+* ```max-width``` :Reglas aplicadas a cualquier ancho de ventana de
+navegador que sea inferior al valor definido en la consulta.
+* ```min-height``` : Reglas aplicadas a cualquier alto de ventana de
+navegador que supere el valor definido en la consulta.
+* ```max-height``` : Reglas aplicadas a cualquier alto de ventana de
+navegador que sea inferior al valor definido en la consulta.
+* ```orientation=portrait``` : Reglas aplicadas a cualquier navegador
+cuyo alto de ventana sea superior o igual al ancho.
+* ```orientation=landscape``` : Reglas aplicadas a cualquier navegador
+cuyo ancho sea superior al alto.
+</script></section><section  data-markdown><script type="text/template">
+# Lecturas recomendadas
 
-```php
-$saludo = function() {
-    return "Hola que tal";
-};
-
-echo $saludo(),"<p>"; // Devuelve: Hola que tal
-};
-```
-
-```php
-function decir ($algo) {
-    echo $algo();
-}
-
-decir(function(){
-    return "Esto es algo";
-});
- // Devuelve "Esto es algo".
-```
-</script></section><section ><section data-markdown><script type="text/template">
-# Una clausura o closure 
-
-
-Una clausura o closure es una función anónima que captura el scope actual, y proporciona acceso a ese scope cuando se invoca el closure.
-
-```php
-
-$colorCoche = 'rojo';
-
-$mostrarColor = function() use ($colorCoche) {
-    echo "El color del coche es $colorCoche";
-};
-
-$mostrarColor(); // Mostrará El color del coche es rojo
-```
-
-
-Las clausuras permiten usar variables mediante la palabra use. Estas variables su ámbito es el de la función donde se definen, no son como las variables globales.
-
-
-Si se altera el valor de la variable $colorCoche dentro de la clausura, no afectará a la variable original.
-</script></section><section data-markdown><script type="text/template">
-```php 
-$colorCoche = 'rojo';
-
-$mostrarColor = function() use ($colorCoche) {
-    $colorCoche = 'azul';
-};
-
-$mostrarColor();
-echo $colorCoche; // Mostrará rojo
-```
-
-# Bibliografía
-
-- PHP: [http://es.php.net/manual/es/](http://es.php.net/manual/es/)
-Guia Estilos: https://www.php-fig.org/psr/psr-2/
-
-- Apache: [http://httpd.apache.org/docs/2.3/es/](http://httpd.apache.org/docs/2.3/es/)
--Callbacks: https://diego.com.es/funciones-anonimas-y-clausuras-en-php 
-
-
-</script></section></section><section  data-markdown><script type="text/template">
-#### ¿Dudas?
-
+* Enlaces de Interés:
+    - Guía HTML:
+[http://www.w3.org/community/webed/wiki/HTML/Elements/](http://www.w3.org/community/webed/wiki/HTML/Elements/)
+    - Guía referencia HTML:
+https://html.spec.whatwg.org/multipage/indices.html
+    - Guía general CSS: [http://www.w3.org/community/webed/wiki/CSS](http://www.w3.org/community/webed/wiki/CSS)
+    - Guia de etiquetes y regles css actives en els navegadors:
+[http://caniuse.com](http://caniuse.com)
+    - Guía Accesibilidad:
+[http://w3c.es/Divulgacion/GuiasBreves/Accesibilidad](http://w3c.es/Divulgacion/GuiasBreves/Accesibilidad)
+* Bibliografía:
+    - Head first web design. O'reilly. Ethan Watrall & Jeff
+Siarto.
+    - HTML5 y CSS3. Editor: ENI (Septiembre 2011) Autor : Luc VAN
+LANCKER ISBN : 978-2-7460-6816-2
+</script></section><section  data-markdown><script type="text/template">
+### ¿Dudas?
   ![Image de Dudas](./media/image8.png)
 </script></section></div>
         </div>
