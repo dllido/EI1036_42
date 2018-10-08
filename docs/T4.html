@@ -342,6 +342,33 @@ if ( is_admin() ) {
 }
 ```
 </script></section></section><section ><section data-markdown><script type="text/template">
+
+# Sintaxis alternativa de estructuras de control ¶
+
+Condigo html oculto
+```php
+<?php if ( is_user_logged_in() ) {
+     echo "CUIDADO estas Logueado ok?";
+} else {
+     echo "CUIDADO NO Estas logeado.";
+}?>
+```
+
+ PHP ofrece sintaxis alternativa para : if, while, for, foreach, y switch.
+
+ En cada caso, la forma básica de la sintaxis alternativa es cambiar la llave de apertura por dos puntos (:) y la llave de cierre por endif;, endwhile;, endfor;, endforeach;, o endswitch;, respectivamente.
+</script></section><section data-markdown><script type="text/template">
+Solución: 
+
+```php
+	<?php if (is_user_logged_in()): ?>
+	    <h1 >CUIDADO Estas logeado ok? </h1>
+    <?php else:?>
+        <h1 >CUIDADO NO Estas logeado. </h1>
+    <?php endif; ?>
+```
+
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## 10. Ganchos
 
 Los Plugins de WordPress interactúan con código del núcleo de WP utilizando ganchos. Hay dos tipos diferentes de ganchos.
@@ -364,20 +391,23 @@ add_action( 'user_register', 'crf_user_register' );
 add_filter( 'autentificarClientes', 'myplugin_auth_signon', 30, 3 );
 ```
 
-</script></section><section data-markdown><script type="text/template">
- 
+</script></section></section><section ><section data-markdown><script type="text/template">
 ### Ganchos de filtro
 
 - Una función de filtro te permite modificar los datos resultantes que son devueltos por funciones ya existentes y deben estar enganchados a los ganchos de filtro. 
 - Al igual que los ganchos de acción se llaman en varios puntos del guión y son contextuales. 
 - Adición de filtros mediante ```add_filter()``` que es un callback.
+    - $tag puede ser cualquier gangho de WP.
+    - $function_to_add la funcion del callback que se ejecuta al activar el gancho.
+    - $arg2 Prioridad.
+    - $arg3 Número de argumentos de la $function_to_add
 
-add_filter( string $tag, callable $function_to_add, int $priority = 10, int $accepted_args = 1 )
+```
+add_filter( string $tag, callable $function_to_add, 
+            int $priority = 10, int $accepted_args = 1 )
+```
 
-- $tag puede ser cualquier gangho de WP.
-- $function_to_add la funcion del callback que se ejecuta al activar el gancho.
-- $arg2 Prioridad.
-- $arg3 Número de argumentos de la $function_to_add
+   
 
 - Una lista completa de los ganchos de filtro: https://codex.wordpress.org/Plugin_API/Filter_Reference
 </script></section><section data-markdown><script type="text/template">
@@ -395,13 +425,14 @@ function mfp_Fix_Text_Spacing($the_Post)
  return $the_New_Post;
 }
 ```
+Los filtros se pueden poner en functions.php.
 
 
+Ejemplo complejo:
+ - https://getflywheel.com/wp-content/uploads/2015/06/Anatomy-of-a-WordPress-Theme.png
+- https://piruletas.000webhostapp.com/Participa/
 
-Ejemplo complejo: https://getflywheel.com/wp-content/uploads/2015/06/Anatomy-of-a-WordPress-Theme.png
-
-
----
+</script></section></section><section  data-markdown><script type="text/template">
 # apply_filters
 
 ```apply_filters( string $tag, mixed $value )```
@@ -414,16 +445,16 @@ function example_callback( $string, $arg1, $arg2 ) {
     return $string;
 }
 add_filter( 'example_filter', 'example_callback', 10, 3 );
+
+$value = apply_filters( 'example_filter', 'filter me', $arg1, $arg2 );
 ```
 
-/*
- * Apply the filters by calling the 'example_callback' function we
- * "hooked" to 'example_filter' using the add_filter() function above.
- * - 'example_filter' is the filter hook $tag
- * - 'filter me' is the value being filtered
- * - $arg1 and $arg2 are the additional arguments passed to the callback.
-$value = apply_filters( 'example_filter', 'filter me', $arg1, $arg2 );
-</script></section></section><section  data-markdown><script type="text/template">
+
+ * - 'example_filter' es nombre del gancho de filtro
+ * - 'filter me' is the value  que debe ser filtrado
+ * - $arg1 and $arg2 son los argumentos del callback.
+
+</script></section><section  data-markdown><script type="text/template">
 ## ¿Como genera la página principal el WP?
 
 -  index.php  carga gancho /wp-blog-header.php'  el cual se encarga de inicializar todo el wordpress y si está inicializado el Template carga su CSS y plantillas. 
@@ -731,7 +762,7 @@ https://visual.ly/community/infographic/computers/wordpress-theme-anatomy
   "highlightTheme": "darkula",
   "controls": true,
   "progress": true,
-  "slideNumber": true,
+  "slideNumber": false,
   "history": true,
   "keyboard": true,
   "overview": true,
