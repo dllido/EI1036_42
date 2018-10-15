@@ -214,11 +214,10 @@ functions.php es donde agrega funcionalidad personalizada a su tema:
 - style.css: fichero CSS principal.
 - header.php: Plantilla cabecera común. Todo lo que contiene la etiqueta  <head> o el menú de navegación principal.
 - footer.php:  Plantilla del pie de página (por ejemplo el copyright o los enlaces a la información legal).
-- sidebar.php : Plantilla   de una barra lateral (sobre todo cuando se trata de un blog) o con widgets (por ejemplo un buscador, un listado de categorías o los posts más visitados).
+- sidebar.php : Plantilla   de una barra lateral (sobre todo cuando se trata de un blog).
 - front-page.php: Plantilla de la página de inicio del blog. Está especialmente pensada para que sea un listado de entradas, es decir, la portada de un blog.
 - home.php : Plantilla por defecto de inicio si se ha seleccioque que la página de inicio es ```página estática```, o sea un portal web. 
-
---
+</script></section><section data-markdown><script type="text/template">
 -  single.php :Plantilla que muestra una entrada completa por defecto.
 - page.php:  mostrará por defecto cualquier página que creemos.
 - category.php : Sirve para mostrar un listado de posts de una categoría específica.
@@ -306,7 +305,7 @@ Ejemplo: Pagina del usuario de los autores, "david", tenga una identificación n
 - Creando en las plantillas las funciones: ```Code Snippets```.
 - Creando un ```pluggin```.
 - Añadir código personalizado a WordPress (en ```functions.php```). Para que no se borren  al actualizar los plugins directamente en la carpeta /mu-plugins/. ("Must Use" plugins). 
-</script></section><section ><section data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template">
 # 9. PHP: Etiquetas de plantilla (tags)
 
 Son funciones PHP para incluir fácilmente archivos de plantilla  desde el tema en otro archivo o para mostrar información de la base de datos.
@@ -321,9 +320,7 @@ Etiquetas de plantilla para cargar plantillas:
  | get_search_form()| include('searchform.php')|
 
 Ventaja:  podemos personalizar que código cargando bien la plantilla por defecto u otra personalizada. 
-
-
-
+</script></section><section ><section data-markdown><script type="text/template">
 # Cuestiones:
 
 Problema: ¿Como cargar la cabezera del fichero ```header-custom.php```  en un tema?
@@ -595,7 +592,7 @@ https://www.cssigniter.com/use-custom-theme-plugin-wordpress-site-customizations
 - ¿Conclusiones?
 - ¿Cuando es conveniente utilizar un plugin o un child-theme?
 
-</script></section></section><section  data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 # 12 Widget
 
 
@@ -605,8 +602,7 @@ https://www.cssigniter.com/use-custom-theme-plugin-wordpress-site-customizations
 - Para crear un widget simplemente se crea un fichero php
 en la  carpeta /wp-content/plugins/my-widget/ el cual debe contener la instrucción register_widget('name') lo cual registra en el WP un widget llamado 'name'. Que podemos insertar en cualquier parte de la página web seleccionandolo de la lista de widgets activos. 
 
-
---
+</script></section><section data-markdown><script type="text/template">
 ## Ejemplo de añadir un widget¿?
 
 
@@ -627,7 +623,7 @@ add_action( 'widgets_init', function(){
 register_widget( 'Mi_Widget' );
 });
 ```
-</script></section><section  data-markdown><script type="text/template">
+</script></section></section><section  data-markdown><script type="text/template">
 # 13. CustomFields para las entradas
 
 - Permite a los autores asignar campos personalizados a una entrada. Esta información arbitraria es conocida como metadatos.
@@ -693,7 +689,7 @@ Autentificación básica: Solicita al cliente un usuario y contraseña, que viaj
 
  ![Proceso Auth](./media/T4/authProcess.jpeg)
 </script></section><section data-markdown><script type="text/template">
-### Configuración Autentificación Básica**
+### Configuración Autentificación Básica
 
 
 - Configurar fichero .htaccess en directorio que se requiera.
@@ -706,25 +702,24 @@ AuthUserFile /home/alxxx/privado/.htpasswd
 Require valid-user
 ```
 
--Ejemplo:
+- Ejemplo:
 https://piruletas.000webhostapp.com/teoria/T4/Auth/session.php
+
 ```
 #Generar fichero password en linux
 >htpasswd -c /home/alxxx/privado/.htpasswd usuario
 ```
-
---
-
-## Autentificación Básica por Programa**
+</script></section><section data-markdown><script type="text/template">
+## Autentificación Básica por Programa
 
  ![Flujo del proceso autentificación?](./media/T4/authWorkflow.jpeg)
  
-</script></section></section><section ><section data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 https://piruletas.000webhostapp.com/teoria/T4/basicAuth.php
 
 ```
 <?php
-$valid_passwords = array ("Pepe" => "Catala",”lola”=>”lola”);
+$valid_passwords = array ("Pepe" => "Catala","lola"=>"lola");
 $valid_users = array_keys($valid_passwords);
 $user = $_SERVER['PHP_AUTH_USER'];
 $pass = $_SERVER['PHP_AUTH_PW'];
@@ -768,6 +763,7 @@ gestor,administrador?
 
 </script></section><section  data-markdown><script type="text/template">
 # WP y Gestión de usuarios:
+
 WP como tiene un sitema de autentificación tiene por defecto un sistema de login que almacena en la BD información sobre el usuario.
 
 Por tanto tiene:
@@ -794,8 +790,9 @@ if ( !$user = $wpdb->get_row( $wpdb->prepare(
 # Autentificación WP: wp_authenticate_cookie
 Hoock para comprobar si un usuario está autentificado:
 
-wp_authenticate_cookie( WP_User|WP_Error|null $user, string $username, string $password )
-(WP_User|WP_Error) WP_User on success, WP_Error on failure.
+- wp_authenticate_cookie( WP_User|WP_Error|null $user, string $username, string $password )
+
+devuelve: (WP_User|WP_Error) WP_User on success, WP_Error on failure.
 
 
 https://developer.wordpress.org/reference/functions/wp_authenticate_cookie/
