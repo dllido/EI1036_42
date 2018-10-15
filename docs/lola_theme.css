@@ -22,7 +22,9 @@
   margin: 0 0 5px 0;
   padding: 0 0 5px 0;
 }
-
+.reveal ul,.reveal ol{
+  line-height: 1;
+margin: 10px 25px 10px 25px;}
 .reveal h1 {
   font-size: 1.2em; 
   color: #83a;}
