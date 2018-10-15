@@ -9,13 +9,13 @@
  }
  .reveal {
 
-  font-size: medium;
+  font-size: 36px;
   line-height: 1;
 }
 
 .reveal p{
 
-  font-size: medium;
+  font-size: 36px;
   line-height: 1;
 }
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
