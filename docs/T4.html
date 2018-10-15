@@ -331,7 +331,8 @@ Cargará el fichero header-custom.php  en vez de header.php
 
 Problema: 
 Mostrar el pie de página en la página principal, pero no en ninguna otra página
-Solución: agregue get_footer() al final de index.php, pero no en page.php. 
+Solución: agregue get_footer() al final de index.php, pero no en page.php.
+
 ¿Por que?
 
 
@@ -485,26 +486,27 @@ O todas las funciones  con:
 - Una lista completa de los ganchos de filtro: https://codex.wordpress.org/Plugin_API/Filter_Reference
   
 Los filtros predefinidos no hace falta definir nosotros la funcion de apply_filters, directamente lo ejecutamos.
+</script></section><section data-markdown><script type="text/template">
+## Por ejemplo :
 
-
-## Por ejemplo:
-```php
 apply_filters( 'the_content', string $content )
-ya definida en:
+
+ya definidas las funciones a ejecutar con el gancho the_content en 
 
 wp-includes/post-template.php
-```
+
   
 </script></section><section data-markdown><script type="text/template">
 ## add_filter()
 
-```add_filter( string $tag, callable $function_to_add, nt $priority = 10, int $accepted_args = 1 )```
+``` add_filter(  $tag, $function_to_add, $priority = 10,  $accepted_args = 1 )```
+
 * Función que permite añadir funciones de filtro:
 * es un callback con 4 parámetros:
     - $tag puede ser cualquier gangho de WP.
     - $function_to_add la funcion del callback que se ejecuta al activar el gancho.
-    - $arg2 Prioridad.
-    - $arg3 Número de argumentos de la $function_to_add
+    -  $priority Prioridad.
+    - $accepted_args Número de argumentos de la $function_to_add
 </script></section><section data-markdown><script type="text/template">
 #### Ejemplo filter hook :
 
