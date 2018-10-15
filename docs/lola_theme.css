@@ -42,7 +42,8 @@
 .reveal h1 {
   text-shadow: none; }
 .reveal table{font-size: 0.5 em;line-height: 0.8em;}
-.reveal section img  {max-height: 550px;max-width: 80%;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
+.reveal .slides > section{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
+.reveal section img  {max-height: 540px;max-width: 80%;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
 .reveal ol,
 .reveal dl,
 .reveal ul {
@@ -52,14 +53,6 @@
   line-height: 1.1;
   }
 .reveal pre code{
-  font-weight: 500;
-  font-size: 2em;
-  max-height: 100%;
-  line-height: 1;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  background-color:grey;
   word-wrap: break-word;
   overflow: scroll;
   }
