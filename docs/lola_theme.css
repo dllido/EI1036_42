@@ -57,6 +57,7 @@ margin: 10px 25px 10px 25px;}
   width: 100%;
   margin: 0px;
   padding: 0px;
+  background-color: blue;
   word-wrap: break-word;
   overflow: scroll;
   }
