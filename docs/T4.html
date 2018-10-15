@@ -375,42 +375,115 @@ Los Plugins de WordPress interactúan con código del núcleo de WP utilizando g
 - Ganchos de acción (para agregar / quitar funciones).
 - Ganchos de filtro (Para modificar datos producidos por funciones).
 
-</script></section><section data-markdown><script type="text/template">
-### Ganchos de acción (hooks)
-
-- Los ganchos de acción son funciones  que tienen generalmente  funciones asociadas a ellas. 
--  Algunos ganchos  existen para su uso por plugins, no tienen funciones conectadas de forma predeterminada.
--  Los ganchos de acción permiten que los complementos conecten sus propias funciones y que se ejecuten en varios puntos de la carga de una página.
-  
-En la plantilla de encabezado de su tema, se invoca el gancho de acción wp_head() para incluir el encabezado HTML predeterminado de WordPress dentro de las etiquetas  ```<head></head>```. 
-Plugin API/Action Reference.
-https://codex.wordpress.org/Plugin_API/Action_Reference
-
 ```PHP
 add_action( 'user_register', 'crf_user_register' );
 add_filter( 'autentificarClientes', 'myplugin_auth_signon', 30, 3 );
 ```
+</script></section><section data-markdown><script type="text/template">
+### Ganchos de acción (hooks)
+Los hooks de accion o acciones son disparadas cuando  pasa algo, como que se cargue la pagina, se  inicie una sesion...
 
-</script></section></section><section ><section data-markdown><script type="text/template">
+
+
+- Los ganchos de acción son funciones  que tienen generalmente  funciones asociadas a ellas. 
+-  Algunos ganchos  existen para su uso por plugins, no tienen funciones conectadas de forma predeterminada.
+-  Los ganchos de acción permiten que los complementos conecten sus propias funciones y que se ejecuten en varios puntos de la carga de una página.
+</script></section><section data-markdown><script type="text/template">
+Ejemplo:
+```
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+
+<?php wp_head(); ?>
+</head>```
+
+En la plantilla de encabezado de su tema, se invoca el gancho de acción wp_head() para incluir el encabezado HTML predeterminado de WordPress. 
+
+wp_head() es un gancho de acción predefinid0 en wordpress.
+
+
+Plugin API/Action Reference.
+https://codex.wordpress.org/Plugin_API/Action_Reference
+</script></section><section data-markdown><script type="text/template">
+Para asociar nuestras propias funciones a ganchos de acción, debemos usar ***add_action***:
+
+```add_action( 'compass_in_footer', 'compass_smallprint', 20 );```
+
+* definimos que nuestra función compass_smallprint, se ejecute cada vez que se llame a la acción compass_in_footer , con una prioridad de 20. 
+
+* Para llamar a la acción se utiliza ***do_action()***
+```do_action( 'compass_in_footer' );```
+
+* Se puede asociar a una acción más de una función, de forma que se ejecutará primero la de más prioridad. Si no se indica la prioridad por defecto es 10.
+
+```php
+add_action( 'compass_in_footer', 'compass_colophon' ); 
+add_action( 'compass_in_footer', 'compass_smallprint', 20 );
+do_action( 'compass_in_footer' );
+ 
+```
+¿que función se ejecuta antes en el ejemplo anterior?
+¿Por que no llamar directamente  a las funciones?
+</script></section><section data-markdown><script type="text/template">
+
+¿Por que no llamar directamente  a las funciones?
+
+* Puedes enlazar más de una funcion de la misma accion,
+* Puedes fijar la prioridad para que ellos se ejecuten en el orden que los quieres.
+
+Podemos borrar nuestras funciones  con
+```remove_action( 'compass_in_footer', 'compass_smallprint', 20 );```
+
+O todas las funciones  con:
+```remove_all_actions( 'compass_in_footer' );```
+</script></section></section><section  data-markdown><script type="text/template">
 ### Ganchos de filtro
+
+Util si tienes opciones en tu tema o plugin que quieras sobreescribir una opcion por default, o si estas creando un tema padre que puede tener elementos sobreescritos de  un tema hijo.
+
 
 - Una función de filtro te permite modificar los datos resultantes que son devueltos por funciones ya existentes y deben estar enganchados a los ganchos de filtro. 
 - Al igual que los ganchos de acción se llaman en varios puntos del guión y son contextuales. 
-- Adición de filtros mediante ```add_filter()``` que es un callback.
+- Adición de filtros mediante ```add_filter()``` 
+- Ejecución del gancho de filtro con ```apply_filters()``.
+- Los filtros se pueden poner en functions.php.
+
+
+```
+
+```
+
+# apply_filters 
+```apply_filters( string $tag, mixed $value )```
+* Es la función que se encarga de ejecutar los ganchos. 
+* tiene tres parametros : el nombre del hook de filtro, el valor que quieres filtrar(ejem. el valor por default), y variables opcionales las cuales pasaraas  a las funciones enlazadas al filtro.
+
+   
+
+- Una lista completa de los ganchos de filtro: https://codex.wordpress.org/Plugin_API/Filter_Reference
+  
+Los filtros predefinidos no hace falta definir nosotros la funcion de apply_filters, directamente lo ejecutamos.
+
+
+## Por ejemplo:
+```php
+apply_filters( 'the_content', string $content )
+ya definida en:
+
+wp-includes/post-template.php
+```
+  
+
+--
+# add_filter()
+```add_filter( string $tag, callable $function_to_add, nt $priority = 10, int $accepted_args = 1 )```
+* Función que permite añadir funciones de filtro:
+* es un callback con 4 parámetros:
     - $tag puede ser cualquier gangho de WP.
     - $function_to_add la funcion del callback que se ejecuta al activar el gancho.
     - $arg2 Prioridad.
     - $arg3 Número de argumentos de la $function_to_add
 
-```
-add_filter( string $tag, callable $function_to_add, 
-            int $priority = 10, int $accepted_args = 1 )
-```
-
-   
-
-- Una lista completa de los ganchos de filtro: https://codex.wordpress.org/Plugin_API/Filter_Reference
-</script></section><section data-markdown><script type="text/template">
 ## Ejemplo:
 
 Ejemplo filter hook para filtrar el contenido de cualquier post quitando dobles espacios 
@@ -424,44 +497,32 @@ function mfp_Fix_Text_Spacing($the_Post)
  $the_New_Post = str_replace(" ", " ", $the_Post);
  return $the_New_Post;
 }
+apply_filters( 'the_content', string $content )
 ```
-Los filtros se pueden poner en functions.php.
+--
+
+Lectura:https://code.tutsplus.com/es/articles/wordpress-actions-and-filters-whats-the-difference--cms-25700
 
 
 Ejemplo complejo:
- - https://getflywheel.com/wp-content/uploads/2015/06/Anatomy-of-a-WordPress-Theme.png
+- https://getflywheel.com/wp-content/uploads/2015/06/Anatomy-of-a-WordPress-Theme.png
 - https://piruletas.000webhostapp.com/Participa/
 
-</script></section></section><section  data-markdown><script type="text/template">
-# apply_filters
-
-```apply_filters( string $tag, mixed $value )```
-
-Es la función que se encarga de ejecutar los ganchos.
-
-```PHP
-function example_callback( $string, $arg1, $arg2 ) {
-    // (maybe) modify $string
-    return $string;
-}
-add_filter( 'example_filter', 'example_callback', 10, 3 );
-
-$value = apply_filters( 'example_filter', 'filter me', $arg1, $arg2 );
-```
 
 
- * - 'example_filter' es nombre del gancho de filtro
- * - 'filter me' is the value  que debe ser filtrado
- * - $arg1 and $arg2 son los argumentos del callback.
 
 </script></section><section  data-markdown><script type="text/template">
-## ¿Como genera la página principal el WP?
+## ¿Como genera la página html en WP?
 
 -  index.php  carga gancho /wp-blog-header.php'  el cual se encarga de inicializar todo el wordpress y si está inicializado el Template carga su CSS y plantillas. 
 -  llamando al frontpage (blog)/ home.php(portal) 
 -  y estos cargarán todas las otras plantillas de las distintas secciones con las distintas etiquetas de plantilla. (get_header(),get_sidebar() |get_footer() 
 - Si el usuario está autentificados además carga una cabecera con el menú del rol del usuario.
-
+</script></section><section  data-markdown><script type="text/template">
+¿Quien genera la página principal/home?
+¿Y las noticias/entradas?
+¿Y la página Participa?
+¿Y en el plugin woocomerce como se genera la tienda?
 </script></section><section ><section data-markdown><script type="text/template">
 # 11 Plugins
 
@@ -506,10 +567,11 @@ Ficheros:
 Lectura Individual 
 https://www.cssigniter.com/use-custom-theme-plugin-wordpress-site-customizations/
 
+
 - ¿Conclusiones?
 - ¿Cuando es conveniente utilizar un plugin o un child-theme?
----
 
+</script></section></section><section ><section data-markdown><script type="text/template">
 # 12 Widget
 
 
@@ -522,8 +584,7 @@ Ejemplo de añadir un widget¿?
 
 
 Para crear un widget simplemente se crea un fichero php
-en la  carpeta/
-wp-content/plugins/my-widget/ el cual debe contener la instrucción register_widget('name') lo cual registra en el WP un widget llamado 'name'. Que podemos insertar en cualquier parte de la página web seleccionandolo de la lista de widgets activos. (https://www.axarnet.es/blog/como-crear-un-widget-en-wordpress/)
+en la  carpeta /wp-content/plugins/my-widget/ el cual debe contener la instrucción register_widget('name') lo cual registra en el WP un widget llamado 'name'. Que podemos insertar en cualquier parte de la página web seleccionandolo de la lista de widgets activos. (https://www.axarnet.es/blog/como-crear-un-widget-en-wordpress/)
 
 *Mi_Widget.php*
 ```php
@@ -543,13 +604,14 @@ register_widget( 'Mi_Widget' );
 </script></section></section><section  data-markdown><script type="text/template">
 # 13. CustomFields para las entradas
 
-- Permitirle a los autores asignar campos personalizados a una entrada. Esta información arbitraria es conocida como metadatos.
+- Permite a los autores asignar campos personalizados a una entrada. Esta información arbitraria es conocida como metadatos.
 
 - Los metadatos se manejan en pares de clave/valor.
 
 
 Los autores pueden  asignar estos  e incluso crear nuevos.
-Despues de escribir la entrada del blog, va al área titulada Custom Fields.
+
+Despues de escribir la entrada del blog, ir al área titulada Custom Fields para modificar o asignar "customFields".
 </script></section><section ><section data-markdown><script type="text/template">
 # 14. Interacción C/S WP: Cache
 
@@ -576,17 +638,22 @@ JavaScript permite visualizar las cookies.
 - El propio WordPress no retiene sesiones, pero si algunos plugins o temas una vez que probablemente se activan.
 - WordPress  no utiliza sesiones PHP nativas. En cambio, depende en gran medida de las cookies para la autenticación y almacena cualquier información adicional sobre una sesión autenticada en la base de datos.
 
-Más información: 
-https://pressjitsu.com/blog/wordpress-sessions-performance/
-</script></section><section data-markdown><script type="text/template">
-Ejemplo login
 
-http://cubiq.org/front-end-user-registration-and-login-in-wordpress
+
+</script></section><section data-markdown><script type="text/template">
+Lectura individual en casa
+
+Uso sessiones:
+
 https://slicejack.com/building-custom-wordpress-login-page/
-</script></section></section><section  data-markdown><script type="text/template"></script></section><section ><section data-markdown><script type="text/template">
+
+Ejemplo Login https://pressjitsu.com/blog/wordpress-sessions-performance/
+
+
+</script></section></section><section ><section data-markdown><script type="text/template">
 # 14. WEB: Autenticación de usuarios
 
-- Una cuestión frecuente en un sitio web es controlar el acceso de los usuarios a una zona determinada del mismo (autentorización), para ello se requiere solicitar generalmente la Autentificación previamente.
+- Una cuestión frecuente en un sitio web es controlar el acceso de los usuarios a una zona determinada del mismo (autorización), para ello se requiere solicitar generalmente la Autentificación previamente.
 - Autentificación requiere credenciales o pruebas de identidad.
 - La autentificación de usuarios puede realizarse:
     - Autentificación en el Servidor: En Apache los ficheros ```.htacacces```.
@@ -762,7 +829,7 @@ https://visual.ly/community/infographic/computers/wordpress-theme-anatomy
   "highlightTheme": "darkula",
   "controls": true,
   "progress": true,
-  "slideNumber": false,
+  "slideNumber": true,
   "history": true,
   "keyboard": true,
   "overview": true,

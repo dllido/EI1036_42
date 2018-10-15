@@ -1,66 +1,80 @@
 /**
  *Mis fuentes más pequeñas*/
 
-.reveal {
+ 
 
-  font-size: 28px;
-}
-.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-  margin: 0 0 10px 0;}
-
-.reveal h1 {
-  font-size: 1.4em; 
-  color: 83a;}
-
-.reveal h2 {
-  font-size: 1.3em; }
-
-.reveal h3 {
-  font-size: 1.2em; }
-
-.reveal h4 {
-  font-size: 1em; }
-
-.reveal h1 {
-  text-shadow: none; }
-.reveal table{font-size: 0.5 em;line-height: 0.8em;}
-.reveal img  {max-height: 500px;max-width: 80%;}
-.reveal ol,
-.reveal dl,
-.reveal ul {
-  display: block;
-  text-align: left;
-  margin: 10px 40px 10px 40px;
-  }
-.reveal pre code{
-  font-weight: 500;
-  font-size: 1.5em;
-  max-height: 100%;
-  line-height: 1 ;
-  }
-a {    word-wrap: break-word;}
-
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-}
-
-.truncate:hover {
-  
-  white-space: normal;
-  overflow:visible;
-
+ @media print { 
+    /* All your print styles go here */
+    #header, #footer, #nav { display: none !important; } 
    }
-
-
-
-
-
-
-.DescriptionExcerpt {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+  
+  .reveal {
+  
+    font-size: 40px;
+  }
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    margin: 0 0 5px 0;
+    padding: 0 0 5px 0;}
+  
+  .reveal h1 {
+    font-size: 1.2em; 
+    color: 83a;}
+  
+  .reveal h2 {
+    font-size: 1.2em; }
+  
+  .reveal h3 {
+    font-size: 1.1em; }
+  
+  .reveal h4 {
+    font-size: 1em; }
+  
+  .reveal h1 {
+    text-shadow: none; }
+  .reveal table{font-size: 0.5 em;line-height: 0.8em;}
+  .reveal img  {max-height: 550px;max-width: 80%;}
+  .reveal ol,
+  .reveal dl,
+  .reveal ul {
+    display: block;
+    text-align: left;
+    margin: 10px 40px 10px 40px;
+    }
+  .reveal pre code{
+    font-weight: 500;
+    font-size: 2em;
+    max-height: 100%;
+    line-height: 1;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    word-wrap: break-word;
+    overflow: scroll;
+    }
+  a {    word-wrap: break-word;}
+  
+  .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+  }
+  
+  .truncate:hover {
+    
+    white-space: normal;
+    overflow:visible;
+  
+     }
+  
+  
+  
+  
+  
+  
+  .DescriptionExcerpt {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
