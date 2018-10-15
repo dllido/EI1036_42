@@ -16,13 +16,14 @@
 .reveal p{
 
   font-size: 36px;
+  margin: 10px 10px 0px 10px;
   line-height: 1.1;
 }
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 5px 0;
   padding: 0 0 5px 0;
 }
-.reveal .reveal li{
+.reveal li{
   line-height: 1.1;
   padding: 5px;}
 .reveal h1 {
@@ -41,7 +42,7 @@
 .reveal h1 {
   text-shadow: none; }
 .reveal table{font-size: 0.5 em;line-height: 0.8em;}
-.reveal img  {max-height: 550px;max-width: 80%;}
+.reveal section img  {max-height: 550px;max-width: 80%;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
 .reveal ol,
 .reveal dl,
 .reveal ul {
@@ -58,7 +59,7 @@
   width: 100%;
   margin: 0px;
   padding: 0px;
-  background-color: blue;
+  background-color:grey;
   word-wrap: break-word;
   overflow: scroll;
   }

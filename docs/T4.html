@@ -8,7 +8,7 @@
          <link rel="stylesheet" href="lola_theme.css" id="theme">
        
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="lib/css/darkula.css">
+        <link rel="stylesheet" href="lib/css/Tomorrow Night Blue.css">
 
         
 
@@ -189,8 +189,9 @@ Las taxonomías de WP son un mecanismo de agrupamiento o categorización de los 
 <img src="./media/T4/WP_files.png">
 </script></section><section ><section data-markdown><script type="text/template">
 # 6. Anatomía de un tema
-
-index.php<img src="./media/T4/template.png">
+<img src="./media/T4/template.png"/>
+- *HomePage*: index.php (blog) o
+- front-page.php-> home.php -> (page.php(static web)) 
 </script></section><section data-markdown><script type="text/template">
 Muy Interesante :
 https://yoast.com/wordpress-theme-anatomy/
@@ -208,14 +209,14 @@ functions.php es donde agrega funcionalidad personalizada a su tema:
 </script></section><section data-markdown><script type="text/template">
 ## Listado Ficheros Template
  
-- index.php: Plantilla con la  página de inicio del site.  **OBLIGATORIO** 
+- index.php: Plantilla con la  página de inicio del site.**OBLIGATORIO**. 
 - style.css: fichero CSS principal.
-- header.php: Cabecera común del portal. Como por ejemplo, todo lo que contiene la etiqueta  <head>— o el menú de navegación principal.
+- header.php: Cabecera común del portal. Todo lo que contiene la etiqueta  <head> o el menú de navegación principal.
 - footer.php:  Plantilla con la información que estará siempre presente en el pie de página (por ejemplo el copyright o los enlaces a la información legal).
-- sidebar.php : Plantilla  para mostrarla a modo de barra lateral (sobre todo cuando se trata de un blog) o con widgets (por ejemplo un buscador, un listado de categorías o los posts más visitados).
-- front-page.php: Plantilla que WordPress  como página de inicio del blog. Está especialmente pensada para que sea un listado de entradas, es decir, la portada de un blog.
-- home.php : Será la plantilla por defecto de inicio si se ha seleccioque que la página de inicio es ```página estática```, o sea un portal web. 
--  single.php :Es la plantilla que muestra una entrada completo por defecto.
+- sidebar.php : Plantilla  una de barra lateral (sobre todo cuando se trata de un blog) o con widgets (por ejemplo un buscador, un listado de categorías o los posts más visitados).
+- front-page.php: Plantilla con la página de inicio del blog. Está especialmente pensada para que sea un listado de entradas, es decir, la portada de un blog.
+- home.php : Plantilla por defecto de inicio si se ha seleccioque que la página de inicio es ```página estática```, o sea un portal web. 
+-  single.php :Plantilla que muestra una entrada completa por defecto.
 </script></section><section data-markdown><script type="text/template">
 - page.php:  mostrará por defecto cualquier página que creemos.
 - category.php : Sirve para mostrar un listado de posts de una categoría específica.
@@ -224,15 +225,41 @@ functions.php es donde agrega funcionalidad personalizada a su tema:
 - 404.php: Plantilla que se mostrará cuando un enlace esté roto o no funcione.
 - functions.php : Permite crear zonas de menú y de widgets, así como personalizar algunos parámetros que WordPress trae por defecto.
 
-</script></section></section><section  data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 # CHILD THEMES
 
 Los temas secundarios (child themes) son la forma en que los diseñadores y desarrolladores pueden realizar pequeños ajustes a páginas específicas de un sitio sin tener que crear un tema completo para ellos.
 
 El tema hijo se pone en el directorio Temes con el nombre del temapadre seguido de -child.
 
-Ejemplo: twentyseventeen-child
-</script></section><section ><section data-markdown><script type="text/template">
+
+Según la jerarquia de WP:
+- Primero se busca  el fichero en el tema hijo.
+- Luego se busca en el tema por defecto.
+
+Ejemplo: twentyseventeen-child: Debe tener 2 ficheros: index.php (puede estar vacio) y style.css 
+</script></section><section data-markdown><script type="text/template">
+Ejemplo  style.css
+
+```
+Theme URI:    http://example.com/twenty-seventeen-child/
+ Description:  Twenty Seventeen Child Theme
+ Author:       John Doe
+ Author URI:   http://example.com
+ Template:     twentyseventeen
+ Version:      1.0.2
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+ Text Domain:  twenty-seventeen-child
+ */
+
+/* =Aquí empieza la personalización de tu tema
+ -------------------------------------------------------------- */
+```
+- Revisar la referencia a la plantilla padre en "template"
+  
+</script></section></section><section ><section data-markdown><script type="text/template">
 
 # The WordPress template hierarchy
 
@@ -245,12 +272,8 @@ Ejemplo: twentyseventeen-child
 - **page.php:**:  plantilla de página predeterminada del tema.
 - **singular.php:**:  plantilla para una sola publicación.
 - **index.php:**:  archivo de índice del tema para representar páginas.
-
-
-**HomePage:** front-page.php-> home.php -> (page.php(static web)) o index.php (blog).
-
-
 </script></section><section data-markdown><script type="text/template">
+
 **Ampliar ↓**
 
 https://wphierarchy.com/
@@ -295,11 +318,8 @@ Etiquetas de plantilla para cargar plantillas:
 
 Ventaja:  podemos personalizar que código cargando bien la plantilla por defecto u otra personalizada. 
 
-Según la jerarquia de WP:
-- Primero se busca  el fichero en el tema hijo.
-- Luego se busca en el tema por defecto.
 
-</script></section><section data-markdown><script type="text/template">
+
 # Cuestiones:
 
 Problema: ¿Como cargar la cabezera del fichero ```header-custom.php```  en un tema?
@@ -826,7 +846,7 @@ https://visual.ly/community/infographic/computers/wordpress-theme-anatomy
   "separator": "^[\r\n?|\n]---[\r\n?|\n]$",
   "verticalSeparator": "^[\r\n?|\n]--[\r\n?|\n]$",
   "theme": "white",
-  "highlightTheme": "darkula",
+  "highlightTheme": "Tomorrow Night Blue",
   "controls": true,
   "progress": true,
   "slideNumber": true,
