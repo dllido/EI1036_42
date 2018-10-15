@@ -7,8 +7,13 @@
   /* All your print styles go here */
   #header, #footer, #nav { display: none !important; } 
  }
+ .reveal {
 
-.reveal {
+  font-size: medium;
+  line-height: 1;
+}
+
+.reveal p{
 
   font-size: medium;
   line-height: 1;
@@ -40,7 +45,7 @@
 .reveal ul {
   display: block;
   text-align: left;
-  margin: 10px 40px 10px 40px;
+  margin: 10px 20px 10px 20px;
   }
 .reveal pre code{
   font-weight: 500;
