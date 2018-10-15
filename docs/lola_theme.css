@@ -9,7 +9,7 @@
  }
  
 
-.reveal p{
+.reveal,.reveal p{
 
   font-size: 36px;
   margin: 10px 10px 0px 10px;
