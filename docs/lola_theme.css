@@ -10,11 +10,13 @@
 
 .reveal {
 
-  font-size: normal;
+  font-size: medium;
+  line-height: 1;
 }
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 5px 0;
-  padding: 0 0 5px 0;}
+  padding: 0 0 5px 0;
+}
 
 .reveal h1 {
   font-size: 1.2em; 
