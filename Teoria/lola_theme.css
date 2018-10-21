@@ -39,7 +39,7 @@
   text-shadow: none; }
 .reveal table{font-size: 0.5 em;line-height: 0.8em;}
 .reveal .slides > section{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
-.reveal section img  {max-height: 540px;max-width: 80%;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
+.reveal code   {max-height: 540px;max-width: 80%;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
 .reveal ol,
 .reveal dl,
 .reveal ul {
