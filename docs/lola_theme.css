@@ -7,12 +7,13 @@
   /* All your print styles go here */
   #header, #footer, #nav { display: none !important; } 
  }
- 
+ .reveal section  img {max-height: 530px; 
+  margin: -20px  0  0 0;}
+.reveal section  img.imagen {max-height: 300px; 
+  margin: 0  0  0 0;}
 
 .reveal,.reveal p{
-
-  font-size: 36px;
-  margin: 10px 10px 0px 10px;
+  font-size: 32px;
   line-height: 1.1;
 }
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
@@ -21,38 +22,45 @@
 }
 .reveal li{
   line-height: 1.1;
-  padding: 5px;}
+  padding: 0px;}
 .reveal h1 {
   font-size: 1.2em; 
   color: #83a;}
 
 .reveal h2 {
-  font-size: 1.1em; }
+  font-size: 1.1em;color: #56a; }
 
 .reveal h3 {
-  font-size: 1.1em; }
+  font-size: 1.1em; color: #83a;}
 
 .reveal h4 {
-  font-size: 1em; }
+  font-size: 1em; color: #56a;}
 
 .reveal h1 {
   text-shadow: none; }
+.reveal ol,ol.ul{
+    columns: 2;;
+}
+.reveal li{margin-left:28px}
 .reveal table{font-size: 0.5 em;line-height: 0.8em;}
 .reveal .slides > section{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
-.reveal section img  {max-height: 540px;max-width: 80%;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
 .reveal ol,
 .reveal dl,
 .reveal ul {
-  display: block;
   text-align: left;
-  margin: 5px 5px 5px 5px;
+  /*margin: 10px 20px 10px 20px;*/
   line-height: 1.1;
   }
+.reveal pre {width: 100%;}
 .reveal pre code{
-  word-wrap: break-word;
-  overflow: scroll;
+  font-size: 28px;
+  line-height: 1.1;
+  max-height: 90%;
+  width: 100%;
+  margin:0px 0px 0px 0px;
+  padding:0px 0px 0px 0px
   }
-a {    word-wrap: break-word;}
+a { word-wrap: break-word;}
 
 .truncate {
   white-space: nowrap;
@@ -67,10 +75,6 @@ a {    word-wrap: break-word;}
   overflow:visible;
 
    }
-
-
-
-
 
 
 .DescriptionExcerpt {

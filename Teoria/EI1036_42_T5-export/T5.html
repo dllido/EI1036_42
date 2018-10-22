@@ -1,10 +1,40 @@
----
-theme : "black"
-transition: "zoom"
-highlightTheme: "darkula"
-customTheme : "lola_theme"
----
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>RevealJS : /Users/dllido/pruebas/GITHOME/EI1036_42/Teoria/EI1036_42_T5.md</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+         <link rel="stylesheet" href="lola_theme.css" id="theme">
+       
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/darkula.css">
 
+        
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <style type="text/css">
+            @page {    
+              margin: 0;
+              size: auto; 
+            }
+        </style>
+
+        <script>
+         if(window.location.search.match( /print-pdf-now/gi )) {
+           window.print();
+         }
+      </script>
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
 # Tema 5:
 
 ##  ECMASCRIPT,  DOM,  NAVEGADOR 
@@ -21,9 +51,7 @@ customTheme : "lola_theme"
 [Universitat Jaume I](https://www.uji.es/).
 
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # Tabla de contenidos
 
 
@@ -47,9 +75,7 @@ customTheme : "lola_theme"
   10. JSON
   11. Generadores
 
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 ## 1. Introducción EMACScript
 
 -  El lenguaje **JavaScript** se creó inicialmente para los
@@ -70,9 +96,7 @@ plataforma. Cada  navegador tiene su propia implementación(webkit->safari,v8->C
 
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Evolución ECMAScript
 
 | Year | Name       | Description          |
@@ -87,9 +111,7 @@ plataforma. Cada  navegador tiene su propia implementación(webkit->safari,v8->C
 | 2016  | ECMAScript_7  | Async/Aqu |
 |  |  |  |
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
  ## Dialectos/Api
 
 -  JavaScript, JScript y ActionScript son un dialectos de
@@ -99,9 +121,7 @@ ECMAScript.
 características  **APIs compatibles**
 
 
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
  # JavaScript
 
 - Lenguaje interpretado, dialecto de ECMAScript.
@@ -110,17 +130,13 @@ características  **APIs compatibles**
 - Una función debe ser declarada antes de usarse.
 - En JavaScript todo son objetos.
 
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 # Editores en línea:
 
 http://jsfiddle.net/
 
 https://codepen.io/idesi/pen/rLgaJO
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 ## Objetos
 
 -  Una lista es en realidad
@@ -133,9 +149,7 @@ las propiedades y los métodos.
 constantes. var pi = Math.pi
    - Console: Es una interface para comunicarnos por código con la
 consola.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ### Creación de Objetos
 
@@ -160,9 +174,7 @@ function {
     this.age=edad;}
 var Autor= new Persona("Anas Sempere","Doe",50);**
 ```
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## Declaración Variables /Ambitos
 
 - Var: permite definir una variable **local** en una función o
@@ -171,9 +183,7 @@ var Autor= new Persona("Anas Sempere","Doe",50);**
 está dentro de {}, este es su ámbito
 - Const: Declara una constante de solo lectura en un
 ámbito.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Ejemplo JS
 
 ```JS
@@ -194,9 +204,7 @@ for (let i of arr) {
 }
 
 ```
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## Tipos de datos
 
 - Number: var x=5;
@@ -218,9 +226,7 @@ for (let i of arr) {
 - null: foo=null // definida no inicialiada
 
 - Undefined: typeof(y) //no definida no inicializada
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ###  Array
 
 * Uso de un array:
@@ -236,9 +242,7 @@ colors[1]="green";
 ```js
 var colors = new Array(3,2,1,0);```
 
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ### Funciones
 
 ```js
@@ -252,9 +256,7 @@ function NombreFuncion (parametro1, ..., parámetro N )
    - Tipo de una variable: *typeof(variable)*;
    - Evalúa un código JavaScript : *eval(“Primera(p1, p2)”*)
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Funciones
 
 -  Las funciones son un objeto por ello podemos:
@@ -273,9 +275,7 @@ var phd = grado();
 phd("Turing"); //Dr Tuning
 ```
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ## Ejemplos JavaScript(1) Try-Throw-cath
 
@@ -294,9 +294,7 @@ try { // statements to try
     monthName = "unknown";
     console.log(e); // pass exception object to error handler -> your own function
 } ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Ejemplos JavaScript(2)
 ```JS
  function Primera(p1, p2) {
@@ -311,9 +309,7 @@ Primera(Segunda, 20 );
 ¿Que aparecerá devuelve la llamada: 
 Primera(Segunda, 20 );
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Ejemplos JavaScript(3)
 ```js
 <script>
@@ -325,11 +321,9 @@ var Segunda = function (m1) {
 };
 // Pasando Segunda como parámetro de Primera
 Primera(Segunda, 20 );
-</script>
+__SCRIPT_END__
 ```
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## Función Anónima
 
 ```js
@@ -352,9 +346,7 @@ paréntesis **()** , y pasándole parámetros
 return function(quien) {alert("hola “+quien)} (‘mundo’)
 ```
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Ejemplos JavaScript(3)
 ```js
  var f1=function(x,y)
@@ -368,9 +360,7 @@ return function(quien) {alert("hola “+quien)} (‘mundo’)
 ```
   ¿Que aparecerá en la pantalla?
 
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 # JAVASCRIPT EN EL NAVEGADOR
 
 - *window* : objeto global que contiene todas las variables.
@@ -384,16 +374,14 @@ El código JS, se puede poner:
 ```
 - Dentro de la etiqueta 
 ```
-  <script > tanto en la cabecera como en el body. <script > console.log(‘hola’);</script>```
+  <script > tanto en la cabecera como en el body. <script > console.log(‘hola’);__SCRIPT_END__```
 
 -  En un fichero externo
 
  ```
- <script src=“url”></script>```
+ <script src=“url”>__SCRIPT_END__```
 
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 #  DOM (Document Object Model)
 <img src="./media/T5/image6.png" width="40%" style="float:right ">
 
@@ -407,9 +395,7 @@ como un árbol de nodos(document, head, frame, body, p,
 div) los cuales contienen propiedades, métodos y eventos.
 - Tipos de DOM :
   ( 1. Core DOM, 2. XML DOM, 3. HTML DOM)
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Origen
 
 - Con el auge de DHTML se incorpora en el Javascript 1.0  una
@@ -424,9 +410,7 @@ https://dom.spec.whatwg.org/
 Group)  "A community of people interested in
 evolving the web through standards and tests".
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Árbol del DOM: Core DOM
 
 
@@ -441,9 +425,7 @@ Métodos de los nodos
    - x.appendChild(y):
    - x.removeChild(nodoy): 
    - x.replaceChild(nodo1,nodo2):
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ### Tipos de Nodos
 <img src="./media/T5/image6.png" style="float:right ">
 
@@ -457,9 +439,7 @@ elemento.
 documento.
 - DOCUMENT_FRAGMENT_NODE: Nodo que representa un fragmento
 de documento que debe estar bien formado (“template”).
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ### Atributos de los nodos
 
    - nodeName – Nombre del nodo x(no el atributo name)
@@ -474,18 +454,14 @@ de documento que debe estar bien formado (“template”).
    - textContent – Devuelve/cambia contenido del nodo como texto.
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 # PHP DOM
 
 Libreria libxml (Parser DOM):
    - Core DOM
    - No incluye la etiqueta Doctype.
    - Compatible con el DOM level 3 core.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 
 
@@ -498,9 +474,7 @@ Libreria libxml (Parser DOM):
 - x.getElementsByClassName()
 - x.getElementById(String id)
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## x Element Node
 
 - Es un nodo del documento que representa una etiqueta en html o XML y su
@@ -515,9 +489,7 @@ especifica como parámetro.
    - x.setAttribute(name, value): modifica el atributo 'name'
 asignándole el valor ‘value’.
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## EJ:DOM PHP
 
 ```php
@@ -543,9 +515,7 @@ echo $doctype.$doc->saveHTML();
 ```
 [https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM.php](https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM.php)
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Ej: DOM PHP load from String
 ```php 
 
@@ -566,9 +536,7 @@ echo $doctype.$doc->saveHTML();
 ?>
 ```
 [https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM_Load.php](https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM_Load.php)
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 # HTML DOM
 
 Los nodos Element y Document tienen:
@@ -580,17 +548,13 @@ Los nodos Element y Document tienen:
    - x.name // lista de hijos de X con el nombre 'name'
    - x.innerHTML // asigna o devuelve el contenido html del nodo elemento(Crítico).
    - x.style// permite dar estilo a las etiquetas.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 - Eventos:
    - blur() :Quita el foco en de un elemento.
    - click(): realiza un click en un elemento.
    - focus(): Pone el foco en un elemento.
    - toString():convierte el contenido de un elemento en una cadena.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Document Object
 
 - document.images: lista de imágenes del
@@ -599,9 +563,7 @@ Los nodos Element y Document tienen:
 - document.body: nodo elemento body.
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ### DOM JS  Navegador
 ```JS
@@ -625,9 +587,7 @@ Ejercicio: Crear una tabla con el DOM
 
 https://piruletas.000webhostapp.com/teoria/T5/HTML_Table_DOM.html
 
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Componentes Navegador Web
 
 <img src="./media/T5/image7.png" class="imagen" >
@@ -640,9 +600,7 @@ renderización. Carga URL, mensajes error, botón atrás,
 -  **Red** : responsable de las llamadas de red, como las solicitudes HTTP. (caché de documentos).
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 <img src="./media/T5/image7.png" class="imagen"  >
 -  **Intérprete de JavaScript** : permite analizar y ejecutar el código JavaScript. El
@@ -652,9 +610,7 @@ tales como marcadores, cookies y preferencias.
 - Backend de interfaz de usuario:  proporciona primitivas de dibujo, widgets de la interfaz  de usuario, fuentes, etc. (debajo utiliza métodos de interfaz de sistema operativo)
 
 https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/ 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Motor de Renderizado
 
 - Un motor de renderizado (web browser engine) es el software que toma
@@ -666,20 +622,14 @@ correo electrónico, u otras aplicaciones que deban mostrar
 contenidos web.
   - Cada motor de renderizado del navegador suele tener su propio
 intérprete javascript (**script engine**) 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 <img src="./media/T5/image8.png" >
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 
 ## Render Tree
 <img src="./media/T5/image11.png" >
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Flujo básico del motor de renderización
 
 <img src="./media/T5/image10.png">
@@ -695,9 +645,7 @@ intérprete javascript (**script engine**)
 
 https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=es-419
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## CSS Render
 
 
@@ -723,18 +671,14 @@ div.error-label{
 	<li><a href="/en-US/docs/Web/CSS/Microsoft_Extensions">Microsoft CSS extensions</a> (prefixed  <code style="white-space: nowrap;">-ms-</code>)</li>
 </ul>
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 # CRP: critical-rendering-path
 <img src="./media/T5/image9.png" >
 https://hackernoon.com/optimising-the-front-end-for-the-browser-f2f51a29c572
 
 Podemos ver el CRT (ruta acceso de representación crítica ) con la línea de tiempo de las herramientas de
 desarrolladores. 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Ejemplo JavaSCRIP DOM NO USAR
 
 <div style="float:right">
@@ -751,9 +695,7 @@ AQUI</span> para recuperar el original</p>
 
 
 https://piruletas.000webhostapp.com/teoria/T5/HTML_DOM.html
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ```html
 <script type="text/javascript">
 var Autor="";
@@ -771,7 +713,7 @@ var node = document.getElementById(Id);
 node.appendChild(node0);
 alert("nodo recuperado:");
 }
-</script><
+__SCRIPT_END__<
 <h1>Hola Mundo</h1>
 <div id="principal">
 <p id="borrar">Mueve ratón <span
@@ -785,18 +727,14 @@ AQUI</span> para recuperar el original</p>
 ```
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 Ejercicio:
 Que vale document.getElementById(“Fin”):
 
 - si el script se pone en el Head?
 - si el script se pone al principio del Body
 - si el script se pone al final del Body?
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 # Cuestiones
 
 - ¿Cómo modifico un documento
@@ -809,9 +747,7 @@ contentText.
 ejecuta primero el script?
 - ¿Por qué da error el siguiente
 código?
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## Cuestiones DOM
 
 https://piruletas.000webhostapp.com/teoria/T5/FormEventHandlerError.html 
@@ -831,13 +767,11 @@ https://piruletas.000webhostapp.com/teoria/T5/FormEventHandlerError.html
         child = document.createElement('h2');
         child.innerHTML='Esto es el H2';
         father.appendChild(child);
-</script>```
+__SCRIPT_END__```
 
 
 
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 #  BOM: Browse Object Model (Browser Web API)
 
 
@@ -845,16 +779,12 @@ https://piruletas.000webhostapp.com/teoria/T5/FormEventHandlerError.html
 
 https://javascript.info/browser-environment
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 BOM
 
 <img src="./media/T5/image13.png" >[http://www.cs.ucc.ie/~gavin/javascript/05_img01.gif](http://www.cs.ucc.ie/~gavin/javascript/05_img01.gif)
 
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 # Window Object
 
 -  Es el Nodo raíz del BOM o sea de las **API Web** de los navegadores.
@@ -863,9 +793,7 @@ BOM
 variables y funciones globales
 -  Representa la "ventana del navegador" y proporciona
 métodos para controlarlo.
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 # Document Object
 
 
@@ -877,9 +805,7 @@ métodos para controlarlo.
    - document.contentType
    - document.styleSheets
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ### Ejemplo crear nueva ventana en Navegador con un documento.
 
 ```js
@@ -897,9 +823,7 @@ child = document.createElement('h2');
 child.innerHTML='Esto es el H2<br/>';
 father.appendChild(child);
 ```
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 
 # This object
 
@@ -917,9 +841,7 @@ https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this
 window.alert(‘error');
 alert(“sin window!”);
 ```
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 # Gestión  de Eventos
 
  -  **Capture** : Al realizar el cliente un evento,
@@ -933,24 +855,18 @@ lo ejecuta.
  -  **Boobling** : Después de disparar el lanzador, busca hacia la raíz, si en los niveles padre del elemento hay algún otro controlador que se active con ese evento, en su caso lo
 lanzará. Esta etapa de su movimiento hacia
 arriba se llama la propagación de eventos 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 # Capture/blubbing
 <img src="./media/T5/CicloEvent.png" >
 <p></a>http://www.thatjsdude.com/images/eventBubble.pn</a></p>
 
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## Event Target INTERFACE
 Clase del para gestionar eventos.
 <img src="./media/T5/image14.png" >
 - EventTarget permite detectar/recibir los eventos que se producen en el DOM o BOM
 - Windows, Document y Element soportan definir detectores de eventos, “event hanlers”.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ### Registro Eventos
 **x.addEventListener ("Evento", funcionEjecutar,Boolean*)**
 
@@ -965,9 +881,7 @@ defecto si no se especifica este parámetro).
 
 
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## EjemploS THIS
 ```JS
 var o = {
@@ -986,9 +900,7 @@ x.addEventListener('click', bluify, false);
 
 
 https://piruletas.000webhostapp.com/teoria/T5/FormEventHandlerType.html
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 # template: Document Fragment
 
 ```html
@@ -1020,9 +932,7 @@ HTML. Un document
 Fragment no tiene nodo
 padre.
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## template: document fragment
 
 ```js 
@@ -1037,12 +947,10 @@ td[ 1 ].textContent = "Stuff";
 td[ td[ ].textContent = ].textContent = "0384928528""Acme Kidney Beans"; ^  ; 
  // Clone the new row and insert it into the table 
  tb[var 0 clone2 = document.importNode(t.content, ].appendChild(clone2); true);
-}}); </script>  
+}}); __SCRIPT_END__  
 ```
 
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 
  https://mdn.mozillademos.org/en-US/docs/Web/HTML/Element/template$samples/Example?revision=93413158
  
@@ -1059,9 +967,7 @@ td[ td[ ].textContent = ].textContent = "0384928528""Acme Kidney Beans"; ^  ;
  </template></tr>  (^)
  </html></body> 
 ```
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 # JSON:Dato Esctruturado
 
  JSON, acrónimo de **JavaScript Object Notation** , es un
@@ -1076,9 +982,7 @@ y de parsear/analizar por máquinas
 - Abierto: Formato de texto independiente del lenguaje.
 - Extensible: formado por unas estructuras que pueden
 anidarse.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Estructura Datos JSON
 
 - JSON es una sintaxis para serializar objetos, arreglos, números,
@@ -1089,9 +993,7 @@ cadenas, booleanos y nulos. 
 ![JSON object](./media/T5/image16.png)
 ![JSON array](./media/T5/image17.png)
 
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## Acceso elementos Objeto JSON
 ```
 JSONdata={"menu": {
@@ -1111,17 +1013,13 @@ fichero = JSONdata.menu.value; (
 var submenu = JSONdata.menu.menuitem;
 var submenuVal = JSONdata.menu.popup.menuitem[ 0 ]["value"]
 ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 Ejercicios:
 -  Construye un el Json //{"bar":"new property”,"baz":3}
 
 -  Construye un el Json //["pepe","Jose"]
   
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ## Ejercicios
 ```
@@ -1130,9 +1028,7 @@ foo.baz = 3 ;
 varconsole.log (jsonString); jsonString = JSON.stringify(foo);
 //{"bar":"new property","baz":3}
 ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 # JSON HTTP 
 Se transmiten cadenas en HTTP poer ello el proceso es:
@@ -1145,18 +1041,14 @@ Se transmiten cadenas en HTTP poer ello el proceso es:
    - Recibir cadena convertirla 
           - a objeto JSON en **JavaScript**.
           - a un diccionario o array en **PHP**.
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 ## Métodos Objeto JSON Javascript
 
 
 
 - JSON .parse (): Analiza una cadena de texto con formato JSON  retornando un objeto JSON. Se puede añadir una función para la transformación como parámetro.
 - JSON .stringify (): Devuelve un string a partir de un JSON. Se puede añadir una función para la transformación como parámetro.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
  ## Ejemplo envío JSON con JavaScript
 ```js
@@ -1174,9 +1066,7 @@ xmlHttp.onreadystatechange = handleStateChange;
 xmlHttp.send(json);
 
 ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
  # JSON PHP
   
@@ -1219,9 +1109,7 @@ Array ( [0] => stdClass Object ( [0] => 1 [id_fruta] => 1 [1] => Manzana [nombre
 => 167 ) [2] => stdClass Object ( [0] => 3 [id_fruta] => 3 [1] => Pera [nombre_fruta] => Pera [2] => 820 [cantidad] =>
 820 ) )
 ```
-
---
-
+</script></section><section data-markdown><script type="text/template">
 
 ## Ejemplo envío una tabla con JSON
 
@@ -1286,9 +1174,7 @@ class="record"></td>
 </template>
 ```
 
-
----
-
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Iframe Node
 
  - Permite anidar un documento html dentro de otra página HTML.
@@ -1298,9 +1184,7 @@ class="record"></td>
  - El contexto de navegación de nivel superior del iframe es la ventana del navegador: *window*
 
  -  **window.frames** devuelve la lista de iframes del documento.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 #### Sample Iframe
 ```
 <!DOCTYPE html>
@@ -1326,9 +1210,7 @@ https://piruletas.000webhostapp.com/teoria/T5/webDOMIframe.html
 
 
 
-
----
-
+</script></section></section><section  data-markdown><script type="text/template">
 
 # CORS
 - Supongamos que tu aplicación reside en example.com y quieres
@@ -1342,9 +1224,7 @@ de dominio cruzado.
 http://www.w3.org/TR/cors/
 http://enable-cors.org
 -Hay que habilitar estas llamadas tanto en el servidor como en el cliente.
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## CORS en el servidor
 [http://www.example2.com](http://www.example2.com) puede que habilitar CORS de dos formas:
 - añadir un encabezado (header) para permitir solicitudes de example.com: 
@@ -1355,9 +1235,7 @@ http://enable-cors.org
 - o en el fichero .httacess
 ```
 Header set Access-Control-Allow-Origin "*" ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## CORS en el cliente
 En la etiqueta script añadir atributo
  **crossorigin:**. Indica si la
@@ -1369,9 +1247,7 @@ credentials" establecida.
 
 
 EJEMPLO Google maps con cors y sin cors
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 # Generadores
 
 Soluciones para utilizar codigo JS no compatible:
@@ -1382,25 +1258,21 @@ Soluciones para utilizar codigo JS no compatible:
 
 2- Codigo polyfill (Plugin): permite emular algunas apis aunque no estén implementadas en el JS nativo. Se utiliza para que los navegadores soporten las últimas APIS que quieras utilizar.
 Implementa el código que los navegadores no soportan.
-
---
-
+</script></section><section data-markdown><script type="text/template">
 ## babel
 ```
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js">__SCRIPT_END__
 <!-- Your custom script here -->
 <script type="text/babel">
 const getMessage = () => "Hello World";
 document.getElementById('output').innerHTML = getMessage();
-</script>
+__SCRIPT_END__
 ```
 --
 
 ##
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-
----
-
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js">__SCRIPT_END__
+</script></section></section><section  data-markdown><script type="text/template">
   ## Bibliografía
 
 
@@ -1408,3 +1280,88 @@ document.getElementById('output').innerHTML = getMessage();
    -  https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/
 
 
+</script></section></div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+              { src: 'plugin/math/math.js', async: true }
+            ];
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default',
+              dependencies: deps
+            };
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+            var options = {
+  "notesSeparator": "note:",
+  "separator": "^[\r\n?|\n]---[\r\n?|\n]$",
+  "verticalSeparator": "^[\r\n?|\n]--[\r\n?|\n]$",
+  "theme": "black",
+  "highlightTheme": "darkula",
+  "controls": true,
+  "progress": true,
+  "slideNumber": true,
+  "history": true,
+  "keyboard": true,
+  "overview": true,
+  "center": true,
+  "touch": true,
+  "loop": false,
+  "rtl": false,
+  "shuffle": false,
+  "fragments": true,
+  "embedded": false,
+  "help": true,
+  "showNotes": false,
+  "autoSlide": 0,
+  "autoSlideStoppable": true,
+  "mouseWheel": false,
+  "hideAddressBar": true,
+  "previewLinks": false,
+  "transition": "zoom",
+  "transitionSpeed": "default",
+  "backgroundTransition": "default",
+  "viewDistance": 3,
+  "parallaxBackgroundImage": "",
+  "parallaxBackgroundSize": "",
+  "parallaxBackgroundHorizontal": null,
+  "parallaxBackgroundVertical": null,
+  "slideExplorerEnabled": true,
+  "browserPath": null,
+  "customTheme": "lola_theme",
+  "attributes": ""
+};
+            options = extend(defaultOptions, options, queryOptions);
+            Reveal.initialize(options);
+
+        </script>
+        
+    </body>
+</html>
