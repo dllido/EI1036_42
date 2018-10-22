@@ -156,8 +156,8 @@ consola.
 - Instancia directa formato breve.
 ```js
 personObj= {nombre: "Carlos Sempere",
-            apodo:"Doe",edad:50}; ```
-
+ apodo:"Doe",edad:50};
+```
 - Instancia directa con creando objeto "vacio".
 ```js
 var  Autor = new Object();
@@ -167,7 +167,7 @@ Autor.edad = 50;
 //objeto 'Autor' con atributos 
 ```
 - Con un constructor.
-  ```JS
+```js
 function {
     this.nombre=nombre;Persona(nombre,apodo,edad)
     this.apodo=apodo;
@@ -231,7 +231,8 @@ for (let i of arr) {
 
 * Uso de un array:
 ```js 
-var colors = ["red", "green", "blue"];```
+var colors = ["red", "green", "blue"];
+```
 *  Crear un array vacio y luego poner los elementos:
 ```js 
 var colors = new Array();
@@ -240,7 +241,8 @@ colors[1]="green";
 ```
 * Crear un array con sus elementos:
 ```js
-var colors = new Array(3,2,1,0);```
+var colors = new Array(3,2,1,0);
+```
 
 </script></section></section><section ><section data-markdown><script type="text/template">
 ### Funciones
@@ -293,7 +295,8 @@ try { // statements to try
 }catch (e) {
     monthName = "unknown";
     console.log(e); // pass exception object to error handler -> your own function
-} ```
+} 
+```
 </script></section><section data-markdown><script type="text/template">
 ## Ejemplos JavaScript(2)
 ```JS
@@ -330,7 +333,8 @@ __SCRIPT_END__
 function (parametro1, ..., parametro N )
 { ...
 return valor;
-}```
+}
+```
 ¿Cómo la ejecutamos si no la podemos llamar?
 - Poniendo la definición de la función anónima entre
 paréntesis **()** , y pasándole parámetros
@@ -374,12 +378,14 @@ El código JS, se puede poner:
 ```
 - Dentro de la etiqueta 
 ```
-  <script > tanto en la cabecera como en el body. <script > console.log(‘hola’);__SCRIPT_END__```
+  <script > tanto en la cabecera como en el body. <script > console.log(‘hola’);__SCRIPT_END__
+```
 
 -  En un fichero externo
 
  ```
- <script src=“url”>__SCRIPT_END__```
+ <script src=“url”>__SCRIPT_END__
+ ```
 
 </script></section><section ><section data-markdown><script type="text/template">
 #  DOM (Document Object Model)
@@ -591,23 +597,24 @@ https://piruletas.000webhostapp.com/teoria/T5/HTML_Table_DOM.html
 # Componentes Navegador Web
 
 <img src="./media/T5/image7.png" class="imagen" >
--  **Interfaz de usuario** : incluye la barra de direcciones, el botón de avance/retroceso, el
+
+- *Interfaz de usuario* : incluye la barra de direcciones, el botón de avance/retroceso, el
 menú de marcadores, etc. (todo excepto la ventana
 principal donde se muestra la página web.
--  **Motor del Navegador** : coordina las acciones entre la interfaz y el motor de
+-  *Motor del Navegador* : coordina las acciones entre la interfaz y el motor de
 renderización. Carga URL, mensajes error, botón atrás,
--  **Motor de renderización** : responsable de mostrar el contenido.
--  **Red** : responsable de las llamadas de red, como las solicitudes HTTP. (caché de documentos).
+-  *Motor de renderización* : responsable de mostrar el contenido.
+-  *Red* : responsable de las llamadas de red, como las solicitudes HTTP. (caché de documentos).
 
 
 </script></section><section data-markdown><script type="text/template">
 
 <img src="./media/T5/image7.png" class="imagen"  >
--  **Intérprete de JavaScript** : permite analizar y ejecutar el código JavaScript. El
+-  *Intérprete de JavaScript* : permite analizar y ejecutar el código JavaScript. El
 resultado se pasa al motor de renderización.
--  **Almacenamiento de datos** : capa de persistencia. Gestiona los datos de usuario,
+-  *Almacenamiento de datos* : capa de persistencia. Gestiona los datos de usuario,
 tales como marcadores, cookies y preferencias.
-- Backend de interfaz de usuario:  proporciona primitivas de dibujo, widgets de la interfaz  de usuario, fuentes, etc. (debajo utiliza métodos de interfaz de sistema operativo)
+- *Backend de interfaz de usuario*:  proporciona primitivas de dibujo, widgets de la interfaz  de usuario, fuentes, etc. (utiliza métodos del sistema operativo)
 
 https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/ 
 </script></section><section data-markdown><script type="text/template">
@@ -767,7 +774,8 @@ https://piruletas.000webhostapp.com/teoria/T5/FormEventHandlerError.html
         child = document.createElement('h2');
         child.innerHTML='Esto es el H2';
         father.appendChild(child);
-__SCRIPT_END__```
+__SCRIPT_END__
+```
 
 
 
@@ -1230,11 +1238,13 @@ http://enable-cors.org
 - añadir un encabezado (header) para permitir solicitudes de example.com: 
 
 ```php
-<?php header('Access-Control-Allow-Origin: *'); ?>```
+<?php header('Access-Control-Allow-Origin: *'); ?>
+```
 
 - o en el fichero .httacess
 ```
-Header set Access-Control-Allow-Origin "*" ```
+Header set Access-Control-Allow-Origin "*" 
+```
 </script></section><section  data-markdown><script type="text/template">
 ## CORS en el cliente
 En la etiqueta script añadir atributo
