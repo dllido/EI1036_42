@@ -471,7 +471,7 @@ Libreria libxml (Parser DOM):
 
 
 
-## x Document Node
+##  Document Node
 
 - x.createAttribute()
 - x.createElement()
@@ -481,7 +481,7 @@ Libreria libxml (Parser DOM):
 - x.getElementById(String id)
 
 </script></section><section data-markdown><script type="text/template">
-## x Element Node
+##  Element Node
 
 - Es un nodo del documento que representa una etiqueta en html o XML y su
 contenido.
@@ -614,7 +614,7 @@ renderización. Carga URL, mensajes error, botón atrás,
 resultado se pasa al motor de renderización.
 -  *Almacenamiento de datos* : capa de persistencia. Gestiona los datos de usuario,
 tales como marcadores, cookies y preferencias.
-- *Backend de interfaz de usuario*:  proporciona primitivas de dibujo, widgets de la interfaz  de usuario, fuentes, etc. (utiliza métodos del sistema operativo)
+- *Backend de interfaz de usuario*:  proporciona primitivas de dibujo, widgets de la interfaz  de usuario, fuentes, etc. (utiliza métodos  sistema operativo)
 
 https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/ 
 </script></section><section data-markdown><script type="text/template">
@@ -890,7 +890,7 @@ defecto si no se especifica este parámetro).
 
 
 </script></section><section data-markdown><script type="text/template">
-## EjemploS THIS
+## Ejemplos THIS
 ```JS
 var o = {
   prop: 37 ,
@@ -944,35 +944,56 @@ padre.
 ## template: document fragment
 
 ```js 
-document.addEventListener(<script type="text/javascript""DOMContentLoaded">**^ **, function () {
-  if (document.querySelector(// Test to see if the browser supports the HTML template.'template').content) {
-// Instantiate the table var t = document.querySelector(   '#productRow'),
-td = t.content.querySelectorAll( td[ 0 ].textContent = "1235646565""td"; );
-td[ 1 ].textContent = "Stuff";
-// Clone the new row and insert it into the tablevar tb = document.getElementsByTagName("tbody"); 
- tb[var 0 clone = document.importNode(t.content, ].appendChild(clone); true); 
- // Create a new row
-td[ td[ ].textContent = ].textContent = "0384928528""Acme Kidney Beans"; ^  ; 
- // Clone the new row and insert it into the table 
- tb[var 0 clone2 = document.importNode(t.content, ].appendChild(clone2); true);
-}}); __SCRIPT_END__  
+if ('content' in document.createElement('template')) {
+
+    // Instantiate the table with the existing HTML tbody
+    // and the row with the template
+    var t = document.querySelector('#productrow');
+
+    // Clone the new row and insert it into the table
+    var tb = document.querySelector("tbody");
+    var clone = document.importNode(t.content, true);
+    td = clone.querySelectorAll("td");
+    td[0].textContent = "1235646565";
+    td[1].textContent = "Stuff";
+
+    tb.appendChild(clone);
+
+    // Clone the new row and insert it into the table
+    var clone2 = document.importNode(t.content, true);
+    td = clone2.querySelectorAll("td");
+    td[0].textContent = "0384928528";
+    td[1].textContent = "Acme Kidney Beans 2";
+
+    tb.appendChild(clone2);
+
+} 
 ```
 
 </script></section></section><section  data-markdown><script type="text/template">
 
  https://mdn.mozillademos.org/en-US/docs/Web/HTML/Element/template$samples/Example?revision=93413158
  
- ```js
- </head> <body>  (^)
- <table <thead>id="producTable" >
-<tr><td>   UPC_Code</td> 
- </tr><td> Product_Name</td>
-</thead><tbody> 
- </tbody><!-- existing data could optionally be included here -->
+ ```
+ <body>
+<table id="producttable">
+  <thead>
+    <tr>
+      <td>UPC_Code</td>
+      <td>Product_Name</td>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- existing data could optionally be included here -->
+  </tbody>
 </table>
-<template <tr> id="productRow">
-<td <td></td>class= "record"></td> 
- </template></tr>  (^)
+
+<template id="productrow">
+  <tr>
+    <td class="record"></td>
+    <td></td>
+  </tr>
+</template> 
  </html></body> 
 ```
 </script></section><section ><section data-markdown><script type="text/template">
@@ -1066,7 +1087,7 @@ foo.baz = 3 ;
 var jsonString = JSON.stringify(foo);
 console.log (jsonString);
 //{"bar":"new property","baz":3}
-var url = "JSONExample3.php createXMLHttpRequest();
+var url = "JSONExample3.php createXMLHttpRequest()";
 xmlHttp.open("POST", url, true);
 xmlHttp.setRequestHeader("Content-Type","application/json;charset=UTF-8");”);
 xmlHttp.onreadystatechange = handleStateChange;
@@ -1122,9 +1143,8 @@ Array ( [0] => stdClass Object ( [0] => 1 [id_fruta] => 1 [1] => Manzana [nombre
 ## Ejemplo envío una tabla con JSON
 
 ```js 
-[{"id":"1","nombre":"pepe","apellido":null,"email":null,"c
-lave":null},{"id":"2","nombre":"pepe","apellido":null,"emai
-l":null,"clave":null}]
+[{"id":"1","nombre":"pepe","apellido":null,"email":null,"clave":null}
+,{"id":"2","nombre":"pepe","apellido":null,"email":null,"clave":null}]
 ```
 
 ```
