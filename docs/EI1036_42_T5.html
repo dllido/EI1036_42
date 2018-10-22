@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EI1036_42_T5.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<hr>
+<h2 id="theme-blacktransition-zoomhighlighttheme-darkulacustomtheme-lolatheme">theme : &quot;black&quot;
+transition: &quot;zoom&quot;
+highlightTheme: &quot;darkula&quot;
+customTheme : &quot;lola_theme&quot;</h2>
+<h1 id="tema-5">Tema 5:</h1>
+<h2 id="ecmascript-dom-navegador">ECMASCRIPT,  DOM,  NAVEGADOR</h2>
+<h3 id="ei1042---tecnolog%C3%ADas-y-aplicaciones-web">EI1042 - Tecnologías y Aplicaciones Web</h3>
+<h3 id="ei1036--tecnolog%C3%ADas-web-para-los-sistemas-de-informaci%C3%B3n">EI1036- Tecnologías Web para los Sistemas de Información **</h3>
+<h1 id="20182019">(2018/2019)</h1>
+<p><em>Professora: Dra. Dolores Mª Llidó Escrivá</em></p>
+<p><a href="https://www.uji.es/">Universitat Jaume I</a>.</p>
+<hr>
+<h1 id="tabla-de-contenidos">Tabla de contenidos</h1>
+<ol>
+<li>Introducción EMACScript:</li>
+</ol>
+<pre><code>- ScriptEngine
+</code></pre>
+<ol start="2">
+<li>JavaScript
+<ul>
+<li>Objetos</li>
+<li>Variables</li>
+<li>Tipos de datos</li>
+<li>Funciones</li>
+</ul>
+</li>
+<li>DOM</li>
+<li>Componentes de los Navegadores</li>
+<li>CSSOM, RenderTree.</li>
+<li>JavaScript Navegador.  BOM</li>
+</ol>
+<pre><code>-  Window
+-  DocumentElement
+-  This
+</code></pre>
+<ol start="7">
+<li>Gestión Eventos: Event Target</li>
+<li>Templatate.</li>
+<li>Iframe</li>
+<li>JSON</li>
+<li>Generadores</li>
+</ol>
+<hr>
+<h2 id="1-introducci%C3%B3n-emacscript">1. Introducción EMACScript</h2>
+<ul>
+<li>El lenguaje <strong>JavaScript</strong> se creó inicialmente para los
+navegadores web.</li>
+<li>En 1997 JavaScript adoptado como estándar de la European
+Computer Manufacturers Association ECMA.</li>
+<li>Evolucionó en un lenguaje con muchos usos y plataformas:
+<strong>EMACScript</strong>.</li>
+<li>Una <strong>plataforma</strong> puede ser un cliente web (Chrome) o un
+servidor web ( Node.js) u otro anfitrión.</li>
+<li>El <strong>Script Engine</strong> es el
+programa que ejecuta código en un dialecto del lenguaje de
+script (JavaScript) proporciona
+además del núcleo del
+lenguaje, los objetos y
+funciones específicos de la
+plataforma. Cada  navegador tiene su propia implementación(webkit-&gt;safari,v8-&gt;Chrome, node.js).</li>
+</ul>
+<p>--</p>
+<h2 id="evoluci%C3%B3n-ecmascript">Evolución ECMAScript</h2>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1997</td>
+<td>ECMAScript_1</td>
+<td>First Edition.</td>
+</tr>
+<tr>
+<td>1998</td>
+<td>ECMAScript_2</td>
+<td>Editorial changes only.</td>
+</tr>
+<tr>
+<td>1999</td>
+<td>ECMAScript_3</td>
+<td>Added Regular Expressions, Try/catch.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>ECMAScript_4</strong></td>
+<td><strong>Was never released.</strong></td>
+</tr>
+<tr>
+<td>2009</td>
+<td>ECMAScript_5</td>
+<td>Added &quot;strict mode&quot;,JSON support.</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>ECMAScript_5.1</td>
+<td>Editorial changes.</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>ECMAScript_6</td>
+<td>Added classes and modules. Promises</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>ECMAScript_7</td>
+<td>Async/Aqu</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>--</p>
+<h2 id="dialectosapi">Dialectos/Api</h2>
+<ul>
+<li>JavaScript, JScript y ActionScript son un dialectos de
+ECMAScript.</li>
+<li>Los <strong>dialectos</strong>  incluyen extensiones al lenguaje y <strong>APIS</strong>.</li>
+<li>Una aplicación escrita en un dialecto puede ser incompatible con otra, si no utilizan un subconjunto común de
+características  <strong>APIs compatibles</strong></li>
+</ul>
+<hr>
+<h1 id="javascript">JavaScript</h1>
+<ul>
+<li>Lenguaje interpretado, dialecto de ECMAScript.</li>
+<li>La sintaxis es semejante al C pero las variables no están tipificadas y no distingue entre mayúsculas y minúsculas.</li>
+<li>No existe un cuerpo principal del programa (main), todo lo que no esté dentro de una función es ejecutado.</li>
+<li>Una función debe ser declarada antes de usarse.</li>
+<li>En JavaScript todo son objetos.</li>
+</ul>
+<hr>
+<h1 id="editores-en-l%C3%ADnea">Editores en línea:</h1>
+<p>http://jsfiddle.net/</p>
+<p>https://codepen.io/idesi/pen/rLgaJO</p>
+<hr>
+<h2 id="objetos">Objetos</h2>
+<ul>
+<li>Una lista es en realidad
+una clase de objeto.</li>
+<li>Un objeto de JavaScript es un array asociativo formado por
+las propiedades y los métodos.</li>
+<li>Objetos/Interfaces predefinidos en el núcleo de JavaScript
+<ul>
+<li>Date: Un objeto genérico conteniendo una fecha.</li>
+<li>Math: Una biblioteca incorporada de funciones matemáticas y
+constantes. var pi = Math.pi</li>
+<li>Console: Es una interface para comunicarnos por código con la
+consola.</li>
+</ul>
+</li>
+</ul>
+<p>--</p>
+<h3 id="creaci%C3%B3n-de-objetos">Creación de Objetos</h3>
+<ul>
+<li>Instancia directa formato breve.</li>
+</ul>
+<pre class="hljs"><code><div>personObj= {<span class="hljs-attr">nombre</span>: <span class="hljs-string">"Carlos Sempere"</span>,
+ <span class="hljs-attr">apodo</span>:<span class="hljs-string">"Doe"</span>,<span class="hljs-attr">edad</span>:<span class="hljs-number">50</span>};
+</div></code></pre>
+<ul>
+<li>Instancia directa con creando objeto &quot;vacio&quot;.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span>  Autor = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+Autor.nombre = <span class="hljs-string">"Carlos Sempere"</span>;
+Autor.apodo = <span class="hljs-string">"Doe"</span> ;
+Autor.edad = <span class="hljs-number">50</span>;
+<span class="hljs-comment">//objeto 'Autor' con atributos </span>
+</div></code></pre>
+<ul>
+<li>Con un constructor.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> </span>{
+    <span class="hljs-keyword">this</span>.nombre=nombre;Persona(nombre,apodo,edad)
+    <span class="hljs-keyword">this</span>.apodo=apodo;
+    <span class="hljs-keyword">this</span>.age=edad;}
+<span class="hljs-keyword">var</span> Autor= <span class="hljs-keyword">new</span> Persona(<span class="hljs-string">"Anas Sempere"</span>,<span class="hljs-string">"Doe"</span>,<span class="hljs-number">50</span>);**
+</div></code></pre>
+<hr>
+<h2 id="declaraci%C3%B3n-variables-ambitos">Declaración Variables /Ambitos</h2>
+<ul>
+<li>Var: permite definir una variable <strong>local</strong> en una función o
+<strong>global</strong> si está fuera de una función.</li>
+<li>Let: Declara una variable local en un bloque de ámbito. Si
+está dentro de {}, este es su ámbito</li>
+<li>Const: Declara una constante de solo lectura en un
+ámbito.</li>
+</ul>
+<p>--</p>
+<h2 id="ejemplo-js">Ejemplo JS</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> z; <span class="hljs-comment">// sin inicializarla</span>
+<span class="hljs-keyword">var</span> x = <span class="hljs-number">42</span>
+y = <span class="hljs-number">42</span> <span class="hljs-comment">// sin declarar variable</span>
+<span class="hljs-keyword">let</span> y = <span class="hljs-number">13</span>
+<span class="hljs-keyword">const</span> PI = <span class="hljs-number">3.14</span>;
+<span class="hljs-keyword">let</span> arr = [ <span class="hljs-number">3</span> , <span class="hljs-number">5</span> , <span class="hljs-number">7</span> ];
+arr.foo = <span class="hljs-string">"hola"</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> arr) {
+   <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// logs "0", "1", "2", "foo"</span>
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">of</span> arr) {
+   <span class="hljs-built_in">console</span>.log(i); <span class="hljs-comment">// logs "3", "5", "7"</span>
+}
+
+</div></code></pre>
+<hr>
+<h2 id="tipos-de-datos">Tipos de datos</h2>
+<ul>
+<li>
+<p>Number: var x=5;</p>
+</li>
+<li>
+<p>String: var cad='32';</p>
+</li>
+<li>
+<p>Boolean: var b1=x&gt;0;</p>
+</li>
+<li>
+<p>Object: var dog = { name : 'Spot', breed : 'Dalmatian' };</p>
+</li>
+<li>
+<p>Function: function apellido (separador) {}</p>
+</li>
+<li>
+<p>Array: var lista = new Array(); var frutas = ['Manzana', 'Banana'];</p>
+</li>
+<li>
+<p>Date: var fin = Date.now();</p>
+</li>
+<li>
+<p>RegExp: var re = /\w+/;</p>
+</li>
+<li>
+<p>null: foo=null // definida no inicialiada</p>
+</li>
+<li>
+<p>Undefined: typeof(y) //no definida no inicializada</p>
+</li>
+</ul>
+<p>--</p>
+<h3 id="array">Array</h3>
+<ul>
+<li>Uso de un array:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> colors = [<span class="hljs-string">"red"</span>, <span class="hljs-string">"green"</span>, <span class="hljs-string">"blue"</span>];
+</div></code></pre>
+<ul>
+<li>Crear un array vacio y luego poner los elementos:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> colors = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>();
+colors[<span class="hljs-number">0</span>] = <span class="hljs-string">"red"</span>; colors[<span class="hljs-number">2</span>] = <span class="hljs-string">"blue"</span>; 
+colors[<span class="hljs-number">1</span>]=<span class="hljs-string">"green"</span>;
+</div></code></pre>
+<ul>
+<li>Crear un array con sus elementos:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> colors = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>);
+</div></code></pre>
+<hr>
+<h3 id="funciones">Funciones</h3>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">NombreFuncion</span> (<span class="hljs-params">parametro1, ..., parámetro N </span>)
+</span>{...
+   return valor;
+}
+</div></code></pre>
+<ul>
+<li>Algunas Funciones Predefinidas:
+<ul>
+<li>Tipo de una variable: <em>typeof(variable)</em>;</li>
+<li>Evalúa un código JavaScript : <em>eval(“Primera(p1, p2)”</em>)</li>
+</ul>
+</li>
+</ul>
+<p>--</p>
+<h2 id="funciones">Funciones</h2>
+<ul>
+<li>Las funciones son un objeto por ello podemos:
+<ul>
+<li>asignar funciones a variables, y referenciarlas
+utilizando la variable</li>
+<li>pasar funciones como parámetros a otras funciones</li>
+<li>obtener funciones como resultados de la ejecución de la
+función.</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">grado</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">titulo</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"Dr. "</span> + name; }
+<span class="hljs-keyword">return</span> titulo; <span class="hljs-comment">//una funcion!</span>
+}
+<span class="hljs-keyword">var</span> phd = grado();
+phd(<span class="hljs-string">"Turing"</span>); <span class="hljs-comment">//Dr Tuning</span>
+</div></code></pre>
+<p>--</p>
+<h2 id="ejemplos-javascript1-try-throw-cath">Ejemplos JavaScript(1) Try-Throw-cath</h2>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMonthName</span>(<span class="hljs-params">mo</span>) </span>{
+  mo = mo - <span class="hljs-number">1</span> ; <span class="hljs-comment">// Adjust month number for array index (1 = Jan, 12 = Dec)</span>
+  <span class="hljs-keyword">var</span> months = [<span class="hljs-string">"Jan"</span>,<span class="hljs-string">"Feb"</span>,<span class="hljs-string">"Mar"</span>,<span class="hljs-string">"Apr"</span>,<span class="hljs-string">"May"</span>,<span class="hljs-string">"Jun"</span>,<span class="hljs-string">"Jul"</span>,
+  <span class="hljs-string">"Aug"</span>,<span class="hljs-string">"Sep"</span>,<span class="hljs-string">"Oct"</span>,<span class="hljs-string">"Nov"</span>,<span class="hljs-string">"Dec"</span>];
+  <span class="hljs-keyword">if</span> (months[mo]) { <span class="hljs-keyword">return</span> months[mo]; }
+  <span class="hljs-keyword">else</span> { <span class="hljs-keyword">throw</span> <span class="hljs-string">"InvalidMonth"</span>; <span class="hljs-comment">// Lanzamos una excepción.}</span>
+}
+myMonth=<span class="hljs-number">5</span>;
+<span class="hljs-keyword">try</span> { <span class="hljs-comment">// statements to try</span>
+  monthName = getMonthName(myMonth); <span class="hljs-comment">// function could throw exception</span>
+}<span class="hljs-keyword">catch</span> (e) {
+    monthName = <span class="hljs-string">"unknown"</span>;
+    <span class="hljs-built_in">console</span>.log(e); <span class="hljs-comment">// pass exception object to error handler -&gt; your own function</span>
+} 
+</div></code></pre>
+<p>--</p>
+<h2 id="ejemplos-javascript2">Ejemplos JavaScript(2)</h2>
+<pre class="hljs"><code><div> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Primera</span>(<span class="hljs-params">p1, p2</span>) </span>{
+  p1(p2);}
+<span class="hljs-comment">// Función Literal</span>
+<span class="hljs-keyword">var</span> Segunda = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">m1</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(m1 / <span class="hljs-number">10</span> );
+};
+<span class="hljs-comment">// Pasando la Función Segunda como parámetro de Primera</span>
+Primera(Segunda, <span class="hljs-number">20</span> );
+</div></code></pre>
+<p>¿Que aparecerá devuelve la llamada:
+Primera(Segunda, 20 );</p>
+<p>--</p>
+<h2 id="ejemplos-javascript3">Ejemplos JavaScript(3)</h2>
+<pre class="hljs"><code><div>&lt;script&gt;
+ <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Primera</span>(<span class="hljs-params">p1, p2</span>) </span>{
+    p1(p2);}
+<span class="hljs-comment">// Función Literal</span>
+<span class="hljs-keyword">var</span> Segunda = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">m1</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(m1 / <span class="hljs-number">10</span> );
+};
+<span class="hljs-comment">// Pasando Segunda como parámetro de Primera</span>
+Primera(Segunda, <span class="hljs-number">20</span> );
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</div></code></pre>
+<hr>
+<h2 id="funci%C3%B3n-an%C3%B3nima">Función Anónima</h2>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">parametro1, ..., parametro N </span>)
+</span>{ ...
+return valor;
+}
+</div></code></pre>
+<p>¿Cómo la ejecutamos si no la podemos llamar?</p>
+<ul>
+<li>Poniendo la definición de la función anónima entre
+paréntesis <strong>()</strong> , y pasándole parámetros</li>
+</ul>
+<pre class="hljs"><code><div>/* funcion anónima sin parámetros*/
+(function() { alert(&quot;hola mundo&quot;) })()
+/* funcion anonima como un parametro*/
+(function(quien) {alert(&quot;hola “+quien)})(&quot;mundo&quot;)
+</div></code></pre>
+<ul>
+<li>Con return</li>
+</ul>
+<pre class="hljs"><code><div>return function(quien) {alert(&quot;hola “+quien)} (‘mundo’)
+</div></code></pre>
+<p>--</p>
+<h2 id="ejemplos-javascript3">Ejemplos JavaScript(3)</h2>
+<pre class="hljs"><code><div> <span class="hljs-keyword">var</span> f1=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x,y</span>)
+ </span>{
+    <span class="hljs-keyword">var</span> s=x+y;
+    <span class="hljs-keyword">return</span> s;
+ }
+ <span class="hljs-built_in">console</span>.log(f1( <span class="hljs-number">4</span> , <span class="hljs-number">6</span> ));
+ <span class="hljs-keyword">var</span> f2=f1;
+ <span class="hljs-built_in">console</span>.log(f2( <span class="hljs-number">3</span> , <span class="hljs-number">3</span> ));
+</div></code></pre>
+<p>¿Que aparecerá en la pantalla?</p>
+<hr>
+<h1 id="javascript-en-el-navegador">JAVASCRIPT EN EL NAVEGADOR</h1>
+<ul>
+<li><em>window</em> : objeto global que contiene todas las variables.</li>
+<li><em>window.document</em> o  <em>document</em> : objeto que tiene  el documento html cargado en el navegador, o sea el DOM del documento HTML.</li>
+</ul>
+<p>El código JS, se puede poner:</p>
+<ul>
+<li>Como valor de un atributo que es un evento.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"return handleClick(event, this);”&gt;
+</span></span></div></code></pre>
+<ul>
+<li>Dentro de la etiqueta</li>
+</ul>
+<pre class="hljs"><code><div>  &lt;script &gt; tanto en la cabecera como en el body. &lt;script &gt; console.log(‘hola’);&lt;/script&gt;
+</div></code></pre>
+<ul>
+<li>En un fichero externo</li>
+</ul>
+<pre class="hljs"><code><div>&lt;script src=“url”&gt;&lt;/script&gt;
+</div></code></pre>
+<hr>
+<h1 id="dom-document-object-model">DOM (Document Object Model)</h1>
+<img src="./media/T5/image6.png" width="40%" style="float:right ">
+<ul>
+<li>El Modelo de Objetos del Documento</li>
+<li>Interfaz de lenguaje
+neutral independiente de plataforma que permite a los
+programas y scripts el acceso dinámico y la actualización
+del contenido, la estructura o estilo de documentos.</li>
+<li>Proporciona una representación estructurada del documento
+como un árbol de nodos(document, head, frame, body, p,
+div) los cuales contienen propiedades, métodos y eventos.</li>
+<li>Tipos de DOM :
+( 1. Core DOM, 2. XML DOM, 3. HTML DOM)</li>
+</ul>
+<p>--</p>
+<h2 id="origen">Origen</h2>
+<ul>
+<li>
+<p>Con el auge de DHTML se incorpora en el Javascript 1.0  una
+forma de acceder y manipular los elementos de la pàgina.</p>
+</li>
+<li>
+<p>Actualmente estamos en la versión DOM4
+https://www.w3.org/DOM/DOMTR o DOM Living Standar
+https://dom.spec.whatwg.org/</p>
+</li>
+<li>
+<p><strong>WHATWG</strong> (The Web Hypertext Application Technology Working
+Group)  &quot;A community of people interested in
+evolving the web through standards and tests&quot;.</p>
+</li>
+</ul>
+<p>--</p>
+<h2 id="%C3%A1rbol-del-dom-core-dom">Árbol del DOM: Core DOM</h2>
+<ul>
+<li><strong>root node:</strong> Nodo raíz. No tiene padre.</li>
+<li><strong>father node:</strong> Todos los nodos(-raíz) tienen padre.</li>
+<li><strong>child node:</strong> Un nodo puede tener varios hijos.</li>
+<li><strong>leaf node:</strong> El nodo hoja es un nodo sin hijos.</li>
+<li><strong>sibling nodes:</strong> Nodos hermanos tienen el mismo padre.</li>
+</ul>
+<img src="./media/T5/image6.png" width="40%" style="float:right ">
+Métodos de los nodos
+   - x.appendChild(y):
+   - x.removeChild(nodoy): 
+   - x.replaceChild(nodo1,nodo2):
+<p>--</p>
+<h3 id="tipos-de-nodos">Tipos de Nodos</h3>
+<img src="./media/T5/image6.png" style="float:right ">
+<ul>
+<li>DOCUMENT_NODE: Representa el documento entero.</li>
+<li>ELEMENT_NODE: Todo elemento (etiquetas) es un nodo
+elemento.</li>
+<li>TEXT_NODE: Contiene el texto entre las etiquetas de un
+elemento.</li>
+<li>COMMENT_NODE: Nodo que representa un comentario.</li>
+<li>DOCUMENT_TYPE_NODE: Nodo que contiene el docType del
+documento.</li>
+<li>DOCUMENT_FRAGMENT_NODE: Nodo que representa un fragmento
+de documento que debe estar bien formado (“template”).</li>
+</ul>
+<p>--</p>
+<h3 id="atributos-de-los-nodos">Atributos de los nodos</h3>
+<ul>
+<li>nodeName – Nombre del nodo x(no el atributo name)</li>
+<li>nodeValue – Valor del nodo x</li>
+<li>parentNode – Nodo padre de x</li>
+<li>firstchild</li>
+<li>lastchild</li>
+<li>previousSibling</li>
+<li>nextSibling</li>
+<li>parentNode</li>
+<li>childNodes – Lista nodos hijos.</li>
+<li>textContent – Devuelve/cambia contenido del nodo como texto.</li>
+</ul>
+<p>--</p>
+<h1 id="php-dom">PHP DOM</h1>
+<p>Libreria libxml (Parser DOM):</p>
+<ul>
+<li>Core DOM</li>
+<li>No incluye la etiqueta Doctype.</li>
+<li>Compatible con el DOM level 3 core.</li>
+</ul>
+<p>--</p>
+<h2 id="document-node">Document Node</h2>
+<ul>
+<li>x.createAttribute()</li>
+<li>x.createElement()</li>
+<li>x.createTextNode()</li>
+<li>x. getElementsByTagName()</li>
+<li>x.getElementsByClassName()</li>
+<li>x.getElementById(String id)</li>
+</ul>
+<p>--</p>
+<h2 id="element-node">Element Node</h2>
+<ul>
+<li>Es un nodo del documento que representa una etiqueta en html o XML y su
+contenido.</li>
+<li>Métodos:
+<ul>
+<li>x.getElementsByTagName(nombre): lista de “element node” con
+la etiqueta ‘nombre'.</li>
+<li>x.getElementById( nombre): elemento cuyo atributo “id” es el
+que se especifica como parámetro.</li>
+<li>x.getAttribute(y): Toma el valor del atributo que se
+especifica como parámetro.</li>
+<li>x.setAttribute(name, value): modifica el atributo 'name'
+asignándole el valor ‘value’.</li>
+</ul>
+</li>
+</ul>
+<p>--</p>
+<h2 id="ejdom-php">EJ:DOM PHP</h2>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span>
+$doc = <span class="hljs-keyword">new</span> DOMDocument();
+$root = $doc-&gt;createElement(<span class="hljs-string">'html'</span>);
+$doc-&gt;appendChild($root);
+$head = $doc-&gt;createElement(<span class="hljs-string">'head'</span>);
+$root-&gt;appendChild($head);
+
+$title = $doc-&gt;createElement(<span class="hljs-string">'title'</span>);
+$title-&gt;appendChild ($doc-&gt;createTextNode(<span class="hljs-string">'Este es el título'</span>));
+$head-&gt;appendChild($title);
+$body = $doc-&gt;createElement(<span class="hljs-string">'body'</span>);
+$root-&gt;appendChild($body);
+$h1 = $doc-&gt;createElement(<span class="hljs-string">'h1'</span>);
+$root-&gt;appendChild($h1);
+$h1-&gt;appendChild($doc-&gt;createTextNode(<span class="hljs-string">'Esto es el cuerpo'</span>));
+$doctype=<span class="hljs-string">"&lt;!DOCTYPE html &gt;"</span>;
+<span class="hljs-keyword">echo</span> $doctype.$doc-&gt;saveHTML();
+<span class="hljs-meta">?&gt;</span>
+
+</div></code></pre>
+<p><a href="https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM.php">https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM.php</a></p>
+<p>--</p>
+<h2 id="ej-dom-php-load-from-string">Ej: DOM PHP load from String</h2>
+<pre class="hljs"><code><div>
+<span class="hljs-meta">&lt;?php</span>
+$html=<span class="hljs-string">'&lt;html&gt;&lt;head&gt; &lt;meta
+charset="utf-8"&gt;&lt;title&gt;PHP_WEB&lt;/title&gt;&lt;/head&gt;&lt;body&gt;
+&lt;div&gt;&lt;h1&gt;Web page parsing&lt;/h1&gt;
+&lt;p&gt;This is an example Webpage.&lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'</span>;
+$doc = <span class="hljs-keyword">new</span> DOMDocument();
+$doc-&gt;loadHTML ($html);
+$h2 = $doc-&gt;createElement(<span class="hljs-string">'h2'</span>);
+$h1= $doc-&gt;getElementsByTagName(<span class="hljs-string">"h1"</span>)[ <span class="hljs-number">0</span> ];
+$h1-&gt;parentNode-&gt;appendChild($h2);
+$h2-&gt;appendChild($doc-&gt;createTextNode(<span class="hljs-string">'Esto es el H2'</span>));
+
+$doctype=<span class="hljs-string">"&lt;!DOCTYPE html &gt;"</span>;
+<span class="hljs-keyword">echo</span> $doctype.$doc-&gt;saveHTML();
+<span class="hljs-meta">?&gt;</span>
+</div></code></pre>
+<p><a href="https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM_Load.php">https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM_Load.php</a></p>
+<hr>
+<h1 id="html-dom">HTML DOM</h1>
+<p>Los nodos Element y Document tienen:</p>
+<ul>
+<li>Propiedades:
+<ul>
+<li>X.events //lista de Eventos de x</li>
+<li>x.methods // lista de métodos de x</li>
+<li>x.elements // colección de nodos de tipo elementos de x</li>
+<li>x.name // lista de hijos de X con el nombre 'name'</li>
+<li>x.innerHTML // asigna o devuelve el contenido html del nodo elemento(Crítico).</li>
+<li>x.style// permite dar estilo a las etiquetas.</li>
+</ul>
+</li>
+</ul>
+<p>--</p>
+<ul>
+<li>Eventos:
+<ul>
+<li>blur() :Quita el foco en de un elemento.</li>
+<li>click(): realiza un click en un elemento.</li>
+<li>focus(): Pone el foco en un elemento.</li>
+<li>toString():convierte el contenido de un elemento en una cadena.</li>
+</ul>
+</li>
+</ul>
+<p>--</p>
+<h2 id="document-object">Document Object</h2>
+<ul>
+<li>document.images: lista de imágenes del
+documento</li>
+<li>document.anchors: lista de hiperenlaces.</li>
+<li>document.body: nodo elemento body.</li>
+</ul>
+<p>--</p>
+<h3 id="dom-js-navegador">DOM JS  Navegador</h3>
+<pre class="hljs"><code><div>     <span class="hljs-keyword">var</span> doc = <span class="hljs-built_in">document</span>.implementation.createHTMLDocument(<span class="hljs-string">"New Document"</span>);
+            <span class="hljs-keyword">var</span> p = doc.createElement(<span class="hljs-string">"p"</span>);
+            p.innerHTML = <span class="hljs-string">"This is a new paragraph."</span>;
+
+            doc.body.appendChild(p);
+            p = doc.createElement(<span class="hljs-string">"p"</span>);
+            p.textContent = <span class="hljs-string">"This is a Other new paragraph."</span>;
+            doc.body.appendChild(p);
+           
+            <span class="hljs-comment">// Replace the new HTML document</span>
+            Nuevo = doc.documentElement 
+            Ori = <span class="hljs-built_in">document</span>.documentElement;
+            <span class="hljs-built_in">document</span>.replaceChild(Nuevo, Ori);
+</div></code></pre>
+<p>Ejercicio: Crear una tabla con el DOM</p>
+<p>https://piruletas.000webhostapp.com/teoria/T5/HTML_Table_DOM.html</p>
+<hr>
+<h1 id="componentes-navegador-web">Componentes Navegador Web</h1>
+<img src="./media/T5/image7.png" class="imagen" >
+<ul>
+<li><em>Interfaz de usuario</em> : incluye la barra de direcciones, el botón de avance/retroceso, el
+menú de marcadores, etc. (todo excepto la ventana
+principal donde se muestra la página web.</li>
+<li><em>Motor del Navegador</em> : coordina las acciones entre la interfaz y el motor de
+renderización. Carga URL, mensajes error, botón atrás,</li>
+<li><em>Motor de renderización</em> : responsable de mostrar el contenido.</li>
+<li><em>Red</em> : responsable de las llamadas de red, como las solicitudes HTTP. (caché de documentos).</li>
+</ul>
+<p>--</p>
+<img src="./media/T5/image7.png" class="imagen"  >
+-  *Intérprete de JavaScript* : permite analizar y ejecutar el código JavaScript. El
+resultado se pasa al motor de renderización.
+-  *Almacenamiento de datos* : capa de persistencia. Gestiona los datos de usuario,
+tales como marcadores, cookies y preferencias.
+- *Backend de interfaz de usuario*:  proporciona primitivas de dibujo, widgets de la interfaz  de usuario, fuentes, etc. (utiliza métodos  sistema operativo)
+<p>https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/</p>
+<p>--</p>
+<h2 id="motor-de-renderizado">Motor de Renderizado</h2>
+<ul>
+<li>Un motor de renderizado (web browser engine) es el software que toma
+contenido marcado (como HTML, XML, archivos de imágenes, etc.) e
+información de formateo (como CSS, XSL, etc.) y luego muestra el
+contenido ya formateado en la pantalla.
+<ul>
+<li>Los motores de renderizado lo usan los navegadores web, clientes de
+correo electrónico, u otras aplicaciones que deban mostrar
+contenidos web.</li>
+<li>Cada motor de renderizado del navegador suele tener su propio
+intérprete javascript (<strong>script engine</strong>)</li>
+</ul>
+</li>
+</ul>
+<p>--</p>
+<img src="./media/T5/image8.png" >
+<p>--</p>
+<h2 id="render-tree">Render Tree</h2>
+<img src="./media/T5/image11.png" >
+<p>--</p>
+<h2 id="flujo-b%C3%A1sico-del-motor-de-renderizaci%C3%B3n">Flujo básico del motor de renderización</h2>
+<img src="./media/T5/image10.png">
+<ol>
+<li>Los árboles DOM y CSSOM se combinan para formar el árbol de representación.</li>
+<li>Render tree: El árbol de representación sólo contiene los nodos necesarios para
+representar la página.</li>
+<li>Layout: El diseño calcula la posición y el tamaño exactos de cada objeto.</li>
+<li>Paint: El último paso es la pintura, que recibe el árbol de representación final y
+representa los píxeles en la pantalla.</li>
+</ol>
+<p>https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=es-419</p>
+<p>--</p>
+<h2 id="css-render">CSS Render</h2>
+<ul>
+<li>En https://developer.mozilla.org/en-US/docs/Web/CSS/Reference tenemos una guia de CSS estándar.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.error-label</span>{
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#DA362A</span>;
+    <span class="hljs-attribute">-webkit-border-radius</span>: <span class="hljs-number">5px</span>; 
+    <span class="hljs-attribute">-moz-border-radius</span>: <span class="hljs-number">5px</span>; 
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+}
+
+</div></code></pre>
+<ul>
+<li>Pero los motores de renderizado tienen ciertas estensiones de CSS que no son todavía estandares:</li>
+</ul>
+<ul>
+	<li><a href="/en-US/docs/Web/CSS/Mozilla_Extensions">Mozilla CSS extensions</a> (prefixed  <code style="white-space: nowrap;">-moz-</code>)</li>
+	<li><a href="/en-US/docs/Web/CSS/WebKit_Extensions">WebKit CSS extensions</a> (prefixed  <code style="white-space: nowrap;">-webkit-</code>)</li>
+	<li><a href="/en-US/docs/Web/CSS/Microsoft_Extensions">Microsoft CSS extensions</a> (prefixed  <code style="white-space: nowrap;">-ms-</code>)</li>
+</ul>
+<p>--</p>
+<h1 id="crp-critical-rendering-path">CRP: critical-rendering-path</h1>
+<img src="./media/T5/image9.png" >
+https://hackernoon.com/optimising-the-front-end-for-the-browser-f2f51a29c572
+<p>Podemos ver el CRT (ruta acceso de representación crítica ) con la línea de tiempo de las herramientas de
+desarrolladores.</p>
+<p>--</p>
+<h2 id="ejemplo-javascrip-dom-no-usar">Ejemplo JavaSCRIP DOM NO USAR</h2>
+<div style="float:right">
+<h1>Hola Mundo</h1>
+<div id="principal">
+<p id="borrar">Mueve ratón <span
+onMouseOver="borrar(this);"> AQUÍ</span>:</p>
+<p>Venga, Has borrado algo ¿Necesitas
+Ayuda</p>
+<p><span onClick="recuperar('borrar');">PULSA
+AQUI</span> para recuperar el original</p>
+<p>FIN</p>
+</div>
+<p>https://piruletas.000webhostapp.com/teoria/T5/HTML_DOM.html</p>
+<p>--</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> Autor=<span class="hljs-string">""</span>;
+<span class="hljs-keyword">var</span> node0;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">borrar</span>(<span class="hljs-params">val</span>) </span>{
+node0=val;
+<span class="hljs-built_in">console</span>.info(<span class="hljs-string">"nodo a borrar:"</span>+node0.nodeName);
+<span class="hljs-built_in">console</span>.info(<span class="hljs-string">"val:"</span>+val.nodeName);
+<span class="hljs-keyword">var</span> node=val.parentNode;
+node.removeChild(node0)
+alert(<span class="hljs-string">"¿Algo borrado ?"</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">recuperar</span>(<span class="hljs-params">Id</span>) </span>{
+<span class="hljs-keyword">var</span> node = <span class="hljs-built_in">document</span>.getElementById(Id);
+node.appendChild(node0);
+alert(<span class="hljs-string">"nodo recuperado:"</span>);
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;
+&lt;<span class="hljs-attr">h1</span>&gt;</span>Hola Mundo<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"principal"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"borrar"</span>&gt;</span>Mueve ratón <span class="hljs-tag">&lt;<span class="hljs-name">span</span>
+<span class="hljs-attr">onMouseOver</span>=<span class="hljs-string">"borrar(this) ;"</span>&gt;</span> AQUÍ<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Venga, Has borrado algo ¿Necesitas
+Ayuda?<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">"recuperar('borrar');"</span>&gt;</span>PULSA
+AQUI<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> para recuperar el original<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>FIN<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<p>--</p>
+<p>Ejercicio:
+Que vale document.getElementById(“Fin”):</p>
+<ul>
+<li>si el script se pone en el Head?</li>
+<li>si el script se pone al principio del Body</li>
+<li>si el script se pone al final del Body?</li>
+</ul>
+<hr>
+<h1 id="cuestiones">Cuestiones</h1>
+<ul>
+<li>¿Cómo modifico un documento
+cargado en el navegador?</li>
+<li>¿Por qué es diferente el manejo
+del DOM en php y HTML?</li>
+<li>Diferencia entre innerHTML y
+contentText.</li>
+<li>¿Se carga primero el body o se
+ejecuta primero el script?</li>
+<li>¿Por qué da error el siguiente
+código?</li>
+</ul>
+<hr>
+<h2 id="cuestiones-dom">Cuestiones DOM</h2>
+<p>https://piruletas.000webhostapp.com/teoria/T5/FormEventHandlerError.html</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">var</span> ventana=<span class="hljs-built_in">window</span>.open();
+        <span class="hljs-keyword">var</span> father, child;
+        father=ventana.document.querySelector(<span class="hljs-string">'head'</span>);
+        child = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'title'</span>);
+        child.textContent=<span class="hljs-string">'HTMLDOM'</span>;
+        father.appendChild(child);
+        father=ventana.document.querySelector(<span class="hljs-string">'body'</span>);
+        child = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'h1'</span>);
+        father.appendChild(child);
+        child.textContent=<span class="hljs-string">'Bienvenido '</span>;
+        child = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'h2'</span>);
+        child.innerHTML=<span class="hljs-string">'Esto es el H2'</span>;
+        father.appendChild(child);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+<hr>
+<h1 id="bom-browse-object-model-browser-web-api">BOM: Browse Object Model (Browser Web API)</h1>
+<img src="./media/T5/image12.png" >
+<p>https://javascript.info/browser-environment</p>
+<p>--</p>
+<p>BOM</p>
+<p><img src="./media/T5/image13.png" ><a href="http://www.cs.ucc.ie/~gavin/javascript/05_img01.gif">http://www.cs.ucc.ie/~gavin/javascript/05_img01.gif</a></p>
+<hr>
+<h1 id="window-object">Window Object</h1>
+<ul>
+<li>Es el Nodo raíz del BOM o sea de las <strong>API Web</strong> de los navegadores.</li>
+<li>El objeto window es el de mayor nivel en la jerarquía de objetos de JavaScript en el navegador.</li>
+<li>Es  un objeto global en JavaScript. Contiene todas las
+variables y funciones globales</li>
+<li>Representa la &quot;ventana del navegador&quot; y proporciona
+métodos para controlarlo.</li>
+</ul>
+<hr>
+<h1 id="document-object">Document Object</h1>
+<ul>
+<li>
+<p>Es el Nodo raíz del DOM</p>
+</li>
+<li>
+<p>Todos los nodos heredan los atributos del objeto eventTarget</p>
+</li>
+<li>
+<p>Atributos:</p>
+<ul>
+<li>document.documentURI</li>
+<li>document.contentType</li>
+<li>document.styleSheets</li>
+</ul>
+</li>
+</ul>
+<p>--</p>
+<h3 id="ejemplo-crear-nueva-ventana-en-navegador-con-un-documento">Ejemplo crear nueva ventana en Navegador con un documento.</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> ventana=<span class="hljs-built_in">window</span>.open();
+<span class="hljs-keyword">var</span> father, child;
+father=ventana.document.querySelector(<span class="hljs-string">'head'</span>);
+child = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'title'</span>);
+child.textContent=<span class="hljs-string">'HTMLDOM'</span>;
+father.appendChild(child);
+father=ventana.document.querySelector(<span class="hljs-string">'body'</span>);
+child = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'h1'</span>);
+father.appendChild(child);
+child.textContent=<span class="hljs-string">'Bienvenido &lt;/br&gt;'</span>;
+child = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'h2'</span>);
+child.innerHTML=<span class="hljs-string">'Esto es el H2&lt;br/&gt;'</span>;
+father.appendChild(child);
+</div></code></pre>
+<hr>
+<h1 id="this-object">This object</h1>
+<ul>
+<li>
+<p>Cuando estamos dentro del atributo de una etiqueta <strong>html</strong> ,
+this se refiere a la <strong>etiqueta</strong> que contiene el atributo.</p>
+</li>
+<li>
+<p>Cuando estamos en un Objeto , <strong>this.xxx</strong> se llama dentro de
+un método propiedad, refiere al <strong>objeto</strong> que lo contiene.</p>
+</li>
+<li>
+<p>En otro caso, <strong>this</strong>  se refiere a la variable global, <strong>window</strong> del documento HTML activo cargado en la ventana.
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this</p>
+</li>
+</ul>
+<pre class="hljs"><code><div>window.alert(‘error');
+alert(“sin window!”);
+</div></code></pre>
+<hr>
+<h1 id="gesti%C3%B3n-de-eventos">Gestión  de Eventos</h1>
+<ul>
+<li><strong>Capture</strong> : Al realizar el cliente un evento,
+el navegador sabe que se ha producido un
+evento,y busca desde la raíz del DOM para
+ver donde se ha producido. event object</li>
+<li><strong>Target</strong> : Una vez sabe en qué elemento se ha
+producido (<em>event target object</em>) el explorador comprueba si tiene
+algún controlador en ese elemento, si existe
+lo ejecuta.</li>
+<li><strong>Boobling</strong> : Después de disparar el lanzador, busca hacia la raíz, si en los niveles padre del elemento hay algún otro controlador que se active con ese evento, en su caso lo
+lanzará. Esta etapa de su movimiento hacia
+arriba se llama la propagación de eventos</li>
+</ul>
+<p>--</p>
+<h1 id="captureblubbing">Capture/blubbing</h1>
+<img src="./media/T5/CicloEvent.png" >
+<p></a>http://www.thatjsdude.com/images/eventBubble.pn</a></p>
+<hr>
+<h2 id="event-target-interface">Event Target INTERFACE</h2>
+<p>Clase del para gestionar eventos.
+<img src="./media/T5/image14.png" ></p>
+<ul>
+<li>EventTarget permite detectar/recibir los eventos que se producen en el DOM o BOM</li>
+<li>Windows, Document y Element soportan definir detectores de eventos, “event hanlers”.</li>
+</ul>
+<p>--</p>
+<h3 id="registro-eventos">Registro Eventos</h3>
+<p><em><em>x.addEventListener (&quot;Evento&quot;, funcionEjecutar,Boolean</em>)</em>*</p>
+<ul>
+<li>El <strong>evento</strong> es el nombre del evento “click”, “load”,</li>
+<li>La <strong>funcionEjecutar</strong> se ejecuta cuando se produce el evento</li>
+<li>El <strong>Boolean es opcional</strong> especifica si el evento debe ser capturado
+(true) o no debe serlo (false, que es el valor que se aplica por
+defecto si no se especifica este parámetro).</li>
+</ul>
+<p>--</p>
+<h2 id="ejemplos-this">Ejemplos THIS</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> o = {
+  <span class="hljs-attr">prop</span>: <span class="hljs-number">37</span> ,
+  <span class="hljs-attr">f</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.prop;
+  }};
+<span class="hljs-built_in">console</span>.log(o.f()); <span class="hljs-comment">// logs 37</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bluify</span>(<span class="hljs-params">e</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span> === e.currentTarget); <span class="hljs-comment">// Siempre true</span>
+  <span class="hljs-keyword">this</span>.style.backgroundColor = <span class="hljs-string">'#A5D9F3'</span>;
+  }
+
+x.addEventListener(<span class="hljs-string">'click'</span>, bluify, <span class="hljs-literal">false</span>);
+</div></code></pre>
+<p>https://piruletas.000webhostapp.com/teoria/T5/FormEventHandlerType.html</p>
+<hr>
+<h1 id="template-document-fragment">template: Document Fragment</h1>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"producTable"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>UPC_Code<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Product_Name<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span><span class="hljs-comment">&lt;!-- Si existen datos se incluye aqui --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"productRow"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"record"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</div></code></pre>
+<p>El contenido del nodo
+<strong>template</strong> es un
+<strong>document fragment</strong>.
+Este se representa en
+un árbol del DOM
+distinto al documento
+HTML. Un document
+Fragment no tiene nodo
+padre.</p>
+<p>--</p>
+<h2 id="template-document-fragment">template: document fragment</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">if</span> (<span class="hljs-string">'content'</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'template'</span>)) {
+
+    <span class="hljs-comment">// Instantiate the table with the existing HTML tbody</span>
+    <span class="hljs-comment">// and the row with the template</span>
+    <span class="hljs-keyword">var</span> t = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#productrow'</span>);
+
+    <span class="hljs-comment">// Clone the new row and insert it into the table</span>
+    <span class="hljs-keyword">var</span> tb = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"tbody"</span>);
+    <span class="hljs-keyword">var</span> clone = <span class="hljs-built_in">document</span>.importNode(t.content, <span class="hljs-literal">true</span>);
+    td = clone.querySelectorAll(<span class="hljs-string">"td"</span>);
+    td[<span class="hljs-number">0</span>].textContent = <span class="hljs-string">"1235646565"</span>;
+    td[<span class="hljs-number">1</span>].textContent = <span class="hljs-string">"Stuff"</span>;
+
+    tb.appendChild(clone);
+
+    <span class="hljs-comment">// Clone the new row and insert it into the table</span>
+    <span class="hljs-keyword">var</span> clone2 = <span class="hljs-built_in">document</span>.importNode(t.content, <span class="hljs-literal">true</span>);
+    td = clone2.querySelectorAll(<span class="hljs-string">"td"</span>);
+    td[<span class="hljs-number">0</span>].textContent = <span class="hljs-string">"0384928528"</span>;
+    td[<span class="hljs-number">1</span>].textContent = <span class="hljs-string">"Acme Kidney Beans 2"</span>;
+  
+    tb.appendChild(clone2);
+
+} 
+</div></code></pre>
+<hr>
+<p>https://mdn.mozillademos.org/en-US/docs/Web/HTML/Element/template$samples/Example?revision=93413158</p>
+<pre class="hljs"><code><div>&lt;body&gt;
+&lt;table id=&quot;producttable&quot;&gt;
+ &lt;thead&gt;
+   &lt;tr&gt;
+     &lt;td&gt;UPC_Code&lt;/td&gt;
+     &lt;td&gt;Product_Name&lt;/td&gt;
+   &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+   &lt;!-- existing data could optionally be included here --&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;template id=&quot;productrow&quot;&gt;
+ &lt;tr&gt;
+   &lt;td class=&quot;record&quot;&gt;&lt;/td&gt;
+   &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/template&gt; 
+&lt;/html&gt;&lt;/body&gt; 
+</div></code></pre>
+<hr>
+<h1 id="jsondato-esctruturado">JSON:Dato Esctruturado</h1>
+<p>JSON, acrónimo de <strong>JavaScript Object Notation</strong> , es un
+formato ligero para el intercambio de datos.</p>
+<p><strong>Propiedades</strong>:</p>
+<ul>
+<li>Ligero: formato ligero para el intercambio de datos</li>
+<li>Simple: Formato sencillo de leer por humanos
+y de parsear/analizar por máquinas</li>
+<li>Funcional: Los objetos JSON están tipificados.</li>
+<li>Abierto: Formato de texto independiente del lenguaje.</li>
+<li>Extensible: formado por unas estructuras que pueden
+anidarse.</li>
+</ul>
+<p>--</p>
+<h2 id="estructura-datos-json">Estructura Datos JSON</h2>
+<ul>
+<li>JSON es una sintaxis para serializar objetos, arreglos, números,
+cadenas, booleanos y nulos.</li>
+<li>La estructura de datos de JSON está basada en pares nombre:valor</li>
+<li>Las 2 estructuras principales son el objeto Json y la Lista JSON.</li>
+</ul>
+<p><img src="./media/T5/image16.png" alt="JSON object">
+<img src="./media/T5/image17.png" alt="JSON array"></p>
+<p>--</p>
+<h2 id="acceso-elementos-objeto-json">Acceso elementos Objeto JSON</h2>
+<pre class="hljs"><code><div>JSONdata={&quot;menu&quot;: {
+&quot;id&quot;: &quot;file&quot;,
+&quot;value&quot;: &quot;File&quot;,
+&quot;popup&quot;: {
+&quot;menuitem&quot;: [
+{&quot;value&quot;: &quot;New&quot;, &quot;onclick&quot;: &quot;CreateNewDoc()&quot;},
+{&quot;value&quot;: &quot;Open&quot;, &quot;onclick&quot;: &quot;OpenDoc()&quot;},
+{&quot;value&quot;: &quot;Close&quot;, &quot;onclick&quot;: &quot;CloseDoc()&quot;}
+]
+}
+}}
+
+var menu = JSONdata.menu; 
+fichero = JSONdata.menu.value; (
+var submenu = JSONdata.menu.menuitem;
+var submenuVal = JSONdata.menu.popup.menuitem[ 0 ][&quot;value&quot;]
+</div></code></pre>
+<p>--</p>
+<p>Ejercicios:</p>
+<ul>
+<li>
+<p>Construye un el Json //{&quot;bar&quot;:&quot;new property”,&quot;baz&quot;:3}</p>
+</li>
+<li>
+<p>Construye un el Json //[&quot;pepe&quot;,&quot;Jose&quot;]</p>
+</li>
+</ul>
+<p>--</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<pre class="hljs"><code><div>vfoo.bar = ar foo = {};&quot;new property&quot; (^) ;
+foo.baz = 3 ;
+varconsole.log (jsonString); jsonString = JSON.stringify(foo);
+//{&quot;bar&quot;:&quot;new property&quot;,&quot;baz&quot;:3}
+</div></code></pre>
+<p>--</p>
+<h1 id="json-http">JSON HTTP</h1>
+<p>Se transmiten cadenas en HTTP poer ello el proceso es:</p>
+<ul>
+<li>
+<p>Envío</p>
+<ul>
+<li>Definir un objeto  JSON</li>
+<li>Convertir JSON a una cadena</li>
+</ul>
+</li>
+<li>
+<p>Recepción:</p>
+<ul>
+<li>Recibir cadena convertirla
+- a objeto JSON en <strong>JavaScript</strong>.
+- a un diccionario o array en <strong>PHP</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="m%C3%A9todos-objeto-json-javascript">Métodos Objeto JSON Javascript</h2>
+<ul>
+<li>JSON .parse (): Analiza una cadena de texto con formato JSON  retornando un objeto JSON. Se puede añadir una función para la transformación como parámetro.</li>
+<li>JSON .stringify (): Devuelve un string a partir de un JSON. Se puede añadir una función para la transformación como parámetro.</li>
+</ul>
+<p>--</p>
+<h2 id="ejemplo-env%C3%ADo-json-con-javascript">Ejemplo envío JSON con JavaScript</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> foo = {};
+foo.bar = <span class="hljs-string">"new property"</span>;
+foo.baz = <span class="hljs-number">3</span> ;
+<span class="hljs-keyword">var</span> jsonString = <span class="hljs-built_in">JSON</span>.stringify(foo);
+<span class="hljs-built_in">console</span>.log (jsonString);
+<span class="hljs-comment">//{"bar":"new property","baz":3}</span>
+<span class="hljs-keyword">var</span> url = <span class="hljs-string">"JSONExample3.php createXMLHttpRequest()"</span>;
+xmlHttp.open(<span class="hljs-string">"POST"</span>, url, <span class="hljs-literal">true</span>);
+xmlHttp.setRequestHeader(<span class="hljs-string">"Content-Type"</span>,<span class="hljs-string">"application/json;charset=UTF-8"</span>);”);
+xmlHttp.onreadystatechange = handleStateChange;
+
+xmlHttp.send(json);
+
+</div></code></pre>
+<p>--</p>
+<h1 id="json-php">JSON PHP</h1>
+<ul>
+<li>
+<p><strong>json_encode</strong> (cadena): Función que
+devuelve un objeto o
+arreglo a partir de una cadena con sintaxis JSON.</p>
+</li>
+<li>
+<p><strong>json_decode</strong> (dato); función que devuelve un objeto o
+arreglo en formato cadena con sintaxis JSON.</p>
+</li>
+</ul>
+<pre class="hljs"><code><div>$json =
+<span class="hljs-string">'[{"0":"1","id_fruta":"1","1":"Manzana","nombre_fruta":"Manzana
+","2":"100","cantidad":"100"},{"0":"2","id_fruta":"2","1":"Platano",
+"nombre_fruta":"Platano","2":"167","cantidad":"167"},{"0":"3","id
+_fruta":"3","1":"Pera","nombre_fruta":"Pera","2":"820","cantidad
+":"820"}]'</span>;
+$array = json_decode($json);
+print_r($_array)
+<span class="hljs-comment">//OBTENER UN DATO DIRECTAMENTE DEL ARRAY.</span>
+<span class="hljs-keyword">echo</span> $array[ <span class="hljs-number">0</span> ]-&gt;nombre_fruta;
+<span class="hljs-comment">//RECORRER Y RECUPERAR VALORES JSON CON</span>
+<span class="hljs-keyword">FOREACH</span>.
+<span class="hljs-keyword">foreach</span>($array <span class="hljs-keyword">as</span> $obj){
+  $id_fruta = $obj-&gt;id_fruta;
+  $nombre_fruta = $obj-&gt;nombre_fruta;
+  $cantidad = $obj-&gt;cantidad;
+  <span class="hljs-keyword">echo</span> $id_fruta.<span class="hljs-string">" "</span>.$nombre_fruta.<span class="hljs-string">" "</span>.$cantidad;
+}
+</div></code></pre>
+<p>1 Manzana 1002 Plátano 167</p>
+<p>3 Pera 820</p>
+<pre class="hljs"><code><div>Array ( [0] =&gt; stdClass Object ( [0] =&gt; 1 [id_fruta] =&gt; 1 [1] =&gt; Manzana [nombre_fruta] =&gt; Manzana [2] =&gt; 100 [cantidad]
+=&gt; 100 ) [1] =&gt; stdClass Object ( [0] =&gt; 2 [id_fruta] =&gt; 2 [1] =&gt; Platano [nombre_fruta] =&gt; Platano [2] =&gt; 167 [cantidad]
+=&gt; 167 ) [2] =&gt; stdClass Object ( [0] =&gt; 3 [id_fruta] =&gt; 3 [1] =&gt; Pera [nombre_fruta] =&gt; Pera [2] =&gt; 820 [cantidad] =&gt;
+820 ) )
+</div></code></pre>
+<p>--</p>
+<h2 id="ejemplo-env%C3%ADo-una-tabla-con-json">Ejemplo envío una tabla con JSON</h2>
+<pre class="hljs"><code><div>[{<span class="hljs-string">"id"</span>:<span class="hljs-string">"1"</span>,<span class="hljs-string">"nombre"</span>:<span class="hljs-string">"pepe"</span>,<span class="hljs-string">"apellido"</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">"email"</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">"clave"</span>:<span class="hljs-literal">null</span>}
+,{<span class="hljs-string">"id"</span>:<span class="hljs-string">"2"</span>,<span class="hljs-string">"nombre"</span>:<span class="hljs-string">"pepe"</span>,<span class="hljs-string">"apellido"</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">"email"</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">"clave"</span>:<span class="hljs-literal">null</span>}]
+</div></code></pre>
+<pre class="hljs"><code><div>header('Content-type: application/json');
+$result= $pdo-&gt;prepare(&quot;SELECT * FROM usuarios &quot;);
+$result-&gt;execute();
+$datos= $result-&gt;fetchAll(PDO::FETCH_ASSOC);
+echo json_encode($datos);
+</div></code></pre>
+<pre class="hljs"><code><div>https://dllido.al.nisu.org/Lab2017/T4/jsonTemplate0.php
+</div></code></pre>
+<p>var datos=
+[{&quot;id&quot;:&quot;1&quot;,&quot;nombre&quot;:&quot;pepe&quot;,&quot;apellido&quot;:null,&quot;email&quot;:null,&quot;clave&quot;:null},
+{&quot;id&quot;:&quot;2&quot;,&quot;nombre&quot;:&quot;pepe&quot;,&quot;apellido&quot;:null,&quot;email&quot;:null,&quot;clave&quot;:null}]</p>
+<pre class="hljs"><code><div>var t = document.querySelector('#productrow');
+var tb = document.getElementsByTagName(&quot;tbody&quot;);
+var clone;
+</div></code></pre>
+<p>td = t.content.querySelectorAll(&quot;td&quot;);
+for (var i = 0; i &lt; datos.length; i++){</p>
+<pre class="hljs"><code><div>td[0].textContent =datos[i].id;
+td[1].textContent = datos[i].nombre;
+clone = document.importNode(t.content, true);
+tb[0].appendChild(clone);
+}
+73
+https://dllido.al.nisu.org/Lab2017/T4/listarTemplate0.html
+</div></code></pre>
+<pre class="hljs"><code><div>&lt;table
+id=&quot;producttable&quot;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;td&gt;UserID&lt;/td&gt;
+&lt;td&gt;UserName&lt;/td
+&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;template
+id=&quot;productrow&quot;&gt;
+&lt;tr&gt;
+&lt;td
+class=&quot;record&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/template&gt;
+</div></code></pre>
+<hr>
+<h1 id="iframe-node">Iframe Node</h1>
+<ul>
+<li>
+<p>Permite anidar un documento html dentro de otra página HTML.</p>
+</li>
+<li>
+<p>Cada elemento <em>iframe</em> tiene su propio historial de sesión y su propio objeto Document.</p>
+</li>
+<li>
+<p>El contexto de navegación de nivel superior del iframe es la ventana del navegador: <em>window</em></p>
+</li>
+<li>
+<p><strong>window.frames</strong> devuelve la lista de iframes del documento.</p>
+</li>
+</ul>
+<p>--</p>
+<h4 id="sample-iframe">Sample Iframe</h4>
+<pre class="hljs"><code><div>&lt;!DOCTYPE html&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Web page parsing&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;
+&lt;h1&gt;Web page parsing&lt;/h1&gt;
+&lt;p&gt;This is an example Web page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe width=&quot;400&quot; height=&quot;215&quot; frameborder=&quot;0&quot;
+scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot;
+src=&quot;https://maps.google.com/maps?f=q&amp;amp;source=s_q&amp;amp;hl=es-419&amp;amp;geocode=&amp;amp;q=
+buenos+aires&amp;amp;sll=37.0625,-95.677068&amp;amp;sspn=38.638819,80.859375&amp;amp;t=h&amp;amp;ie=UTF8
+&amp;amp;hq=&amp;amp;hnear=Buenos+Aires,+Argentina&amp;amp;z=11&amp;amp;ll=-34.603723,-58.381593&amp;amp;ou
+tput=embed&quot;&gt;&lt;/iframe&gt;**
+&lt;/html&gt;
+
+</div></code></pre>
+<p>https://piruletas.000webhostapp.com/teoria/T5/webDOMIframe.html</p>
+<hr>
+<h1 id="cors">CORS</h1>
+<ul>
+<li>Supongamos que tu aplicación reside en example.com y quieres
+extraer datos de <a href="http://www.example2.com.">http://www.example2.com.</a> Normalmente, si intentas ejecutar
+este tipo de llamada desde Javascript, la solicitud fallará y el navegador
+lanzará un error por la falta de correspondencia de los orígenes.</li>
+<li>Uso compartido de recursos de origen cruzado (CORS) permite a las aplicaciones web de un dominio realizar solicitudes
+de dominio cruzado.</li>
+<li>HTML5 introduce Cross-Origin Resource Sharing (CORS)</li>
+</ul>
+<p>http://www.w3.org/TR/cors/
+http://enable-cors.org
+-Hay que habilitar estas llamadas tanto en el servidor como en el cliente.</p>
+<hr>
+<h2 id="cors-en-el-servidor">CORS en el servidor</h2>
+<p><a href="http://www.example2.com">http://www.example2.com</a> puede que habilitar CORS de dos formas:</p>
+<ul>
+<li>añadir un encabezado (header) para permitir solicitudes de example.com:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> header(<span class="hljs-string">'Access-Control-Allow-Origin: *'</span>); <span class="hljs-meta">?&gt;</span>
+</div></code></pre>
+<ul>
+<li>o en el fichero .httacess</li>
+</ul>
+<pre class="hljs"><code><div>Header set Access-Control-Allow-Origin &quot;*&quot; 
+</div></code></pre>
+<hr>
+<h2 id="cors-en-el-cliente">CORS en el cliente</h2>
+<p>En la etiqueta script añadir atributo
+<strong>crossorigin:</strong>. Indica si la
+petición hecha a un servidor externo debe presentar credenciales CORS o no.</p>
+<ul>
+<li><strong>crossorigin=anonymous</strong> : las peticiones CORS para el elemento tendrán la etiqueta &quot;omit
+credentials&quot; establecida.</li>
+<li><strong>crossorigin=use-credentials</strong> : las peticiones CORS para el elemento no tendrán la etiqueta
+&quot;omit credentials&quot; establecida.</li>
+</ul>
+<p>EJEMPLO Google maps con cors y sin cors</p>
+<hr>
+<h1 id="generadores">Generadores</h1>
+<p>Soluciones para utilizar codigo JS no compatible:</p>
+<p>1- Transpiler(compilador): Transforma tu codigo reemplazando las secciónes de codigo para que se puedan ejecutar ocon el JS nativo.</p>
+<ul>
+<li>Babel : Permite transformar el código con las nuevas características de ES6, en un JS ES5 o inferior.</li>
+<li>Traceur: Transpiles ES6, ES7, and beyond into ES5</li>
+</ul>
+<p>2- Codigo polyfill (Plugin): permite emular algunas apis aunque no estén implementadas en el JS nativo. Se utiliza para que los navegadores soporten las últimas APIS que quieras utilizar.
+Implementa el código que los navegadores no soportan.</p>
+<p>--</p>
+<h2 id="babel">babel</h2>
+<pre class="hljs"><code><div>&lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Your custom script here --&gt;
+&lt;script type=&quot;text/babel&quot;&gt;
+const getMessage = () =&gt; &quot;Hello World&quot;;
+document.getElementById('output').innerHTML = getMessage();
+&lt;/script&gt;
+</div></code></pre>
+<p>--</p>
+<h2 id=""></h2>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<hr>
+<h2 id="bibliograf%C3%ADa">Bibliografía</h2>
+<ul>
+<li>https://dom.spec.whatwg.org/ DOM LIVE</li>
+<li>https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/</li>
+</ul>
+
+</body>
+</html>
