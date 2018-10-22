@@ -43,7 +43,7 @@
 
 ### EI1042 - Tecnologías y Aplicaciones Web
 
-### EI1036- Tecnologías Web para los Sistemas de Información **
+### EI1036- Tecnologías Web para los Sistemas de Información
 # (2018/2019)
 
 *Professora: Dra. Dolores Mª Llidó Escrivá*
@@ -57,23 +57,23 @@
 
   1. Introducción EMACScript: 
     - ScriptEngine
-  2. JavaScript
+  2. JavaScript.
       - Objetos
       - Variables
       - Tipos de datos
       - Funciones
-  3. DOM 
-  4. Componentes de los Navegadores
+  3. DOM .
+  4. Componentes de los Navegadores.
   5. CSSOM, RenderTree.
-  6. JavaScript Navegador.  BOM
+  6. JavaScript Navegador.  BOM.
     -  Window
     -  DocumentElement
     -  This
-  7. Gestión Eventos: Event Target 
-  8. Templatate. 
-  9. Iframe
-  10. JSON
-  11. Generadores
+  7. Gestión Eventos: Event Target. 
+  8. Template. 
+  9. Iframe.
+  10. JSON.
+  11. Generadores.
 
 </script></section><section ><section data-markdown><script type="text/template">
 ## 1. Introducción EMACScript
@@ -85,14 +85,14 @@ Computer Manufacturers Association ECMA.
 -  Evolucionó en un lenguaje con muchos usos y plataformas:
 **EMACScript**.
 -  Una **plataforma** puede ser un cliente web (Chrome) o un
-servidor web ( Node.js) u otro anfitrión.
+servidor web (Node.js) u otro anfitrión.
 -  El **Script Engine** es el
 programa que ejecuta código en un dialecto del lenguaje de
 script (JavaScript) proporciona
 además del núcleo del
 lenguaje, los objetos y
 funciones específicos de la
-plataforma. Cada  navegador tiene su propia implementación(webkit->safari,v8->Chrome, node.js).
+plataforma. Cada  navegador tiene su propia implementación (webkit->safari, v8->Chrome, Node.js).
 
 
 
@@ -112,11 +112,10 @@ plataforma. Cada  navegador tiene su propia implementación(webkit->safari,v8->C
 |  |  |  |
 
 </script></section><section data-markdown><script type="text/template">
- ## Dialectos/Api
+ ## Dialectos/API
 
--  JavaScript, JScript y ActionScript son un dialectos de
-ECMAScript.
--  Los **dialectos**  incluyen extensiones al lenguaje y **APIS**.
+-  JavaScript, JScript y ActionScript son un dialectos de ECMAScript.
+-  Los **dialectos**  incluyen extensiones al lenguaje y **APIs**.
 -  Una aplicación escrita en un dialecto puede ser incompatible con otra, si no utilizan un subconjunto común de
 características  **APIs compatibles**
 
@@ -155,8 +154,7 @@ consola.
 
 - Instancia directa formato breve.
 ```js
-personObj= {nombre: "Carlos Sempere",
- apodo:"Doe",edad:50};
+personObj = {nombre: "Carlos Sempere", apodo:"Doe", edad:50};
 ```
 - Instancia directa con creando objeto "vacio".
 ```js
@@ -168,11 +166,12 @@ Autor.edad = 50;
 ```
 - Con un constructor.
 ```js
-function {
-    this.nombre=nombre;Persona(nombre,apodo,edad)
+function Persona(nombre,apodo,edad){
+    this.nombre=nombre;
     this.apodo=apodo;
-    this.age=edad;}
-var Autor= new Persona("Anas Sempere","Doe",50);**
+    this.age=edad;
+}
+var Autor= new Persona("Anas Sempere","Doe",50);
 ```
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Declaración Variables /Ambitos
@@ -207,11 +206,11 @@ for (let i of arr) {
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Tipos de datos
 
-- Number: var x=5;
+- Number: var x = 5;
 
-- String: var cad='32';
+- String: var cad = '32';
 
-- Boolean: var b1=x>0;
+- Boolean: var b1 = x>0;
 
 - Object: var dog = { name : 'Spot', breed : 'Dalmatian' };
 
@@ -261,16 +260,14 @@ function NombreFuncion (parametro1, ..., parámetro N )
 </script></section><section data-markdown><script type="text/template">
 ## Funciones
 
--  Las funciones son un objeto por ello podemos:
-   -  asignar funciones a variables, y referenciarlas
-utilizando la variable
+Las funciones son un objeto por ello podemos:
+   -  asignar funciones a variables, y referenciarla utilizando la variable
    -  pasar funciones como parámetros a otras funciones
-   -  obtener funciones como resultados de la ejecución de la
-función.
+   -  obtener funciones como resultados de la ejecución de la función.
 ```JS
 function grado() {
 function titulo(name) {
-  return "Dr. " + name; }
+  return "Dr. " + name; }  
 return titulo; //una funcion!
 }
 var phd = grado();
@@ -300,7 +297,7 @@ try { // statements to try
 </script></section><section data-markdown><script type="text/template">
 ## Ejemplos JavaScript(2)
 ```JS
- function Primera(p1, p2) {
+function Primera(p1, p2) {
   p1(p2);}
 // Función Literal
 var Segunda = function (m1) {
@@ -312,20 +309,6 @@ Primera(Segunda, 20 );
 ¿Que aparecerá devuelve la llamada: 
 Primera(Segunda, 20 );
 
-</script></section><section data-markdown><script type="text/template">
-## Ejemplos JavaScript(3)
-```js
-<script>
- function Primera(p1, p2) {
-    p1(p2);}
-// Función Literal
-var Segunda = function (m1) {
-    console.log(m1 / 10 );
-};
-// Pasando Segunda como parámetro de Primera
-Primera(Segunda, 20 );
-__SCRIPT_END__
-```
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Función Anónima
 
@@ -367,21 +350,21 @@ return function(quien) {alert("hola “+quien)} (‘mundo’)
 </script></section></section><section  data-markdown><script type="text/template">
 # JAVASCRIPT EN EL NAVEGADOR
 
-- *window* : objeto global que contiene todas las variables.
+- *window* : OBJETO GLOBAL que contiene todas las variables. 
 - *window.document* o  *document* : objeto que tiene  el documento html cargado en el navegador, o sea el DOM del documento HTML.
 
 El código JS, se puede poner:
 
-- Como valor de un atributo que es un evento.
+  - Como valor de un atributo que es un evento. (No usar)
 ```html
 <button onclick="return handleClick(event, this);”>
 ```
-- Dentro de la etiqueta 
-```
-  <script > tanto en la cabecera como en el body. <script > console.log(‘hola’);__SCRIPT_END__
+  - Dentro de la etiqueta *script* tanto en la cabecera como en el body. 
+  ```
+  <script > console.log(‘hola’);__SCRIPT_END__
 ```
 
--  En un fichero externo
+  -  En un fichero externo
 
  ```
  <script src=“url”>__SCRIPT_END__
@@ -460,13 +443,7 @@ de documento que debe estar bien formado (“template”).
    - textContent – Devuelve/cambia contenido del nodo como texto.
 
 
-</script></section><section data-markdown><script type="text/template">
-# PHP DOM
 
-Libreria libxml (Parser DOM):
-   - Core DOM
-   - No incluye la etiqueta Doctype.
-   - Compatible con el DOM level 3 core.
 </script></section><section data-markdown><script type="text/template">
 
 
@@ -495,6 +472,13 @@ especifica como parámetro.
    - x.setAttribute(name, value): modifica el atributo 'name'
 asignándole el valor ‘value’.
 
+</script></section></section><section ><section data-markdown><script type="text/template">
+# PHP DOM
+
+Libreria libxml (Parser DOM):
+   - Core DOM
+   - No incluye la etiqueta Doctype.
+   - Compatible con el DOM level 3 core.
 </script></section><section data-markdown><script type="text/template">
 ## EJ:DOM PHP
 
@@ -542,36 +526,14 @@ echo $doctype.$doc->saveHTML();
 ?>
 ```
 [https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM_Load.php](https://piruletas.000webhostapp.com/teoria/T5/HTMLDOM_Load.php)
-</script></section></section><section ><section data-markdown><script type="text/template">
-# HTML DOM
 
-Los nodos Element y Document tienen:
 
-- Propiedades:
-   - X.events //lista de Eventos de x
-   - x.methods // lista de métodos de x
-   - x.elements // colección de nodos de tipo elementos de x
-   - x.name // lista de hijos de X con el nombre 'name'
-   - x.innerHTML // asigna o devuelve el contenido html del nodo elemento(Crítico).
-   - x.style// permite dar estilo a las etiquetas.
-</script></section><section data-markdown><script type="text/template">
-- Eventos:
-   - blur() :Quita el foco en de un elemento.
-   - click(): realiza un click en un elemento.
-   - focus(): Pone el foco en un elemento.
-   - toString():convierte el contenido de un elemento en una cadena.
-</script></section><section data-markdown><script type="text/template">
-## Document Object
-
-- document.images: lista de imágenes del
- documento
-- document.anchors: lista de hiperenlaces.
-- document.body: nodo elemento body.
 
 
 </script></section><section data-markdown><script type="text/template">
 
 ### DOM JS  Navegador
+Ejercicio: ¿Que hace este código?
 ```JS
      var doc = document.implementation.createHTMLDocument("New Document");
             var p = doc.createElement("p");
@@ -591,7 +553,6 @@ Los nodos Element y Document tienen:
 
 Ejercicio: Crear una tabla con el DOM
 
-https://piruletas.000webhostapp.com/teoria/T5/HTML_Table_DOM.html
 
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Componentes Navegador Web
@@ -604,7 +565,7 @@ principal donde se muestra la página web.
 -  *Motor del Navegador* : coordina las acciones entre la interfaz y el motor de
 renderización. Carga URL, mensajes error, botón atrás,
 -  *Motor de renderización* : responsable de mostrar el contenido.
--  *Red* : responsable de las llamadas de red, como las solicitudes HTTP. (caché de documentos).
+-  *Red* : responsable de las llamadas de red, como las solicitudes HTTP (Caché de documentos).
 
 
 </script></section><section data-markdown><script type="text/template">
@@ -630,6 +591,8 @@ contenidos web.
   - Cada motor de renderizado del navegador suele tener su propio
 intérprete javascript (**script engine**) 
 </script></section><section data-markdown><script type="text/template">
+## Componentes Navegadores
+
 <img src="./media/T5/image8.png" >
 </script></section><section data-markdown><script type="text/template">
 
@@ -686,57 +649,34 @@ https://hackernoon.com/optimising-the-front-end-for-the-browser-f2f51a29c572
 Podemos ver el CRT (ruta acceso de representación crítica ) con la línea de tiempo de las herramientas de
 desarrolladores. 
 </script></section><section data-markdown><script type="text/template">
-## Ejemplo JavaSCRIP DOM NO USAR
-
-<div style="float:right">
-<h1>Hola Mundo</h1>
-<div id="principal">
-<p id="borrar">Mueve ratón <span
-onMouseOver="borrar(this);"> AQUÍ</span>:</p>
-<p>Venga, Has borrado algo ¿Necesitas
-Ayuda</p>
-<p><span onClick="recuperar('borrar');">PULSA
-AQUI</span> para recuperar el original</p>
-<p>FIN</p>
-</div>
-
-
 https://piruletas.000webhostapp.com/teoria/T5/HTML_DOM.html
-</script></section><section data-markdown><script type="text/template">
 ```html
 <script type="text/javascript">
-var Autor="";
-var node0;
-function borrar(val) {
-node0=val;
-console.info("nodo a borrar:"+node0.nodeName);
-console.info("val:"+val.nodeName);
-var node=val.parentNode;
-node.removeChild(node0)
-alert("¿Algo borrado ?");
+var Autor="";   var node0;
+function borrar(val) { node0=val;
+  console.info("nodo a borrar:"+node0.nodeName);
+  console.info("val:"+val.nodeName);
+  var node=val.parentNode;
+  node.removeChild(node0);
+  alert("¿Algo borrado ?");
 }
 function recuperar(Id) {
-var node = document.getElementById(Id);
-node.appendChild(node0);
-alert("nodo recuperado:");
+  var node = document.getElementById(Id);
+  node.appendChild(node0);
+  alert("nodo recuperado:");
 }
-__SCRIPT_END__<
-<h1>Hola Mundo</h1>
-<div id="principal">
+__SCRIPT_END__
 <p id="borrar">Mueve ratón <span
-onMouseOver="borrar(this) ;"> AQUÍ</span>:</p>
-<p>Venga, Has borrado algo ¿Necesitas
-Ayuda?</span></p>
+onMouseOver="borrar(this) ;">AQUÍ</span>:</p>
 <p><span onClick="recuperar('borrar');">PULSA
 AQUI</span> para recuperar el original</p>
-<p>FIN</p>
 </div>
 ```
 
 
 </script></section><section data-markdown><script type="text/template">
 Ejercicio:
-Que vale document.getElementById(“Fin”):
+Que vale <script> document.getElementById(“id”)__SCRIPT_END__:
 
 - si el script se pone en el Head?
 - si el script se pone al principio del Body
@@ -752,15 +692,14 @@ del DOM en php y HTML?
 contentText.
 - ¿Se carga primero el body o se
 ejecuta primero el script?
-- ¿Por qué da error el siguiente
-código?
+
 </script></section><section  data-markdown><script type="text/template">
 ## Cuestiones DOM
 
 https://piruletas.000webhostapp.com/teoria/T5/FormEventHandlerError.html 
 
 ```html
-<script type="text/javascript">
+<script type="text/javascript">º
         var ventana=window.open();
         var father, child;
         father=ventana.document.querySelector('head');
@@ -809,10 +748,12 @@ métodos para controlarlo.
 - Todos los nodos heredan los atributos del objeto eventTarget
 
 - Atributos:
-   - document.documentURI
-   - document.contentType
-   - document.styleSheets
-
+  - document.documentURI
+  - document.contentType
+  - document.styleSheets
+  - document.images: lista de imágenes 
+  - document.anchors: lista de hiperenlaces.
+  - document.body: nodo elemento body.
 </script></section><section data-markdown><script type="text/template">
 ### Ejemplo crear nueva ventana en Navegador con un documento.
 
@@ -831,6 +772,24 @@ child = document.createElement('h2');
 child.innerHTML='Esto es el H2<br/>';
 father.appendChild(child);
 ```
+</script></section><section data-markdown><script type="text/template">
+# Element y Document
+
+Los nodos Element y Document tienen:
+
+- Propiedades:
+   - X.events //lista de Eventos de x
+   - x.methods // lista de métodos de x
+   - x.elements // colección de nodos de tipo elementos de x
+   - x.name // lista de hijos de X con el nombre 'name'
+   - x.innerHTML // asigna o devuelve el contenido html del nodo elemento(Crítico).
+   - x.style// permite dar estilo a las etiquetas.
+- Eventos:
+   - blur() :Quita el foco en de un elemento.
+   - click(): realiza un click en un elemento.
+   - focus(): Pone el foco en un elemento.
+   - toString():convierte el contenido en una cadena.
+
 </script></section></section><section  data-markdown><script type="text/template">
 
 # This object
@@ -964,7 +923,7 @@ if ('content' in document.createElement('template')) {
     td = clone2.querySelectorAll("td");
     td[0].textContent = "0384928528";
     td[1].textContent = "Acme Kidney Beans 2";
-  
+
     tb.appendChild(clone2);
 
 } 
