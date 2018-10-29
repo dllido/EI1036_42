@@ -710,15 +710,12 @@ BOM
 </script></section></section><section  data-markdown><script type="text/template">
 # Window Object
 
--  Es el Nodo raíz del BOM o sea de las **API Web** de los navegadores.
--  El objeto window es el de mayor nivel en la jerarquía de objetos de JavaScript en el navegador.
-- Es  un objeto global en JavaScript. Contiene todas las
-variables y funciones globales
--  Representa la "ventana del navegador" y proporciona
-métodos para controlarlo.
+- Es el Nodo raíz del BOM o sea de las **API Web** de los navegadores.
+- El objeto window es el de mayor nivel en la jerarquía de objetos de JavaScript en el navegador.
+- Es un objeto global en JavaScript. Contiene todas las variables y funciones globales
+- Representa la "ventana del navegador" y proporciona los métodos para controlarlo.
 </script></section><section ><section data-markdown><script type="text/template">
 # Document Object
-
 
 - Es el Nodo raíz del DOM
 - Todos los nodos heredan los atributos del objeto eventTarget
@@ -736,11 +733,11 @@ métodos para controlarlo.
 ```js
 var ventana=window.open();
 var father, child;
-father=ventana.document.querySelector('head');
+father = ventana.document.querySelector('head');
 child = document.createElement('title');
 child.textContent='HTMLDOM';
 father.appendChild(child);
-father=ventana.document.querySelector('body');
+father = ventana.document.querySelector('body');
 child = document.createElement('h1');
 father.appendChild(child);
 child.textContent='Bienvenido </br>';
@@ -749,27 +746,24 @@ child.innerHTML='Esto es el H2<br/>';
 father.appendChild(child);
 ```
 </script></section><section data-markdown><script type="text/template">
-# Element y Document
+# Element y Document Nodes:
 
-Los nodos Element y Document tienen:
-
-- Propiedades:
-   - X.events //lista de Eventos de x
-   - x.methods // lista de métodos de x
-   - x.elements // colección de nodos de tipo elementos de x
-   - x.name // lista de hijos de X con el nombre 'name'
+- Propiedades de un elemento x:
+   - x.events    //lista de Eventos de x
+   - x.methods   // lista de métodos de x
+   - x.elements  // colección de nodos de tipo elementos de x
+   - x.name      // lista de hijos de x con el nombre 'name'
    - x.innerHTML // asigna o devuelve el contenido html del nodo elemento(Crítico).
-   - x.style// permite dar estilo a las etiquetas.
+   - x.style     // permite dar estilo a las etiquetas.
 - Eventos:
-   - blur() :Quita el foco en de un elemento.
-   - click(): realiza un click en un elemento.
-   - focus(): Pone el foco en un elemento.
-   - toString():convierte el contenido en una cadena.
+   - blur() :    Quita el foco en de un elemento.
+   - click():    Realiza un click en un elemento.
+   - focus():    Pone el foco en un elemento.
+   - toString(): Convierte el contenido en una cadena.
 
 </script></section></section><section  data-markdown><script type="text/template">
 
 # This object
-
 
 - Cuando estamos dentro del atributo de una etiqueta **html** ,
 this se refiere a la **etiqueta** que contiene el atributo.
@@ -803,8 +797,7 @@ Clase del para gestionar eventos.
 - El **evento** es el nombre del evento “click”, “load”,
 - La **funcionEjecutar** se ejecuta cuando se produce el evento
 - El **Boolean es opcional** especifica si el evento debe ser capturado
-(true) o no debe serlo (false, que es el valor que se aplica por
-defecto si no se especifica este parámetro).
+(true) o no (false,  valor  por defecto).
 </script></section><section data-markdown><script type="text/template">
 ## Ejemplo DOM Validación datos formularios
 
@@ -831,66 +824,56 @@ function detectores()
 detectores();
 ```
 
+¿Funciona correctamente?
+Solución:
+https://piruletas.000webhostapp.com/teoria/T5/FormEventHandler.html 
 </script></section><section data-markdown><script type="text/template">
 
-# Gestión  de Eventos: Capture/blubbing
+# Gestión  de Eventos: Capture/bubbling
 <img src="./media/T5/CicloEvent.png" >
 <p></a>http://www.thatjsdude.com/images/eventBubble.pn</a></p>
 </script></section><section data-markdown><script type="text/template">
-## Capture/blubbing/target
- -  **Capture** : Al realizar el cliente un evento,
-el navegador sabe que se ha producido un
-evento,y busca desde la raíz del DOM para
-ver donde se ha producido. event object
- -  **Target** : Una vez sabe en qué elemento se ha
-producido (*event target object*) el explorador comprueba si tiene
-algún controlador en ese elemento, si existe
-lo ejecuta. 
- -  **Boobling** : Después de disparar el lanzador, busca hacia la raíz, si en los niveles padre del elemento hay algún otro controlador que se active con ese evento, en su caso lo
-lanzará. Esta etapa de su movimiento hacia
-arriba se llama la propagación de eventos 
+## Capture/bubbling/target
+ -  **Capture** : Al realizar el cliente un evento, el navegador sabe que se ha producido un evento,y busca desde la raíz del DOM para
+ver donde se ha producido (*event object*)
+ -  **Target** : Una vez sabe en qué elemento se ha producido (*event target object*) el explorador comprueba si tiene algún controlador en ese elemento, si existe lo ejecuta. 
+ -  **Bubbling** : Después de disparar el lanzador, busca hacia la raíz, si en los niveles padre del elemento hay algún otro controlador que se active con ese evento, en su caso lo lanzará. Esta etapa de su movimiento hacia arriba se llama la propagación de eventos 
 
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Template: Document Fragment
 
 ```html
 <table id="producTable">
-<thead>
-<tr>
-<td>UPC_Code</td>
-<td>Product_Name</td>
-</tr>
-</thead>
-<tbody><!-- Si existen datos se incluye aqui -->
-</tbody>
-</table>
-<template id="productRow">
-<tr>
-<td class="record"></td>
-<td></td>
-</tr>
-</template>
+		<thead>
+			<tr>
+				<td>UPC_Code</td>
+				<td>Product_Name</td>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Si existen datos se incluye aqui -->
+		</tbody>
+	</table>
+	<template id="productRow">
+		<tr>
+			<td class="record"></td>
+			<td></td>
+		</tr>
+	</template>
 ```
 </script></section><section data-markdown><script type="text/template">
-- El contenido del nodo
-*template* es un
-*document fragment*.
+- El contenido del nodo *template* es un *document fragment*.
 
-- Este se representa en
-un árbol del DOM
-distinto al documento
-HTML. 
-- Un document
-Fragment no tiene nodo
-padre.
--Ponemos elegir los nodos  del template y colonarlos añadiendo contenido y luego posicionandolos donde nos interese.
+- Este se representa en un árbol del DOM distinto al documento HTML.
 
+- Un *document fragment* no tiene nodo padre.
 
+- Ponemos elegir los nodos  del template y colocarlos añadiendo contenido y luego posicionarlos donde nos interese.
 </script></section><section data-markdown><script type="text/template">
 ## Ejemplo: Tabla con template
 
 ```js 
-    var t = document.querySelector('#productrow');
+    var t = document.querySelector('#productRow');
     // Clone the new row and insert it into the table
     var tb = document.querySelector("tbody");
     var clone = document.importNode(t.content, true);
@@ -904,39 +887,34 @@ padre.
     td[0].textContent = "0384928528";
     td[1].textContent = "Acme Kidney Beans 2";
     tb.appendChild(clone2);
-
-} 
 ```
 https://piruletas.000webhostapp.com/teoria/T5/HTML_Table_DOM.html
+https://piruletas.000webhostapp.com/teoria/T5/TemplateTable.html
 </script></section></section><section ><section data-markdown><script type="text/template">
-# JSON:Dato Esctruturado
+# JSON: Dato Esctruturado
 
- JSON, acrónimo de **JavaScript Object Notation** , es un
-formato ligero para el intercambio de datos.
+ JSON, acrónimo de **JavaScript Object Notation** , es un formato ligero para el intercambio de datos.
 
 **Propiedades**:
 
-- Ligero: formato ligero para el intercambio de datos
-- Simple: Formato sencillo de leer por humanos
-y de parsear/analizar por máquinas
+- Ligero: Formato ligero para el intercambio de datos.
+- Simple: Formato sencillo de leer por humanos y de parsear/analizar por máquinas.
 - Funcional: Los objetos JSON están tipificados. 
 - Abierto: Formato de texto independiente del lenguaje.
-- Extensible: formado por unas estructuras que pueden
-anidarse.
+- Extensible: Formado por unas estructuras que pueden anidarse.
 </script></section><section data-markdown><script type="text/template">
 ## Estructura Datos JSON
 
-- JSON es una sintaxis para serializar objetos, arreglos, números,
-cadenas, booleanos y nulos. 
-- La estructura de datos de JSON está basada en pares nombre:valor
-- Las 2 estructuras principales son el objeto Json y la Lista JSON.
+- JSON es una sintaxis para serializar objetos, arreglos, números, cadenas, booleanos y nulos. 
+- La estructura de datos de JSON está basada en pares *nombre:valor*
+- Las 2 estructuras principales son el objeto JSON y la lista JSON.
 
 ![JSON object](./media/T5/image16.png)
 ![JSON array](./media/T5/image17.png)
 
 </script></section><section data-markdown><script type="text/template">
 ## Acceso elementos Objeto JSON
-```
+```js
 JSONdata={"menu": {
 "id": "file",
 "value": "File",
@@ -977,17 +955,14 @@ var submenuVal = JSONdata.menu.popup.menuitem[ 0 ]["value"]
 JSON PHP
 
 ### PHP  
--  **json_encode** (cadena): Función que 
-devuelve un objeto o
-arreglo a partir de una cadena con sintaxis JSON.
+-  **json_encode** (cadena): Función que devuelve un objeto o arreglo a partir de una cadena con sintaxis JSON.
 
--  **json_decode** (dato); función que devuelve un objeto o
-arreglo en formato cadena con sintaxis JSON.
+-  **json_decode** (dato): función que devuelve un objeto o arreglo en formato cadena con sintaxis JSON.
 </script></section><section data-markdown><script type="text/template">
-Ejercicio JS: Construir el Json 
+Ejercicio JS: Construir el JSON 
 {"bar":"new property”,"baz":3}
 
-```
+```js
 var foo = {};
 foo.bar ="new property";
 foo.baz = 3 ;
@@ -998,7 +973,7 @@ console.log (JSON.stringify(foo));
 
 </script></section><section data-markdown><script type="text/template">
 
- # Ejemplo PHP JSON.
+# Ejemplo PHP JSON.
 
 https://piruletas.000webhostapp.com/teoria/T5/JsonPhp.php
 ```php
@@ -1024,10 +999,11 @@ Manzana
 </script></section><section data-markdown><script type="text/template">
 
 ## Ejemplo envío una tabla al cliente como un JSON
+
 https://piruletas.000webhostapp.com/teoria/T5/SendJSON.php
 
 
-```
+```php
 header('Content-type: application/json');
 $result = $pdo->prepare("SELECT * FROM A_GrupoCliente");
 $result->execute();
@@ -1035,7 +1011,8 @@ $datos = $result->fetchAll(PDO::FETCH_ASSOC);
 echo json_encode($datos);
 
 ```
-##Ejemplo crear tabla con Template y Json en JS
+## Ejemplo crear tabla con Template y JSON en JS
+
 https://piruletas.000webhostapp.com/teoria/T5/TemplateTableJson.html
 
 
@@ -1051,25 +1028,21 @@ https://piruletas.000webhostapp.com/teoria/T5/TemplateTableJson.html
  -  **window.frames** devuelve la lista de iframes del documento.
 </script></section><section data-markdown><script type="text/template">
 #### Sample Iframe
-```
+```html
 <iframe width="400" height="215" frameborder="0"
 	scrolling="no" marginheight="0" marginwidth="0"
 	src="https://maps.google.com/maps?f=....">
 </iframe>
-
-
 ```
+
 https://piruletas.000webhostapp.com/teoria/T5/webDOMIframe.html
-
-
 
 </script></section></section><section ><section data-markdown><script type="text/template">
 
 # CORS
 - Por seguridad JS no permite que una  una aplicación que reside en example.com pueda 
 extraer datos de [http://www.example2.com.](http://www.example2.com.) 
-- El uso compartido de recursos de origen cruzado (CORS- introducido en HTML5) permite a las aplicaciones web de un dominio realizar solicitudes
-de dominio cruzado.
+- El uso compartido de recursos de origen cruzado (CORS- introducido en HTML5) permite a las aplicaciones web de un dominio realizar solicitudes de dominio cruzado.
 - Hay que habilitar estas llamadas tanto en el servidor como en el cliente.
 
 http://www.w3.org/TR/cors/
@@ -1096,7 +1069,7 @@ petición hecha a un servidor externo debe presentar credenciales CORS o no.
 - **crossorigin=use-credentials** : las peticiones CORS para el elemento no tendrán la etiqueta "omit credentials" establecida.
 
 
-EJEMPLO Google maps con cors y sin cors
+EJEMPLO Google maps con CORS y sin CORS
 
 https://piruletas.000webhostapp.com/teoria/T5/webDOMIframe.html
 
@@ -1111,9 +1084,10 @@ Soluciones para utilizar codigo JS no compatible:
 
 1- Transpiler(compilador): Transforma tu codigo reemplazando las secciónes de codigo para que se puedan ejecutar ocon el JS nativo.
   - Babel : Permite transformar el código con las nuevas características de ES6, en un JS ES5 o inferior.
-  - Traceur: Transpiles ES6, ES7, and beyond into ES5
+  - Traceur: Compila ES6, ES7, y más en el formato ES5
 
 2- Codigo polyfill (Plugin): permite emular algunas apis aunque no estén implementadas en el JS nativo. Se utiliza para que los navegadores soporten las últimas APIS que quieras utilizar.
+
 Implementa el código que los navegadores no soportan.
 </script></section><section data-markdown><script type="text/template">
 ## babel
