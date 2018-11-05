@@ -682,7 +682,7 @@ Que vale  document.getElementById(“id”):
 - si el script se pone al principio del Body
 - si el script se pone al final del Body?
 - ¿Qué referencia THIS?
-</script></section></section><section  data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Cuestiones
 
 - ¿Cómo modifico un documento
@@ -693,8 +693,15 @@ del DOM en php y HTML?
 contentText.
 - ¿Se carga primero el body o se
 ejecuta primero el script?
+</script></section><section data-markdown><script type="text/template">
+#Ejemplo carga imágenes
+```js
+Url2="http://www.bigfoto.com/themes/nature/animals/rhino.jpg";
+document.querySelector("#animal").src=Url2;
+```
 
-</script></section><section ><section data-markdown><script type="text/template">
+Ejercicio: Crea un carrusel de 5 fotos.
+</script></section></section><section ><section data-markdown><script type="text/template">
 #  BOM: Browse Object Model (Browser Web API)
 
 
@@ -798,6 +805,7 @@ Clase del para gestionar eventos.
 - La **funcionEjecutar** se ejecuta cuando se produce el evento
 - El **Boolean es opcional** especifica si el evento debe ser capturado
 (true) o no (false,  valor  por defecto).
+
 </script></section><section data-markdown><script type="text/template">
 ## Ejemplo DOM Validación datos formularios
 
@@ -827,11 +835,11 @@ detectores();
 ¿Funciona correctamente?
 Solución:
 https://piruletas.000webhostapp.com/teoria/T5/FormEventHandler.html 
-</script></section><section data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 
 # Gestión  de Eventos: Capture/bubbling
 <img src="./media/T5/CicloEvent.png" >
-<p></a>http://www.thatjsdude.com/images/eventBubble.pn</a></p>
+<p></a>http://www.thatjsdude.com/images/eventBubble.png</a></p>
 </script></section><section data-markdown><script type="text/template">
 ## Capture/bubbling/target
  -  **Capture** : Al realizar el cliente un evento, el navegador sabe que se ha producido un evento,y busca desde la raíz del DOM para
@@ -839,7 +847,14 @@ ver donde se ha producido (*event object*)
  -  **Target** : Una vez sabe en qué elemento se ha producido (*event target object*) el explorador comprueba si tiene algún controlador en ese elemento, si existe lo ejecuta. 
  -  **Bubbling** : Después de disparar el lanzador, busca hacia la raíz, si en los niveles padre del elemento hay algún otro controlador que se active con ese evento, en su caso lo lanzará. Esta etapa de su movimiento hacia arriba se llama la propagación de eventos 
 
-</script></section></section><section ><section data-markdown><script type="text/template">
+Ejemlo
+https://piruletas.000webhostapp.com/teoria/T5/ejemCapture.html
+
+Cuestion:
+
+Diferencia: event.target  y currentTarget
+---
+
 # Template: Document Fragment
 
 ```html
