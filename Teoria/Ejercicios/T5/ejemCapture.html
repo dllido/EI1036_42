@@ -5,7 +5,6 @@
 
 <title>test</title>
 <script>
-var divs = document.getElementsByTagName('div');
 
 function capture() {
     log('capture: ' + this.firstChild.nodeValue.trim())
@@ -21,17 +20,22 @@ for (var i = 0; i < divs.length; i++) {
 }
 }
 function fun1(event){
-event.background-color="green";
+event.target.style.backgroundColor="green";
+event.currentTarget.style.borderColor="blue";
 }
 function fun2(event){
-event.background-color="red";
-event.font-color="green";
+    event.target.style.borderColor="purple";
+    event.currentTarget.style.borderColor="yelow";
 }
 function load(){
+    var divs = document.getElementsByTagName('div');
 
     divs[1].addEventListener('dblclick', fun1, true);
-    divs[2].addEventListener('dblclick', fun2, true);
-
+    divs[3].addEventListener('dblclick', fun2, true);
+    for (var i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('click', capture, true);
+        divs[i].addEventListener('click', bubble, false);
+}
 }
 
 function log(msg) {

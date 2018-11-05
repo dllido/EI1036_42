@@ -15,7 +15,7 @@ function cargarTemplate(datos){
 	td = t.content.querySelectorAll("td");
 	for  (var i = 0; i < datos.length; i++){
 		
-		td[0].textContent =datos[i].id;
+		td[0].textContent =datos[i].person_eid;
 		td[1].textContent = datos[i].nombre;
 		
 		clone = document.importNode(t.content, true);
