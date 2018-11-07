@@ -14,7 +14,8 @@
                 { 'id': 'name', 'help': 'Nombre completo' },
                 { 'id': 'age', 'help': 'Edad (debes tener más de 16 años)' }];
             for (let i = 0; i < helpText.length; i++) {
-                document.getElementById(item.id).addEventListener("focus", function () { showHelp(helpText[i]) });
+                let item = helpText[i];
+                document.getElementById(item.id).addEventListener("focus", function () { showHelp(item.help) });
             }
         }
         document.addEventListener("DOMContentLoaded", function () { setupHelp();});

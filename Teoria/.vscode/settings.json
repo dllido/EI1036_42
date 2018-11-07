@@ -1,0 +1,5 @@
+{
+   "workbench.editor.tabSizing": "shrink",
+   "editor.acceptSuggestionOnEnter": "smart",
+"editor.tabSize": 3
+}
