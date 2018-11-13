@@ -9,55 +9,69 @@
  * * @license http://www.fsf.org/licensing/licenses/gpl.txt GPL 2 or later
  * * @version 2
  * */
-include_once(plugin_dir_path( __FILE__ ).'./include/gestionBD');
-$table = "A_clientGroup";
 
-//seguridad wp
+
+//Estas 2 instrucciones me aseguran que el usuario accede a través del WP. Y no directamente
 if ( ! defined( 'WPINC' ) ) exit;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+$pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
+include_once(plugin_dir_path( __FILE__ ).'gestionBD.php');
+$table = "A_GrupoCliente";
+
+error_reporting(E_ALL);
+
+
+
 //Funcion instalación plugin. Crea tabla
-function my_group_install(){
-    $query="CREATE TABLE IF NOT EXISTS $table (person_id INT(11) NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(100), apellidos VARCHAR(100), email VARCHAR(100),  foto_file VARCHAR(25), clienteMail VARCHAR(100)  PRIMARY KEY(client_id))";
-    //echo $query;
-    $pdo->exec($query);
+function CrearT($table){
+    $pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
+    $query="CREATE TABLE IF NOT EXISTS $table (person_id INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(100),  email VARCHAR(100),  foto_file VARCHAR(25), clienteMail VARCHAR(100),  PRIMARY KEY(person_id))";
+    $consult = $pdo1->prepare($query);
+    $consult->execute (array());
 }
 
 
-add_action('admin_post_nopriv_my_datos', 'my_datos');
-add_action('admin_post_my_datos', 'my_datos');
+
 
 
 //CONTROLADOR
 //Esta función realizará distintas acciones en función del valor del parámetro
 //$_REQUEST['proceso'], o sea se activara al llamar a url semejantes a 
 //https://host/wp-admin/admin-post.php?action=my_datos&proceso=r 
-if ( ! function_exists( 'my_datos' ) ) {
+//if ( ! function_exists( 'my_datos' ) ) {
 function my_datos()
 { 
-    global $pdo;
     global $table;
-    global $$user_ID , $user_email;
+    global $pdo;
 
+    global $user_ID , $user_email;
+    //my_group_install();
+    print("Bienvenido $user_email");
     get_currentuserinfo();
     if ('' == $user_ID) {
                 //no user logged in
                 exit;
     }
-    if (!(isset($_REQUEST['action']) and isset($_REQUEST['proceso'])))  exit;
+    //Al estar autentificado eliminamos que no se vea el dashboard
+    //Excepto al administrador
+    function remove_admin_bar() {
+            add_filter(‘show_admin_bar’, ‘__return_false’);
+        }   
+    
+    if (!(isset($_REQUEST['action'])) or !(isset($_REQUEST['proceso']))) { print("Opciones no correctas $user_email"); exit;}
 
     get_header();
+    echo '<div class="wrap">';
     switch ($_REQUEST['proceso']) {
-    
         case "registro":
-            
             ?>
             <h1>GestiÓn de Usuarios </h1>
             <form class="fom_usuario" action="?action=my_datos&proceso=registrar" method="POST">
                 <label for="clienteMail">Tu correo</label>
                 <br/>
-                <input type="text" name="clienteMail"  size="20" maxlength="25" value="<?php print $userID?> "
+                <input type="text" name="clienteMail"  size="20" maxlength="25" value="<?php print $user_email?>"
                 readonly />
                 <br/>
                 <legend>Datos básicos</legend>
@@ -71,10 +85,6 @@ function my_datos()
                 <input type="text" name="email" class="item_requerid" size="20" maxlength="25" value="<?php print $email ?>"
                 placeholder="kiko@ic.es" />
                 <br/>
-                <label for=foto>Foto</label>
-                <br/>
-                <input type="file" name="foto" class="item_requerid" />
-                <br/>
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Deshacer">
             </form>
@@ -85,25 +95,20 @@ function my_datos()
                 print ("No has rellenado el formulario correctamente");
                 return;
             }
-            $query = "INSERT INTO     $table (nombre, email,clienteMail)
-                                VALUES (?,?,?)";
-                            
-            try { 
-                $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'] );
-                $consult = $pdo->prepare($query);
-                $a=$consult->execute(array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['passwd']  ));
-                if (1>$a)echo "InCorrecto";
-        
-                } 
-            catch (PDOExeption $e) {
-                    echo ($e->getMessage());
-                }
-        default:
+            $query = "INSERT INTO $table (nombre, email,clienteMail) VALUES (?,?,?)";         
+            $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'] );
+            //$pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
+            $consult = $pdo->prepare($query);
+            $a=$consult->execute($a);
+            if (1>$a) {echo "InCorrecto $query";}
+            break;
+        case "listar":
             //Listado amigos o de todos si se es administrador.
-            if (is_admin()) {$rows=consultar();}
-            else {$rows=consultarFiltro("email", $user_email);}
-            
+            if (current_user_can('administrator')) {$rows=consultar();}
+            else {$rows=consultarFiltro("clienteMail", $user_email);}
+
             if (is_array($rows)) {/* Creamos un listado como una tabla HTML*/
+                
                 print '<div><table><th>';
                 foreach ( array_keys($rows[0])as $key) {
                     echo "<td>", $key,"</td>";
@@ -119,11 +124,14 @@ function my_datos()
                 print "</table></div>";
             }
             break;
+        default:
+            print "Opción no correcta";
         
     }
-
+    echo "</div>";
     get_footer();
     }
-}
-
+//}
+//add_action('admin_post_nopriv_my_datos', 'my_datos');
+//add_action('admin_post_my_datos', 'my_datos'); //no autentificados
 ?>

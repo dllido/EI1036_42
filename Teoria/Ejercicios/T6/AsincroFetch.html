@@ -13,33 +13,35 @@
                 response.status);
               return;
             }
-
             // Examine the text in the response
-            response.json().then(function (data) {
-              console.log(data);
+            response.text().then(function (data) {
+              //sec = document.createElement('section');
+              //sec = document.createDocumentFragment();
+              //document.write(data);
+              //nodoScript = sec.querySelector("script");
+              //nodoDiv = sec.querySelector("div");
+              lugar.innerHTML = data;
+              nodoScript = lugar.querySelector("script");
+              if (null != nodoScript) {
+                let myScript = document.createElement('script');
+                myScript.textContent = nodoScript.innerHTML;
+                document.head.appendChild(myScript);
+                (nodoScript.parentNode).removeChild(nodoScript);
+              }
             });
           }
         )
         .catch(function (err) {
           console.log('Fetch Error :-S', err);
         });
-      var Ajax1 = new XMLHttpRequest();
-      Ajax1.addEventListener('readystatechange', function () {
-        console.log(this.readyState);
-        if (this.readyState === 4)
-          lugar.innerHTML = Ajax1.responseText;
-        return true;
-      })
-      Ajax1.open("GET", src_url);
-      Ajax1.send();
       return true;
     }
 
     function detectores() {
+      lugar = document.querySelector("#divi");
       enlace = document.querySelector("nav a");
-      src_url = enlace.getAttribute("href");
       enlace.addEventListener("click", function (event) {
-        if (cargaAjax(event.target.href, event.target.parentElement) == true) {
+        if (cargaAjax(event.target.href, lugar) == true) {
           event.preventDefault()
         }
       });
@@ -47,15 +49,17 @@
     document.addEventListener("DOMContentLoaded", function () {
       detectores()
     });
+    
   </script>
 </head>
 
 <body>
   <h1>Hola Mundo<h1>
       <nav>
-        <p><a id="login" href="./closureProblem.html"> Acceder </a>
+        <p><a id="login" href="./closureProblemAsinc.html"> Acceder </a>
           <p>
       </nav>
+      <div id="divi"></div>
 </body>
 
 </html>

@@ -11,12 +11,9 @@
 				$result = $pdo->prepare("SELECT * FROM A_GrupoCliente");
 				$result->execute();
 				$datos = $result->fetchAll(PDO::FETCH_ASSOC);
-				$salida=array("plantilla"=>"listarTemplate.html","datos"=>$datos);
 				echo json_encode($salida);
-				//$salida="{\"plantilla\":\"listarTemplate.html\",\"datos\":$dat}";
 				break;
 			default:
-				
 				require_once('listarTemplate.html');
 		
 	}
