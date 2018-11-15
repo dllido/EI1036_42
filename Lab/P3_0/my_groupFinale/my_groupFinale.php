@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: my_group
+Plugin Name: my_groupFinale
 Description: Register group of persons.
 Author URI: lola
 Author Email: dllido@uji.es
@@ -29,4 +29,14 @@ add_action('admin_post_my_datos', 'my_datos');
 //add_action('admin_post_nopriv_my_datos', 'my_datos');
 
 include_once(plugin_dir_path( __FILE__ ).'include/functions.php');
+
+// Servicios rest
+
+add_action( 'rest_api_init', function () {
+   register_rest_route( 'my_groupFinale', '/amigos/(\w+)', array(
+     'methods' => 'GET',
+     'callback' => 'my_datosRest',
+   ) );
+ } );
+
 ?>
