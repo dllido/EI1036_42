@@ -4,7 +4,7 @@ add_filter("the_content", "mfp_Fix_Text_Spacing");
 // Automatically correct double spaces from any post
 function mfp_Fix_Text_Spacing($the_Post)
 {
-$the_New_Post = str_replace(".* ", " ", $the_Post);
+$the_New_Post = preg_replace('/\s+/', ' ', $the_Post);
 return $the_New_Post;
 }
 

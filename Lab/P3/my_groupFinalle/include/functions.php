@@ -25,7 +25,7 @@ $table = "A_GrupoCliente";
 
 
 //Funcion instalación plugin. Crea tabla
-function CrearT($table)
+function MPP_CrearT($table)
 {
     $pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $query = "CREATE TABLE IF NOT EXISTS $table (person_id INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(100),  email VARCHAR(100),  foto_file VARCHAR(25), clienteMail VARCHAR(100),  PRIMARY KEY(person_id))";
@@ -42,7 +42,7 @@ function CrearT($table)
 //$_REQUEST['proceso'], o sea se activara al llamar a url semejantes a 
 //https://host/wp-admin/admin-post.php?action=my_datos&proceso=r 
 
-function my_datos()
+function MPP_my_datos()
 {
     global $table;
     global $pdo;
@@ -59,37 +59,19 @@ function my_datos()
 
 
     if (!(isset($_REQUEST['action'])) or !(isset($_REQUEST['proceso']))) {
+
         print("Opciones no correctas $user_email");
         exit;
     }
 
-    get_header();
-    echo '<div class="wrap">';
+    if (!(isset($_REQUEST['partial']))) {
+        get_header();
+        echo '<div class="wrap">';
+    }
     switch ($_REQUEST['proceso']) {
         case "registro":
-            ?>
-            <h1>GestiÓn de Usuarios </h1>
-            <form class="fom_usuario" action="?action=my_datos&proceso=registrar" method="POST">
-                <label for="clienteMail">Tu correo</label>
-                <br/>
-                <input type="text" name="clienteMail"  size="20" maxlength="25" value="<?php print $user_email ?>"
-                readonly />
-                <br/>
-                <legend>Datos básicos</legend>
-                <label for="nombre">Nombre</label>
-                <br/>
-                <input type="text" name="userName" class="item_requerid" size="20" maxlength="25" value="<?php print $userName ?>"
-                placeholder="Miguel Cervantes" />
-                <br/>
-                <label for="email">Email</label>
-                <br/>
-                <input type="text" name="email" class="item_requerid" size="20" maxlength="25" value="<?php print $email ?>"
-                placeholder="kiko@ic.es" />
-                <br/>
-                <input type="submit" value="Enviar">
-                <input type="reset" value="Deshacer">
-            </form>
-            <?php
+            $MP_user = null;
+            include_once(plugin_dir_path(__FILE__) . '../templates/registro.php');
             break;
         case "registrar":
             if (count($_REQUEST) < 3) {
@@ -102,8 +84,11 @@ function my_datos()
             $consult = $pdo->prepare($query);
             $a = $consult->execute($a);
             if (1 > $a) {
-                echo "InCorrecto $query";
-            } else wp_redirect(admin_url('admin-post.php?action=my_datos&proceso=listar'));
+                echo "InCorrecto: $query";
+            } else {
+                echo "<p>Inserción realizada con éxito</p>";
+                if (!(isset($_REQUEST['partial']))) wp_redirect(admin_url('admin-post.php?action=my_datos&proceso=listar'));
+            }
             break;
         case "listar":
             //Listado amigos o de todos si se es administrador.
@@ -114,27 +99,20 @@ function my_datos()
             }
 
             if (is_array($rows)) {/* Creamos un listado como una tabla HTML*/
-
-                print '<div><table><th>';
-                foreach (array_keys($rows[0]) as $key) {
-                    echo "<td>", $key, "</td>";
-                }
-                print "</th>";
-                foreach ($rows as $row) {
-                    print "<tr>";
-                    foreach ($row as $key => $val) {
-                        echo "<td>", $val, "</td>";
-                    }
-                    print "</tr>";
-                }
-                print "</table></div>";
+                $filas = json_encode($rows);
+                include_once(plugin_dir_path(__FILE__) . '../templates/listar.php');
+            
+                //wp_send_json($rows);
+                //wp_register_script('miscript', get_stylesheet_directory_uri().'/js/ cargaTemplateTable.js');
+                //wp_enqueue_script('miscript');
+                //wp_send_json($rows);
             }
             break;
         default:
             print "Opción no correcta";
 
     }
-    echo "</div>";
+    
     // get_footer ademas del pie de página carga el toolbar de administración de wordpres si es un 
     //usuario autentificado, por ello voy a borrar la acción cuando no es un administrador para que no aparezca.
     if (!current_user_can('administrator')) {
@@ -144,42 +122,11 @@ function my_datos()
         // for the front-end
         remove_action('wp_footer', 'wp_admin_bar_render', 1000);
     }
-
-    get_footer();
+    if (!(isset($_REQUEST['partial']))) {
+        get_footer();
+        echo "</div>";
+    }
 }
 //add_action('admin_post_nopriv_my_datos', 'my_datos');
 //add_action('admin_post_my_datos', 'my_datos'); //no autentificados
-
-
-
-function my_datosRest($data)
-{
-    global $pdo;
-    global $table;
-    global $user_ID, $user_email;
-    var_dump($_REQUEST);
-    var_dump($data);
-    echo("sss");
-    // Create the response object
-    $code = 401;
-
-    if (!(isset($_REQUEST['action']) and isset($_REQUEST['proceso']))) {
-        $data = array('some error', 'response', 'data');
-
-    } else {
-        $code = 201;
-    }
-
-    if (is_admin()) {
-        $data = consultar();
-    } else {
-        $data = consultarFiltro("email", $user_email);
-    }
-
-
-$response = new WP_REST_Response($data);
-$response->set_status($code);
-return response;
-}
-
 ?>

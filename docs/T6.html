@@ -55,21 +55,16 @@
 
 
 1. Etiqueta SCRIPT
-2. Función callback:
+2. Función callback
 3. Función flecha
 4. Asincronia:
+ Closures / Promises / Async-Await
 
-  2.2 Closures
-
-  2.2 Promises 
-
-  2.3 Async/Await  
-
-3. API XMLHttpRequest (AJAX)
+5. API XMLHttpRequest (AJAX)
    
-4. API FETCH 
+6. API FETCH 
    
-5. FormData
+7. FormData
    
 </script></section><section ><section data-markdown><script type="text/template">
 
@@ -145,7 +140,7 @@ setTimeout(function(){mike.showName();},5000);//correcto
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Función Flecha => (arrow functions)
 
-Forma de definir funciones anónimas más corta.
+Forma de definir funciones anónimas más cortas.
 
 `([param] [, param]) => { instrucciones }`
 
@@ -377,10 +372,10 @@ isDinnerTime()
 
 
 </script></section></section><section ><section data-markdown><script type="text/template">
-#   funciones asincrónicas: Async / Await
-- Te permite escribir un código basado en promesas como si fuese sincrónico, pero sin bloquear el hilo principal. 
-- Hacen a tu código asincrónico menos "inteligente" y más legible.
-- Las funciones asincrónicas siempre devuelven una promesa.
+#   funciones asíncronas: Async / Await
+- Te permite escribir un código basado en promesas como si fuese síncrono, pero sin bloquear el hilo principal. 
+- Hacen a tu código asíncrono menos "inteligente" y más legible.
+- Las funciones asíncronas siempre devuelven una promesa.
 - EmacScript 7.
 - Con **async** señalamos que  la función  es asíncrona, debe devolver una promesa.
 - Una función async puede contener una expresión await, la cual pausa la ejecución de la función asíncrona y espera la resolución de la Promise pasada y, a continuación, reanuda la ejecución de la función async y devuelve el valor resuelto.
@@ -484,7 +479,7 @@ Ajax1.send();
 document.getElementByID("central").innerHTML=Ajax1.responseText;
 ```
 
-- ¿Hay algun problema si es sincrono?
+- ¿Hay algun problema si es síncrono?
 - ¿Y si es asincrono?
 
 </script></section><section data-markdown><script type="text/template">
@@ -793,30 +788,17 @@ if (document.forms.length > 0) {
 ```
 </script></section></section><section  data-markdown><script type="text/template">
 #### Enlaces de Interés
- - http://www.w3.org/TR/XMLHttpRequest/
- - https://developer.mozilla.org/es/docs/XMLHttpRequest/Using_XMLHt
-tpRequest
- - https://fetch.spec.whatwg.org/#
- - https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizan
-do_Fetch
- - http://www.etnassoft.com/2016/10/10/estudiando-la-nueva-api-fetc
-h-la-evolucion-natural-de-xhr-en-el-nuevo-javascript/
- - https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/
-Funciones/Arrow_functions
-</script></section><section  data-markdown><script type="text/template">
-#### Bibliografía
+
+- http://www.w3.org/TR/XMLHttpRequest/
+- https://developer.mozilla.org/es/docs/XMLHttpRequest/Using_XMLHttpRequest
+- https://fetch.spec.whatwg.org/#
+- https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch
+- http://www.etnassoft.com/2016/10/10/estudiando-la-nueva-api-fetch-la-evolucion-natural-de-xhr-en-el-nuevo-javascript/
+- https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions
 
 
-- https://www.html5rocks.com/es/tutorials/internals/howbrowserswork/
-- https://developer.mozilla.org/en-US/docs/Web/API
-- http://www.thatjsdude.com/
-- https://javascript.info
 
 
-EDITOR JS+HTML+CSS
-
-[http://jsfiddle.net/](http://jsfiddle.net/)
-https://codepen.io/idesi/pen/rLgaJO
 
 
 

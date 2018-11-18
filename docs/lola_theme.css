@@ -21,8 +21,7 @@
   padding: 0 0 5px 0;
 }
 .reveal li{
-  line-height: 1.1;
-  padding: 0px;}
+  line-height: 1.1;}
 .reveal h1 {
   font-size: 1.2em; 
   color: #83a;}
@@ -41,13 +40,14 @@
 .reveal ol,ol.ul{
     columns: 2;;
 }
-.reveal li{margin-left:28px}
+.reveal li{margin-left:5px}
 .reveal table{font-size: 0.5 em;line-height: 0.8em;}
 .reveal .slides > section{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
 .reveal ol,
 .reveal dl,
 .reveal ul {
   text-align: left;
+  width: 100%;
   /*margin: 10px 20px 10px 20px;*/
   line-height: 1.1;
   }

@@ -4,10 +4,9 @@ Plugin Name: my_groupFinale
 Description: Register group of persons.
 Author URI: lola
 Author Email: dllido@uji.es
-Version: 1
+Version: 2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-namespaces": [my_groupFinale]
 */
 
 
@@ -25,35 +24,15 @@ namespaces": [my_groupFinale]
 
 //La siguiente sentencia activaria la acción para todos los usuarios.
 //add_action('admin_post_nopriv_my_datos', 'my_datos');
-namespace my_groupFinale;
+
 include(plugin_dir_path( __FILE__ ).'include/functions.php');
 
-
-
+register_activation_hook( __FILE__, 'MPP_Ejecutar_crearT');
 //add_action( 'plugins_loaded', 'Ejecutar_crearT' ); // esto se ejecuta siempre que se llama al plugin
-function Ejecutar_crearT(){
-    CrearT("A_GrupoCliente");
-    add_action('admin_post_my_datos', 'my_datos'); 
-
+function MPP_Ejecutar_crearT(){
+    MPP_CrearT("A_GrupoCliente");
 }
 
-
-/*
-//Como poner una URL REST
-register_activation_hook( __FILE__, 'Ejecutar_crearT');
-add_action( 'rest_api_init', function () {
-  register_rest_route('my', "/?(\w*)", array(
-      'methods' => 
-        "GET",
-      'callback' => 'my_datosRest'
-    ));
-  });
-
-  */
-
-//add_action('admin_post_nopriv_my_datos', 'my_datos'); //no autentificados
-
-// Servicios rest
-
-
+//add_action('admin_post_nopriv_my_datos', 'MPP_my_datos'); //no autentificados
+add_action('admin_post_my_datos', 'MPP_my_datos'); 
 ?>
