@@ -57,7 +57,7 @@
 1. Etiqueta SCRIPT
 2. Función callback
 3. Función flecha
-4. Asincronia:
+4. Asincronía:
  Closures / Promises / Async-Await
 
 5. API XMLHttpRequest (AJAX)
@@ -74,21 +74,21 @@ Atributos:
  -  **src** : URI del recurso con los programas  a ser cargados.
  -  **type:**  por defecto **text/javascript**. 
  -  **charset** : Por defecto utf-8. La codificación de caracteres.
- -  **async:** Boolean.  **true**  indica que el fichero  del src debe ser cargados asincrónicamente.
+ -  **async:** Boolean.  **true**  indica que el fichero del src debe ser cargados asincrónicamente.
  -  **defer:** Booleano. **true** el programa será recuperado en paralelo al
 procesamiento del documento y evaluado sólo cuando se haya completado el
 procesamiento del documento.
 </script></section><section data-markdown><script type="text/template">
 ## Script
 Los scripts sin atributo async o defer, son interpretados y ejecutados
-inmediatamente, antes de que el navegador continúe procesando la página por lo que ralentiza la velocidad de carga de la página.
+inmediatamente, antes de que el navegador continúe procesando la página, lo que puede ralentizar la carga de la página.
 
 
-## Ejemplo Async+Template
+## Ejemplo Async + Template
 
 http://piruletas.cloudaccess.host/teoria/T6/cargaTemplateAsync.html
 
-```
+```html
 <script type="text/javascript"
 src="listarTemplateAsync.js" async defer >
 __SCRIPT_END__
@@ -99,7 +99,7 @@ __SCRIPT_END__
 
 Un callback es un tipo de función que se pasa como parametro a otra función por referencia y se  ejecutada desde una subrutina. 
 
-```
+```js
 function ejemplo2(fn) {
   var nombre = "Pepe";
   fn(nombre);
@@ -115,17 +115,17 @@ ejemplo2(function(nom) {
 Ejemplos:
 
 ```
-x.addEventListener ("Evento", funcionEjecutar,Boolean*)
+x.addEventListener ("Evento", funcion_Callback, Boolean*)
 
-setTimeout(funcion[, retraso]); 
+setTimeout(funcion_Callback[, retraso]); 
 
 ```
-setTimeout: ejecuta la funcion tras los segundos indicados en retraso.
+setTimeout: ejecuta la función callback tras los segundos indicados en retraso.
 
 </script></section><section data-markdown><script type="text/template">
 ## Problemas paso valor/referencia:
 
-```
+```js
 var one = function() { mike.showName(); };
 var two = mike.showName;
 var three = mike.showName();
@@ -149,26 +149,26 @@ Forma de definir funciones anónimas más cortas.
 
 ```js
 
-(function(quien){alert("hola"+quien)})("mundo");
-(quien=>alert("hola"+quien))("mundo");
+(function(quien){alert("hola" + quien)})("mundo");
+(quien => alert("hola" + quien))("mundo");
 
-["mundo"].map(quien=>alert("hola"+quien))
+["mundo"].map(quien => alert("hola" + quien))
 ```
 
-El método *array.map()* crea un array como resultado de aplicar función que se pasa por parámetro  a cada elemento del array del método. Es una función  callback.
-
+El método *array.map()* crea un array como resultado de aplicar función que se pasa por parámetro a cada elemento del array del método. Es una función *callback*.
 </script></section><section data-markdown><script type="text/template">
 Ejemplo:
-```js
+```JS
 var elementos = [ "Hidrógeno","Helio","Litio"];
-a=elementos.map(function(elemento){ 
-    return elemento.length;
+a = elementos.map(function(elemento){ 
+      return elemento.length;
 });  
 
-b=elementos.map((elemento) => {
+b = elementos.map((elemento) => {
   return elemento.length;
-}); 
-c=elementos.map( elementos => elementos.length ); 
+});
+
+c = elementos.map( elementos => elementos.length ); 
 console.log(a);
 
 ```
@@ -189,13 +189,13 @@ contenedora.
 ## Cuestiones:
 ¿Qué funciones se han definido?
 
-¿Donde se ha definido nombre?
+¿Dónde se ha definido nombre?
 
-¿Que diferencia hay entre los 2 alerts?
+¿Qué diferencia hay entre los 2 alerts?
 
 ¿Hay algún error de ejecución?
 
-```JS
+```js
 function init() {
   var nombre= "Mozilla";
   function displayName() {alert(nombre);}
@@ -207,7 +207,7 @@ alert(nombre);
 </script></section><section data-markdown><script type="text/template">
 ## Ejemplos Closure
 
-```
+```js
 function llamaotra1(A){
   console.log(A);
   return "1";
@@ -223,9 +223,10 @@ function funcionllamada(B){
 
 llamaotra1(funcionllamada("Estoy Aqui1"));
 llamaotra1('funcionllamada("Estoy Aqui2")');
-llamaotra2('funcionllamada("Estoy Aqui3")');``` 
+llamaotra2('funcionllamada("Estoy Aqui3")');
+``` 
 
-¿Hay algun callback?
+¿Hay algún callback?
 ¿Que aparecerá en la pantalla?
 [EjemploClosure1](http://piruletas.cloudaccess.host/teoria/T6/closure.js)
 </script></section><section data-markdown><script type="text/template">
@@ -242,36 +243,48 @@ llamaotra2('funcionllamada("Estoy Aqui3")');```
 function showHelp(help) {
   document.getElementById('help').innerHTML = help;
 }
+
 function setupHelp() {
 var helpText = [
-{'id': 'email', 'help': 'Dirección de correo electrónico'},
-{'id': 'name', 'help': 'Nombre completo'},
-{'id': 'age', 'help': 'Edad (debes tener más de 16 años)'} ];
+    {'id': 'email', 'help': 'Dirección de correo electrónico'},
+    {'id': 'name',  'help': 'Nombre completo'},
+    {'id': 'age',   'help': 'Edad (debes tener más de 16 años)'} ];
+
 for (var i = 0 ; i < helpText.length; i++) {
    var item = helpText[i];
    document.getElementById(item.id).addEventListener
     ("focus",function() { showHelp(item.help)});}
 }
-setupHelp();
 
+setupHelp();
 ```
+
 http://piruletas.cloudaccess.host/teoria/T6/closureProblem.html
 </script></section><section data-markdown><script type="text/template">
+Solución con función flecha
+```js
+helpText.forEach(item => document.getElementById(item.id).addEventListener
+    ("focus",
+    function() { showHelp(item.help);}
+     ));
+```
+</script></section><section data-markdown><script type="text/template">
 ## Cuestiones ejemplo anterior:
-¿Qué valor muestra en la ayuda al pulsar sobre Name? 
+
+¿Qué valor muestra en la ayuda al pulsar sobre *Name*? 
 
 ¿Por qué?
 
-¿Hay algun callback?
+¿Hay algún callback?
 
 ## Solución: usar let en el bucle.
 http://piruletas.cloudaccess.host/teoria/T6/closureProblemSolv.html
 </script></section></section><section  data-markdown><script type="text/template">
 
-# Modelo Asincrono
+# Modelo Asíncrono
 Asincronía: acción que no tiene lugar en total correspondencia temporal con otra acción. (Fuente: Wikipedia).
 
-¿Ejemplo de asincronia?
+¿Ejemplo de asincronía?
 
 </script></section><section ><section data-markdown><script type="text/template">
 #  Promesas- Promise
@@ -281,32 +294,33 @@ Asincronía: acción que no tiene lugar en total correspondencia temporal con ot
 no sabemos cómo, ni cuándo se nos va a devolver un determinado valor.
 - Una promesa es un objeto que por medio de una máquina de estados
 podamos controlar cuándo un valor está disponible o no.
-- Los métodos de las promesas devuelven promesas, permitiendo que las promesas  se puedan encadenar.
+- Los métodos de las promesas devuelven promesas, permitiendo que las promesas se puedan encadenar.
 - EmacScript 7
 </script></section><section data-markdown><script type="text/template">
-## Metodos Promesas
+## Métodos Promesas
 
- **promisa=new Promise(function(resolve[, reject]) {});**
+ **promise = new Promise(function(resolve[, reject]) {});**
 
 *   promise.resolve (Obligatorio). Método  que se ejecuta para indicar que la promesa  se completó correctamente.
 *   promise.reject (Opcional). Método  que se ejecuta para indicar que la promesa se rechazó con un error. 
 
 Para encadenar promesas en caso de éxito o fracaso tenemos:
 *  promise.then(onFulfilled,onRejected) : Método para indicar que hacer
-cuando una promesa devuelve el valor deseado. Resolve
-* promise.catch(onRejected): Método para indicar que hacer cuando una promesa devuelve el valor no deseado. Reject
+cuando una promesa devuelve el valor deseado. **Resolve**
+* promise.catch(onRejected): Método para indicar que hacer cuando una promesa devuelve el valor no deseado. **Reject**
 </script></section><section data-markdown><script type="text/template">
 ### Promise.resolve()
 
-Retorna un objeto Promise que es resuelto con el parámetro:
-- si el valor es una promise, esa promise es devuelta; 
-- si el valor es un thenable (si tiene un método "then"), el valor devuelto le seguirá a ese thenable, adoptando su estado; 
+Retorna un objeto *Promise* que es resuelto con el parámetro:
+- si el valor es una promesa, esa promesa es devuelta; 
+- si el valor es un *thenable* (si tiene un método "then"), el valor devuelto le seguirá a ese thenable, adoptando su estado; 
 - de otro modo la promise devuelta estará completada con el valor.
   
 ```js
 var p1 = new Promise(function(resolve, reject) {
   resolve('456');
 });
+
 p1.then(function(value) {
   console.log(value);
   // expected output: 456
@@ -316,13 +330,14 @@ p1.then(function(value) {
 
 ```js
 var promise1 = Promise.resolve(123);
+
 promise1.then(function(value) {
   console.log(value);
   // expected output: 123
 });
 ```
 </script></section><section data-markdown><script type="text/template">
-## Estados Promesas
+## Estados de una Promesa
 
 Una promesa puede encontrarse en 4 estados:
 
@@ -365,14 +380,14 @@ isDinnerTime()
 </script></section><section data-markdown><script type="text/template">
 
 
-¿Que problemas tienen las promesas?
+¿Qué problemas tienen las promesas?
 - Notación inteligente
 - Anidamientos
 
 
 
 </script></section></section><section ><section data-markdown><script type="text/template">
-#   funciones asíncronas: Async / Await
+#   Funciones asíncronas: Async / Await
 - Te permite escribir un código basado en promesas como si fuese síncrono, pero sin bloquear el hilo principal. 
 - Hacen a tu código asíncrono menos "inteligente" y más legible.
 - Las funciones asíncronas siempre devuelven una promesa.
@@ -395,10 +410,12 @@ function isDinnerTime() {
         }, 50);
     });
 }
+
 async function hello() {
-    a=await isDinnerTime();
-    console.log("success: "+a);
-}   
+    a = await isDinnerTime();
+    console.log("success: " + a);
+}
+
 hello();
 
 
@@ -418,6 +435,7 @@ Soluciones en Javascript:
 # AJAX: API XMLHttpRequest
 
 <img src="./media/T6/image6.png" width="40%" style="float:right ">
+
 - Permite realizar múltiples peticiones mediante
 una  comunicación cliente/servidor Asincrona
 
@@ -456,7 +474,9 @@ debe devolver el recurso que se le solicita.
 
 ##  API XMLHttpRequest: Métodos
 
-` new XMLHttpRequest();`
+```js
+ new XMLHttpRequest();
+ ```
 
 - .open(método,URL,asincrono,usuario,clave)
 
@@ -472,7 +492,7 @@ debe devolver el recurso que se le solicita.
 </script></section><section data-markdown><script type="text/template">
 ## Ejemplo: Petición URL sincrona
 
-```
+```js
 var Ajax1=new XMLHttpRequest();
 Ajax1.open(“GET”,” http://www.example.com”);
 Ajax1.send();
@@ -480,7 +500,7 @@ document.getElementByID("central").innerHTML=Ajax1.responseText;
 ```
 
 - ¿Hay algun problema si es síncrono?
-- ¿Y si es asincrono?
+- ¿Y si es asíncrono?
 
 </script></section><section data-markdown><script type="text/template">
 # Estados  del motor de Ajax
@@ -504,7 +524,7 @@ asociado.
 ### Ejemplo: Carga hiperenlaces de forma asíncrona
 http://piruletas.cloudaccess.host/teoria/T6/AsincroAjax.html
 
-```
+```js
 function cargaAjax(src_url, lugar){
 var Ajax1=new XMLHttpRequest();
 Ajax1.addEventListener('readystatechange', function()
@@ -514,6 +534,7 @@ Ajax1.addEventListener('readystatechange', function()
 Ajax1.open("GET",src_url);
 Ajax1.send();
 }
+
 function ready()
  {enlace=document.querySelector("nav a");
  src_url=enlace.getAttribute("href");
@@ -521,6 +542,7 @@ function ready()
   { event.preventDefault();
    cargaAjax(event.target.src,event.target.parentElement);
 });} 
+
 document.addEventListener("DOMContentLoaded", 
          function(){ready()});
 
@@ -532,7 +554,7 @@ document.addEventListener("DOMContentLoaded",
 ### Cuestiones AJAX
 
  -  ¿Por qué está vacío el método sent?
- -   ¿Cómo sabemos que se ha enviado la respuesta completa?
+ -  ¿Cómo sabemos que se ha enviado la respuesta completa?
 
  - ¿Cómo indicamos si queremos que se realice síncrono o asíncrono?
 
@@ -683,7 +705,7 @@ Tipos de respuesta:
 </script></section><section data-markdown><script type="text/template">
 # Fetch: Request  Get
 
-```
+```js
 var myHeaders = new Headers();
 
 var myInit = { method: 'GET',
@@ -707,7 +729,7 @@ fetch(myRequest)
 
 Ejemplo: Carga  una  imagen 
 
-Ejemplo:http://piruletas.cloudaccess.host/teoria/T6/ImageSend.html
+Ejemplo: http://piruletas.cloudaccess.host/teoria/T6/ImageSend.html
 
   ```js
   async function asyncCall() {
@@ -720,9 +742,9 @@ Ejemplo:http://piruletas.cloudaccess.host/teoria/T6/ImageSend.html
 asyncCall();
 ```
 </script></section><section data-markdown><script type="text/template">
-# Ejempo Template+Fetch+Json
+# Ejempo Template + Fetch + JSON
 
-```
+```js
 document.querySelector('#listar').addEventListener("click", function (event) {
 	event.preventDefault();
 	var myRequest = new Request(event.target.href, myInit);
@@ -748,7 +770,7 @@ document.querySelector('#listar').addEventListener("click", function (event) {
   Los parámetros de un formulario se pueden recoger con el objeto FormData.
 
 
-```
+```js
 var formData = new FormData(form)
 var formElement = new FormdData (document.getElementById("myFormElement"));
 ```
@@ -756,7 +778,7 @@ var formElement = new FormdData (document.getElementById("myFormElement"));
 
 Ejemplo:http://piruletas.cloudaccess.host/teoria/T6/ImageSend.html
 
-```
+```js
 # fetch POST
 async function enviaForm(evento) {
    try {
@@ -768,7 +790,7 @@ async function enviaForm(evento) {
          method: 'post',
          body: data
       };
-      let request0 = new Request(url, init);
+      let request0 = new Request(init);
       const response = await fetch(request0);
       if (!response.ok) {
          throw Error(response.statusText);
