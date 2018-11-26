@@ -8,8 +8,8 @@
 		switch ($action) {
 			case "listar":
 				header('Content-type: application/json');
-				$result = $pdo->prepare("SELECT * FROM A_GrupoCliente");
-				$result->execute();
+				$result = $pdo->prepare("SELECT * FROM A_GrupoCliente WHERE email=(?)  ");
+				$result->execute(['pp']);
 				$datos = $result->fetchAll(PDO::FETCH_ASSOC);
 				$salida=array("plantilla"=>"listarTemplate.html","datos"=>$datos);
 				echo json_encode($salida);
