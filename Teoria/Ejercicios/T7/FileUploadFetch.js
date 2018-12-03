@@ -4,15 +4,10 @@ addFile(event) {
    formData.append('name', 'some value user types');
    formData.append('description', 'some value user types');
    console.log(event.target.files[0]);
-
-   fetch(`http://.../gallery/${path}`, {
+   fetch('http://.../gallery/${path}', {
          method: 'POST',
-         headers: {
-            'Content-Type': 'multipart/form-data'
-         },
-         body: {
-            event.target.files[0]
-         }
+         headers: { 'Content-Type': 'multipart/form-data'},
+         body: {event.target.files[0]}
       })
       .then((response) => response.json())
       .then((data) => {
@@ -27,11 +22,10 @@ addFile(event) {
          isLoading: false
       }));
 }
-}
+
 
 render() {
-   return ( <
-      div >
+   return ("<div>
       <
       form encType = "multipart/form-data"
       action = "" >
@@ -45,6 +39,6 @@ render() {
       /form>
 
       <
-      /div>)
+      /div>")
    }
 }

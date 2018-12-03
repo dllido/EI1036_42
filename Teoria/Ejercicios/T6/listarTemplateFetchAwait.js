@@ -13,13 +13,10 @@ function cargarTemplate(datos) {
 		var t = document.querySelector('#productrow');
 		var tb = document.getElementsByTagName("tbody");
 		var clone;
-
 		td = t.content.querySelectorAll("td");
 		for (var i = 0; i < datos.length; i++) {
-
 			td[0].textContent = datos[i].person_eid;
 			td[1].textContent = datos[i].nombre;
-
 			clone = document.importNode(t.content, true);
 			tb[0].appendChild(clone);
 
@@ -28,40 +25,37 @@ function cargarTemplate(datos) {
 }
 
 
-function llamarTemplate(url_template, data) {
-	var myRequest = new Request(url_template, myInit);
-	fetch(myRequest)
-		.then(function (response) {
-			if (response.status == 200) return response.text();
-			else throw new Error('Something went wrong on api server!');
-		})
-		.then(function (response) {
-			console.debug(response);
-			document.querySelector('#plantilla').innerHTML = response;
+async function llamarTemplate(url_template, data) {
+	var myRequest = new Request(url_template,);
+	try {
+		const response = await fetch(myRequest,myInit);
+		const respuestaHTML = 	await response.text()
+
+
+		if (response.status == 200) {
+			document.querySelector('#plantilla').innerHTML = respuestaHTML;
 			cargarTemplate(data);
 
-			// ...
-		})
-		.catch(function (error) {
-			console.error(error);
-		});
+		} else throw new Error('Something went wrong on api server!');
+
+	} catch (error) {
+		console.log(error);
+	};
 }
 
 
-document.querySelector('#listar').addEventListener("click", function (event) {
+document.querySelector('#listar').addEventListener("click", async function (event) {
 	event.preventDefault();
-	var myRequest = new Request(event.target.href, myInit);
-	fetch(myRequest)
-		.then(function (response) {
-			if (response.status == 200) return response.json();
-			else throw new Error('Something went wrong on api server!');
-		})
-		.then(function (response) {
-			console.debug(response);
-			llamarTemplate(response.plantilla, response.datos);
-			// ...
-		})
-		.catch(function (error) {
-			console.error(error);
-		});
+	try {
+	
+		const response = await fetch(event.target.href,myInit);
+		const respuestaJson = await response.json();
+		if (response.status != 200) {
+			 throw new Error('Something went wrong on api server!');}
+		
+		llamarTemplate(respuestaJson.plantilla, respuestaJson.datos);
+
+	} catch (error) {
+		console.log(error);
+	};
 });

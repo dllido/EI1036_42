@@ -1,12 +1,12 @@
 async function cargaAsincro(src_url, lugar) {
    try {
    const response = await fetch(src_url);
-   const restpuestaHTML = await response.text()
+   const respuestaHTML = await response.text()
    if (response.status !== 200) {
      console.log('Looks like there was a problem. Status Code: ' +
        response.status);
    } else {
-     lugar.innerHTML = restpuestaHTML;
+     lugar.innerHTML = respuestaHTML;
      nodoScript = lugar.querySelector("script");
      if (null != nodoScript) {
        let myScript = document.createElement('script');
