@@ -1,4 +1,5 @@
 {
     "revealjs.slideNumber": true,
-    "eslint.enable": false
+    "eslint.enable": false,
+    "revealjs.slideExplorerEnabled": false
 }
