@@ -1,5 +1,6 @@
 {
     "revealjs.slideNumber": true,
     "eslint.enable": false,
-    "revealjs.slideExplorerEnabled": false
+    "revealjs.slideExplorerEnabled": false,
+    "markdown.extension.toc.githubCompatibility": true
 }
