@@ -25,7 +25,14 @@
 
      <link rel="stylesheet" href="./title_files/lola_theme.css">
 
-    
+    <!-- Printing and PDF exports -->
+    <script id="twitter-wjs" src="./title_files/widgets.js"></script><script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'libs/reveal.js/3.7.0/css/print/pdf.css' : 'libs/reveal.js/3.7.0/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script><link rel="stylesheet" type="text/css" href="./title_files/paper.css">
         
         <style>
                 
@@ -105,7 +112,8 @@
          if(window.location.search.match( /print-pdf-now/gi )) {
            window.print();
          }
-<link rel="stylesheet" href="./title_files/menu.css"><link rel="stylesheet" href="./title_files/font-awesome.min.css"><link href="./title_files/title-footer.css" type="text/css" rel="stylesheet"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+      </script><script type="text/javascript" src="./title_files/marked.js"></script><script type="text/javascript" src="./title_files/markdown.js"></script><script type="text/javascript" src="./title_files/chalkboard.js"></script><script type="text/javascript" src="./title_files/Chart.min.js"></script><script type="text/javascript" src="./title_files/csv2chart.js"></script><script type="text/javascript" src="./title_files/embed-tweet.js"></script><script type="text/javascript" src="./title_files/menu.js"></script>
+<script type="text/javascript" src="./title_files/search.js"></script><script type="text/javascript" src="./title_files/zoom.js"></script><script type="text/javascript" src="./title_files/notes.js"></script><script type="text/javascript" src="./title_files/math.js"></script><script type="text/javascript" src="http://localhost:54637/libs/highlight.js/9.12.0/highlight.js"></script><script type="text/javascript" src="./title_files/title-footer.js"></script><script type="text/javascript" src="./title_files/reveal-code-focus-1.0.0-mod.js"></script><link rel="stylesheet" href="./title_files/menu.css"><link rel="stylesheet" href="./title_files/font-awesome.min.css"><script type="text/javascript" src="./title_files/MathJax.js"></script><link href="./title_files/title-footer.css" type="text/css" rel="stylesheet"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
 .MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
 .MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
 .MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
