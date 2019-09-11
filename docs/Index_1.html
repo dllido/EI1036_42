@@ -13,7 +13,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- REVEAL CSS-->
-    <link rel="stylesheet" href="libs/reveal.js/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./reveal.js/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/white.css" id="theme">
     <link rel="stylesheet" href="plugin/title-footer/title-footer-mod.css" />
@@ -21,8 +21,8 @@
 
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-    <link rel="stylesheet" href="libs/highlight.js/9.12.0/darkula.css">
+    <link rel="stylesheet" href="./css/zenburn.css">
+    <link rel="stylesheet" href="./css/darkula.css">
 
      <link rel="stylesheet" href="lola_theme.css">
 
@@ -140,10 +140,10 @@ $"
 
     </div>
 
-    <script src="lib/js/head.min.js"></script>
+    <script src="./js/head.min.js"></script>
     <script src="js/reveal.js"></script>
 <!-- 
-    <script src="libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <script src="./jquery/2.2.4/jquery.min.js"></script> -->
     <script>
 
         // More info https://github.com/hakimel/reveal.js#configuration
@@ -188,7 +188,7 @@ $"
 
             // More info https://github.com/hakimel/reveal.js#dependencies
             dependencies: [
-               // { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+               // { src: './js/classList.js', condition: function () { return !document.body.classList; } },
                 { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
                 { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
                // { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
@@ -208,13 +208,13 @@ $"
                 
                 
                 { src: 'plugin/math/math.js', async: true },
-                { src: 'libs/highlight.js/9.12.0/highlight.js', async: true },
+                { src: './highlight.js/9.12.0/highlight.js', async: true },
 
                 { src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(); } },
                 
                 
 		
-                { src: 'libs/highlight.js/9.12.0/reveal-code-focus-1.0.0-mod.js',
+                { src: './highlight.js/9.12.0/reveal-code-focus-1.0.0-mod.js',
                   async: true,
                   callback: function() {
                     RevealCodeFocus();
@@ -234,7 +234,7 @@ $"
             },
             math: {
                 mathjax: 'plugin/math/MathJax.js',
-					// mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+					// mathjax: 'https://cdnjs.cloudflare.com/ajax/./mathjax/2.7.0/MathJax.js',
 					config: 'TeX-AMS_HTML-full'
 				},
             chart: {
