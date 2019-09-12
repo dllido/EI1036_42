@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EI1036_42_T3.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<hr>
+<h2 id="theme-whitetransition-zoomhighlighttheme-darkulacustomtheme-lolatheme">theme : &quot;white&quot;
+transition: &quot;zoom&quot;
+highlightTheme: &quot;darkula&quot;
+customTheme : &quot;lola_theme&quot;</h2>
+<h1 id="t3-lenguajes-de-la-web">T3: Lenguajes de la Web</h1>
+<h1 id="html5-css3">(HTML5, CSS3)</h1>
+<p><em>EI1042 - Tecnologías y Aplicaciones Web</em></p>
+<p><code>EI1036- Tecnologías Web para los Sistemas de Información (2018/2019)</code></p>
+<p><em>Professora: Dra. Dolores Mª Llidó Escrivá</em></p>
+<p><a href="https://www.uji.es/">Universitat Jaume I</a>.</p>
+<hr>
+<h1 id="%C3%ADndice">Índice</h1>
+<ol>
+<li>HTML: HyperText Markup Language</li>
+<li>Renderizado HTML</li>
+<li>Accesibilidad/usabilidad</li>
+<li>HTML5</li>
+<li>Estructura Semántica</li>
+<li>Formularios</li>
+<li>CSS</li>
+<li>Sintaxis CSS
+<ul>
+<li>Tipos selectores</li>
+<li>Medidas/Unidades</li>
+</ul>
+</li>
+<li>CSS3</li>
+<li>Modelo de Cajas: flotantes/flexibles</li>
+<li>Discriminación por dispositivos.
+<ul>
+<li>Media-Type</li>
+<li>Media-Queries</li>
+</ul>
+</li>
+<li>Bibliografía</li>
+</ol>
+<hr>
+<h1 id="1-html-hypertext-markup-language">1 HTML: HyperText Markup Language</h1>
+<ul>
+<li>Lenguaje de marcas para publicar documentos multimedia
+hipertexto.</li>
+<li>Los documentos HTML son ficheros de texto con marcas de formato
+que son independientes del SO, lenguaje de programación y
+programas.</li>
+<li>Las marcas o etiquetas indican cómo representar los
+contenidos de los documentos.
+<ul>
+<li>Elemento con contenido:  <code>&lt;html&gt;...&lt;/html&gt;</code></li>
+<li>Elemento vacío: <code>&lt;br/&gt;</code> o <code>&lt;br&gt;&lt;/br&gt;</code></li>
+<li>Etiqueta con atributos:<br>
+<code>&lt;body class=“principal”&gt;...&lt;/body&gt;</code></li>
+</ul>
+</li>
+<li>Extensiones de fichero: .html o .htm</li>
+<li>Cuestiones de estilo: etiquetas en minúsculas y atributos entre comillas dobles (XML).</li>
+</ul>
+<hr>
+<h1 id="conceptos">Conceptos:</h1>
+<ul>
+<li>¿Qué es el <em>encode</em>? (Editor/Navegador)</li>
+<li>¿Cómo especificamos que el documento HTML está en español?</li>
+<li>¿Qué es el mimetype?</li>
+<li>¿Qué son los carácteres especiales en HTML?</li>
+</ul>
+<hr>
+<p><img src="./media/T3/image4.png" alt="Image of HTML"></p>
+<p>https://ontargetwebsolutions.com/insights/wp-content/uploads/2014/11/evolution-of-web-design-ok.jpg</p>
+<hr>
+<h1 id="2-renderizado-html">2. Renderizado HTML</h1>
+<p>¿Qué es el renderizado?</p>
+<ul>
+<li>
+<p>Los documentos HTML pueden ser renderizados en pantallas, sintetizadores de habla y dispositivos
+de Braille.</p>
+</li>
+<li>
+<p>Para indicar cómo aparece el renderizado se ha definido el <em>CSS</em><br>
+(Cascade Style Sheet).</p>
+</li>
+<li>
+<p>Cuando un documento HTML se renderiza se guarda en la memoria como un árbol <em>DOM</em> (Document Object
+Model).</p>
+</li>
+</ul>
+<hr>
+<h2 id="renderizado-en-navegador-blokinline">Renderizado en navegador:  blok/Inline</h2>
+<p>Los elementos HTML se dividen en dos grandes tipos:</p>
+<ul>
+<li><code>block</code>: tienden a ocupar todo el espacio disponible a lo ancho y, en
+caso de existir varios elementos, se sitúan unos debajo de otros (p, aside,
+footer, div, table...).</li>
+<li><code>inline</code>: ocupan el espacio necesario dentro de una línea y en caso
+de existir varios elementos se sitúan uno junto a otro en la misma línea
+siempre que haya espacio (span, a).</li>
+</ul>
+<hr>
+<h1 id="3-recomendaciones-accesibilidad-y-usabilidad">3 Recomendaciones: Accesibilidad y Usabilidad</h1>
+<ul>
+<li>Etiquetas y atributos en minúsculas.</li>
+<li>Organización lógica del documento según estándar: h1, h2, h3, ...</li>
+<li>No usar tablas (<code>&lt;table&gt;</code>) para estructurar la página.</li>
+<li>Intentar que sin el estilo <em>CSS</em> se pueda entender el contenido.</li>
+<li>Resaltar los textos tanto con forma y color distintos.</li>
+<li>No utilizar espacios en blanco consecutivos, mejor usa <code>css margin</code></li>
+<li>Uso preferente de etiquetas semánticas <code>header, article....</code> frente a <code>div</code></li>
+</ul>
+<hr>
+<h1 id="4-html-5">4. HTML 5:</h1>
+<p>http://www.w3.org/TR/html5/</p>
+<p>https://HTML.spec.whatwg.org/multipage/indices.HTML</p>
+<ul>
+<li>Comienza con la definición del Doctype <code>&lt;!DOCTYPE html&gt;</code>.</li>
+<li>Elementos obligatorios: <code>html, head, title y body</code></li>
+<li>Validadores: <a href="http://validator.w3.org">http://validator.w3.org</a> o
+<a href="http://validator.w3.org/nu/">http://validator.w3.org/nu/</a></li>
+<li><a href="http://caniuse.com">http://caniuse.com</a> ¿Qué etiquetas puedo usar en los
+navegadores?</li>
+</ul>
+<hr>
+<h2 id="elementos-html5-multimedia">Elementos HTML5 multimedia</h2>
+<ul>
+<li>Audio: <code>&lt;audio src=””&gt;&lt;/audio&gt;</code></li>
+<li>Vídeo: <code>&lt;video src=””&gt;&lt;/video&gt;</code></li>
+<li>Animación: <code>&lt;canvas&gt;&lt;/canvas&gt;</code>(+ JS)</li>
+<li>Soporte Imágenes vectoriales: SVG (scalable vector graphics)</li>
+</ul>
+<hr>
+<h1 id="5-estructura-sem%C3%A1ntica">5. Estructura Semántica</h1>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">hgroup</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Page subtitle<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">hgroup</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+   Navigation...
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Title<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+   Content...
+   <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+   ....
+   <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>
+   Top links...
+   <span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"..."</span>/&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Chart<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+   Copyright © <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2010-11-08"</span>&gt;</span>2010<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>.
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</div></code></pre>
+<p>--</p>
+<h2 id="html5-estructura-sem%C3%A1ntica">HTML5: Estructura Semántica</h2>
+<ul>
+<li><code>&lt;p&gt;</code>: Mínimo bloque en HTML.</li>
+<li><code>&lt;div&gt;</code>: Une bloques de distintos tipos, cuando no podemos asociar significado
+semántico a este conjunto.</li>
+<li><code>&lt;header&gt;</code> : Encabezado de la página.</li>
+<li><code>&lt;footer&gt;</code>: Pie de página.</li>
+<li><code>&lt;nav&gt;</code>: Menú de navegación.</li>
+<li><code>&lt;hgroup&gt;</code>: Agrupación titulares (Hn).</li>
+<li><code>&lt;article&gt;</code>: Elementos con significado propio.Puede contener :
+<ul>
+<li><code>&lt;header/&gt;, &lt;section/&gt;, &lt;aside/&gt; y &lt;footer/&gt;</code>.</li>
+<li>Puede ser un documento entero.</li>
+</ul>
+</li>
+<li><code>&lt;section/&gt;</code>: declaramos que el conjunto de etiquetas tiene un
+contenido relacionado. Equivalente a una sección de un periódico que engloba varios artículos.</li>
+<li><code>&lt;aside&gt;:</code> bloque que es sólo un añadido a los bloques que tiene
+al lado (ej.- anuncios). Son datos extra sin lo que podríamos
+pasar perfectamente pero que hemos decidido añadir en el
+documento.</li>
+</ul>
+<hr>
+<h1 id="7-formularios-html-din%C3%A1mico">7. Formularios: HTML DINÁMICO</h1>
+<ul>
+<li>¿Qué entendesis por dinámico?</li>
+<li>¿Cómo sería la arquitectura?</li>
+<li>¿Cómo funcionan los formularios?</li>
+<li>¿Conoceis alguna alternativa a los formularios?</li>
+</ul>
+<hr>
+<h2 id="atributos-form">Atributos  Form</h2>
+<p><code>&lt;form id=&quot;identificador&quot; action=&quot;programa&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</code></p>
+<ul>
+<li><code>method</code> : get(defecto)/post</li>
+<li><code>action</code> (obligatorio) : Indica la URL o función JS que procesará la
+información del formulario.</li>
+<li><code>enctype</code>: El tipo mime empleado para codificar el contenido del
+formulario.
+https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types</li>
+</ul>
+<hr>
+<h2 id="etiquetas-de-los-formularios">Etiquetas de los formularios</h2>
+<ul>
+<li>
+<p>Input</p>
+</li>
+<li>
+<p>Select</p>
+</li>
+<li>
+<p>Textarea</p>
+</li>
+<li>
+<p>Button</p>
+</li>
+</ul>
+<p>http://www.w3.org/TR/html5/forms.html</p>
+<hr>
+<h1 id="8-css-cascade-style-sheets">8. CSS: Cascade Style Sheets</h1>
+<ul>
+<li>HTML utiliza un conjunto de etiquetas predefinidas, cuyo
+significado es bien conocido. Un navegador sabe cómo debe
+mostrar estos elementos al usuario.<br>
+<code>h2 {color:blue;}</code></li>
+<li>Las CSS (Cascade Style Sheets): son un conjunto de distintas
+reglas de estilo unidas a un documento que permiten definir
+estilos para mostrar a los elementos de HTML
+<ul>
+<li><a href="http://www.w3c.es/Divulgacion/GuiasReferencia/CSS">http://www.w3c.es/Divulgacion/GuiasReferencia/CSS</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="css-en-navegadores">CSS: En navegadores</h2>
+<p>¿Por qué no son iguales los documentos HTML en todos los
+navegadores?</p>
+<ul>
+<li>Los navegadores tienen su propio conjunto de reglas de
+estilo.</li>
+<li>Los navegadores no soportan el estándar CSS 100%</li>
+</ul>
+<hr>
+<h2 id="css-ventajas">CSS: Ventajas</h2>
+<ul>
+<li>Separar el contenido del formato.</li>
+<li>Reducir el tiempo de descarga.</li>
+<li>Dar más control sobre el renderizado de HTML.</li>
+<li>Utilizar un mismo estilo para todo el
+portal web para que tenga una apariencia uniforme  y consistente.</li>
+<li>Cada usuario pueden aplicar
+sus propias reglas de estilo.</li>
+<li>Las reglas se aplican de forma jerárquica o en cascada.</li>
+<li>Se combinan reglas del navegador con las del diseñador</li>
+</ul>
+<hr>
+<h1 id="9-css-sint%C3%A1xis">9 CSS: Sintáxis</h1>
+<p>Una regla de estilo se compone de:</p>
+<ul>
+<li>Selector: enlace entre el documento HTML y el estilo</li>
+<li>Declaración: describe el efecto de la regla</li>
+</ul>
+<p><code>selector1, selector2 {prop1:value1; prop2:value2;...}</code></p>
+<pre class="hljs"><code><div>   <span class="hljs-selector-tag">h1</span> {<span class="hljs-attribute">color</span>:blue} 
+   <span class="hljs-selector-tag">h1</span>,<span class="hljs-selector-tag">h2</span>,<span class="hljs-selector-tag">h3</span> {<span class="hljs-attribute">color</span>:blue; <span class="hljs-attribute">tex-align</span>:center}}
+</div></code></pre>
+<hr>
+<h2 id="%C2%BFc%C3%B3mo-se-enlaza-css-con-html">¿Cómo se enlaza CSS con HTML?</h2>
+<ul>
+<li>Dentro de la definición de etiquetas en el HTML (No abusar)</li>
+</ul>
+<pre class="hljs"><code><div> <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size:14pt;color:red"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> 
+</div></code></pre>
+<ul>
+<li>En HTML dentro de la cabecera: etiqueta <code>&lt;style&gt;</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span><span class="css">
+<span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">color</span>: purple; <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#d8da3d</span>}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>En ficheros externos .css e importarlos:<code>&lt;link&gt;/@import</code></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+<span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>
+<span class="hljs-attr">href</span>=<span class="hljs-string">"splash.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span><span class="css">
+@<span class="hljs-keyword">import</span> url(externo.css);
+<span class="hljs-selector-tag">h1</span> {<span class="hljs-attribute">color</span>: gray;}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div></code></pre>
+<p>¿Prioridad de las reglas?</p>
+<hr>
+<h2 id="tipos-de-selectores">Tipos de selectores</h2>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Directorio1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"directorio"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Directorio1.2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Directorio1.3<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cita"</span>&gt;</span>En en lugar de la mancha...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cita"</span>&gt;</span> Referencia Miguel <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>Etiquetas:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">h1</span> {<span class="hljs-attribute">color</span>:blue}
+</div></code></pre>
+<ul>
+<li>Identificador de elemento (atributo ``ìd```):</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-id">#directorio</span> {
+<span class="hljs-attribute">position</span>: absolute;
+<span class="hljs-attribute">left</span>: <span class="hljs-number">0px</span>;
+<span class="hljs-attribute">top</span>: <span class="hljs-number">70px</span>;
+<span class="hljs-attribute">background</span>: red;
+<span class="hljs-attribute">width</span>: <span class="hljs-number">20%</span>; 
+}
+</div></code></pre>
+<ul>
+<li>Clases de elementos (atributo <code>class</code>):</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.cita</span> {<span class="hljs-attribute">font-weight</span>: bold; <span class="hljs-attribute">color</span>: red;}
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.cita</span> {<span class="hljs-attribute">background-color</span>: red;}
+</div></code></pre>
+<p>--</p>
+<h2 id="tipos-de-selectores">Tipos de selectores</h2>
+<ul>
+<li>
+<p>Pseudo-Clases :</p>
+<ul>
+<li>:link cualquier enlace no visitado de la página.</li>
+<li>:visited cualquier enlace ya visitado de la página.</li>
+<li>:active enlace en el que estamos en este momento.</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span>  {<span class="hljs-attribute">color</span>: gray;}
+</div></code></pre>
+<ul>
+<li>Pseudo-Elementos</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-letter</span> {<span class="hljs-attribute">color</span>: red;}
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-line</span> {<span class="hljs-attribute">color</span>: gray;}
+</div></code></pre>
+<ul>
+<li>En función del contexto</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">td</span> <span class="hljs-selector-tag">b</span> {<span class="hljs-attribute">color</span>:green}
+<span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">b</span> {<span class="hljs-attribute">color</span>:<span class="hljs-number">#074A</span>}
+</div></code></pre>
+<p>El atributo Color del CSS soporta nombre inglés o HEXA, RGB y HSL</p>
+<hr>
+<h2 id="unidades-css">Unidades CSS</h2>
+<ul>
+<li>Medidas relativas:
+<ul>
+<li><code>em</code> (ems, &quot;font-size&quot; o tamaño de la fuente)</li>
+<li><code>ex</code> (x-height, altura de la letra &quot;x&quot; minúscula)</li>
+<li><code>px</code> (pixels, relativa a la resolución de pantalla)</li>
+</ul>
+</li>
+<li>Medidas absolutas:
+<ul>
+<li><code>in</code> (pulgadas; 1in=2.54cm)</li>
+<li><code>cm</code> (centímetros; 1cm=10mm)</li>
+<li><code>mm</code> (milímetros)</li>
+<li><code>pt</code> (puntos tipográficos; 1pt=1/72in)</li>
+<li><code>pc</code> (picas; 1pc=12pt)</li>
+</ul>
+</li>
+<li>Unidades de medida relativas:
+<ul>
+<li>Porcentajes : margin-left:20%
+margen izquierdo de un 20% del ancho del elemento contenedor</li>
+<li>Proporcionales: margin-left:3*
+margen izquierdo de ¾ partes del elemento contenedor</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="tama%C3%B1o-de-la-fuente-font-size">Tamaño de la fuente: Font-size</h2>
+<ul>
+<li>Absolutos:
+[ xx-small | x-small | small |medium |large | x-large
+| xx-large ]</li>
+<li>Relativos:
+[larger | smaller]</li>
+</ul>
+<hr>
+<h1 id="9-css3">9. CSS3</h1>
+<ul>
+<li>Transformaciones</li>
+<li>Transiciones</li>
+<li>Animaciones</li>
+<li>Fuentes propias</li>
+<li>Columnas</li>
+<li>Transparencia</li>
+<li>Degradados</li>
+<li>Bordes redondeados</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+<span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(1,5) <span class="hljs-built_in">translate</span>(30px,10px);}
+<span class="hljs-selector-id">#mibloque</span> {<span class="hljs-attribute">column-count</span>: <span class="hljs-number">3</span>;}
+</div></code></pre>
+<hr>
+<h2 id="ejercicio-css3">Ejercicio CSS3</h2>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-selector-id">#gira</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotate</span>(-30deg); }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gira"</span> &gt;</span>Esto hace algo <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span> Acción CSS3Transform<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>Se ve o no se ve.<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<p>Practicar ejemplos:</p>
+<p>https://codepen.io/martinwolf/pen/qlFdp</p>
+<p>Más ejemplos:
+http://estelle.github.io/animation/30.html#slide1</p>
+<hr>
+<h1 id="10-modelo-de-cajas">10. Modelo de Cajas</h1>
+<ul>
+<li>
+<p>Los elementos HTML se dividen en dos grandes tipos: block e inline.</p>
+</li>
+<li>
+<p>La propiedad <code>display</code> nos permite alterar el tipo de caja con
+que se muestra un elemento.</p>
+<ul>
+<li><code>inline</code>: el elemento no es un bloque, se renderiza en linea con otros elementos de ese tipo.</li>
+<li><code>block</code> : el elemento se comporta como un bloque, podemos poner márgenes y bordes..</li>
+<li><code>none</code> : el elemento no se muestra; el efecto es como si no existiera, por lo que su espacio será ocupado por otros.</li>
+<li><code>inherit</code> : se heredan las características del elemento padre.</li>
+<li><code>flex</code> : el elemento es flexible en posición horizontal y vertical.</li>
+<li><code>inline-block</code> : el elemento de bloque pero que se renderiza en línea con otros elementos.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="ejemplo">Ejemplo</h2>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Esto es un párrafo, elemento block por defecto que contiene un trozo de texto <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span> SPAN <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> que por defecto es inline<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"aqui"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"display:block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; "</span>&gt;</span> Hiperenlace que  ya no es inline, es block.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hiperenlace <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"alli"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"display:inline-block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; "</span>&gt;</span>Alli<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> ,que es una caja inline, no es block<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span>, <span class="hljs-selector-tag">footer</span> {
+   <span class="hljs-attribute">display</span>: block;
+   <span class="hljs-attribute">margin</span>: <span class="hljs-number">4px</span>;
+   <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;
+   <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100px</span>;
+   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#eebb55</span>;
+   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">7pt</span>;
+   <span class="hljs-attribute">background</span>: <span class="hljs-number">#ffeebb</span>;
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./media/T3/image5.gif"</span>/&gt;</span>
+</div></code></pre>
+<hr>
+<h2 id="propiedad-overflow">Propiedad overflow</h2>
+<p>Propiedad que especifica que hacer con el contenido excedente en un elemento a nivel de bloque</p>
+<p><code>overflow: scroll</code></p>
+<ul>
+<li><code>visible</code> (por defecto): Contenido no  recortado, podría ser dibujado fuera de la caja contenedora.</li>
+<li><code>hidden</code>: Contenido  recortado.</li>
+<li><code>scroll</code>: Contenido  recortado y el Navegador, usa  barras de desplazamiento.</li>
+<li><code>auto</code>: Depende del Navegador.</li>
+</ul>
+<hr>
+<h2 id="elipsis-texto">Elipsis texto</h2>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"truncate"</span> &gt;</span>This is a text that should be truncated because it's too long.  The dreams of yesterday are the hopes of today and the reality of tomorrow. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species. Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. If you could see the earth illuminated when you were in a place as dark as night, it would look to you more splendid than the moon. Buy why, some say, the moon? Why choose this as our goal? And they may as well ask why climb the highest <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.truncate</span> {
+  <span class="hljs-attribute">white-space</span>: nowrap;
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">text-overflow</span>: ellipsis;
+
+}
+
+<span class="hljs-selector-class">.truncate</span><span class="hljs-selector-pseudo">:hover</span> {
+  
+  <span class="hljs-attribute">white-space</span>: normal;
+  <span class="hljs-attribute">overflow</span>:visible;
+
+   }
+</div></code></pre>
+<hr>
+<h3 id="modelo-de-cajas-position">Modelo de cajas: <code>Position</code></h3>
+<ul>
+<li><code>Static:</code> Posición predeterminada en HTML.</li>
+<li><code>Relative:</code> La posición de la caja se ajusta en relación a su posición
+normal dentro de la página. La caja siguiente se sitúa como si esta
+no se hubiera desplazado.</li>
+<li><code>Absolute:</code> Las cajas son quitadas del flujo normal, su posición se
+especifica con las propiedades 'left', 'right', 'top', y 'bottom'. No
+tienen ninguna influencia sobre la posición de las cajas siguientes.</li>
+<li><code>Fixed:</code> Como el anterior, pero se posiciona en función de la ventana
+del navegador. Esta caja no se mueve de posición al hacer scroll.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">div</span> {
+<span class="hljs-attribute">display</span>:block;
+<span class="hljs-attribute">position</span>: absolute;
+<span class="hljs-attribute">top</span>: <span class="hljs-number">150px</span>;
+<span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span>;
+<span class="hljs-attribute">Margin</span>: <span class="hljs-number">5px</span> auto; <span class="hljs-comment">/*centrar*/</span>
+<span class="hljs-attribute">border-style</span>: solid; }
+</div></code></pre>
+<hr>
+<h3 id="cajas-flotantes-float">Cajas Flotantes: <code>Float</code></h3>
+<ul>
+<li><code>Left</code> : Genera un bloque a la izquierda donde posicionar las
+siguientes cajas si caben. De modo que el contenido de la caja
+se posiciona a la izquierda arriba de ese bloque.</li>
+<li><code>Right</code> : Lo mismo a la izquierda</li>
+<li><code>None</code> : No deja elementos flotantes.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-id">#a_izq</span> {<span class="hljs-attribute">position</span>:absolute;
+<span class="hljs-attribute">top</span>:<span class="hljs-number">30px</span>;
+<span class="hljs-attribute">right</span>:<span class="hljs-number">30px</span>;
+<span class="hljs-attribute">width</span>:<span class="hljs-number">20%</span>;
+<span class="hljs-attribute">float</span>:right }
+<span class="hljs-selector-tag">img</span> {<span class="hljs-attribute">float</span>: left;}
+</div></code></pre>
+<p>Si al lado ponemos un parrafo este se alinea
+a la derecha de la imagen.
+https://piruletas.000webhostapp.com/Lab/P1</p>
+<hr>
+<h3 id="cajas-flexibles-dise%C3%B1o-flexible">Cajas flexibles: Diseño Flexible</h3>
+<p>Un diseño flexible permite para alterar el ancho y alto de sus
+elementos para ajustarse lo mejor posible al espacio disponible
+en cualquier dispositivo. Un contenedor flexible expande sus
+elementos para rellenar el espacio libre, o los comprime para
+evitar que rebasen el área prevista.</p>
+<ul>
+<li>Un contenedor flexible (Flex container) se define usando los valores flex o inline-flex en la propiedad display del contenedor o elemento &quot;padre&quot; que contiene los elementos flexibles.</li>
+<li>Cada hijo de un contenedor flex se convierte en un elemento flexible (Flex item), que permite cajas a su derecha o izquierda.</li>
+</ul>
+<p>https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS</p>
+<hr>
+<h1 id="11-css-discriminaci%C3%B3n-por-dispositivos">11. CSS: Discriminación por dispositivos</h1>
+<h2 id="media-type">Media-Type</h2>
+<ul>
+<li>
+<p>Permite categorizar los dispositivos de usuario</p>
+</li>
+<li>
+<p>Se usaron originalmente para seleccionar en HTML4 distintos CSS en
+función del dispositivo del usuario.</p>
+</li>
+<li>
+<p>Pero son insuficientes como una manera de discriminar entre dispositivos con
+diferentes</p>
+</li>
+<li>
+<p><em>Media Types</em>:
+all, braille, embossed, handheld, print, projection, screen, speech,
+tty, tv.</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> 
+<span class="hljs-attr">href</span>=<span class="hljs-string">"http://mysite.com/style-print.css"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"print"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>
+<span class="hljs-attr">href</span>=<span class="hljs-string">"http://mysite.com/style.css"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"screen"</span>&gt;</span>
+</div></code></pre>
+<hr>
+<h2 id="css3-media-queries">CSS3: Media queries</h2>
+<ul>
+<li>Las consultas de medios ( media queries )son simples filtros que pueden aplicarse a
+los estilos CSS. Facilitan el cambio de estilos según el tipo de dispositivo
+( media-type ) o las características del dispositivo ( media-feature ), como el tipo
+de pantalla, el ancho, el alto, la orientación e incluso la resolución.</li>
+</ul>
+<pre class="hljs"><code><div>@<span class="hljs-keyword">media</span> screen and (min-width:<span class="hljs-number">600px</span>) {
+    <span class="hljs-selector-tag">nav</span> {
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">25%</span>;
+    }
+    <span class="hljs-selector-tag">section</span> {
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">25%</span>;
+}}
+</div></code></pre>
+<pre class="hljs"><code><div>@<span class="hljs-keyword">media</span> (query) 
+{
+ //<span class="hljs-selector-tag">CSS</span> <span class="hljs-selector-tag">Rules</span> <span class="hljs-selector-tag">used</span> <span class="hljs-selector-tag">when__query</span> <span class="hljs-selector-tag">matches</span> 
+}
+</div></code></pre>
+<hr>
+<h2 id="ejemplo-media-queries">Ejemplo Media-QuerIes</h2>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(max-width: 640px)"</span> 
+<span class="hljs-attr">href</span>=<span class="hljs-string">"max-640px.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 640px)"</span> 
+<span class="hljs-attr">href</span>=<span class="hljs-string">"min-640px.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(orientation: portrait)"</span>
+ <span class="hljs-attr">href</span>=<span class="hljs-string">"portrait.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(orientation: landscape)"</span>
+ <span class="hljs-attr">href</span>=<span class="hljs-string">"landscape.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  @<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">500px</span>) and (max-width: <span class="hljs-number">600px</span>) {
+  <span class="hljs-selector-tag">h1</span> { <span class="hljs-attribute">color</span>: fuchsia;}
+  <span class="hljs-selector-class">.desc</span><span class="hljs-selector-pseudo">:after</span> {
+    <span class="hljs-attribute">content</span>:<span class="hljs-string">" In fact, it's between 500px and 600px wide."</span>;
+  }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div></code></pre>
+<hr>
+<h3 id="media-feature">Media Feature</h3>
+<ul>
+<li><code>min-width</code> :Reglas aplicadas a cualquier ancho de ventana de
+navegador que supere el valor definido en la consulta.</li>
+<li><code>max-width</code> :Reglas aplicadas a cualquier ancho de ventana de
+navegador que sea inferior al valor definido en la consulta.</li>
+<li><code>min-height</code> : Reglas aplicadas a cualquier alto de ventana de
+navegador que supere el valor definido en la consulta.</li>
+<li><code>max-height</code> : Reglas aplicadas a cualquier alto de ventana de
+navegador que sea inferior al valor definido en la consulta.</li>
+<li><code>orientation=portrait</code> : Reglas aplicadas a cualquier navegador
+cuyo alto de ventana sea superior o igual al ancho.</li>
+<li><code>orientation=landscape</code> : Reglas aplicadas a cualquier navegador
+cuyo ancho sea superior al alto.</li>
+</ul>
+<hr>
+<h1 id="lecturas-recomendadas">Lecturas recomendadas</h1>
+<ul>
+<li>Enlaces de Interés:
+<ul>
+<li>Guía HTML:
+<a href="http://www.w3.org/community/webed/wiki/HTML/Elements/">http://www.w3.org/community/webed/wiki/HTML/Elements/</a></li>
+<li>Guía referencia HTML:
+https://html.spec.whatwg.org/multipage/indices.html</li>
+<li>Guía general CSS: <a href="http://www.w3.org/community/webed/wiki/CSS">http://www.w3.org/community/webed/wiki/CSS</a></li>
+<li>Guia de etiquetes y regles css actives en els navegadors:
+<a href="http://caniuse.com">http://caniuse.com</a></li>
+<li>Guía Accesibilidad:
+<a href="http://w3c.es/Divulgacion/GuiasBreves/Accesibilidad">http://w3c.es/Divulgacion/GuiasBreves/Accesibilidad</a></li>
+</ul>
+</li>
+<li>Bibliografía:
+<ul>
+<li>Head first web design. O'reilly. Ethan Watrall &amp; Jeff
+Siarto.</li>
+<li>HTML5 y CSS3. Editor: ENI (Septiembre 2011) Autor : Luc VAN
+LANCKER ISBN : 978-2-7460-6816-2</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="%C2%BFdudas">¿Dudas?</h3>
+<p><img src="./media/image8.png" alt="Image de Dudas"></p>
+
+</body>
+</html>

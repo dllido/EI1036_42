@@ -1,17 +1,11 @@
----
-theme : "white"
-transition: "zoom"
-highlightTheme: "darkula"
-customTheme : "lola_theme"
----
 
 # TEMA 1: Introducción a la WWW
 
-### EI1042 - Tecnologías y Aplicaciones Web
+## EI1042 - Tecnologías y Aplicaciones Web
 
-### EI1036- Tecnologías Web para los Sistemas de Información (2019/2020)
+## EI1036- Tecnologías Web para los Sistemas de Información (2019/2020)
 
-#### Profesora: Dra. Dolores Mª Llidó Escrivá
+### Professora: Dra. Dolores Mª Llidó Escrivá
 
 ![Derechos Autor](./media/cc2.jpg)
 
@@ -21,20 +15,19 @@ customTheme : "lola_theme"
 
 ## Tabla de contenidos
 
-- Arquitectura cliente servidor Web
-- Localitzación de recursos: URL
-- Clientes Web
-- Servidores Web
+- Sistema cliente servidor Web
 - El protocolo HTTP
 - Proceso de producción del portal web
 - Definición un proyecto Web
+- Localització de recursos: URL
 - Servidor web con PHP.
 - Configuración Apache:.htaccess
 
 ---
 
-## Arquitectura Cliente Servidor
+## Sistema cliente servidor Web
 
+### Arquitectura Cliente Servidor
 
 ![Image of La World Wide Web](./media/T1/image2.png)
 
@@ -48,74 +41,26 @@ customTheme : "lola_theme"
 
 ```<!DOCTYPE html >```
 
-``` <li id="section-3" class="section main clearfix" role="region" aria-label="Laboratorio">```
-
 ---
 
-## URL: Uniform Resource Locator
+### Clientes Web CURL/GET
 
-Són cadenas de caracteres con un formato que identifica recursos indicando su dirección electrónica
-
-
-```<esquema>://<user>:<password>@<host>:<port>/<url-path>```
-
-esquema=protocolo sistema:
-  
-- http://host[:port][abs_path]
-
-- http://anubis.uji.es/index.html
-
-- ftp://al007@anubis.uji.es/un/ejemplo.txt
-  
-
-  https://aulavirtual.uji.es/course/view.php?id=64297#section-3
-
----
-
-### Exemples URL HTTP
-
-- [http://www.milanuncios.com/informaticos-en-almeria/pp.htm?dias=1&demanda=n](http://www.milanuncios.com/informaticos-en-almeria/pp.htm?dias=1&demanda=n)
-- https://duckduckgo.com/?q=pp&t=ffab&ia=about
-- https://www.google.es/search?q=llido&as_sitesearch=uji.es&gfe_rd=ssl&ei=pRDx
-- [http://dllido.al.nisu.org/EI1036_1042/PortalJson.php?action=modificarAlumnoJson](http://dllido.al.nisu.org/EI1036_1042/PortalJson.php?action=modificarAlumnoJson)
-- https://aulavirtual.uji.es/course/view.php?id=64297#section-3
-
-Caràcteres especiales:
-
-- /: Indica path del recurso
-- #: indica una etiqueta que tiene el id referenciado (< id==section-3>)
-- &,=: El cliente web los datos del formulario cuando se usa el método get los envia como pares nombre=valor unidos por &
-
----
-
-### URL amigables
-
-[http://www.example.com/camaras/reflex/canon-eos-5d-mark-2/](http://www.example.com/camaras/reflex/canon-eos-5d-mark-2/)
-
-- Mejora el SEO
-- El servidor  manipula la URL para redireccionarlos a los recursos internos correctamente.
-
----
-
-## Clientes Web CURL/GET
-
-<small>curl http://www.pekegifs.com/pekemundo/dibujos/colorearonline.htm  -o pp.html
-</small>
-
-- Descargar un documento html.
-  
 <small> wget ‐‐level=1 ‐‐recursive ‐‐no-parent ‐‐accept mp3,MP3 http://example.com/mp3/
 </small>
 
 - Descargar todos los ficheros MP3 de un subdirectorio.
 
 <small>
+curl http://www.pekegifs.com/pekemundo/dibujos/colorearonline.htm  -o pp.html
+</small>
+
+- Descargar un documento html.
 
 ---
 
-## Servidor Web 
+### Servidor Web 
 
-- Servidor Web Apache
+- Servidor web apache
 - ```php -S localhost```
 
 ---
@@ -234,29 +179,26 @@ HTTP es un protocolo sin sesión.
 ---
 
 ### URL REWRITING
-
-Consiste en incluir la información del estado en la propio URL
+Consiste en incluir la información del estado en el propio URL
 
 http://www.pekegifs.com/pekemundo/dibujos//comprar.asp?paso=3&producto1=01992CX&producto2=ZZ112230&
 
 ---
 
 ### Cookies
+- Una cookie es información que un servidor puede enviar al cliente para que la almacene y se reenvíe en posteriores accesos (header).
 
-Una cookie es información que un servidor puede enviar al cliente para que la almacene y se reenvíe en posteriores accesos (header).
 
-Permiten:
-
-- Recordar preferencias de un cliente para generar contenido personalizado
-- Para almacenar información de sesión
-- En general: para “simular” sesiones
+- Aplicaciones de las cookies:
+    - Recordar preferencias de un cliente para generar contenido personalizado
+    - Para almacenar información de sesión
+    - En general: para “simular” sesiones
 - No para almacenar información privada. claves, cuentas...
 
 
 ---
 
 #### Variables de las  Cookies
-
 fichero con pares nombre=valor de tamaño limitado.
 
 - name= nombre de la cookie
@@ -271,11 +213,14 @@ fichero con pares nombre=valor de tamaño limitado.
 
 ![Image of coockies](./media/T1/image11.jpeg)
 
+
+
 ---
 
 #### Contras Cookies
-
 - Privacidad: Otros servidores podrían pueden leer información de las cookies del cliente.
+
+   
 - Los datos pueden ser alterados: Un usuario podría modificar el fichero de una cookie.
 - Implementación compleja: Mantener “a mano” el estado en el cliente es complicado si queremos hacerlo de manera robusta.
 - Tamaño de datos limitado: Tanto el tamaño máximo permitido por las cookies como la longitud máxima de una URL pueden darnos problemas.
@@ -343,6 +288,44 @@ fichero con pares nombre=valor de tamaño limitado.
 
 ---
 
+## URL: Uniform Resource Locator
+
+Són cadenes de caràcters amb un format que identifica recursos indicant la seua direcció electrónica
+
+
+```<esquema>://<user>:<password>@<host>:<port>/<url-path>```
+esquema=protocolo sistema 
+
+
+- http://anubis.uji.es/index.html
+
+- ftp://al007@anubis.uji.es/un/ejemplo.txt
+### URLs HTTP:
+
+- http://host[:port][abs_path]
+
+
+---
+
+### Exemples URL
+
+- [http://www.milanuncios.com/informaticos-en-almeria/pp.htm?dias=1&demanda=n](http://www.milanuncios.com/informaticos-en-almeria/pp.htm?dias=1&demanda=n)
+- https://duckduckgo.com/?q=pp&t=ffab&ia=about
+- https://www.google.es/search?q=llido&as_sitesearch=uji.es&gfe_rd=ssl&ei=pRDx
+- [http://dllido.al.nisu.org/EI1036_1042/PortalJson.php?action=modificarAlumnoJson](http://dllido.al.nisu.org/EI1036_1042/PortalJson.php?action=modificarAlumnoJson)
+
+
+---
+
+### URL amigables
+
+[http://www.example.com/camaras/reflex/canon-eos-5d-mark-2/](http://www.example.com/camaras/reflex/canon-eos-5d-mark-2/)
+
+- Mejora el SEO
+- El servidor  manipula la URL para redireccionarlos a los recursos internos correctamente.
+
+---
+
 ## Servidor WEB con PHP
 
 ¿Cómo funciona PHP?
@@ -356,7 +339,7 @@ fichero con pares nombre=valor de tamaño limitado.
 
 - .htaccess (personalizado en directorios)
 
-Más Info:
+Mas Info:
 - [http://httpd.apache.org/docs/2.2/es/](http://httpd.apache.org/docs/2.2/es/)
 
 - [http://php.net/manual/es/](http://php.net/manual/es/)
@@ -372,8 +355,7 @@ RewriteRule pp/(.*)/(.*)$   phpInfo.php?Val1=$1&Val2=$
 
 ---
 
-Ejemplos .htaccess
-
+Ejemplos .htaccess 
 ```txt
 #  listar directorios
 Options +Indexes
