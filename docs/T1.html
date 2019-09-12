@@ -51,6 +51,10 @@
                 .line.focus .hljs-emphasis { font-style: italic; }
                 .line.focus .hljs-strong { font-weight: bold; }
                 .yellow-slide .line.focus:nth-child(2) { background: yellow; }
+                @media print { 
+                  /* All your print styles go here */
+                  #header, #footer, #nav { display: none !important; } 
+                 }
 
     .reveal .slides section .code-presenting-annotation {
         font-size: 70%;
