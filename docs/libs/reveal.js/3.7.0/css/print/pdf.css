@@ -162,3 +162,13 @@ ul, ol, div, p {
 	position: absolute;
 	font-size: 14px;
 }
+#nav,#footer,.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds,
+	.reveal .slide-number {
+		display: none !important;
+	}
