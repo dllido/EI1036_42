@@ -32,7 +32,7 @@
 
 	/* SECTION 2: Remove any elements not needed in print.
 	   This would include navigation, ads, sidebars, etc. */
-	#nav,.nestedarrow,
+	#nav,#footer,.nestedarrow,
 	.controls,
 	.fork-reveal,
 	.share-reveal,
