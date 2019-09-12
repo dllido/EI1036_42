@@ -107,6 +107,16 @@
   font-size: 50% !important;
 }
 
+#nav,#footer,.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds,
+	.reveal .slide-number {
+		display: none !important;
+	}
 </style>
 <script>
          if(window.location.search.match( /print-pdf-now/gi )) {
@@ -292,7 +302,7 @@ $"
                 // Adds markers to the slide titles to indicate the 
                 // progress through the presentation. Set to 'false'
                 // to hide the markers.
-                markers: true,
+                markers: false,
 
                 // Specify custom panels to be included in the menu, by
                 // providing an array of objects with 'title', 'icon'
