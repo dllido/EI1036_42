@@ -3,6 +3,19 @@
 
  element.style{width :100%;}
 
+ .reveal #title-footer {
+  opacity: 1;
+  transition: opacity 800ms ease-in-out;
+  position: fixed;
+  height: 2vh;
+  z-index: 20;
+  width: 100%;
+  font-size: 1vh;
+  text-align: center;
+  letter-spacing: 0em;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+}
  @media print { 
   /* All your print styles go here */
   #header, #footer, #nav { display: none !important; } 
