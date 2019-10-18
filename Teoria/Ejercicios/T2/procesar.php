@@ -17,17 +17,15 @@
 <body>
 <p>
 <?php
-
-$conf= $_REQUEST["conf"];
-if ($conf="")
- foreach ($argv as $arg) {
-         $e=explode("=",$arg);
-        if(count($e)==2)
-            $_GET[$e[0]]=$e[1];
-   
+print "Adivina adivinanza<br>\n";	
+if ($_REQUEST) $conf= $_REQUEST["conf"];
+else {
+   $A=stream_get_contents(STDIN);
+   $conf=$A;
   }
-print "-".$conf."-</p>";
-if ($conf=="S") phpinfo();
+print_r ("<br>\n".$conf);
+if ($conf=="S") print "<br>\nBien , has ganado";
+else print "<br>\n Continua intentandolo";
 ?>
 </body>
 </html>
