@@ -1,8 +1,0 @@
-#./htaccess
-AuthType Basic
-AuthName "Password Required"
-AuthUserFile "/public_html/Pruebas/T02/Auth/users.htpasswd"
-Require  valid-user
-php_flag display_startup_errors on
-php_flag display_errors on
-php_flag html_errors on
