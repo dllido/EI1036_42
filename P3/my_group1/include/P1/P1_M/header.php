@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--**
+ * * Descripción: Cabecera portal Programa Aprender PHP
+ * *
+ * * Descripción extensa: Pagina web dividida en 4 ficheros.
+ * *
+ * * @author  Lola <dllido@uji.es>
+ * * @version 1
+ * * @link http://dllido@al.nisu.org/P0/holaMundo.php
+ * * -->
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Bienvenido a la web de ACCE</title>
+	<META name="Author" content="AlumnoXXX">
+	<link rel="stylesheet" href="../css/estilo.css" type="text/css">
+	<style type="text/css">
+	table { border-style:solid;border-width: 3px;
+  background-color: #52E396;}
+	tr,td {border-style:dotted;}
+	</style>
+
+</head>
+
+
+<body>
+	<header>
+		<img src="../img/Logo-ACCE.gif" id="logo" alt="logo" />
+		<p id="eslogan">Asociación de Consumidores de Comercio Electrónico</p>
+	</header>
