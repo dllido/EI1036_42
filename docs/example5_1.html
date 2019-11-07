@@ -38,8 +38,37 @@
 		</div>
 
 		<script src="reveal.js-3.8.0/js/reveal.js"></script>
+Reveal.initialize({
+	// Options which are passed into marked
+	// See https://marked.js.org/#/USING_ADVANCED.md#options
+	markdown: {
+		smartypants: true
+	}
+});
+        <script>
+            Reveal.initialize({
+               // Options which are passed into marked
+               // See https://marked.js.org/#/USING_ADVANCED.md#options
+               markdown: {
+                  smartypants: true
+               }
+            });
+			[].slice.call( document.querySelectorAll( '.share-reveal-facebook, .share-reveal-twitter' ) ).forEach( function( element ) {
+				element.addEventListener( 'click', function( event ) {
+					event.preventDefault();
+					var width = 500, height = 300;
+					var winTop = window.screenY + (window.screen.height / 2) - (height / 2);
+					var winLeft = window.screenX + (window.screen.width / 2) - (width / 2);
+					window.open(this.href, 'shre', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + width + ',height=' + height);
+				} );
+			} );
 
-      
+			if( !navigator.userAgent.match( /(iphone|android)/gi ) && !!document.querySelector ) {
+				document.querySelector( '.share-reveal' ).style.display = 'block';
+				document.querySelector( '.fork-reveal' ).style.display = 'block';
+			}
+		</script>
+
 
       
 	</body>
