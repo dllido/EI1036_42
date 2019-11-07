@@ -1,7 +1,7 @@
 /**
  *Mis fuentes más pequeñas*/
 
- element.style{width :100%;}
+ /*element.style{width :100%;}*/
 
  .reveal #title-footer {
   opacity: 1;
@@ -9,7 +9,7 @@
   position: fixed;
   height: 3.5vh;
   z-index: 20;
-  width: 100%;
+  /*width: 100%;*/
   font-size: 1vh;
   text-align: center;
   letter-spacing: 0em;
@@ -60,7 +60,7 @@
 .reveal dl,
 .reveal ul {
   text-align: left;
-  width: 100%;
+  /*width: 100%;*/
   /*margin: 10px 20px 10px 20px;*/
   line-height: 1.1;
   }
@@ -68,7 +68,6 @@
 .reveal pre code{
   font-size: 26px;
   line-height: 1.1;
-  max-height: 90%;
   margin:10px 10px 10px 10px;
   padding:5px 5px 5px 5px
   }
