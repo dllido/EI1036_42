@@ -21,7 +21,7 @@
   #header, #footer, #nav { display: none !important; } 
  }
  .reveal section  img {max-height: 530px; 
-  margin: -20px  0  0 0;}
+  margin: 0  0  0 0;}
 .reveal section  img.imagen {max-height: 300px; 
   margin: 0  0  0 0;}
 
