@@ -1,7 +1,7 @@
 /**
  *Mis fuentes más pequeñas*/
 
- /*element.style{width :100%;}*/
+ element.style{top :40px;}
 
  .reveal #title-footer {
   opacity: 1;
@@ -24,7 +24,7 @@
 .reveal section  img.imagen {max-height: 300px; 
   margin: 0  0  0 0;}
 
-.reveal,.reveal p{
+.reveal,.reveal p, .reveal li{
   font-size: 28px;
   margin:15px;
   padding: 5px;
