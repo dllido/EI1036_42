@@ -24,7 +24,7 @@
   margin: 0  0  0 0;}
 .reveal section  img.imagen {max-height: 300px; 
   margin: 0  0  0 0;}
-
+/*
 .reveal,.reveal p{
   font-size: 28px;
   line-height: 1.1;
@@ -53,17 +53,17 @@
 .reveal ol,ol.ul{
     columns: 2;;
 }
+
 .reveal li{margin-left:5px}
 .reveal table{font-size: 0.5 em;line-height: 0.8em;}
-.reveal .slides > section{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
+.reveal .slides > section{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}*/
 .reveal ol,
 .reveal dl,
 .reveal ul {
   text-align: left;
-  /*width: 100%;*/
-  /*margin: 10px 20px 10px 20px;*/
   line-height: 1.1;
   }
+
 /*.reveal pre {width: 100%;}*/
 .reveal pre code{
   font-size: 26px;
