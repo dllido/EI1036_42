@@ -2,14 +2,26 @@
 <html lang="en">
 
 	<head>
-		<meta charset="utf-8">
+        <meta charset="utf-8">
 
-		<title>reveal.js - Markdown Demo</title>
+        <title>EI1036_42: Teoría</title>
+        <meta name="author" content="Dolores Maria Llidó Escrivá">
 
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="reveal.js-3.8.0/css/reveal.css">
 		<link rel="stylesheet" href="reveal.js-3.8.0/css/theme/white.css" id="theme">
 
         <link rel="stylesheet" href="reveal.js-3.8.0/lib/css/monokai.css">
+        <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.8.0/css/print/pdf.css' : 'reveal.js-3.8.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
 	</head>
 
 	<body>
@@ -19,92 +31,8 @@
 			<div class="slides">
 
                 <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
-                <section data-markdown="./EI1036_42_T5.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+                <section data-markdown="./EI1036_42_T5.md" data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"></section>
 
-                <!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
-                <section data-markdown data-separator="---">
-                    <script type="text/template">
-                        ## Demo 1
-                        Slide 1
-                        ---
-                        ## Demo 1
-                        Slide 2
-                        ---
-                        ## Demo 1
-                        Slide 3
-                    </script>
-                </section>
-
-                <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
-                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-                    <script type="text/template">
-                        ## Demo 2
-                        Slide 1.1
-
-                        --
-
-                        ## Demo 2
-                        Slide 1.2
-
-                        ---
-
-                        ## Demo 2
-                        Slide 2
-                    </script>
-                </section>
-
-                <!-- No "extra" slides, since there are no separators defined (so they'll become horizontal rulers) -->
-                <section data-markdown>
-                    <script type="text/template">
-                        A
-
-                        ---
-
-                        B
-
-                        ---
-
-                        C
-                    </script>
-                </section>
-
-                <!-- Slide attributes -->
-                <section data-markdown>
-                    <script type="text/template">
-                        <!-- .slide: data-background="#000000" -->
-                        ## Slide attributes
-                    </script>
-                </section>
-
-                <!-- Element attributes -->
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Element attributes
-                        - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
-                        - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
-                    </script>
-                </section>
-
-                <!-- Code -->
-                <section data-markdown>
-                    <script type="text/template">
-                        ```php
-                        public function foo()
-                        {
-                            $foo = array(
-                                'bar' => 'bar'
-                            )
-                        }
-                        ```
-                    </script>
-                </section>
-
-                <!-- Images -->
-                <section data-markdown>
-                    <script type="text/template">
-                        ![Sample image](https://s3.amazonaws.com/static.slid.es/logo/v2/slides-symbol-512x512.png)
-                    </script>
-                </section>
 
             </div>
 		</div>
