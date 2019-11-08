@@ -39,8 +39,7 @@
 				for (titulo in titulos ) {
 				  // Crea las hileras de la tabla
 				  var hilera = document.createElement("li");
-				  var textoCelda = titulo.innerHtml();
-				  hilera.innerText=titulo.innerText;
+				  hilera.innerText=titulo[0].innerText;
 				  var subtitulos = titulo.getElementsByTagName("h2");
 				  var subtabla  = document.createElement("ol");
 				  for ( j in subtitulos) {
@@ -48,7 +47,7 @@
 					 // texto sea el contenido de <td>, ubica el elemento <td> al final
 					 // de la hilera de la tabla
 					 var celda = document.createElement("li");
-					 celda.innerText=j.innerText;
+					 celda.innerText=subtitulos[j].innerText;
 					 hilera.appendChild(celda);
 				  }
 				  this.appendChild(hilera);
