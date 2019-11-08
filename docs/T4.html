@@ -55,9 +55,8 @@
 			}
 			function detectores()
 				{elemento=document.getElementById("tablaContenido");
-				  
-				  elemento.addEventListener("onclick",function (event) 
-				  {if (validar()==false){event.preventDefault()}});
+				elemento.addEventListener("click",function (event)
+				{event.preventDefault();
 				  genera_tablaContenido() ;
 				}
 				
