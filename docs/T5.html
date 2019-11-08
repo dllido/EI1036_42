@@ -23,6 +23,33 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.8.0/css/print/pdf.css' : 'reveal.js-3.8.0/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<script>
+			
+			function genera_tablaContenido() {
+				// Crea un elemento <table> y un elemento <tbody>
+				var tabla   = document.createElement("ol");
+				
+				var titulos = document.getElementsByTagName("h1");
+				// Crea las celdas
+				padre=event.target;
+				for (i = 0; i < titulos.lenth ;i++) {
+				  // Crea las hileras de la tabla
+				  var hilera = document.createElement("li");
+				  hilera.innerText=titulos[i].innerText;
+				  tabla.appendChild(hilera);
+				}
+				padre.appendChild(tabla)
+			}
+			function detectores()
+				{elemento=document.getElementById("tablaContenido");
+				elemento.addEventListener("click",function (event)
+				{event.preventDefault();
+				  genera_tablaContenido() ;
+				})
+			}
+				
+		</script>
 	</head>
 
 	<body>
@@ -68,7 +95,10 @@
 				]
 			});
 
-			
+			Reveal.addEventListener( 'ready', function( event ) {
+				detectores();
+				// event.currentSlide, event.indexh, event.indexv
+			} );
 
 		</script>
 
