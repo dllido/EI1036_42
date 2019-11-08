@@ -61,9 +61,9 @@ function MP_Register_Form($MP_user , $user_email)
 //$_REQUEST['proceso'], o sea se activara al llamar a url semejantes a 
 //https://host/wp-admin/admin-post.php?action=my_datos&proceso=r 
 
-function MP_my_datos($table)
+function MP_my_datos()
 { 
-    global $user_ID , $user_email;
+    global $user_ID , $user_email,$table;
     
     $MP_pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
     wp_get_current_user();
