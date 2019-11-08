@@ -35,8 +35,12 @@
 .content-box { columns: 2 auto; }
 
 
+.reveal p {
+  line-height: 1.3;
+}
+
 .reveal li{
-  line-height: 1.1;}
+  line-height: 1.2;}
 .reveal h1 {
   font-size: 1.3em; 
   color: #83a;}
