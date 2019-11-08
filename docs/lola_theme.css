@@ -22,6 +22,7 @@
  .reveal section  img {max-height: 530px; 
   margin: 0  0  0 0;}
 .reveal section  img.imagen {max-height: 300px; 
+  style:"float:right";
   margin: 0  0  0 0;}
 
 .reveal {
