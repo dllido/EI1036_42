@@ -19,8 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 
-
-
 //Funcion instalación plugin. Crea tabla
 function MP_CrearT($tabla){
     
@@ -29,7 +27,6 @@ function MP_CrearT($tabla){
     $consult = $MP_pdo->prepare($query);
     $consult->execute (array());
 }
-
 
 
 function MP_Register_Form($MP_user , $user_email)
@@ -67,12 +64,8 @@ function MP_Register_Form($MP_user , $user_email)
 function MP_my_datos($tabla)
 { 
     global $user_ID , $user_email;
-<<<<<<< HEAD
-=======
     $table='A_GrupoCliente1';
->>>>>>> 8e3c04f474fbb9da12e92836eca4811d5e6977a3
     $MP_pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
-    
     wp_get_current_user();
     if ('' == $user_ID) {
                 //no user logged in
