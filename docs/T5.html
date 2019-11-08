@@ -26,18 +26,20 @@
 
 		<script>
 			
+						
 			function genera_tablaContenido() {
 				// Crea un elemento <table> y un elemento <tbody>
 				var tabla   = document.createElement("ol");
 				
 				var titulos = document.getElementsByTagName("h1");
 				// Crea las celdas
-				padre=event.target;
-				for (i = 0; i < titulos.lenth ;i++) {
+				padre=event.target.parentElement;
+				for (i = 0; i < titulos.length ;i++) {
 				  // Crea las hileras de la tabla
 				  var hilera = document.createElement("li");
 				  hilera.innerText=titulos[i].innerText;
 				  tabla.appendChild(hilera);
+
 				}
 				padre.appendChild(tabla)
 			}
