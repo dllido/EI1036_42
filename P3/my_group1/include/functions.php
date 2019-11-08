@@ -61,10 +61,10 @@ function MP_Register_Form($MP_user , $user_email)
 //$_REQUEST['proceso'], o sea se activara al llamar a url semejantes a 
 //https://host/wp-admin/admin-post.php?action=my_datos&proceso=r 
 
-function MP_my_datos($tabla)
+function MP_my_datos($table)
 { 
     global $user_ID , $user_email;
-    $table='A_GrupoCliente1';
+    
     $MP_pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
     wp_get_current_user();
     if ('' == $user_ID) {
@@ -89,7 +89,7 @@ function MP_my_datos($tabla)
                 print ("No has rellenado el formulario correctamente");
                 return;
             }
-            $query = "INSERT INTO $tabla (nombre, email,clienteMail) VALUES (?,?,?)";         
+            $query = "INSERT INTO $table (nombre, email,clienteMail) VALUES (?,?,?)";         
             $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'] );
             //$pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
             $consult = $MP_pdo->prepare($query);
@@ -102,7 +102,7 @@ function MP_my_datos($tabla)
             $a=array();
             if (current_user_can('administrator')) {$query = "SELECT     * FROM       $table ";}
             else {$campo="clienteMail";
-                $query = "SELECT     * FROM  $tabla      WHERE $campo =?";
+                $query = "SELECT     * FROM  $table      WHERE $campo =?";
                 $a=array( $user_email);
  
             } 
