@@ -22,7 +22,7 @@
  .reveal section  img {max-height: 530px; 
   margin: 0  0  0 0;}
 .reveal section  img.imagen {max-height: 300px; 
-  style:"float:right";
+  float:right;
   margin: 0  0  0 0;}
 
 .reveal {
@@ -64,7 +64,7 @@
   line-height: 1.4;
   display: inherit;
   
-
+}
 /*.reveal pre {width: 100%;}*/
 .reveal pre code{
   font-size: 24px;
