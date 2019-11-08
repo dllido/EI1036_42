@@ -26,9 +26,9 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.8.0/css/print/pdf.css' : 'reveal.js-3.8.0/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-		<script src="reveal.js-3.8.0/js/reveal.js" async ></script>
+		<script src="reveal.js-3.8.0/js/reveal.js"></script>
 
-        <script defer>
+      <script defer>
 
 
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -90,7 +90,11 @@
 				  {if (validar()==false){event.preventDefault()}});
 				  genera_tablaContenido() ;
 				}
-			detectores();
+				Reveal.addEventListener( 'ready', function( event ) {
+					detectores();
+					// event.currentSlide, event.indexh, event.indexv
+				} );
+				
 		</script>
 
 
