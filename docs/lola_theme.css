@@ -28,12 +28,12 @@
   font-size: 28px;
   margin: 15px;
   padding: 5px;
+  line-height: 1.3;
   width: auto;
 }
 
-.reveal p {
-  font-size: 28px;
-  line-height: 1.1;
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-size: 1.5%;
 }
 /*
 .reveal li{
@@ -64,7 +64,7 @@
 .reveal dl,
 .reveal ul {
   text-align: left;
-  line-height: 1;
+  line-height: 1.4;
   }
 
 /*.reveal pre {width: 100%;}*/
