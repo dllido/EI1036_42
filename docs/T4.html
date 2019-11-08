@@ -61,10 +61,6 @@
 				  {if (validar()==false){event.preventDefault()}});
 				  genera_tablaContenido() ;
 				}
-				Reveal.addEventListener( 'ready', function( event ) {
-					detectores();
-					// event.currentSlide, event.indexh, event.indexv
-				} );
 				
 		</script>
 
@@ -116,6 +112,11 @@ slideNumber: true,
 				{ src: 'reveal.js-3.8.0/plugin/notes/notes.js', async: true }
 			]
 		});
+		Reveal.addEventListener( 'ready', function( event ) {
+			detectores();
+			// event.currentSlide, event.indexh, event.indexv
+		} );
+		
 </script>
       
 	</body>
