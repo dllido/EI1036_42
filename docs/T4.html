@@ -41,6 +41,7 @@
 				  // Crea las hileras de la tabla
 				  var hilera = document.createElement("li");
 				  hilera.innerText=titulos[i].innerText;
+				  tabla.appendChild(hilera);
 				  var subtitulos = titulos[i].getElementsByTagName("h2");
 				  var subtabla  = document.createElement("ol");
 				  for ( j in subtitulos) {
@@ -49,11 +50,13 @@
 					 // de la hilera de la tabla
 					 var celda = document.createElement("li");
 					 celda.innerText=subtitulos[j].innerText;
-					 hilera.appendChild(celda);
+					 subtabla.appendChild(celda);
 				  }
-				  padre.appendChild(hilera)
+				  
+				  tabla.appendChild(subtabla)
 				  
 				}
+				padre.appendChild(tabla)
 			}
 			function detectores()
 				{elemento=document.getElementById("tablaContenido");
