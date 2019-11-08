@@ -24,12 +24,16 @@
 .reveal section  img.imagen {max-height: 300px; 
   margin: 0  0  0 0;}
 
-.reveal,.reveal p, .reveal li{
+.reveal {
   font-size: 28px;
-  margin:15px;
-  padding: 20px;
-  line-height: 1.1;
+  margin: 15px;
+  padding: 5px;
   width: auto;
+}
+
+.reveal p {
+  font-size: 28px;
+  line-height: 1.1;
 }
 /*
 .reveal li{
@@ -60,13 +64,12 @@
 .reveal dl,
 .reveal ul {
   text-align: left;
-  line-height: 1.1;
+  line-height: 1;
   }
 
 /*.reveal pre {width: 100%;}*/
 .reveal pre code{
   font-size: 24px;
-  line-height: 1.1;
   }
 a { word-wrap: break-word;}
 
@@ -83,7 +86,6 @@ a { word-wrap: break-word;}
   overflow:visible;
 
    }
-
 
 .DescriptionExcerpt {
   overflow: hidden;
