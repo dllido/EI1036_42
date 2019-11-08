@@ -31,19 +31,17 @@
   line-height: 1.3;
   width: auto;
 }
+.content-box { columns: 2 auto; }
 
-.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-  font-size: 1.5%;
-}
-/*
+
 .reveal li{
   line-height: 1.1;}
 .reveal h1 {
-  font-size: 1.2em; 
+  font-size: 1.3em; 
   color: #83a;}
 
 .reveal h2 {
-  font-size: 1.1em;color: #56a; }
+  font-size: 1.2em;color: #56a; }
 
 .reveal h3 {
   font-size: 1.1em; color: #83a;}
@@ -53,10 +51,8 @@
 
 .reveal h1 {
   text-shadow: none; }
-.reveal ol,ol.ul{
-    columns: 2;;
-}
 
+/*
 .reveal li{margin-left:5px}
 .reveal table{font-size: 0.5 em;line-height: 0.8em;}
 .reveal .slides > section{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}*/
@@ -65,7 +61,8 @@
 .reveal ul {
   text-align: left;
   line-height: 1.4;
-  }
+  display: inherit;
+  
 
 /*.reveal pre {width: 100%;}*/
 .reveal pre code{
