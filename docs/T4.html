@@ -101,8 +101,10 @@
 			function detectores()
 				{form=document.querySelector("#tablaContenido");
 				  form.addEventListener("onclick",function (event) 
-				  {if (validar()==false){event.preventDefault()}});}
-			detectores(EventTarget);
+				  {if (validar()==false){event.preventDefault()}});
+				  genera_tablaContenido() ;
+				}
+			detectores();
 				
 			 }
 		</script>
