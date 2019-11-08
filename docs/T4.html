@@ -26,6 +26,44 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.8.0/css/print/pdf.css' : 'reveal.js-3.8.0/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+<script type="text/javascript"  async defer >
+
+	function genera_tablaContenido() {
+		// Crea un elemento <table> y un elemento <tbody>
+		var tabla   = document.createElement("ol");
+		
+		var titulos = document.getElementsByTagName("h1");
+		// Crea las celdas
+		for (titulo in titulos ) {
+		  // Crea las hileras de la tabla
+		  var hilera = document.createElement("li");
+		  var textoCelda = titulo.innerHtml();
+		  hilera.innerText=titulo.innerText;
+		  var subtitulos = titulo.getElementsByTagName("h2");
+		  var subtabla  = document.createElement("ol");
+		  for ( j in subtitulos) {
+			 // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+			 // texto sea el contenido de <td>, ubica el elemento <td> al final
+			 // de la hilera de la tabla
+			 var celda = document.createElement("li");
+			 celda.innerText=j.innerText;
+			 hilera.appendChild(celda);
+		  }
+		  this.appendChild(hilera);
+		}
+	}
+	function detectores()
+		{elemento=document.getElementById("tablaContenido");
+		  
+		  elemento.addEventListener("click",function (event) 
+		  {if (validar()==false){event.preventDefault()}});
+		  genera_tablaContenido() ;
+		}
+	detectores();
+	
+</script>
+
 	</head>
 
 	<body>
@@ -75,44 +113,6 @@
 			});
 		</script>
 
-<script></script>
-function genera_tablaContenido() {
-	// Crea un elemento <table> y un elemento <tbody>
-	var tabla   = document.createElement("ol");
-	
-	var titulos = document.getElementsByTagName("h1");
-	// Crea las celdas
-	for (titulo in titulos ) {
-	  // Crea las hileras de la tabla
-	  var hilera = document.createElement("li");
-	  var textoCelda = titulo.innerHtml();
-	  hilera.innerText=titulo.innerText;
-	  var subtitulos = titulo.getElementsByTagName("h2");
-	  var subtabla  = document.createElement("ol");
-	  for ( j in subtitulos) {
-		 // Crea un elemento <td> y un nodo de texto, haz que el nodo de
-		 // texto sea el contenido de <td>, ubica el elemento <td> al final
-		 // de la hilera de la tabla
-		 var celda = document.createElement("li");
-		 celda.innerText=j.innerText;
-		 hilera.appendChild(celda);
-	  }
-  
-	  // agrega la hilera al final de la tabla (al final del elemento tblbody)
-	  this.appendChild(hilera);
-	}
-}
-function detectores()
-	{elemento=document.getElementById("tablaContenido");
-	  elemento.addEventListener("onclick",function (event) 
-	  {if (validar()==false){event.preventDefault()}});
-	  genera_tablaContenido() ;
-	  elemento.addEventListener("click",function (event) 
-	  {if (validar()==false){event.preventDefault()}});
-	  genera_tablaContenido() ;
-	}
-detectores();
-</script>
       
 	</body>
 </html>
