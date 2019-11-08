@@ -36,11 +36,11 @@
 				
 				var titulos = document.getElementsByTagName("h1");
 				// Crea las celdas
-				for (titulo in titulos ) {
+				for (i in titulos ) {
 				  // Crea las hileras de la tabla
 				  var hilera = document.createElement("li");
-				  hilera.innerText=titulo[0].innerText;
-				  var subtitulos = titulo[0].getElementsByTagName("h2");
+				  hilera.innerText=titulos[i].innerText;
+				  var subtitulos = titulos[i].getElementsByTagName("h2");
 				  var subtabla  = document.createElement("ol");
 				  for ( j in subtitulos) {
 					 // Crea un elemento <td> y un nodo de texto, haz que el nodo de
