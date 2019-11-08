@@ -98,7 +98,11 @@
 				  // agrega la hilera al final de la tabla (al final del elemento tblbody)
 				  this.appendChild(hilera);
 				}
-			  
+			function detectores()
+				{form=document.querySelector("#tablaContenidos");
+				  form.addEventListener("click",function (event) 
+				  {if (validar()==false){event.preventDefault()}});}
+			detectores(EventTarget);
 				
 			 }
 		</script>
