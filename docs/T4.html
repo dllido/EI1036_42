@@ -36,6 +36,7 @@
 				
 				var titulos = document.getElementsByTagName("h1");
 				// Crea las celdas
+				padre=event.target;
 				for (i in titulos ) {
 				  // Crea las hileras de la tabla
 				  var hilera = document.createElement("li");
@@ -50,7 +51,8 @@
 					 celda.innerText=subtitulos[j].innerText;
 					 hilera.appendChild(celda);
 				  }
-				  event.target.appendChild(hilera);
+				  padre.appendChild(hilera)
+				  
 				}
 			}
 			function detectores()
