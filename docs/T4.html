@@ -37,11 +37,12 @@
 				var titulos = document.getElementsByTagName("h1");
 				// Crea las celdas
 				padre=event.target;
-				for (i = 0; i < titulos.lenth ;i++) {
+				for (i = 0; i < titulos.length ;i++) {
 				  // Crea las hileras de la tabla
 				  var hilera = document.createElement("li");
 				  hilera.innerText=titulos[i].innerText;
 				  tabla.appendChild(hilera);
+
 				}
 				padre.appendChild(tabla)
 			}
