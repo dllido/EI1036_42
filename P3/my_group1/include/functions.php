@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 
-$tabla="A_GrupoCliente000";
+
 //Funcion instalación plugin. Crea tabla
 function MP_CrearT($tabla){
     
