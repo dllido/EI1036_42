@@ -71,7 +71,8 @@
 }
 /*.reveal pre {width: 100%;}*/
 .reveal pre code{
-  font-size: 24px;
+  font-size: 26px;
+  line-height: 1.2;
   }
 a { word-wrap: break-word;}
 
