@@ -1,8 +1,10 @@
 /**
  *Mis fuentes más pequeñas*/
 
- element.style{top :40px;}
-
+ element.style {
+  top: 40.5px;
+  display: block;
+}
  .reveal #title-footer {
   opacity: 1;
   transition: opacity 800ms ease-in-out;
@@ -28,7 +30,7 @@
 .reveal {
   font-size: 28px;
   margin: 1px;
-  padding: 1px;
+  padding: px;
   line-height: 1.3;
   width: auto;
 }
@@ -72,11 +74,11 @@
 /*.reveal pre {width: 100%;}*/
 
 .reveal pre code{
-  font-size: 26px;
-  line-height: 1.4;
+  font-size: 18px;
+  line-height: 1.2;
   max-height: 100%;
   }
-}
+
 a { word-wrap: break-word;}
 
 .truncate {
