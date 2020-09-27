@@ -20,7 +20,12 @@
  @media print { 
   /* All your print styles go here */
   #header, #footer, #nav { display: none !important; } 
- }
+  .reveal pre code{
+    font-size: 18px;
+    line-height: 1.2;
+    max-height: 100%;
+    }
+}
  .reveal section  img {max-height: 530px; 
   margin: 0  0  0 0;}
 .reveal section  img.imagen {max-height: 300px; 
