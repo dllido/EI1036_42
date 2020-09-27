@@ -275,12 +275,13 @@
     
         <section >
             
-            <h1><a id="user-content-tema-2-introducción-al-php" class="anchor" href="#tema-2-introducción-al-php" aria-hidden="true"></a>Tema 2: Introducción al PHP</h1>
-<h3><a id="user-content-ei1042---tecnologías-y-aplicaciones-web" class="anchor" href="#ei1042---tecnologías-y-aplicaciones-web" aria-hidden="true"></a>EI1042 - Tecnologías y Aplicaciones Web</h3>
-<p><strong>EI1036- Tecnologías Web para los Sistemas de Información (2020/2021)</strong></p>
-<p>Professora: Dra. Dolores Mª Llidó Escrivá</p>
-<p><img src="./media/cc2.jpg" alt="Derechos Autor"></p>
-<p><a href="https://www.uji.es/">Universitat Jaume I</a>.</p>
+            <h1><a id="user-content-tema-3-lenguajes-de-la-web" class="anchor" href="#tema-3-lenguajes-de-la-web" aria-hidden="true"></a>Tema 3: Lenguajes de la Web</h1>
+<h1><a id="user-content-html5-css3" class="anchor" href="#html5-css3" aria-hidden="true"></a>(HTML5, CSS3)</h1>
+<p><em>EI1042 - Tecnologías y Aplicaciones Web</em></p>
+<p><strong>EI1036- Tecnologías Web para los Sistemas de Información (2019-/2020)</strong></p>
+<p><em>Professora: Dra. Dolores Mª Llidó Escrivá</em></p>
+<p><img src="./media/cc2.jpg" alt="Derechos Autor">
+<a href="https://www.uji.es/">Universitat Jaume I</a>.</p>
 
             </section>
     
@@ -290,15 +291,58 @@
     
         <section >
             
-            <h2><a id="user-content-índice" class="anchor" href="#índice" aria-hidden="true"></a>Índice</h2>
-<ul>
-<li>Introducción a PHP</li>
-<li>Sintaxis básica</li>
-<li>Tipos de datos</li>
-<li>Salida Estándar</li>
-<li>Variables Expresiones y Operadores</li>
+            <h1><a id="user-content-índice" class="anchor" href="#índice" aria-hidden="true"></a>Índice</h1>
+<ol>
+<li>HTML: HyperText Markup Language</li>
+<li>Renderizado HTML</li>
+<li>Accesibilidad/usabilidad</li>
+<li>HTML5</li>
+<li>Estructura Semántica</li>
 <li>Formularios</li>
-<li>Funciones</li>
+<li>CSS</li>
+<li>Sintaxis CSS
+<ul>
+<li>Tipos selectores</li>
+<li>Medidas/Unidades</li>
+</ul>
+</li>
+<li>CSS3</li>
+<li>Modelo de Cajas: flotantes/flexibles</li>
+<li>Discriminación por dispositivos.
+<ul>
+<li>Media-Type</li>
+<li>Media-Queries</li>
+</ul>
+</li>
+<li>Bibliografía</li>
+</ol>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-1-html-hypertext-markup-language" class="anchor" href="#1-html-hypertext-markup-language" aria-hidden="true"></a>1 HTML: HyperText Markup Language</h1>
+<ul>
+<li>Lenguaje de marcas para publicar documentos multimedia
+hipertexto.</li>
+<li>Los documentos HTML son ficheros de texto con marcas de formato
+que son independientes del SO, lenguaje de programación y
+programas.</li>
+<li>Las marcas o etiquetas indican cómo representar los
+contenidos de los documentos.
+<ul>
+<li>Elemento con contenido:  <code>&lt;html&gt;...&lt;/html&gt;</code></li>
+<li>Elemento vacío: <code>&lt;br/&gt;</code> o <code>&lt;br&gt;&lt;/br&gt;</code></li>
+<li>Etiqueta con atributos:<br>
+<code>&lt;body class=“principal”&gt;...&lt;/body&gt;</code></li>
+</ul>
+</li>
+<li>Extensiones de fichero: .html o .htm</li>
+<li>Cuestiones de estilo: etiquetas en minúsculas y atributos entre comillas dobles (XML).</li>
 </ul>
 
             </section>
@@ -309,18 +353,123 @@
     
         <section >
             
-            <h1><a id="user-content-1-introducción-al-php" class="anchor" href="#1-introducción-al-php" aria-hidden="true"></a>1. Introducción al PHP</h1>
+            <h1><a id="user-content-conceptos" class="anchor" href="#conceptos" aria-hidden="true"></a>Conceptos:</h1>
 <ul>
-<li>Creado por Rasmus Lerdorf para uso personal en 1994 <img src="./media/T2/rasmus.jpeg" alt="Image of Rasmus"></li>
-<li>PHP es un lenguaje de script del lado del servidor.</li>
-<li>PHP: Hypertext Preprocessor</li>
-<li>Versión actual: PHP 7</li>
-<li>Es potente, fácil de aprender, de libre
-distribución, permite el acceso a bases de datos y otras
-funcionalidades orientadas a la red</li>
-<li>Dispone de abundante soporte en la Web</li>
+<li>¿Qué es el <em>encode</em>? (Editor/Navegador)</li>
+<li>¿Cómo especificamos que el documento HTML está en español?</li>
+<li>¿Qué es el mimetype?</li>
+<li>¿Qué son los carácteres especiales en HTML?</li>
 </ul>
-<p>Manual PHP: <a href="http://php.net/manual/es/">http://php.net/manual/es/</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <p><img src="./media/T3/image4.png" alt="Image of HTML"></p>
+<p><a href="https://ontargetwebsolutions.com/insights/wp-content/uploads/2014/11/evolution-of-web-design-ok.jpg">https://ontargetwebsolutions.com/insights/wp-content/uploads/2014/11/evolution-of-web-design-ok.jpg</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-2-renderizado-html" class="anchor" href="#2-renderizado-html" aria-hidden="true"></a>2. Renderizado HTML</h1>
+<p>¿Qué es el renderizado?</p>
+<ul>
+<li>
+<p>Los documentos HTML pueden ser renderizados en pantallas, sintetizadores de habla y dispositivos
+de Braille.</p>
+</li>
+<li>
+<p>Para indicar cómo aparece el renderizado se ha definido el <em>CSS</em><br>
+(Cascade Style Sheet).</p>
+</li>
+<li>
+<p>Cuando un documento HTML se renderiza se guarda en la memoria como un árbol <em>DOM</em> (Document Object
+Model).</p>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-renderizado-en-navegador--blokinline" class="anchor" href="#renderizado-en-navegador--blokinline" aria-hidden="true"></a>Renderizado en navegador:  blok/Inline</h2>
+<p>Los elementos HTML se dividen en dos grandes tipos:</p>
+<ul>
+<li><code>block</code>: tienden a ocupar todo el espacio disponible a lo ancho y, en
+caso de existir varios elementos, se sitúan unos debajo de otros (p, aside,
+footer, div, table…).</li>
+<li><code>inline</code>: ocupan el espacio necesario dentro de una línea y en caso
+de existir varios elementos se sitúan uno junto a otro en la misma línea
+siempre que haya espacio (span, a).</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-3-recomendaciones-accesibilidad-y-usabilidad" class="anchor" href="#3-recomendaciones-accesibilidad-y-usabilidad" aria-hidden="true"></a>3 Recomendaciones: Accesibilidad y Usabilidad</h1>
+<ul>
+<li>Etiquetas y atributos en minúsculas.</li>
+<li>Organización lógica del documento según estándar: h1, h2, h3, …</li>
+<li>No usar tablas (<code>&lt;table&gt;</code>) para estructurar la página.</li>
+<li>Intentar que sin el estilo <em>CSS</em> se pueda entender el contenido.</li>
+<li>Resaltar los textos tanto con forma y color distintos.</li>
+<li>No utilizar espacios en blanco consecutivos, mejor usa <code> css margin</code></li>
+<li>Uso preferente de etiquetas semánticas <code>header, article....</code> frente a <code>div</code></li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-4-html-5" class="anchor" href="#4-html-5" aria-hidden="true"></a>4. HTML 5:</h1>
+<p><a href="http://www.w3.org/TR/html5/">http://www.w3.org/TR/html5/</a></p>
+<p><a href="https://HTML.spec.whatwg.org/multipage/indices.HTML">https://HTML.spec.whatwg.org/multipage/indices.HTML</a></p>
+<ul>
+<li>Comienza con la definición del Doctype <code>&lt;!DOCTYPE html&gt;</code>.</li>
+<li>Elementos obligatorios: <code>html, head, title y body</code></li>
+<li>Validadores: <a href="http://validator.w3.org">http://validator.w3.org</a> o
+<a href="http://validator.w3.org/nu/">http://validator.w3.org/nu/</a></li>
+<li><a href="http://caniuse.com">http://caniuse.com</a> ¿Qué etiquetas puedo usar en los
+navegadores?</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-elementos-html5-multimedia" class="anchor" href="#elementos-html5-multimedia" aria-hidden="true"></a>Elementos HTML5 multimedia</h2>
+<ul>
+<li>Audio: <code>&lt;audio src=””&gt;&lt;/audio&gt;</code></li>
+<li>Vídeo: <code>&lt;video src=””&gt;&lt;/video&gt;</code></li>
+<li>Animación: <code>&lt;canvas&gt;&lt;/canvas&gt; </code>(+ JS)</li>
+<li>Soporte Imágenes vectoriales: SVG (scalable vector graphics)</li>
+</ul>
 
             </section>
     
@@ -330,498 +479,59 @@ funcionalidades orientadas a la red</li>
     
     <section>
         <section >
-            <h2><a id="user-content-ficheros-con-php" class="anchor" href="#ficheros-con-php" aria-hidden="true"></a>Ficheros con PHP</h2>
-<ul>
-<li>Fichero PHP:  hola.php</li>
-</ul>
-<pre><code class="language-PHP">&lt;?php 
-echo &quot;Hola Mundo&quot;;
-?&gt;
-</code></pre>
-<ul>
-<li>Fichero con HTML: bienvenido.php</li>
-</ul>
-<pre><code class="language-HTML">&lt;body&gt;
-&lt;p&gt;Inicio&lt;/p&gt;
-&lt;?php 
-$nombre = &quot;Ana&quot;;
-print(&quot; &lt;P&gt;Hola, $nombre&lt;/P&gt;&quot;); 
- ?&gt;
-&lt;p&gt;Fin&lt;/p&gt;
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-páginas-web-dinámicas-con-php" class="anchor" href="#páginas-web-dinámicas-con-php" aria-hidden="true"></a>Páginas web dinámicas con PHP</h2>
-<ul>
-<li>El cliente no ve el código PHP sino los resultados que produce en la salida estándar.</li>
-<li>Apache ejecuta php no como un CGI sino como un módulo.</li>
-</ul>
-<p>Version php  S.O. != Apache</p>
-<p><img src="./media/T2/image1.png" alt="Image of La World Wide Web"></p>
-<p>Seguridad: Ficheros sensibles deben estar fuera de la raiz (docroot) del servidor web</p>
-
-            </section>
-        
-            <section >
-                <h3><a id="user-content-ejercicio-1" class="anchor" href="#ejercicio-1" aria-hidden="true"></a>Ejercicio 1</h3>
-<p><a href="https://piruletas.000webhostapp.com/Lab/P1/includes/portal.php?action=listar">https://piruletas.000webhostapp.com/Lab/P1/includes/portal.php?action=listar</a></p>
-<p>Analiza la URL.</p>
-<ul>
-<li>¿Cual es el nombre servidor?</li>
-<li>¿Cual es el recurso?</li>
-<li>¿Que parametros requiere el programa php?</li>
-</ul>
-
-            </section>
-        
-
-    </section>
-    
-
-
-
-    
-    <section>
-        <section >
-            <h2><a id="user-content-ejecución-php" class="anchor" href="#ejecución-php" aria-hidden="true"></a>Ejecución PHP</h2>
-<p><a href="https://piruletas.000webhostapp.com/teoria/T2/holaMundo.php">https://piruletas.000webhostapp.com/teoria/T2/holaMundo.php</a></p>
-<ul>
-<li>Consola</li>
-</ul>
-<pre><code class="language-php">php.exe &quot;./bienvenidos.php&quot; 
-</code></pre>
-<ul>
-<li>Entorno php:</li>
-</ul>
-<pre><code class="language-php">&gt;&gt;php -a
-$hola=&quot;Adios&quot;;
-$echo $hola
-</code></pre>
-<p>-Servidor web local:</p>
-<pre><code class="language-php:">&gt;&gt;php -S localhost:8080
+            <h1><a id="user-content-5-estructura-semántica" class="anchor" href="#5-estructura-semántica" aria-hidden="true"></a>5. Estructura Semántica</h1>
+<pre><code class="language-html">&lt;header&gt; &lt;hgroup&gt;
+&lt;h1&gt;Page title&lt;/h1&gt;
+&lt;h2&gt;Page subtitle&lt;h2&gt;
+&lt;/hgroup&gt; &lt;/header&gt;
+&lt;nav&gt;
+   &lt;ul&gt;
+   Navigation...
+   &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;section&gt; &lt;article&gt;
+   &lt;header&gt;&lt;h1&gt;Title&lt;h1&gt; &lt;/header&gt;
+   Content...
+   &lt;/article&gt;
+   &lt;article&gt;
+   ....
+   &lt;/article&gt;
+&lt;/section&gt;
+&lt;aside&gt;
+   Top links...
+   &lt;figure&gt; &lt;img src=&quot;...&quot;/&gt;
+   &lt;figcaption&gt;Chart&lt;/figcaption&gt; &lt;/figure&gt;
+&lt;/aside&gt;
+&lt;footer&gt;
+   Copyright © &lt;time datetime=&quot;2010-11-08&quot;&gt;2010&lt;/time&gt;.
+&lt;/footer&gt;
 </code></pre>
 
             </section>
         
             <section >
-                <h3><a id="user-content-ejercicio-2" class="anchor" href="#ejercicio-2" aria-hidden="true"></a>Ejercicio 2</h3>
-<pre><code class="language-php">&gt;&gt;php -S localhost:8080
-</code></pre>
+                <h2><a id="user-content-html5-estructura-semántica" class="anchor" href="#html5-estructura-semántica" aria-hidden="true"></a>HTML5: Estructura Semántica</h2>
 <ul>
-<li>¿Cuál  es el docroot del servidor web?</li>
-<li>¿Dónde ponemos el fichero tutoPhp.php en el servidor para acceder desde <a href="http://localhost/teoria/T2/tutoPHP.php">http://localhost/teoria/T2/tutoPHP.php</a>?</li>
-</ul>
-
-            </section>
-        
-            <section >
-                <h3><a id="user-content-servidor-web-en-producción" class="anchor" href="#servidor-web-en-producción" aria-hidden="true"></a>Servidor WEB en Producción</h3>
+<li><code>&lt;p&gt;</code>: Mínimo bloque en HTML.</li>
+<li><code>&lt;div&gt;</code>: Une bloques de distintos tipos, cuando no podemos asociar significado
+semántico a este conjunto.</li>
+<li><code>&lt;header&gt;</code> : Encabezado de la página.</li>
+<li><code>&lt;footer&gt;</code>: Pie de página.</li>
+<li><code>&lt;nav&gt;</code>: Menú de navegación.</li>
+<li><code>&lt;hgroup&gt;</code>: Agrupación titulares (Hn).</li>
+<li><code>&lt;article&gt;</code>: Elementos con significado propio.Puede contener :
 <ul>
-<li>Servidor web Apache (<a href="http://www.apache.org">http://www.apache.org</a>) con el módulo PHP (<a href="http://www.php.net">http://www.php.net</a>)</li>
-<li>Base de datos MySQL (<a href="http://www.mysql.com">http://www.mysql.com</a>) si se desea crear páginas dinámicas</li>
-<li>Herramientas para la gestión de MySQL, como PHPMyAdmin
-(<a href="http://www.phpmyadmin.net">http://www.phpmyadmin.net</a>)</li>
-</ul>
-<p><a href="http://httpd.apache.org/docs/current/es/">Apache 2.3 http://httpd.apache.org/docs/current/es/</a></p>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-servidor-web--en-desarrollo-xampp" class="anchor" href="#servidor-web--en-desarrollo-xampp" aria-hidden="true"></a>Servidor WEB  en desarrollo: XAMPP</h2>
-<ul>
-<li>XAMPP es una distribución de Apache que incluye MySQL, PHP y  phpMyAdmin</li>
-<li>XAMPP es gratuito y fácil de instalar</li>
-<li>XAMPP es multiplataforma</li>
-<li>Precaución: la configuración por defecto  no es segura, ni para un entorno de producción.</li>
-</ul>
-
-            </section>
-        
-
-    </section>
-    
-
-
-
-    
-    <section>
-        <section >
-            <h1><a id="user-content-2-sintaxis-básica-php" class="anchor" href="#2-sintaxis-básica-php" aria-hidden="true"></a>2. Sintaxis básica PHP</h1>
-<ul>
-<li>PHP es sensible a las mayúsculas/minúsculas.</li>
-<li>Las instrucciones se separan con “;”</li>
-<li>Espacios en blanco y cambios de línea no se tienen en cuenta.</li>
-<li>PHP interpreta entre comillas dobles pero no entre comillas
-simples.</li>
-<li>Se utiliza codificación utf8.</li>
-<li>Comprobar que el editor no ha generado un BOM ( <em>byte order mark</em> de unicode en la primera línea)</li>
-</ul>
-<p>Guia Estilos: <a href="https://www.php-fig.org/psr/psr-2/">https://www.php-fig.org/psr/psr-2/</a></p>
-
-            </section>
-        
-            <section >
-                <h3><a id="user-content-ejemplo-fichero-php" class="anchor" href="#ejemplo-fichero-php" aria-hidden="true"></a>Ejemplo fichero PHP</h3>
-<pre><code class="language-PHP">&lt;?php
-$var = &quot;test&quot;;
-echo &quot;$var&quot;; // Salida:&quot;test“
-echo &quot;\$var&quot;; // Salida:&quot; &quot;$var&quot;
-echo '$var'; // Salida:&quot; &quot;$var&quot;
-# otro comentario hasta el final de la línea
-/* comento
-varias líneas */
-?&gt;
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h3><a id="user-content-usar-yodastyle" class="anchor" href="#usar-yodastyle" aria-hidden="true"></a>Usar: YodaStyle</h3>
-<p><img src="./media/T2/image2.png" alt="Image of La World Wide Web"></p>
-<p>Comparaciones  al revés  para evitar equivocarnos.</p>
-
-            </section>
-        
-
-    </section>
-    
-
-
-
-    
-    <section>
-        <section >
-            <h1><a id="user-content-3-tipos-de-datos" class="anchor" href="#3-tipos-de-datos" aria-hidden="true"></a>3. Tipos de datos</h1>
-<ul>
-<li>Tipos escalares: boolean, integer, double, string</li>
-<li>Tipos compuestos: array, object</li>
-<li>Tipos especiales: resource, NULL</li>
-</ul>
-
-            </section>
-        
-            <section >
-                <h3><a id="user-content-array-asociativo" class="anchor" href="#array-asociativo" aria-hidden="true"></a>Array Asociativo</h3>
-<p>Sintaxis:
-array ([clave =&gt;] valor, …)</p>
-<pre><code class="language-PHP">$medidas = array (10, 25, 15);
-echo $medidas[0]
-
-$color = array (‘rojo’=&gt;101, ‘verde’=&gt;51, ‘azul’=&gt;255); 
-
-#Acceso:
-echo $color[‘rojo’] // No olvidar las comillas
-echo array_keys($color)
-</code></pre>
-
-            </section>
-        
-
-    </section>
-    
-
-
-
-    
-    <section>
-        <section >
-            <h1><a id="user-content-4-salida-estándar" class="anchor" href="#4-salida-estándar" aria-hidden="true"></a>4. Salida estándar</h1>
-<p>¿Cómo enviar mensajes a la salida estándar?</p>
-<ul>
-<li>echo — Muestra una o más cadenas.</li>
-<li>print — Mostrar una cadena.</li>
-<li>printf — Imprimir una cadena con formato.</li>
-<li>print_r — Imprime información legible para humanos.</li>
-<li>var_dump— Vuelca información sobre una variable. La información y su tipo</li>
-</ul>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-diferencias-echo-o-print" class="anchor" href="#diferencias-echo-o-print" aria-hidden="true"></a>Diferencias echo o print</h2>
-<ul>
-<li>
-<p>Void echo (string argument1[,…string argumentN])</p>
-</li>
-<li>
-<p>Int print (argument)</p>
-<ul>
-<li>print solo tiene un argumento (echo puede tener varios)</li>
-<li>si print devuelve 1 (significa que ha generado la salida)</li>
+<li><code>&lt;header/&gt;, &lt;section/&gt;, &lt;aside/&gt; y &lt;footer/&gt;</code>.</li>
+<li>Puede ser un documento entero.</li>
 </ul>
 </li>
+<li><code>&lt;section/&gt;</code>: declaramos que el conjunto de etiquetas tiene un
+contenido relacionado. Equivalente a una sección de un periódico que engloba varios artículos.</li>
+<li><code>&lt;aside&gt;:</code> bloque que es sólo un añadido a los bloques que tiene
+al lado (ej.- anuncios). Son datos extra sin lo que podríamos
+pasar perfectamente pero que hemos decidido añadir en el
+documento.</li>
 </ul>
-<p>No es obligatorio el uso de paréntesis ya que no son
-realmente una función.</p>
-<pre><code class="language-PHP">echo &quot;Hola mundo&quot;;
-echo &quot;Hola &quot;, &quot;mundo&quot;; 
-print &quot;Hola mundo&quot;;
-print &quot;Hola &quot;. &quot;mundo&quot;;
-</code></pre>
-
-            </section>
-        
-
-    </section>
-    
-
-
-
-    
-    <section>
-        <section >
-            <h1><a id="user-content-5-variables" class="anchor" href="#5-variables" aria-hidden="true"></a>5. Variables</h1>
-<ul>
-<li>No se declara el tipo de las variables.</li>
-<li>Las variables se pueden asignar
-<ul>
-<li>Por valor</li>
-<li>Por referencia (con &amp;)</li>
-<li>Creación de nombres de variables dinámico.</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-PHP">$x='equis';
-$_x = &amp;$x; //referencia a $x
-$_x ='x';
-echo $x; //x
-echo $_x; //x
-$a = &quot;hola&quot;;
-$$a = &quot;mundo&quot;;
-print &quot;$a $hola\n&quot;; //hola mundo
-print &quot;$a ${$a}&quot;;  //hola mundo
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-¿que-tipo-es-la-variable" class="anchor" href="#¿que-tipo-es-la-variable" aria-hidden="true"></a>¿Que tipo es la variable?</h2>
-<ul>
-<li>gettype() devuelve el tipo de una variable</li>
-<li>is_type() comprueba si una variable es de un tipo dado:</li>
-</ul>
-<p><code> is_array(), is_bool(), is_float(), is_integer(), is_null(), is_numeric(), is_object(), is_resource(), is_scalar(),is_string()</code></p>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-ámbito-de-variables" class="anchor" href="#ámbito-de-variables" aria-hidden="true"></a>Ámbito de variables</h2>
-<ul>
-<li>Local: Variable definida en una función
-<ul>
-<li>Está limitada a dicha función.</li>
-<li>Se elimina al acabar la ejecución de la función</li>
-<li>Salvo si la variable se declara como <strong>static</strong> .</li>
-</ul>
-</li>
-<li>Global:
-<ul>
-<li>No se puede definir dentro de las funciones a menos que :
-<ul>
-<li>se declare en la función con la palabra clave ‘global’</li>
-<li>O que se acceda con el array $GLOBALS[indice]</li>
-</ul>
-</li>
-<li>Existen durante todo el tiempo de proceso del fichero</li>
-<li>Al acabar de procesar el fichero se eliminan las variables globales</li>
-</ul>
-</li>
-</ul>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-superglobal" class="anchor" href="#superglobal" aria-hidden="true"></a>Superglobal</h2>
-<ul>
-<li>
-<p>Variables predefinidas en PHP</p>
-</li>
-<li>
-<p>Están disponibles en todos los ámbitos.</p>
-</li>
-<li>
-<p>$GLOBALS — Array con todas las variables disponibles en el ámbito global</p>
-</li>
-<li>
-<p>$_SERVER — Información del entorno del servidor y de ejecución</p>
-</li>
-<li>
-<p>$_GET(POST) — Variables HTTP GET(POST)</p>
-</li>
-<li>
-<p>$_FILES — Variables de Carga de Archivos HTTP</p>
-</li>
-<li>
-<p>$_REQUEST — Variables HTTP Request: GET+POTS+COOKIE</p>
-</li>
-<li>
-<p>$_SESSION — Variables de sesión</p>
-</li>
-<li>
-<p>$_COOKIE— Variables con datos de la cookie</p>
-</li>
-<li>
-<p>$_ENV— Variables del entorno</p>
-</li>
-</ul>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-ejercicio-3" class="anchor" href="#ejercicio-3" aria-hidden="true"></a>Ejercicio 3</h2>
-<p><a href="https://piruletas.000webhostapp.com/teoria/T2/tutoPhp.php">https://piruletas.000webhostapp.com/teoria/T2/tutoPhp.php</a></p>
-<ul>
-<li>Analiza este fichero y mira el funcionamiento.</li>
-</ul>
-
-            </section>
-        
-
-    </section>
-    
-
-
-
-    
-    <section>
-        <section >
-            <h1><a id="user-content-6-formularios" class="anchor" href="#6-formularios" aria-hidden="true"></a>6. Formularios</h1>
-<h3><a id="user-content-ejemplo-radio" class="anchor" href="#ejemplo-radio" aria-hidden="true"></a>Ejemplo: radio</h3>
-<pre><code class="language-HTML">&lt;form action=’procesar.php” method=”get”&gt;
-Sexo:
-&lt;INPUT TYPE=&quot;radio&quot; NAME=“sexo&quot; VALUE=“M&quot; CHECKED &gt;Mujer
-&lt;INPUT TYPE= &quot;radio&quot; NAME=“sexo&quot; VALUE=“H&quot;&gt;Hombre
-&lt;INPUT TYPE=”submit”&gt;
-&lt;/form&gt;
-</code></pre>
-<pre><code class="language-PHP">#Procesar.php
-&lt;?PHP
-$sexo = $_REQUEST[‘sexo’];
-print ($sexo);
-?&gt;
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-ejercicio-5" class="anchor" href="#ejercicio-5" aria-hidden="true"></a>Ejercicio 5:</h2>
-<ul>
-<li>¿Cuál es la petición al servidor al pulsar submit/enviar?</li>
-<li>¿Que aparecerá por pantalla?
-<a href="https://piruletas.000webhostapp.com/teoria/T2/form0.html">https://piruletas.000webhostapp.com/teoria/T2/form0.html</a></li>
-</ul>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-checkbox" class="anchor" href="#checkbox" aria-hidden="true"></a>CHECKBOX</h2>
-<pre><code class="language-php">&lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;extras[]&quot; VALUE=&quot;garaje&quot; CHECKED&gt;Garaje
-&lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;extras[]&quot; VALUE=&quot;piscina&quot;&gt;Piscina
-&lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;extras[]&quot; VALUE=&quot;jardin&quot;&gt;Jardín
-</code></pre>
-<pre><code class="language-PHP">&lt;?PHP
-$extras = $_REQUEST[‘extras’];
-foreach ($extras as $extra)
-print (“$extra&lt;BR&gt;\n”);
-?&gt;
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-button" class="anchor" href="#button" aria-hidden="true"></a>BUTTON</h2>
-<pre><code class="language-PHP">&lt;INPUT TYPE=&quot;button&quot; NAME=“actualizar&quot; VALUE=&quot;Actualizar datos&quot;&gt;
-</code></pre>
-<pre><code class="language-PHP">&lt;?PHP
-$actualizar = $_REQUEST[‘actualizar’];
-if ($actualizar)
-print (&quot;Se han actualizado los datos&quot;);
-?&gt;
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h2><a id="user-content-select-múltiple" class="anchor" href="#select-múltiple" aria-hidden="true"></a>SELECT múltiple</h2>
-<pre><code>Idiomas:
-&lt;SELECT MULTIPLE SIZE=&quot;3&quot; NAME=&quot;idiomas[]&quot;&gt;
-&lt;OPTION VALUE=&quot;ingles&quot; SELECTED&gt;Inglés
-&lt;OPTION VALUE=&quot;francés&quot;&gt;Francés
-&lt;OPTION VALUE=&quot;alemán&quot;&gt;Alemán
-&lt;OPTION VALUE=&quot;holandés&quot;&gt;Holandés
-&lt;/SELECT&gt;
-</code></pre>
-<pre><code>&lt;?PHP
-$idiomas = $_REQUEST[‘idiomas’];
-foreach ($idiomas as $idioma)
-print (“$idioma&lt;BR&gt;\n”);
-?&gt;
-</code></pre>
-
-            </section>
-        
-
-    </section>
-    
-
-
-
-    
-    <section>
-        <section >
-            <h1><a id="user-content-7-funciones" class="anchor" href="#7-funciones" aria-hidden="true"></a>7. Funciones</h1>
-<pre><code class="language-PHP">function suma ($x, $y)
-{
-$s = $x + $y;
-return $s;
-}
-</code></pre>
-<p>Salida:</p>
-<pre><code>$a=1;
-$b=2;
-$c=suma ($a, $b);
-print $c;
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h4><a id="user-content-paso-parámetros" class="anchor" href="#paso-parámetros" aria-hidden="true"></a>Paso parámetros</h4>
-<ul>
-<li>Por defecto paso parámetros por valor</li>
-<li>Paso por referencia:</li>
-</ul>
-<pre><code class="language-PHP">function incrementa (&amp;$a)
-{
-$a = $a + 1;
-}
-$a=1;
-incrementa ($a);
-print $a; // Muestra un 2
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h4><a id="user-content-argumentos" class="anchor" href="#argumentos" aria-hidden="true"></a>Argumentos</h4>
-<ul>
-<li>Argumentos por defecto</li>
-<li>Los argumentos con valores por defecto deben ser siempre
-los últimos:</li>
-</ul>
-<pre><code class="language-PHP">function muestranombre ($nombre, $titulo= &quot;Sr.&quot;)
-{
-print &quot;Estimado $titulo $nombre:\n&quot;;
-}
-muestranombre (“Fernández”);
-muestranombre (“Fernández”, &quot;Prof.&quot;);
-</code></pre>
-<p>Salida:</p>
-<pre><code>Estimado Sr. Fernández:
-Estimado Prof. Fernández:
-</code></pre>
 
             </section>
         
@@ -834,15 +544,78 @@ Estimado Prof. Fernández:
     
         <section >
             
-            <h2><a id="user-content-bibliografía" class="anchor" href="#bibliografía" aria-hidden="true"></a>Bibliografía</h2>
+            <h1><a id="user-content-7-formularios-html-dinámico" class="anchor" href="#7-formularios-html-dinámico" aria-hidden="true"></a>7. Formularios: HTML DINÁMICO</h1>
+<ul>
+<li>¿Qué entendesis por dinámico?</li>
+<li>¿Cómo sería la arquitectura?</li>
+<li>¿Cómo funcionan los formularios?</li>
+<li>¿Conoceis alguna alternativa a los formularios?</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-atributos--form" class="anchor" href="#atributos--form" aria-hidden="true"></a>Atributos  Form</h2>
+<p><code>&lt;form id=&quot;identificador&quot; action=&quot;programa&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</code></p>
+<ul>
+<li><code>method</code> : get(defecto)/post</li>
+<li><code>action</code> (obligatorio) : Indica la URL o función JS que procesará la
+información del formulario.</li>
+<li><code>enctype</code>: El tipo mime empleado para codificar el contenido del
+formulario.
+<a href="https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types">https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types</a></li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-etiquetas-de-los-formularios" class="anchor" href="#etiquetas-de-los-formularios" aria-hidden="true"></a>Etiquetas de los formularios</h2>
 <ul>
 <li>
-<p>PHP: <a href="http://es.php.net/manual/es/">http://es.php.net/manual/es/</a>
-Guia Estilos: <a href="https://www.php-fig.org/psr/psr-2/">https://www.php-fig.org/psr/psr-2/</a></p>
+<p>Input</p>
 </li>
 <li>
-<p>Apache: <a href="http://httpd.apache.org/docs/2.3/es/">http://httpd.apache.org/docs/2.3/es/</a>
--Callbacks: <a href="https://diego.com.es/funciones-anonimas-y-clausuras-en-php">https://diego.com.es/funciones-anonimas-y-clausuras-en-php</a></p>
+<p>Select</p>
+</li>
+<li>
+<p>Textarea</p>
+</li>
+<li>
+<p>Button</p>
+</li>
+</ul>
+<p><a href="http://www.w3.org/TR/html5/forms.html">http://www.w3.org/TR/html5/forms.html</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-8-css-cascade-style-sheets" class="anchor" href="#8-css-cascade-style-sheets" aria-hidden="true"></a>8. CSS: Cascade Style Sheets</h1>
+<ul>
+<li>HTML utiliza un conjunto de etiquetas predefinidas, cuyo
+significado es bien conocido. Un navegador sabe cómo debe
+mostrar estos elementos al usuario.<br>
+<code>h2 {color:blue;}</code></li>
+<li>Las CSS (Cascade Style Sheets): son un conjunto de distintas
+reglas de estilo unidas a un documento que permiten definir
+estilos para mostrar a los elementos de HTML
+<ul>
+<li>[<a href="https://www.w3c.es/Divulgacion/GuiasReferencia/CSS21">https://www.w3c.es/Divulgacion/GuiasReferencia/CSS21</a>](hhttps://www.w3c.es/Divulgacion/GuiasReferencia/CSS21</li>
+</ul>
 </li>
 </ul>
 
@@ -854,7 +627,662 @@ Guia Estilos: <a href="https://www.php-fig.org/psr/psr-2/">https://www.php-fig.o
     
         <section >
             
-            <h2><a id="user-content-¿dudas" class="anchor" href="#¿dudas" aria-hidden="true"></a>¿Dudas?</h2>
+            <h2><a id="user-content-css-en-navegadores" class="anchor" href="#css-en-navegadores" aria-hidden="true"></a>CSS: En navegadores</h2>
+<p>¿Por qué no son iguales los documentos HTML en todos los
+navegadores?</p>
+<ul>
+<li>Los navegadores tienen su propio conjunto de reglas de
+estilo.</li>
+<li>Los navegadores no soportan el estándar CSS 100%</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-css-ventajas" class="anchor" href="#css-ventajas" aria-hidden="true"></a>CSS: Ventajas</h2>
+<ul>
+<li>Separar el contenido del formato.</li>
+<li>Reducir el tiempo de descarga.</li>
+<li>Dar más control sobre el renderizado de HTML.</li>
+<li>Utilizar un mismo estilo para todo el
+portal web para que tenga una apariencia uniforme  y consistente.</li>
+<li>Cada usuario pueden aplicar
+sus propias reglas de estilo.</li>
+<li>Las reglas se aplican de forma jerárquica o en cascada.</li>
+<li>Se combinan reglas del navegador con las del diseñador</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-9-css-sintáxis" class="anchor" href="#9-css-sintáxis" aria-hidden="true"></a>9 CSS: Sintáxis</h1>
+<p>Una regla de estilo se compone de:</p>
+<ul>
+<li>Selector: enlace entre el documento HTML y el estilo</li>
+<li>Declaración: describe el efecto de la regla</li>
+</ul>
+<p><code>selector1, selector2 {prop1:value1; prop2:value2;...}</code></p>
+<pre><code class="language-css">   h1 {color:blue} 
+   h1,h2,h3 {color:blue; tex-align:center}}
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-¿cómo-se-enlaza-css-con-html" class="anchor" href="#¿cómo-se-enlaza-css-con-html" aria-hidden="true"></a>¿Cómo se enlaza CSS con HTML?</h2>
+<ul>
+<li>Dentro de la definición de etiquetas en el HTML (No abusar)</li>
+</ul>
+<pre><code class="language-html"> &lt;b style=&quot;font-size:14pt;color:red&quot;&gt;...&lt;/b&gt; 
+</code></pre>
+<ul>
+<li>En HTML dentro de la cabecera: etiqueta <code>&lt;style&gt;</code></li>
+</ul>
+<pre><code class="language-html">&lt;head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body { color: purple; background-color: #d8da3d}
+&lt;/style&gt;
+&lt;head&gt;
+</code></pre>
+<ul>
+<li>En ficheros externos .css e importarlos:<code>&lt;link&gt;/@import</code></li>
+</ul>
+<pre><code class="language-html">&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot;
+type=&quot;text/css&quot;
+href=&quot;splash.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<pre><code class="language-html">&lt;style type=&quot;text/css&quot;&gt;
+@import url(externo.css);
+h1 {color: gray;}
+&lt;/style&gt;
+</code></pre>
+<p>¿Prioridad de las reglas?</p>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2><a id="user-content-tipos-de-selectores" class="anchor" href="#tipos-de-selectores" aria-hidden="true"></a>Tipos de selectores</h2>
+<pre><code class="language-html">&lt;h1&gt;Directorio1&lt;/h1&gt;
+&lt;div id=&quot;directorio&quot;&gt;
+   &lt;h2&gt;Directorio1.2&lt;/h2&gt;
+   &lt;h2&gt;Directorio1.3&lt;/h2&gt;
+   &lt;p class=&quot;cita&quot;&gt;En en lugar de la mancha...&lt;/p&gt;
+   &lt;aside class=&quot;cita&quot;&gt; Referencia Miguel &lt;/aside&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>Etiquetas:</li>
+</ul>
+<pre><code class="language-css">h1 {color:blue}
+</code></pre>
+<ul>
+<li>Identificador de elemento (atributo ``ìd```):</li>
+</ul>
+<pre><code class="language-css">#directorio {
+position: absolute;
+left: 0px;
+top: 70px;
+background: red;
+width: 20%; 
+}
+</code></pre>
+<ul>
+<li>Clases de elementos (atributo <code>class</code>):</li>
+</ul>
+<pre><code class="language-css">.cita {font-weight: bold; color: red;}
+p.cita {background-color: red;}
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h2><a id="user-content-tipos-de-selectores-1" class="anchor" href="#tipos-de-selectores-1" aria-hidden="true"></a>Tipos de selectores</h2>
+<ul>
+<li>
+<p>Pseudo-Clases :</p>
+<ul>
+<li>:link cualquier enlace no visitado de la página.</li>
+<li>:visited cualquier enlace ya visitado de la página.</li>
+<li>:active enlace en el que estamos en este momento.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-css">a:visited  {color: gray;}
+</code></pre>
+<ul>
+<li>Pseudo-Elementos</li>
+</ul>
+<pre><code class="language-css">p:first-letter {color: red;}
+p:first-line {color: gray;}
+</code></pre>
+<ul>
+<li>En función del contexto</li>
+</ul>
+<pre><code class="language-css">td b {color:green}
+ul b {color:#074A}
+</code></pre>
+<p>El atributo Color del CSS soporta nombre inglés o HEXA, RGB y HSL</p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-unidades-css" class="anchor" href="#unidades-css" aria-hidden="true"></a>Unidades CSS</h2>
+<ul>
+<li>Medidas relativas:
+<ul>
+<li><code>em</code> (ems, “font-size” o tamaño de la fuente)</li>
+<li><code>ex</code> (x-height, altura de la letra “x” minúscula)</li>
+<li><code>px</code> (pixels, relativa a la resolución de pantalla)</li>
+</ul>
+</li>
+<li>Medidas absolutas:
+<ul>
+<li><code>in</code> (pulgadas; 1in=2.54cm)</li>
+<li><code>cm</code> (centímetros; 1cm=10mm)</li>
+<li><code>mm</code> (milímetros)</li>
+<li><code>pt</code> (puntos tipográficos; 1pt=1/72in)</li>
+<li><code>pc</code> (picas; 1pc=12pt)</li>
+</ul>
+</li>
+<li>Unidades de medida relativas:
+<ul>
+<li>Porcentajes : margin-left:20%
+margen izquierdo de un 20% del ancho del elemento contenedor</li>
+<li>Proporcionales: margin-left:3*
+margen izquierdo de ¾ partes del elemento contenedor</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-tamaño-de-la-fuente-font-size" class="anchor" href="#tamaño-de-la-fuente-font-size" aria-hidden="true"></a>Tamaño de la fuente: Font-size</h2>
+<ul>
+<li>Absolutos:
+[ xx-small | x-small | small |medium |large | x-large
+| xx-large ]</li>
+<li>Relativos:
+[larger | smaller]</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-ejercicios-en-clase" class="anchor" href="#ejercicios-en-clase" aria-hidden="true"></a>Ejercicios en clase</h2>
+<p>Buscando en estas guias <a href="https://www.w3.org/community/webed/wiki/CSS">https://www.w3.org/community/webed/wiki/CSS</a>  (¿A que página te ha enviado?)</p>
+<p>Programando en  <a href="https://codepen.io/martinwolf/pen/qlFdp">https://codepen.io/martinwolf/pen/qlFdp</a></p>
+<ul>
+<li>Convierte un hiperenlace en un boton con una clase enlaceBoton. Usando las reglas de background y border.</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <ul>
+<li>
+<p>Crea un pequeño formulario para registrarse en un gimnasio que utilice:</p>
+<ul>
+<li>
+<p>campo nombre con input type=“text”, campo dni input type=“text”</p>
+</li>
+<li>
+<p>campo sexo con “input type=radio”</p>
+</li>
+<li>
+<p>campo fecha  con un  &quot;input type=“date”</p>
+</li>
+<li>
+<p>seleccionar multiples deportes con “select multiple”.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Trata de encontrar una solución consultando la guia de html y CSS poner más atributos a estos campos y con el mejorar la apariencia del formulario. Por ejemplo una imagen de fondo al formulario, los textos con el tamaño requerido y con una fuente de distintos colores… Además usa para los campos obligatorios el utiliza el  atributo “required”</p>
+<p>¿Que parámetros se envian al servidor? Utiliza las herramientas de desarrolladores.</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-9-css3" class="anchor" href="#9-css3" aria-hidden="true"></a>9. CSS3</h1>
+<ul>
+<li>Transformaciones</li>
+<li>Transiciones</li>
+<li>Animaciones</li>
+<li>Fuentes propias</li>
+<li>Columnas</li>
+<li>Transparencia</li>
+<li>Degradados</li>
+<li>Bordes redondeados</li>
+</ul>
+<pre><code class="language-css">a:hover {
+transform: scale(1,5) translate(30px,10px);}
+#mibloque {column-count: 3;}
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-ejercicio-css3" class="anchor" href="#ejercicio-css3" aria-hidden="true"></a>Ejercicio CSS3</h2>
+<pre><code class="language-html">&lt;style&gt;
+  #gira:hover {
+  transform:rotate(-30deg); }
+&lt;/style&gt;
+
+&lt;p id=&quot;gira&quot; &gt;Esto hace algo &lt;a href=&quot;#&quot;&gt; Acción CSS3Transform&lt;/a&gt;
+ Se ve o no se ve.&lt;p&gt;
+</code></pre>
+<p>Comprueba que funciona en <a href="https://codepen.io/martinwolf/pen/qlFdp">https://codepen.io/martinwolf/pen/qlFdp</a></p>
+<p>Más ejemplos:
+<a href="http://estelle.github.io/animation/30.html#slide1">http://estelle.github.io/animation/30.html#slide1</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-10-modelo-de-cajas" class="anchor" href="#10-modelo-de-cajas" aria-hidden="true"></a>10. Modelo de Cajas</h1>
+<ul>
+<li>
+<p>Los elementos HTML se dividen en dos grandes tipos: block e inline.</p>
+</li>
+<li>
+<p>La propiedad <code>display</code> nos permite alterar el tipo de caja con
+que se muestra un elemento.</p>
+<ul>
+<li><code>inline</code>: el elemento no es un bloque, se renderiza en linea con otros elementos de ese tipo.</li>
+<li><code>block</code> : el elemento se comporta como un bloque, podemos poner márgenes y bordes…</li>
+<li><code>none</code> : el elemento no se muestra; el efecto es como si no existiera, por lo que su espacio será ocupado por otros.</li>
+<li><code>inherit</code> : se heredan las características del elemento padre.</li>
+<li><code>flex</code> : el elemento es flexible en posición horizontal y vertical.</li>
+<li><code>inline-block</code> : el elemento de bloque pero que se renderiza en línea con otros elementos.</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-ejemplo" class="anchor" href="#ejemplo" aria-hidden="true"></a>Ejemplo</h2>
+<pre><code class="language-html">&lt;p&gt; Esto es un párrafo, elemento block por defecto que contiene un trozo de texto &lt;span&gt; SPAN &lt;/span&gt; que por defecto es inline&lt;/p&gt;
+&lt;a href=&quot;aqui&quot; style=&quot;display:block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; &quot;&gt; Hiperenlace que  ya no es inline, es block.&lt;/a&gt;
+&lt;p&gt;Hiperenlace &lt;a href=&quot;alli&quot; style=&quot;display:inline-block; border: solid 4px rgb(204, 0, 0) ; background : #ffeebb ; &quot;&gt;Alli&lt;/a&gt; ,que es una caja inline, no es block&lt;/p&gt;
+</code></pre>
+<pre><code class="language-css">header, footer {
+   display: block;
+   margin: 4px;
+   padding: 5px;
+   min-height: 100px;
+   border: 1px solid #eebb55;
+   border-radius: 7pt;
+   background: #ffeebb;
+}
+</code></pre>
+<pre><code class="language-html">&lt;img src=&quot;./media/T3/image5.gif&quot;/&gt;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-propiedad-overflow" class="anchor" href="#propiedad-overflow" aria-hidden="true"></a>Propiedad overflow</h2>
+<p>Propiedad que especifica que hacer con el contenido excedente en un elemento a nivel de bloque</p>
+<p><code>overflow: scroll </code></p>
+<ul>
+<li><code>visible</code> (por defecto): Contenido no  recortado, podría ser dibujado fuera de la caja contenedora.</li>
+<li><code>hidden</code>: Contenido  recortado.</li>
+<li><code>scroll</code>: Contenido  recortado y el Navegador, usa  barras de desplazamiento.</li>
+<li><code>auto</code>: Depende del Navegador.</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-elipsis-texto" class="anchor" href="#elipsis-texto" aria-hidden="true"></a>Elipsis texto</h2>
+<pre><code class="language-html">&lt;div id=&quot;container&quot;&gt;
+  &lt;p class=&quot;truncate&quot; &gt;This is a text that should be truncated because it's too long.  The dreams of yesterday are the hopes of today and the reality of tomorrow. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species. Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. If you could see the earth illuminated when you were in a place as dark as night, it would look to you more splendid than the moon. Buy why, some say, the moon? Why choose this as our goal? And they may as well ask why climb the highest &lt;/p&gt;
+</code></pre>
+<pre><code class="language-css">.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.truncate:hover {
+  
+  white-space: normal;
+  overflow:visible;
+
+   }
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3><a id="user-content-modelo-de-cajas-position" class="anchor" href="#modelo-de-cajas-position" aria-hidden="true"></a>Modelo de cajas: <code>Position</code></h3>
+<ul>
+<li><code>Static:</code> Posición predeterminada en HTML.</li>
+<li><code>Relative:</code> La posición de la caja se ajusta en relación a su posición
+normal dentro de la página. La caja siguiente se sitúa como si esta
+no se hubiera desplazado.</li>
+<li><code>Absolute:</code> Las cajas son quitadas del flujo normal, su posición se
+especifica con las propiedades ‘left’, ‘right’, ‘top’, y ‘bottom’. No
+tienen ninguna influencia sobre la posición de las cajas siguientes.</li>
+<li><code>Fixed:</code> Como el anterior, pero se posiciona en función de la ventana
+del navegador. Esta caja no se mueve de posición al hacer scroll.</li>
+</ul>
+<pre><code class="language-css">div {
+display:block;
+position: absolute;
+top: 150px;
+padding: 5px 5px 5px 5px;
+Margin: 5px auto; /*centrar*/
+border-style: solid; }
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3><a id="user-content-cajas-flotantes-float" class="anchor" href="#cajas-flotantes-float" aria-hidden="true"></a>Cajas Flotantes: <code>Float</code></h3>
+<ul>
+<li><code>Left</code> : Genera un bloque a la izquierda donde posicionar las
+siguientes cajas si caben. De modo que el contenido de la caja
+se posiciona a la izquierda arriba de ese bloque.</li>
+<li><code>Right</code> : Lo mismo a la izquierda</li>
+<li><code>None</code> : No deja elementos flotantes.</li>
+</ul>
+<pre><code class="language-css">#a_izq {position:absolute;
+top:30px;
+right:30px;
+width:20%;
+float:right }
+img {float: left;}
+</code></pre>
+<p>Si al lado ponemos un parrafo este se alinea
+a la derecha de la imagen.
+<a href="https://piruletas.000webhostapp.com/Lab/P1">https://piruletas.000webhostapp.com/Lab/P1</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3><a id="user-content-cajas-flexibles-diseño-flexible" class="anchor" href="#cajas-flexibles-diseño-flexible" aria-hidden="true"></a>Cajas flexibles: Diseño Flexible</h3>
+<p>Un diseño flexible permite para alterar el ancho y alto de sus
+elementos para ajustarse lo mejor posible al espacio disponible
+en cualquier dispositivo. Un contenedor flexible expande sus
+elementos para rellenar el espacio libre, o los comprime para
+evitar que rebasen el área prevista.</p>
+<ul>
+<li>Un contenedor flexible (Flex container) se define usando los valores flex o inline-flex en la propiedad display del contenedor o elemento “padre” que contiene los elementos flexibles.</li>
+<li>Cada hijo de un contenedor flex se convierte en un elemento flexible (Flex item), que permite cajas a su derecha o izquierda.</li>
+</ul>
+<p><a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS">https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3><a id="user-content-columns" class="anchor" href="#columns" aria-hidden="true"></a>Columns</h3>
+<p><a href="https://piruletas.000webhostapp.com/teoria/T2/form0Info.html">https://piruletas.000webhostapp.com/teoria/T2/form0Info.html</a></p>
+<pre><code> &lt;style&gt;
+</code></pre>
+<p>.content-box {
+columns: 3 auto;
+}
+</style></p>
+<p>Usando Columns</p>
+  <div class="content-box">
+    <div>uno</div>
+    <div>due</div>
+    <div>tre</div>
+  </div>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-11-css-discriminación-por-dispositivos" class="anchor" href="#11-css-discriminación-por-dispositivos" aria-hidden="true"></a>11. CSS: Discriminación por dispositivos</h1>
+<h2><a id="user-content-media-type" class="anchor" href="#media-type" aria-hidden="true"></a>Media-Type</h2>
+<ul>
+<li>
+<p>Permite categorizar los dispositivos de usuario</p>
+</li>
+<li>
+<p>Se usaron originalmente para seleccionar en HTML4 distintos CSS en
+función del dispositivo del usuario.</p>
+</li>
+<li>
+<p>Pero son insuficientes como una manera de discriminar entre dispositivos con
+diferentes</p>
+</li>
+<li>
+<p><em>Media Types</em>:
+all, braille, embossed, handheld, print, projection, screen, speech,
+tty, tv.</p>
+</li>
+</ul>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; 
+href=&quot;http://mysite.com/style-print.css&quot; media=&quot;print&quot;&gt;
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot;
+href=&quot;http://mysite.com/style.css&quot; media=&quot;screen&quot;&gt;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-css3-media-queries" class="anchor" href="#css3-media-queries" aria-hidden="true"></a>CSS3: Media queries</h2>
+<ul>
+<li>Las consultas de medios ( media queries )son simples filtros que pueden aplicarse a
+los estilos CSS. Facilitan el cambio de estilos según el tipo de dispositivo
+( media-type ) o las características del dispositivo ( media-feature ), como el tipo
+de pantalla, el ancho, el alto, la orientación e incluso la resolución.</li>
+</ul>
+<pre><code class="language-css">@media screen and (min-width:600px) {
+    nav {
+    float: left;
+    width: 25%;
+    }
+    section {
+    margin-left: 25%;
+}}
+</code></pre>
+<pre><code class="language-css">@media (query) 
+{
+ //CSS Rules used when__query matches 
+}
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-ejemplo-media-queries" class="anchor" href="#ejemplo-media-queries" aria-hidden="true"></a>Ejemplo Media-QuerIes</h2>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; media=&quot;(max-width: 640px)&quot; 
+href=&quot;max-640px.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;(min-width: 640px)&quot; 
+href=&quot;min-640px.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;(orientation: portrait)&quot;
+ href=&quot;portrait.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; media=&quot;(orientation: landscape)&quot;
+ href=&quot;landscape.css&quot;&gt;
+&lt;style&gt;
+  @media (min-width: 500px) and (max-width: 600px) {
+  h1 { color: fuchsia;}
+  .desc:after {
+    content:&quot; In fact, it's between 500px and 600px wide.&quot;;
+  }
+}
+&lt;/style&gt;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3><a id="user-content-media-feature" class="anchor" href="#media-feature" aria-hidden="true"></a>Media Feature</h3>
+<ul>
+<li><code>min-width</code> :Reglas aplicadas a cualquier ancho de ventana de
+navegador que supere el valor definido en la consulta.</li>
+<li><code>max-width</code> :Reglas aplicadas a cualquier ancho de ventana de
+navegador que sea inferior al valor definido en la consulta.</li>
+<li><code>min-height</code> : Reglas aplicadas a cualquier alto de ventana de
+navegador que supere el valor definido en la consulta.</li>
+<li><code>max-height</code> : Reglas aplicadas a cualquier alto de ventana de
+navegador que sea inferior al valor definido en la consulta.</li>
+<li><code>orientation=portrait</code> : Reglas aplicadas a cualquier navegador
+cuyo alto de ventana sea superior o igual al ancho.</li>
+<li><code>orientation=landscape</code> : Reglas aplicadas a cualquier navegador
+cuyo ancho sea superior al alto.</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-lecturas-recomendadas" class="anchor" href="#lecturas-recomendadas" aria-hidden="true"></a>Lecturas recomendadas</h1>
+<ul>
+<li>Webgrafía:
+<ul>
+<li>Guía HTML y CSS : <a href="https://developer.mozilla.org/en-US/docs/Web">https://developer.mozilla.org/en-US/docs/Web</a></li>
+<li>Guía referencia HTML <a href="https://html.spec.whatwg.org/multipage/indices.html">https://html.spec.whatwg.org/multipage/indices.html</a></li>
+<li>Guía general CSS: <a href="http://www.w3.org/community/webed/wiki/CSS">http://www.w3.org/community/webed/wiki/CSS</a></li>
+<li>Guia de etiquetes y regles css actives en els navegadors:
+<a href="http://caniuse.com">http://caniuse.com</a></li>
+<li>Guía Accesibilidad:
+<a href="http://w3c.es/Divulgacion/GuiasBreves/Accesibilidad">http://w3c.es/Divulgacion/GuiasBreves/Accesibilidad</a></li>
+</ul>
+</li>
+<li>Bibliografía:
+<ul>
+<li>Head first web design. O’reilly. Ethan Watrall &amp; Jeff
+Siarto.</li>
+<li>HTML5 y CSS3. Editor: ENI (Septiembre 2011) Autor : Luc VAN
+LANCKER ISBN : 978-2-7460-6816-2</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3><a id="user-content-¿dudas" class="anchor" href="#¿dudas" aria-hidden="true"></a>¿Dudas?</h3>
 <p><img src="./media/image8.png" alt="Image de Dudas"></p>
 
             </section>
