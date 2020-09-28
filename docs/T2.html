@@ -13,12 +13,12 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="cssreset.css">
+		<link rel="stylesheet" href="cssreveal.css">
+		<link rel="stylesheet" href="csstheme/sky.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="export/libs/reveal.js/3.0.8/plugin/highlight/monokai.css" id="highlight-theme">
 		<!-- Theme used for syntax highlighted code -->
 		<!-- link rel="stylesheet" href="export/libs/reveal.js/3.0.8/plugin/highlight/monokai.css" id="highlight-theme" -->
 		  <link rel="stylesheet" href="lola_theme.css">
@@ -47,26 +47,24 @@
 		</div>
 
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/zoom/zoom.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/search/search.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
 
-			// Also available as an ES module, see:
-			// https://revealjs.com/initialization/
+		<script src="export/libs/reveal.js/3.0.8/plugin/math/math.js"></script>
+		<script src="cssreveal.js"></script>
+		<script src="export/libs/reveal.js/3.0.8/plugin/zoom/zoom.js"></script>
+		<script src="export/libs/reveal.js/3.0.8/plugin/notes/notes.js"></script>
+		<script src="export/libs/reveal.js/3.0.8/plugin/search/search.js"></script>
+		<script src="export/libs/reveal.js/3.0.8/plugin/markdown/markdown.js"></script>
+		<script src="export/libs/reveal.js/3.0.8/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
 			Reveal.initialize({
-				controls: true,
-				progress: true,
-				center: true,
 				hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+				// Learn about export/libs/reveal.js/3.0.8/plugins: https://revealjs.com/export/libs/reveal.js/3.0.8/plugins/
+				plugins: [ RevealZoom,RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath],
 			});
-
 		</script>
 
 
